@@ -22,10 +22,10 @@ public class Camera : MonoBehaviour
 		}
 		Vector3 rotationPivot = cursor.transform.position;
         if(Input.GetKeyDown("a")){
-			StartCoroutine(GradualRotation(rotationPivot, Vector3.down, 90.0f));
+			StartCoroutine(GradualRotation(rotationPivot, Vector3.up, 90.0f));
 		}
 		if(Input.GetKeyDown("d")){
-			StartCoroutine(GradualRotation(rotationPivot, Vector3.up, 90.0f));
+			StartCoroutine(GradualRotation(rotationPivot, Vector3.down, 90.0f));
 		}
     }
 	
@@ -33,8 +33,7 @@ public class Camera : MonoBehaviour
 		
 		//assuming framerate remains (approximately) constant
 		rotating = true;
-		float rotationPerFrame = angle / timeToRotate * Time.deltaTime; 
-		Debug.Log(rotationPerFrame);
+		float rotationPerFrame = angle / timeToRotate * Time.deltaTime;
 		float totalRotation = 0f;
 		
 		while (totalRotation < angle - 0.5f){ //it is better to undershoot so error correction is less noticeable

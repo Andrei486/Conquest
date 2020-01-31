@@ -11,6 +11,7 @@ public class Cursor : MonoBehaviour
 	public GameObject cursorSelectPrefab;
 	public float moveTime = 0.1f; //it takes the cursor 0.1s to move one space
 	public bool moving = false;
+	public bool locked = false;
 	public GameObject camera;
 	public BoardManager board;
 	GameObject selector;
@@ -33,7 +34,7 @@ public class Cursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (camera.GetComponent<Camera>().rotating || this.moving){ //to prevent camera going off-center, do not move if already moving or turning
+		if (camera.GetComponent<Camera>().rotating || this.moving || this.locked){ //to prevent camera going off-center, do not move if already moving or turning
 			return;
 		}
 		Quaternion rotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);

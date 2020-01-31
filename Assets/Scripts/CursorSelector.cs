@@ -32,7 +32,8 @@ public class CursorSelector : MonoBehaviour
 	
 	public void Select(BoardSpace space){
 		if (cursorScript.selectedSpace == null){
-				cursorScript.selectedSpace = space; //select the space if none already selected
+			if (cursorScript.selectedSpace.occupyingUnit != null){
+				cursorScript.selectedSpace = space; //select the space if none already selected and not empty
 				activeSelect.GetComponent<SpriteRenderer>().enabled = true;
 				activeSelect.transform.position = space.anchorPosition;
 			} else{
@@ -40,10 +41,11 @@ public class CursorSelector : MonoBehaviour
 					Deselect(); //can't double-select a space
 				} else {
 					cursorScript.board.MoveUnit(cursorScript.selectedSpace, space);
-					cursorScript.Move(new Vector2(0, 0));
+					cursorScript.Move(new Vector2(0, 0)); //update the cursor's height if needed
 					Deselect(); //move player if possible
 				}
 			}
+		}
 	}
 	public void Deselect(){
 		cursorScript.selectedSpace = null;

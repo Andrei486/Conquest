@@ -11,8 +11,9 @@ namespace Objects{
 		public Vector3 anchorPosition;
 		public GameObject occupyingUnit;
 		public Sprite sprite;
+		public const float BOARD_SIZE = 2.0f;
 		
-		public float getHeight(){
+		public float GetHeight(){
 			return this.anchorPosition.z;
 		}
 	}
@@ -26,8 +27,15 @@ namespace Objects{
 		public Vector2 knockbackPosition;
 	}
 	
+	public enum SkillType{
+		Melee,
+		Ranged,
+		Support
+	}
 	public class Skill{
 		
+		public string name;
+		public SkillType skillType;
 		public bool reusable = false;
 		public List<Attack> attacks;
 		public int actionCost;
