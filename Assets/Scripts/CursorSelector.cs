@@ -31,23 +31,32 @@ public class CursorSelector : MonoBehaviour
     }
 	
 	public void Select(BoardSpace space){
-		if (cursorScript.selectedSpace == null){
-			if (cursorScript.selectedSpace.occupyingUnit != null){
+		if (cursorScript.selectedSpace == null){ //no space selected
+			if (space.occupyingUnit != null){
 				cursorScript.selectedSpace = space; //select the space if none already selected and not empty
 				activeSelect.GetComponent<SpriteRenderer>().enabled = true;
-				activeSelect.transform.position = space.anchorPosition;
-			} else{
-				if (space == cursorScript.selectedSpace){
+				cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>().ShowAccessibleSpaces();
+				activeSelect.transform.position = space.anchorPosition + new Vector3(0f, 0.02f, 0f);
+			}
+		} else { //something already selected
+			PlayerController pc = cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>();
+			if (space == cursorScript.selectedSpace){
 					Deselect(); //can't double-select a space
 				} else {
-					cursorScript.board.MoveUnit(cursorScript.selectedSpace, space);
-					cursorScript.Move(new Vector2(0, 0)); //update the cursor's height if needed
-					Deselect(); //move player if possible
+					if (pc.GetAccessibleSpaces(pc.moveRange, (int) pc.boardPosition.x, (int) pc.boardPosition.y).Contains(space)){
+						cursorScript.board.MoveUnit(cursorScript.selectedSpace, space); //move player if possible
+						cursorScript.Move(new Vector2(0, 0)); //update the cursor's height if needed
+						Deselect();
+					}
 				}
-			}
 		}
 	}
 	public void Deselect(){
+		//clear all visualizations for unit's move range
+		foreach (GameObject vis in GameObject.FindGameObjectsWithTag("Visualization")){
+			Destroy(vis);
+		}
+		
 		cursorScript.selectedSpace = null;
 		activeSelect.GetComponent<SpriteRenderer>().enabled = false;
 	}

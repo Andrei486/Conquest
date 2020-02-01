@@ -9,7 +9,7 @@ public class Cursor : MonoBehaviour
 	public Vector2 position;
 	public BoardSpace selectedSpace = null;
 	public GameObject cursorSelectPrefab;
-	public float moveTime = 0.1f; //it takes the cursor 0.1s to move one space
+	public float moveTime = 0.05f; //it takes the cursor 0.1s to move one space
 	public bool moving = false;
 	public bool locked = false;
 	public GameObject camera;

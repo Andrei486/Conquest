@@ -8,6 +8,7 @@ public class Camera : MonoBehaviour
 	GameObject cursor;
 	public float timeToRotate = 0.3f;
 	public bool rotating = false;
+	public float zAngle = 30.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,20 @@ public class Camera : MonoBehaviour
 		}
 		if(Input.GetKeyDown("d")){
 			StartCoroutine(GradualRotation(rotationPivot, Vector3.down, 90.0f));
+		}
+		if(Input.GetKeyDown("s")){
+			if (zAngle >= 15.0f){
+				StartCoroutine(GradualRotation(rotationPivot, Vector3.Cross(this.transform.position - rotationPivot, Vector3.down), 15.0f));
+			zAngle -= 15.0f;
+			}
+			Debug.Log(zAngle);
+		}
+		if(Input.GetKeyDown("w")){
+			if (zAngle <= 60.0f){
+				StartCoroutine(GradualRotation(rotationPivot, Vector3.Cross(this.transform.position - rotationPivot, Vector3.up), 15.0f));
+			zAngle += 15.0f;
+			}
+			Debug.Log(zAngle);
 		}
     }
 	

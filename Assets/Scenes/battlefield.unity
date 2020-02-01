@@ -149,7 +149,7 @@ Light:
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -204,13 +204,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437642572}
-  m_LocalRotation: {x: 0.40557975, y: -0.579228, z: 0.40557975, w: 0.579228}
-  m_LocalPosition: {x: 2, y: 3, z: 0}
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalPosition: {x: 3, y: 2, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 70, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!1 &1219874181
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,12 +425,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66bc0c925ca3174cb992100f766b6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rows: 0
+  columns: 0
   defaultSprites:
   - {fileID: 8204095343765444867, guid: 4e1d42f4db37f574eb7e52ba706c9c10, type: 3}
   - {fileID: 8648822512753860137, guid: 4e1d42f4db37f574eb7e52ba706c9c10, type: 3}
+  tileColors:
+  - {r: 0.78823537, g: 0.7843138, b: 0.78823537, a: 0}
+  - {r: 0.10588236, g: 0.5882353, b: 0.0627451, a: 0}
   cursor: {fileID: 587640148685082739, guid: 00b628af59913a342ac6a932cb10e2ca, type: 3}
   pawn: {fileID: 6535245383649658801, guid: b79204adbe5cbff4bb79e5b59276710c, type: 3}
   spriteShader: {fileID: 2100000, guid: ba09810178058e54b8eb39775cca3840, type: 2}
+  boardTilePrefab: {fileID: 7014652375506959953, guid: 5c1282255cc32ce428d83510cfbabf84,
+    type: 3}
+  moveTilePrefab: {fileID: 8031693787661174911, guid: 1511ffa9b2eeabc4c9670b3a8624eac0,
+    type: 3}
   skillTilePrefab: {fileID: 7633504030874719877, guid: 5d6520703c6bd2740bb8ce2b9e854565,
     type: 3}
   mapData: {fileID: 4900000, guid: d25a7b3dfc1386c448d97651a0eef74b, type: 3}

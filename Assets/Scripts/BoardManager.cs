@@ -9,14 +9,17 @@ using Newtonsoft.Json.Linq;
 
 public class BoardManager : MonoBehaviour
 {
-	protected int rows;
-	protected int columns;
+	public int rows;
+	public int columns;
 	public List<Sprite> defaultSprites;
+	public List<Color> tileColors;
 	GameObject board;
 	public BoardSpace[,] boardSpaces;
 	public GameObject cursor;
 	public GameObject pawn;
 	public Material spriteShader;
+	public GameObject boardTilePrefab;
+	public GameObject moveTilePrefab;
 	public GameObject skillTilePrefab;
 	public TextAsset mapData;
     // Start is called before the first frame update
@@ -24,19 +27,6 @@ public class BoardManager : MonoBehaviour
     {
 		board = this.gameObject;
 		CreateMap();
-		// BoardSpace newSpace;
-		// board = this.gameObject;
-		// boardSpaces = new BoardSpace[columns, rows];
-		// for (int i = 0; i < columns; i++){
-			// for (int j = 0; j < rows; j++){
-				// newSpace = new BoardSpace();
-				// newSpace.boardPosition = new Vector2(i, j);
-				// newSpace.anchorPosition = new Vector3(i * BoardSpace.BOARD_SIZE, i * 0.5f, j * BoardSpace.BOARD_SIZE);
-				// newSpace.sprite = defaultSprites[0];
-				// boardSpaces[i,j] = newSpace;
-				// showTile(boardSpaces[i,j]);
-			// }
-		// }
 		CreateUnits();
 		Instantiate(cursor);
     }
@@ -48,6 +38,14 @@ public class BoardManager : MonoBehaviour
     }
 	
 	void showTile(BoardSpace space){
+		GameObject tile = Instantiate(boardTilePrefab, board.transform);
+		tile.transform.position = space.anchorPosition;
+		SpriteRenderer renderer = tile.GetComponent<SpriteRenderer>();
+		tile.transform.Find("Pillar").gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color", space.pillarColor);
+		renderer.sprite = space.sprite;
+		renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+		renderer.receiveShadows = true;
+		/*
 		GameObject tile = new GameObject("Tile");
 		tile.transform.parent = board.transform; //set as child to board, so that hierarchy is simplified
 		tile.transform.position = space.anchorPosition;
@@ -59,6 +57,7 @@ public class BoardManager : MonoBehaviour
 		renderer.material = spriteShader;
 		renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
 		renderer.receiveShadows = true;
+		*/
 	}
 	
 	public bool IsWithinBounds(Vector2 position){
@@ -79,9 +78,12 @@ public class BoardManager : MonoBehaviour
 			Debug.Log("cannot move to a used space");
 			return;
 		}
+		
 		end.occupyingUnit = start.occupyingUnit;
 		start.occupyingUnit = null;
 		end.occupyingUnit.transform.position = end.anchorPosition; //lerp here
+		end.occupyingUnit.GetComponent<PlayerController>().boardPosition = end.boardPosition;
+		
 	}
 	
 	public void MoveUnit(Vector2 start, Vector2 end){
@@ -92,6 +94,7 @@ public class BoardManager : MonoBehaviour
 		GameObject unit = Instantiate(pawn);
 		this.boardSpaces[4,4].occupyingUnit = unit;
 		unit.transform.position = this.boardSpaces[4,4].anchorPosition;
+		unit.GetComponent<PlayerController>().boardPosition = new Vector2(4, 4);
 	}
 	
 	public void CreateMap(){
@@ -129,15 +132,19 @@ public class BoardManager : MonoBehaviour
 													(float) space.boardPosition.y * BoardSpace.BOARD_SIZE);
 													
 				List<Sprite> defaultSprites = board.defaultSprites;
+				List<Color> tileColors = board.tileColors;
 				switch (item["spriteName"].Value<string>()){
 					case "tile":
 						space.sprite = defaultSprites[0];
+						space.pillarColor = tileColors[0];
 						break;
 					case "grass":
 						space.sprite = defaultSprites[1];
+						space.pillarColor = tileColors[1];
 						break;
 					default:
 						space.sprite = defaultSprites[1]; //make an actual default sprite?
+						space.pillarColor = tileColors[1];
 						break;
 				}
 				return space;

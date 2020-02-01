@@ -83,7 +83,7 @@
          "spriteName": "tile"
       },
       {
-         "boardPosition": [
+         "boardPosition": [	
             1,
             0
          ],
@@ -207,7 +207,7 @@
             2,
             5
          ],
-         "anchorHeight": 0.5,
+         "anchorHeight": 2.5,
          "spriteName": "tile"
       },
       {
@@ -223,7 +223,7 @@
             2,
             7
          ],
-         "anchorHeight": 0.0,
+         "anchorHeight": 2.0,
          "spriteName": "grass"
       },
       {

@@ -11,10 +11,13 @@ namespace Objects{
 		public Vector3 anchorPosition;
 		public GameObject occupyingUnit;
 		public Sprite sprite;
+		public Color pillarColor;
+		public int moveCost = 1;
 		public const float BOARD_SIZE = 2.0f;
+		public bool impassable = false;
 		
 		public float GetHeight(){
-			return this.anchorPosition.z;
+			return this.anchorPosition.y;
 		}
 	}
 	
