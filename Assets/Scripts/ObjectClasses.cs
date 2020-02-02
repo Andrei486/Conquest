@@ -27,13 +27,13 @@ namespace Objects{
 		public float accuracy;
 		//relative to user, in board space, when user faces upwards.
 		public Vector2 targetPosition;
-		public Vector2 knockbackPosition;
+		public Vector2 knockbackPosition = new Vector2(0, 0);
 	}
 	
 	public enum SkillType{
-		Melee,
-		Ranged,
-		Support
+		MELEE,
+		RANGED,
+		SUPPORT
 	}
 	public class Skill{
 		
@@ -41,11 +41,11 @@ namespace Objects{
 		public SkillType skillType;
 		public bool reusable = false;
 		public List<Attack> attacks;
-		public int actionCost;
-		public int bulletCost;
-		public int moveCost;
+		public int actionCost = 1;
+		public int bulletCost = 0;
+		public int moveCost = 0;
 		//relative to user, in board space, when user faces upwards.
-		public Vector2 movePosition; 
+		public Vector2 movePosition = new Vector2(0, 0); 
 		
 		public void VisualizeTarget(BoardSpace space){
 			PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();

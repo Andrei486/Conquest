@@ -54,6 +54,9 @@ public class Cursor : MonoBehaviour
 		if (Input.GetKeyDown("space")){
 			selector.GetComponent<CursorSelector>().Select(board.boardSpaces[(int) position.x, (int) position.y]);
 		}
+		if (Input.GetKeyDown("backspace")){
+			selector.GetComponent<CursorSelector>().Deselect();
+		}
     }
 	
 	public void Move(Vector2 movement){	

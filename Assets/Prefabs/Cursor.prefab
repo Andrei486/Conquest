@@ -97,6 +97,7 @@ MonoBehaviour:
     type: 3}
   moveTime: 0.1
   moving: 0
+  locked: 0
   camera: {fileID: 0}
   board: {fileID: 0}
 --- !u!1 &8261064899847466723
@@ -197,3 +198,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToRotate: 0.3
   rotating: 0
+  zAngle: 60

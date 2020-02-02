@@ -8,7 +8,7 @@ public class Camera : MonoBehaviour
 	GameObject cursor;
 	public float timeToRotate = 0.3f;
 	public bool rotating = false;
-	public float zAngle = 30.0f;
+	public float zAngle = 60.0f;
     // Start is called before the first frame update
     void Start()
     {

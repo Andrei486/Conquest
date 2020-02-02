@@ -1,0 +1,158 @@
+[
+	{
+		"name": "Thorned Punch",
+		"reusable": true,
+		"actionCost": 1,
+		"bulletCost": 0,
+		"moveCost": 0,
+		"skillType": "MELEE",
+		"attacks": [
+			{
+				"basePower": 50,
+				"accuracy": 95,
+				"targetPosition": [0, 1]
+			}
+		]
+	},
+	{
+		"name": "Crescent Slash",
+		"reusable": false,
+		"actionCost": 1,
+		"bulletCost": 0,
+		"moveCost": 0,
+		"skillType": "MELEE",
+		"attacks": [
+			{
+				"basePower": 70,
+				"accuracy": 80,
+				"targetPosition": [0, 1]
+			},
+			{
+				"basePower": 70,
+				"accuracy": 80,
+				"targetPosition": [1, 0]
+			},
+			{
+				"basePower": 70,
+				"accuracy": 80,
+				"targetPosition": [-1, 0]
+			}
+		]
+	},
+	{
+		"name": "Full Moon",
+		"reusable": false,
+		"actionCost": 2,
+		"bulletCost": 0,
+		"moveCost": 0,
+		"skillType": "MELEE",
+		"attacks": [
+			{
+				"basePower": 110,
+				"accuracy": 70,
+				"targetPosition": [0, 1]
+			},
+			{
+				"basePower": 110,
+				"accuracy": 70,
+				"targetPosition": [1, 0]
+			},
+			{
+				"basePower": 110,
+				"accuracy": 70,
+				"targetPosition": [-1, 0]
+			},
+			{
+				"basePower": 110,
+				"accuracy": 70,
+				"targetPosition": [0, -1]
+			}
+		]
+	},
+	{
+		"name": "Sniper",
+		"reusable": false,
+		"actionCost": 2,
+		"bulletCost": 1,
+		"moveCost": 0,
+		"skillType": "RANGED",
+		"attacks": [
+			{
+				"basePower": 100,
+				"accuracy": 70,
+				"targetPosition": [0, 1]
+			},
+			{
+				"basePower": 95,
+				"accuracy": 80,
+				"targetPosition": [0, 2]
+			},
+			{
+				"basePower": 90,
+				"accuracy": 85,
+				"targetPosition": [0, 3]
+			},
+			{
+				"basePower": 85,
+				"accuracy": 85,
+				"targetPosition": [0, 4]
+			},
+			{
+				"basePower": 80,
+				"accuracy": 85,
+				"targetPosition": [0, 5]
+			}
+		]
+	},
+	{
+		"name": "Artillery",
+		"reusable": false,
+		"actionCost": 1,
+		"bulletCost": 2,
+		"moveCost": 0,
+		"skillType": "RANGED",
+		"attacks": [
+			{
+				"basePower": 90,
+				"accuracy": 65,
+				"targetPosition": [0, 1]
+			},
+			{
+				"basePower": 95,
+				"accuracy": 80,
+				"targetPosition": [0, 2]
+			},
+			{
+				"basePower": 90,
+				"accuracy": 65,
+				"targetPosition": [1, 2]
+			},
+			{
+				"basePower": 90,
+				"accuracy": 65,
+				"targetPosition": [-1, 2]
+			},
+			{
+				"basePower": 90,
+				"accuracy": 65,
+				"targetPosition": [0, 3]
+			}
+		]
+	},
+	{
+		"name": "Mighty Hammer",
+		"reusable": false,
+		"actionCost": 1,
+		"bulletCost": 0,
+		"moveCost": 0,
+		"skillType": "MELEE",
+		"attacks": [
+			{
+				"basePower": 150,
+				"accuracy": 85,
+				"targetPosition": [0, 1],
+				"knockbackPosition": [0, 2]
+			}
+		]
+	},
+]

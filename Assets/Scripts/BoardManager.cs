@@ -166,4 +166,39 @@ public class BoardManager : MonoBehaviour
 			}
 		}
 	}
+	internal class PlayerConverter : JsonConverter{
+		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer){
+			throw new System.NotImplementedException(); //can't use to serialize json
+		}
+		
+		public override bool CanConvert(Type type){
+			if (type == typeof(GameObject) || type == typeof(List<GameObject>)){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer){
+			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			if (objectType == typeof(GameObject)){ //if it is a single space
+				return null;
+			} else { //if it is the entire map
+				JObject boardInfo = JObject.Load(reader);
+				//set board size
+				JToken rows = boardInfo["rows"];
+				JToken columns = boardInfo["columns"];
+				board.rows = rows.Value<int>();
+				board.columns = columns.Value<int>();
+				//get list of spaces, arrange them later
+				JArray array = (JArray) boardInfo["spaces"];
+				List<BoardSpace> spaces = new List<BoardSpace>();
+				foreach (JToken token in array){
+					JsonTextReader newReader = new JsonTextReader(new StringReader(token.ToString()));
+					spaces.Add(this.ReadJson(newReader, typeof(BoardSpace), existingValue, serializer) as BoardSpace); 
+				}
+				return spaces;
+			}
+		}
+	}
 }

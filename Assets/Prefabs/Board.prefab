@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1933822987141416243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1933822987141416240}
+  - component: {fileID: 1933822987141416241}
+  m_Layer: 0
+  m_Name: Board
+  m_TagString: Board
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1933822987141416240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933822987141416243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1933822987141416241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933822987141416243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66bc0c925ca3174cb992100f766b6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rows: 0
+  columns: 0
+  defaultSprites:
+  - {fileID: 8204095343765444867, guid: 4e1d42f4db37f574eb7e52ba706c9c10, type: 3}
+  - {fileID: 8648822512753860137, guid: 4e1d42f4db37f574eb7e52ba706c9c10, type: 3}
+  tileColors:
+  - {r: 0.2830189, g: 0.099330425, b: 0, a: 0}
+  - {r: 0.28235295, g: 0.098039225, b: 0, a: 0}
+  cursor: {fileID: 587640148685082739, guid: 00b628af59913a342ac6a932cb10e2ca, type: 3}
+  pawn: {fileID: 6535245383649658801, guid: b79204adbe5cbff4bb79e5b59276710c, type: 3}
+  spriteShader: {fileID: 2100000, guid: ba09810178058e54b8eb39775cca3840, type: 2}
+  boardTilePrefab: {fileID: 7014652375506959953, guid: 5c1282255cc32ce428d83510cfbabf84,
+    type: 3}
+  moveTilePrefab: {fileID: 8031693787661174911, guid: 1511ffa9b2eeabc4c9670b3a8624eac0,
+    type: 3}
+  skillTilePrefab: {fileID: 7633504030874719877, guid: 5d6520703c6bd2740bb8ce2b9e854565,
+    type: 3}
+  mapData: {fileID: 4900000, guid: d25a7b3dfc1386c448d97651a0eef74b, type: 3}
