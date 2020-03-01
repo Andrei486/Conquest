@@ -63,7 +63,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 779983166002475628, guid: 1efa0805ee3262240a8af9c88746a4be, type: 3}
+  m_Sprite: {fileID: 3672460783984968573, guid: 7abb49ca5dc72244c8888ac5ca43dcc6,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -111,7 +112,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3452037990696858789
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -138,8 +139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5749030629103549784, guid: 1efa0805ee3262240a8af9c88746a4be,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b540ba672bb41cb418a9107583751a7c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 3452037990827393891}
   - component: {fileID: 3452037990827393890}
   m_Layer: 5
-  m_Name: Skill Name
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.427451, g: 0.42352945, b: 0.2901961, a: 0.78431374}
+  m_Color: {r: 0, g: 0.1813848, b: 0.5, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

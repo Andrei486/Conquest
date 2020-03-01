@@ -2,9 +2,6 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BoardManager
-    - Camera
-    - Cursor
-    - CursorSelector
     - Menu
     - PlayerController
     Unity.2D.Tilemap.Editor.dll:
@@ -35,8 +32,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 4
       Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
     - Class: 23
@@ -51,36 +46,28 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9672}
     - Class: 114
-      Script: {instanceID: 9832}
+      Script: {instanceID: 9826}
     - Class: 114
-      Script: {instanceID: 9842}
+      Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 9882}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 10282}
+      Script: {instanceID: 10280}
     - Class: 114
       Script: {instanceID: 10324}
     - Class: 114
-      Script: {instanceID: 10408}
+      Script: {instanceID: 10816}
     - Class: 114
-      Script: {instanceID: 10448}
+      Script: {instanceID: 11132}
     - Class: 114
-      Script: {instanceID: 10544}
-    - Class: 114
-      Script: {instanceID: 10818}
-    - Class: 114
-      Script: {instanceID: 11136}
-    - Class: 114
-      Script: {instanceID: 11506}
+      Script: {instanceID: 11504}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -142,7 +129,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: ee7b3531e6341f896bf58b7fb512bb3b
+      Hash: 8dc0a4d6e0820f40f6ffbd9de2441b85
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -244,10 +231,22 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 86024296ee36b02f180c9f43eacb8949
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuCursor
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 0093a47e4e03170af9719bee3f14bc3b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SkillMenuCursor
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -292,7 +291,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 615a871d690abe056f6400963198fdf2
+      Hash: bef5aa08dd670ed856f3b5d3cba6cca5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Menu
@@ -316,7 +315,7 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: e8432c23ae52dde1e97e00ae5da0a371
+      Hash: 916988bc0c526b4d3fe445cf4028359b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cursor
@@ -376,7 +375,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 88782df6a681493bd2537d5ef3fc9db4
+      Hash: 9f225caf3fc050f46a55f8c2100cd75e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BoardManager
@@ -464,6 +463,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 86024296ee36b02f180c9f43eacb8949
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ActionMenuCursor
   - hash:
       serializedVersion: 2
       Hash: df434544c9f7b33d1cc7e635b180d279

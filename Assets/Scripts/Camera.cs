@@ -6,7 +6,7 @@ using Objects;
 public class Camera : MonoBehaviour
 {
 	GameObject cursor;
-	public float timeToRotate = 0.3f;
+	public float timeToRotate = 0.2f;
 	public bool rotating = false;
 	public float zAngle = 60.0f;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (cursor.GetComponent<Cursor>().moving || this.rotating){ //to prevent camera going off-center, do not turn if already moving or turning
+		if (cursor.GetComponent<Cursor>().moving || this.rotating || cursor.GetComponent<Cursor>().movedTemporary){ //to prevent camera going off-center, do not turn if already moving or turning
 			return;
 		}
 		Vector3 rotationPivot = cursor.transform.position;
@@ -45,7 +45,7 @@ public class Camera : MonoBehaviour
     }
 	
 	public IEnumerator GradualRotation(Vector3 point, Vector3 axis, float angle){
-		
+		/**Rotates camera by angle degrees around axis with constant speed.*/
 		//assuming framerate remains (approximately) constant
 		rotating = true;
 		float rotationPerFrame = angle / timeToRotate * Time.deltaTime;

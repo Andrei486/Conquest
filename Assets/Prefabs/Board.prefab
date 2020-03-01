@@ -51,7 +51,10 @@ MonoBehaviour:
   tileColors:
   - {r: 0.2830189, g: 0.099330425, b: 0, a: 0}
   - {r: 0.28235295, g: 0.098039225, b: 0, a: 0}
-  cursor: {fileID: 587640148685082739, guid: 00b628af59913a342ac6a932cb10e2ca, type: 3}
+  cursorPrefab: {fileID: 587640148685082739, guid: 00b628af59913a342ac6a932cb10e2ca,
+    type: 3}
+  menuPrefab: {fileID: 5355686462192797176, guid: edea51bbf4d988f419210b6379112b7e,
+    type: 3}
   pawn: {fileID: 6535245383649658801, guid: b79204adbe5cbff4bb79e5b59276710c, type: 3}
   spriteShader: {fileID: 2100000, guid: ba09810178058e54b8eb39775cca3840, type: 2}
   boardTilePrefab: {fileID: 7014652375506959953, guid: 5c1282255cc32ce428d83510cfbabf84,
@@ -61,3 +64,4 @@ MonoBehaviour:
   skillTilePrefab: {fileID: 7633504030874719877, guid: 5d6520703c6bd2740bb8ce2b9e854565,
     type: 3}
   mapData: {fileID: 4900000, guid: d25a7b3dfc1386c448d97651a0eef74b, type: 3}
+  skillData: {fileID: 0}
