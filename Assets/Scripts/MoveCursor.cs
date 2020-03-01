@@ -62,6 +62,10 @@ public class MoveCursor : Cursor
 		if (!pc.GetAccessibleSpaces((int) pc.boardPosition.x, (int) pc.boardPosition.y).Contains(space)){
 			return; //can't move to an unaccessible space
 		}
+		if (startSpace == space){
+			return;
+		}
+		
 		if (movedTemporary){
 			board.MoveUnit(startSpace, space);
 			pc.EndTurnIfNeeded();

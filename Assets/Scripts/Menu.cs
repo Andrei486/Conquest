@@ -55,8 +55,9 @@ public class Menu : MonoBehaviour
     }
 	
 	public void ShowSkillList(PlayerController pc){
-		List<Skill> skillList = pc.skillList;
+		List<Skill> skillList = pc.GetUsableSkills();
 		cursor.locked = true;
+		
 		foreach (Transform child in transform.Find("Skills")){
 			Destroy(child.gameObject);
 		}
@@ -90,7 +91,7 @@ public class Menu : MonoBehaviour
 	
 	public void ShowActionList(PlayerController pc){
 		cursor.locked = true;
-		HashSet<UnitAction> actions = pc.GetUsableActions();
+		List<UnitAction> actions = pc.GetUsableActions();
 		
 		if (actions.Count == 0){
 			pc.alreadyActed = true;
@@ -108,6 +109,7 @@ public class Menu : MonoBehaviour
 		int actionCount = 0;
 		foreach (UnitAction action in actions){
 			menuItem = Instantiate(actionItemPrefab, this.transform.Find("Actions"));
+			menuItem.name = action.ToString();
 			menuItem.transform.Translate(new Vector3(0f, actionStackHeight * actionCount, 0f));
 			text = menuItem.transform.Find("Name").gameObject.GetComponent<Text>();
 			text.text = action.ToString();

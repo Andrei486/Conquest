@@ -19,12 +19,11 @@ public class ActionMenuCursor : MenuCursor
         if (this.menu != null){
 			if (Input.GetKeyDown("space")){
 				cursor.locked = false;
-				UpdateItem();
 				SelectItem(currentItem);
 			}
 		}
     }
-	
+
 	protected override void HoverItem(GameObject item){
 		base.HoverItem(item);
 		UnitAction action = (UnitAction) Enum.Parse(typeof(UnitAction), item.transform.Find("Name").gameObject.GetComponent<Text>().text);
@@ -39,6 +38,10 @@ public class ActionMenuCursor : MenuCursor
 			default:
 				break;
 		}
+	}
+	
+	public override void LinkMenu(GameObject menu){
+		base.LinkMenu(menu);
 	}
 	
 	protected override void SelectItem(GameObject item){

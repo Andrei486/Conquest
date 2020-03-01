@@ -28,9 +28,8 @@ public class MenuCursor : MonoBehaviour
 	
 	virtual public void LinkMenu(GameObject menu){
 		this.menu = menu;
+		ResetItem();
 		offset = new Vector3(this.gameObject.GetComponent<RectTransform>().rect.width * this.gameObject.transform.localScale.x * -1.1f, 0f, 0f);
-		index = 0;
-		HoverItem(0);
 		this.gameObject.GetComponent<Image>().enabled = true;
 	}
 	
@@ -46,7 +45,7 @@ public class MenuCursor : MonoBehaviour
 		BoardManager.ClearVisualization();
 	}
 	
-	void HoverItem(int childNumber){
+	protected void HoverItem(int childNumber){
 		HoverItem(menu.transform.GetChild(childNumber).gameObject);
 	}
 	
@@ -68,8 +67,13 @@ public class MenuCursor : MonoBehaviour
 		}
 	}
 	
-	public void UpdateItem(){
-		HoverItem(index);
+	protected void ResetItem(){
+		StartCoroutine(Reset());
 	}
 	
+	IEnumerator Reset(){
+		yield return new WaitForEndOfFrame();
+		index = 0;
+		HoverItem(index);
+	}
 }

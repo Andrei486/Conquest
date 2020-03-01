@@ -5,20 +5,23 @@ using Objects;
 
 public class Camera : MonoBehaviour
 {
-	GameObject cursor;
+	Cursor cursor;
 	public float timeToRotate = 0.2f;
 	public bool rotating = false;
 	public float zAngle = 60.0f;
     // Start is called before the first frame update
     void Start()
     {
-		cursor = GameObject.FindGameObjectsWithTag("Cursor")[0];
+		cursor = GameObject.FindGameObjectsWithTag("Cursor")[0].GetComponent<Cursor>();
     }
 
     // Update is called once per frame
     void Update()
     {
-		if (cursor.GetComponent<Cursor>().moving || this.rotating || cursor.GetComponent<Cursor>().movedTemporary){ //to prevent camera going off-center, do not turn if already moving or turning
+		if (cursor.locked){
+			return;
+		}
+		if (cursor.moving || this.rotating || cursor.movedTemporary){ //to prevent camera going off-center, do not turn if already moving or turning
 			return;
 		}
 		Vector3 rotationPivot = cursor.transform.position;

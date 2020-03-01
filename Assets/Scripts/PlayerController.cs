@@ -176,8 +176,12 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	
-	public void UseSkill(){
-		
+	public void UseSkill(Skill skill){
+		/**Uses the Skill skill. Assumes that using it is possible.*/
+		this.remainingMove -= skill.moveCost;
+		this.remainingActions -= skill.actionCost;
+		this.bullets -= skill.bulletCost;
+		Debug.Log(this.name + " used " + skill.name);
 	}
 	
 	public bool CanMove(){
@@ -187,19 +191,14 @@ public class PlayerController : MonoBehaviour
 	
 	public bool CanAct(){
 		/**Returns true if the unit has actions left to use, false otherwise.*/
-		Debug.Log((remainingActions > 0 && !alreadyActed));
 		return (remainingActions > 0 && !alreadyActed);
 	}
 	
 	public bool CanUse(Skill skill){
 		/**Returns true if the unit can use the specified skill, false otherwise.*/
-		Debug.Log(CanAct());
 		if (!CanAct()){
 			return false;
 		}
-		Debug.Log(remainingActions < skill.actionCost);
-		Debug.Log(bullets < skill.bulletCost);
-		Debug.Log(remainingMove < skill.moveCost);
 		if (remainingActions < skill.actionCost || bullets < skill.bulletCost || remainingMove < skill.moveCost){
 			return false;
 		}
@@ -211,15 +210,14 @@ public class PlayerController : MonoBehaviour
 		foreach (Skill skill in skillList){
 			if (CanUse(skill)){
 				usable.Add(skill);
-				Debug.Log(skill);
 			}
 		}
 		return usable;
 	}
 	
-	public HashSet<UnitAction> GetUsableActions(){
-		HashSet<UnitAction> actions = new HashSet<UnitAction>();
-		actions.Add(UnitAction.WAIT);
+	public List<UnitAction> GetUsableActions(){
+		List<UnitAction> actions = new List<UnitAction>();
+		
 		if (CanMove()){
 			actions.Add(UnitAction.MOVE);
 		}
@@ -228,6 +226,7 @@ public class PlayerController : MonoBehaviour
 				actions.Add(UnitAction.SKILL);
 			}
 		}
+		actions.Add(UnitAction.WAIT);
 		return actions;
 	}
 	
