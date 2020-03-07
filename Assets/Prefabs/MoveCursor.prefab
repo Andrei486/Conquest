@@ -93,13 +93,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0}
   movedTemporary: 0
-  moveTime: 0.03
+  moveTime: 0.1
   moving: 0
   lockSelection: 0
   locked: 0
-  selectingMove: 0
   camera: {fileID: 0}
   board: {fileID: 0}
   selector: {fileID: 0}
   cursorSelectPrefab: {fileID: 0}
+  moveCursorPrefab: {fileID: 0}
   mainCursor: {fileID: 0}
+  menu: {fileID: 0}

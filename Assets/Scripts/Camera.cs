@@ -5,7 +5,7 @@ using Objects;
 
 public class Camera : MonoBehaviour
 {
-	Cursor cursor;
+	public Cursor cursor;
 	public float timeToRotate = 0.2f;
 	public bool rotating = false;
 	public float zAngle = 60.0f;
@@ -18,7 +18,7 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (cursor.locked){
+		if (cursor.rotationLocked){
 			return;
 		}
 		if (cursor.moving || this.rotating || cursor.movedTemporary){ //to prevent camera going off-center, do not turn if already moving or turning

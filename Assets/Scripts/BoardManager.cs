@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System;
 using UnityEngine;
@@ -68,12 +67,13 @@ public class BoardManager : MonoBehaviour
 	public bool IsWithinBounds(Vector2 position){
 		/**Returns true if the (x, y) coordinates specified by position are within bounds for the grid,
 		ie there is a space at that position. Otherwise returns false.*/
-		if (position.x < 0 || position.x > columns - 1 || position.y < 0 || position.y > rows - 1){
+		int x = (int) Math.Round(position.x);
+		int y = (int) Math.Round(position.y);
+		if (x < 0 || x > columns - 1 || y < 0 || y > rows - 1){
 			return false;
 		} else {
 			return true;
 		}
-		return false;
 	}
 	
 	public void MoveUnit(BoardSpace start, BoardSpace end){
@@ -129,6 +129,72 @@ public class BoardManager : MonoBehaviour
 	public void TempMoveUnit(Vector2 start, Vector2 end){
 		/**Creates a temporary visualization of the unit at start and moves it to the end position.*/
 		TempMoveUnit(this.GetSpace(start), this.GetSpace(end));
+	}
+	
+	public void KnockbackMoveUnit(BoardSpace start, BoardSpace end, bool throughUnits){
+		/**Moves a unit from start to end, going through units if specified.
+		Used to move a unit due to a skill from applied knockback.*/
+		BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+		PlayerController pc = start.occupyingUnit.GetComponent<PlayerController>();
+		float startPos;
+		float endPos;
+		float currentHeight = start.GetHeight();
+		BoardSpace nextSpace;
+		BoardSpace lastAttainable = start;
+		
+		if (start.boardPosition.x == end.boardPosition.x){
+			startPos = start.boardPosition.y;
+			endPos = end.boardPosition.y;
+			for (float y = startPos + 1; y < endPos; y++){
+				nextSpace = board.GetSpace(new Vector2(start.boardPosition.x, y));
+				if (nextSpace.impassable || Math.Abs(currentHeight - nextSpace.GetHeight()) > pc.jumpHeight){
+					break; //there is something preventing movement through it, stop there
+				} else {
+					if (nextSpace.occupyingUnit != null && throughUnits == false){
+						break; //if cannot move through units, stop
+					}
+					currentHeight = nextSpace.GetHeight();
+					lastAttainable = nextSpace; //keep going
+				}
+			}
+			
+		} else if (start.boardPosition.y == end.boardPosition.y){ 
+			startPos = start.boardPosition.x;
+			endPos = end.boardPosition.x;
+			for (float x = startPos + 1; x < endPos; x++){
+				nextSpace = board.GetSpace(new Vector2(x, start.boardPosition.y));
+				if (nextSpace.impassable || Math.Abs(currentHeight - nextSpace.GetHeight()) > pc.jumpHeight){
+					break; //there is something preventing movement through it, stop there
+				} else {
+					if (nextSpace.occupyingUnit != null && throughUnits == false){
+						break; //if cannot move through units, stop
+					}
+					currentHeight = nextSpace.GetHeight();
+					lastAttainable = nextSpace; //keep going
+				}
+			}
+		}
+		
+		//move to last attainable space along the path
+		lastAttainable.occupyingUnit = start.occupyingUnit;
+		start.occupyingUnit = null;
+		lastAttainable.occupyingUnit.transform.position = lastAttainable.anchorPosition; //lerp here
+		pc.boardPosition = lastAttainable.boardPosition;
+	}
+	
+	public void SkillMoveUnit(Skill skill, BoardSpace start, Quaternion direction){
+		/**Moves the unit from space start according to the movement of skill used in direction.
+		Assumes that the movement is possible.*/
+		if (skill.movePosition == Vector2.zero){
+			return; //don't need to move the unit
+		}
+		BoardSpace end = GetSpace(start.boardPosition + (Vector2) (direction * (Vector3) skill.movePosition));
+		PlayerController pc = start.occupyingUnit.GetComponent<PlayerController>();
+		end.occupyingUnit = start.occupyingUnit;
+		start.occupyingUnit = null;
+		end.occupyingUnit.transform.position = end.anchorPosition; //lerp here
+		pc.boardPosition = end.boardPosition;
+		cursor.selectedSpace = end;
 	}
 	
 	public void RefreshUnits(){
@@ -253,9 +319,13 @@ public class BoardManager : MonoBehaviour
 				JObject playerInfo = JObject.Load(reader);
 				GameObject player = Instantiate(board.pawn, board.transform);
 				PlayerController pc = player.GetComponent<PlayerController>();
+				Health h = player.GetComponent<Health>();
 				pc.name = playerInfo["name"].Value<string>();
-				pc.attackPower = playerInfo["attackPower"].Value<float>();
-				pc.defense = playerInfo["defense"].Value<float>();
+				h.attackPower = playerInfo["attackPower"].Value<float>();
+				h.defense = playerInfo["defense"].Value<float>();
+				h.level = playerInfo["level"].Value<int>();
+				h.maxHealth = playerInfo["maxHealth"].Value<float>();
+				h.currentHealth = playerInfo["currentHealth"].Value<float>();
 				pc.jumpHeight = playerInfo["jumpHeight"].Value<float>();
 				pc.moveRange = playerInfo["moveRange"].Value<int>();
 				pc.maxActions = playerInfo["moveRange"].Value<int>();

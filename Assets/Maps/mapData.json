@@ -15,45 +15,13 @@
                 0,
                 1
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
                 0,
                 2
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                3
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                4
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                0,
-                5
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                6
             ],
             "anchorHeight": 0.0,
             "spriteName": "tile"
@@ -61,7 +29,7 @@
         {
             "boardPosition": [
                 0,
-                7
+                3
             ],
             "anchorHeight": 0.5,
             "spriteName": "tile"
@@ -69,103 +37,7 @@
         {
             "boardPosition": [
                 0,
-                8
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                9
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                10
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                0,
-                11
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                0,
-                12
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                13
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                14
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                15
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                0,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                17
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                18
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                0,
-                19
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                20
+                4
             ],
             "anchorHeight": 0.5,
             "spriteName": "tile"
@@ -173,6 +45,134 @@
         {
             "boardPosition": [
                 0,
+                5
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                6
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                0,
+                7
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                8
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                0,
+                9
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                10
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                11
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                12
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                13
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                0,
+                14
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                16
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                17
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                18
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                0,
+                19
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                20
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
                 21
             ],
             "anchorHeight": 0.0,
@@ -183,37 +183,13 @@
                 0,
                 22
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
                 0,
                 23
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                0,
-                24
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                0,
-                25
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                0,
-                26
             ],
             "anchorHeight": 0.0,
             "spriteName": "grass"
@@ -221,6 +197,30 @@
         {
             "boardPosition": [
                 0,
+                24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
+                25
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                0,
+                26
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                0,
                 27
             ],
             "anchorHeight": 0.0,
@@ -231,7 +231,7 @@
                 0,
                 28
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -239,16 +239,16 @@
                 0,
                 29
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 1,
                 0
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -264,22 +264,22 @@
                 2
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 1,
                 3
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 1,
                 4
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
@@ -296,7 +296,7 @@
                 6
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -311,15 +311,15 @@
                 1,
                 8
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 1,
                 9
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -335,7 +335,7 @@
                 1,
                 11
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -344,15 +344,15 @@
                 12
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 1,
                 13
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -360,7 +360,7 @@
                 14
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -375,7 +375,7 @@
                 1,
                 16
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -383,7 +383,7 @@
                 1,
                 17
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -391,15 +391,15 @@
                 1,
                 18
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 1,
                 19
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -407,7 +407,7 @@
                 1,
                 20
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -415,8 +415,8 @@
                 1,
                 21
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -431,7 +431,7 @@
                 1,
                 23
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -439,7 +439,7 @@
                 1,
                 24
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -464,7 +464,7 @@
                 27
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -479,7 +479,7 @@
                 1,
                 29
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -488,14 +488,14 @@
                 0
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 2,
                 1
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -512,52 +512,12 @@
                 3
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                4
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                5
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                6
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                7
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                8
-            ],
-            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
                 2,
-                9
+                4
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
@@ -565,10 +525,50 @@
         {
             "boardPosition": [
                 2,
-                10
+                5
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                2,
+                6
             ],
             "anchorHeight": 0.0,
             "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                2,
+                7
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                2,
+                8
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                2,
+                9
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                2,
+                10
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -583,29 +583,13 @@
                 2,
                 12
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                2,
-                13
-            ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
                 2,
-                14
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                2,
-                15
+                13
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
@@ -613,55 +597,7 @@
         {
             "boardPosition": [
                 2,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                17
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                18
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                19
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                20
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                2,
-                21
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                2,
-                22
+                14
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
@@ -669,7 +605,7 @@
         {
             "boardPosition": [
                 2,
-                23
+                15
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
@@ -677,7 +613,7 @@
         {
             "boardPosition": [
                 2,
-                24
+                16
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
@@ -685,15 +621,7 @@
         {
             "boardPosition": [
                 2,
-                25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                2,
-                26
+                17
             ],
             "anchorHeight": 0.0,
             "spriteName": "tile"
@@ -701,7 +629,15 @@
         {
             "boardPosition": [
                 2,
-                27
+                18
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                2,
+                19
             ],
             "anchorHeight": 0.0,
             "spriteName": "grass"
@@ -709,9 +645,73 @@
         {
             "boardPosition": [
                 2,
-                28
+                20
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                2,
+                21
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                2,
+                22
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                2,
+                23
             ],
             "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                2,
+                24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                2,
+                25
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                2,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                2,
+                27
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                2,
+                28
+            ],
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -720,14 +720,14 @@
                 29
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 0
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -736,15 +736,15 @@
                 1
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 2
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -752,14 +752,14 @@
                 3
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 4
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -768,14 +768,14 @@
                 5
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 6
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -784,22 +784,22 @@
                 7
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 8
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 9
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -807,7 +807,7 @@
                 3,
                 10
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -816,15 +816,15 @@
                 11
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 12
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -840,15 +840,15 @@
                 14
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 15
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -856,7 +856,7 @@
                 16
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -871,7 +871,7 @@
                 3,
                 18
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -880,14 +880,14 @@
                 19
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 3,
                 20
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -895,15 +895,15 @@
                 3,
                 21
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 3,
                 22
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -920,47 +920,47 @@
                 24
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                3,
-                25
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                3,
-                26
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                3,
-                27
-            ],
-            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
                 3,
+                25
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                3,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                3,
+                27
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                3,
                 28
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 3,
                 29
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -968,14 +968,14 @@
                 0
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 4,
                 1
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -984,7 +984,7 @@
                 2
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -999,7 +999,7 @@
                 4,
                 4
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1016,7 +1016,7 @@
                 6
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -1039,15 +1039,15 @@
                 4,
                 9
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 4,
                 10
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
@@ -1056,14 +1056,14 @@
                 11
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 4,
                 12
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1071,8 +1071,8 @@
                 4,
                 13
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -1087,16 +1087,16 @@
                 4,
                 15
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 4,
                 16
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1120,22 +1120,22 @@
                 19
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 4,
                 20
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 4,
                 21
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1144,14 +1144,14 @@
                 22
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 4,
                 23
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1167,7 +1167,7 @@
                 4,
                 25
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1175,8 +1175,8 @@
                 4,
                 26
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -1207,16 +1207,16 @@
                 5,
                 0
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 5,
                 1
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1248,14 +1248,14 @@
                 5
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 5,
                 6
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1263,7 +1263,7 @@
                 5,
                 7
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1271,7 +1271,7 @@
                 5,
                 8
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1279,7 +1279,7 @@
                 5,
                 9
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1287,7 +1287,7 @@
                 5,
                 10
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1295,8 +1295,8 @@
                 5,
                 11
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1304,7 +1304,7 @@
                 12
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1312,7 +1312,7 @@
                 13
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1320,14 +1320,14 @@
                 14
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 5,
                 15
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -1343,7 +1343,7 @@
                 5,
                 17
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -1351,15 +1351,15 @@
                 5,
                 18
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 5,
                 19
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1367,16 +1367,16 @@
                 5,
                 20
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 5,
                 21
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1384,7 +1384,7 @@
                 22
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1392,22 +1392,22 @@
                 23
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 5,
                 24
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 5,
                 25
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1416,7 +1416,7 @@
                 26
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1431,15 +1431,15 @@
                 5,
                 28
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 5,
                 29
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
@@ -1464,7 +1464,7 @@
                 2
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1472,14 +1472,14 @@
                 3
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 6,
                 4
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -1487,16 +1487,16 @@
                 6,
                 5
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 6,
                 6
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -1504,14 +1504,14 @@
                 7
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 6,
                 8
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1527,7 +1527,7 @@
                 6,
                 10
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -1543,8 +1543,8 @@
                 6,
                 12
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1559,7 +1559,7 @@
                 6,
                 14
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -1567,8 +1567,8 @@
                 6,
                 15
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1583,8 +1583,8 @@
                 6,
                 17
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -1615,16 +1615,16 @@
                 6,
                 21
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 6,
                 22
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -1647,7 +1647,7 @@
                 6,
                 25
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1672,14 +1672,14 @@
                 28
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 6,
                 29
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1687,7 +1687,7 @@
                 7,
                 0
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1695,8 +1695,8 @@
                 7,
                 1
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1704,7 +1704,7 @@
                 2
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1720,20 +1720,12 @@
                 4
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                7,
-                5
-            ],
-            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
                 7,
-                6
+                5
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
@@ -1741,9 +1733,17 @@
         {
             "boardPosition": [
                 7,
-                7
+                6
             ],
             "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                7,
+                7
+            ],
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1751,7 +1751,7 @@
                 7,
                 8
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1767,7 +1767,7 @@
                 7,
                 10
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1775,15 +1775,15 @@
                 7,
                 11
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 7,
                 12
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -1791,8 +1791,8 @@
                 7,
                 13
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1807,8 +1807,8 @@
                 7,
                 15
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1816,7 +1816,7 @@
                 16
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1824,7 +1824,7 @@
                 17
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -1840,7 +1840,7 @@
                 19
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -1848,14 +1848,14 @@
                 20
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 7,
                 21
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1871,7 +1871,7 @@
                 7,
                 23
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1879,7 +1879,7 @@
                 7,
                 24
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -1887,8 +1887,8 @@
                 7,
                 25
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -1920,971 +1920,11 @@
                 29
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                0
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                1
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                2
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                3
-            ],
-            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
                 8,
-                4
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                5
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                6
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                7
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                8
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                9
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                10
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                11
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                12
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                13
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                8,
-                14
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                15
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                16
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                17
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                18
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                8,
-                19
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                20
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                21
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                22
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                23
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                24
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                8,
-                26
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                27
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                28
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                8,
-                29
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                0
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                1
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                2
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                3
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                4
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                5
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                6
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                7
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                8
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                9
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                10
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                11
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                12
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                13
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                14
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                15
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                17
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                18
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                19
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                20
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                21
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                22
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                23
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                24
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                26
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                27
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                9,
-                28
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                9,
-                29
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                0
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                1
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                2
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                3
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                4
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                5
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                6
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                7
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                8
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                9
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                10
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                11
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                12
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                13
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                14
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                15
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                17
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                18
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                19
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                20
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                21
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                22
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                23
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                24
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                26
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                27
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                10,
-                28
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                10,
-                29
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                0
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                1
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                2
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                3
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                4
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                5
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                6
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                7
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                8
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                9
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                10
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                11
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                12
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                13
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                14
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                15
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                17
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                18
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                19
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                20
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                21
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                22
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                23
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                24
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                26
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                27
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                11,
-                28
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                11,
-                29
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
                 0
             ],
             "anchorHeight": 0.0,
@@ -2892,7 +1932,7 @@
         },
         {
             "boardPosition": [
-                12,
+                8,
                 1
             ],
             "anchorHeight": 0.0,
@@ -2900,247 +1940,7 @@
         },
         {
             "boardPosition": [
-                12,
-                2
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                3
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                4
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                5
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                6
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                7
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                8
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                9
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                10
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                11
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                12
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                13
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                14
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                15
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                16
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                17
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                18
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                19
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                20
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                21
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                22
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                23
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                24
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                12,
-                26
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                27
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                28
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                12,
-                29
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                13,
-                0
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                13,
-                1
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                13,
+                8,
                 2
             ],
             "anchorHeight": 0.5,
@@ -3148,31 +1948,31 @@
         },
         {
             "boardPosition": [
-                13,
+                8,
                 3
             ],
             "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                8,
+                4
+            ],
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
-                13,
-                4
+                8,
+                5
             ],
             "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
-                5
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                13,
+                8,
                 6
             ],
             "anchorHeight": 0.0,
@@ -3180,87 +1980,87 @@
         },
         {
             "boardPosition": [
-                13,
+                8,
                 7
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
+                8,
                 8
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
+                8,
                 9
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
-                13,
+                8,
                 10
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                13,
-                11
-            ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
-                12
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                13,
-                13
+                8,
+                11
             ],
             "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
+                8,
+                12
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                8,
+                13
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                8,
                 14
             ],
             "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                8,
+                15
+            ],
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
-                13,
-                15
+                8,
+                16
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                13,
+                8,
                 17
             ],
             "anchorHeight": 0.0,
@@ -3268,15 +2068,15 @@
         },
         {
             "boardPosition": [
-                13,
+                8,
                 18
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
+                8,
                 19
             ],
             "anchorHeight": 0.0,
@@ -3284,31 +2084,31 @@
         },
         {
             "boardPosition": [
-                13,
+                8,
                 20
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                8,
+                21
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
-                21
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                13,
+                8,
                 22
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
-                13,
+                8,
                 23
             ],
             "anchorHeight": 0.0,
@@ -3316,31 +2116,31 @@
         },
         {
             "boardPosition": [
-                13,
+                8,
                 24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                8,
+                25
             ],
             "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
-                13,
-                25
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                13,
+                8,
                 26
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
-                13,
+                8,
                 27
             ],
             "anchorHeight": 0.0,
@@ -3348,15 +2148,15 @@
         },
         {
             "boardPosition": [
-                13,
+                8,
                 28
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                13,
+                8,
                 29
             ],
             "anchorHeight": 0.0,
@@ -3364,7 +2164,7 @@
         },
         {
             "boardPosition": [
-                14,
+                9,
                 0
             ],
             "anchorHeight": 0.0,
@@ -3372,7 +2172,7 @@
         },
         {
             "boardPosition": [
-                14,
+                9,
                 1
             ],
             "anchorHeight": 0.0,
@@ -3380,10 +2180,1210 @@
         },
         {
             "boardPosition": [
-                14,
+                9,
+                2
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                3
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                4
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                5
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                6
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                7
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                8
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                9
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                10
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                11
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                12
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                13
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                14
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                16
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                17
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                18
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                19
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                20
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                21
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                22
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                23
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                25
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                27
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                9,
+                28
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                9,
+                29
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                0
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                1
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                2
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                3
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                4
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                5
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                6
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                7
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                8
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                9
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                10
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                11
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                12
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                13
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                14
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                16
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                17
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                18
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                19
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                20
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                21
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                22
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                23
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                24
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                25
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                27
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                10,
+                28
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                10,
+                29
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                0
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                1
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                2
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                3
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                4
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                5
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                6
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                7
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                8
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                9
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                10
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                11
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                12
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                13
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                14
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                16
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                17
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                18
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                19
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                20
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                21
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                22
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                23
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                11,
+                25
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                27
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                28
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                11,
+                29
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                0
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                1
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
                 2
             ],
             "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                3
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                4
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                5
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                6
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                7
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                8
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                9
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                10
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                11
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                12
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                13
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                14
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                15
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                16
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                17
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                18
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                19
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                20
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                21
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                22
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                23
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                25
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                12,
+                27
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                28
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                12,
+                29
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                0
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                1
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                2
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                3
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                4
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                5
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                6
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                7
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                8
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                9
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                10
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                11
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                12
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                13,
+                13
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                14
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                13,
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                16
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                17
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                13,
+                18
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                13,
+                19
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                20
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                13,
+                21
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                13,
+                22
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                23
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                24
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                13,
+                25
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                27
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                28
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                13,
+                29
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                14,
+                0
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                14,
+                1
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                14,
+                2
+            ],
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -3391,7 +3391,7 @@
                 14,
                 3
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -3407,7 +3407,7 @@
                 14,
                 5
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -3416,15 +3416,15 @@
                 6
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 14,
                 7
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -3432,7 +3432,7 @@
                 8
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -3448,7 +3448,7 @@
                 10
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -3463,8 +3463,8 @@
                 14,
                 12
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -3480,7 +3480,7 @@
                 14
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -3504,30 +3504,30 @@
                 17
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 14,
                 18
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 14,
                 19
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 14,
                 20
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -3535,7 +3535,7 @@
                 14,
                 21
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -3543,8 +3543,8 @@
                 14,
                 22
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -3560,7 +3560,7 @@
                 24
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -3592,15 +3592,15 @@
                 28
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 14,
                 29
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -3616,15 +3616,15 @@
                 1
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 15,
                 2
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -3639,8 +3639,8 @@
                 15,
                 4
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -3655,7 +3655,7 @@
                 15,
                 6
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -3679,7 +3679,7 @@
                 15,
                 9
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -3687,31 +3687,31 @@
                 15,
                 10
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 15,
                 11
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 15,
                 12
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 15,
                 13
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -3727,7 +3727,7 @@
                 15,
                 15
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -3735,7 +3735,7 @@
                 15,
                 16
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -3743,8 +3743,8 @@
                 15,
                 17
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -3776,7 +3776,7 @@
                 21
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -3792,7 +3792,7 @@
                 23
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -3807,7 +3807,7 @@
                 15,
                 25
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -3823,15 +3823,15 @@
                 15,
                 27
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 15,
                 28
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
@@ -3839,252 +3839,12 @@
                 15,
                 29
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                0
-            ],
             "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
                 16,
-                1
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                2
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                3
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                4
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                5
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                6
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                16,
-                7
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                8
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                9
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                16,
-                10
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                11
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                12
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                13
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                14
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                15
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                16,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                17
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                18
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                19
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                16,
-                20
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                21
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                16,
-                22
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                16,
-                23
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                16,
-                24
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                25
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                26
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                27
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                16,
-                28
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                16,
-                29
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
                 0
             ],
             "anchorHeight": 0.0,
@@ -4092,247 +3852,7 @@
         },
         {
             "boardPosition": [
-                17,
-                1
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                2
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                3
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                4
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                5
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                6
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                7
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                8
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                9
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                10
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                11
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                12
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                13
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                14
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                15
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                17
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                18
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                19
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                20
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                21
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                22
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                17,
-                23
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                24
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                26
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                27
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                28
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                17,
-                29
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                0
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
+                16,
                 1
             ],
             "anchorHeight": 0.5,
@@ -4340,255 +3860,15 @@
         },
         {
             "boardPosition": [
-                18,
+                16,
                 2
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                3
-            ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                18,
-                4
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                5
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                6
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                7
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                8
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                9
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                10
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                11
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                12
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                13
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                14
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                15
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                16
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                17
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                18
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                19
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                20
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                21
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                22
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                23
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                24
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                26
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                27
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                18,
-                28
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                18,
-                29
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                19,
-                0
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                19,
-                1
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                19,
-                2
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                19,
+                16,
                 3
             ],
             "anchorHeight": 0.0,
@@ -4596,7 +3876,7 @@
         },
         {
             "boardPosition": [
-                19,
+                16,
                 4
             ],
             "anchorHeight": 0.5,
@@ -4604,47 +3884,47 @@
         },
         {
             "boardPosition": [
-                19,
+                16,
                 5
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                19,
+                16,
                 6
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                19,
-                7
             ],
             "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
-                19,
+                16,
+                7
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                16,
                 8
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
-                19,
+                16,
                 9
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
-                19,
+                16,
                 10
             ],
             "anchorHeight": 0.0,
@@ -4652,23 +3932,23 @@
         },
         {
             "boardPosition": [
-                19,
+                16,
                 11
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                19,
-                12
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                19,
+                16,
+                12
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                16,
                 13
             ],
             "anchorHeight": 0.0,
@@ -4676,23 +3956,23 @@
         },
         {
             "boardPosition": [
-                19,
+                16,
                 14
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                16,
+                15
             ],
             "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                19,
-                15
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                19,
+                16,
                 16
             ],
             "anchorHeight": 0.5,
@@ -4700,15 +3980,15 @@
         },
         {
             "boardPosition": [
-                19,
+                16,
                 17
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
-                19,
+                16,
                 18
             ],
             "anchorHeight": 0.0,
@@ -4716,31 +3996,31 @@
         },
         {
             "boardPosition": [
-                19,
+                16,
                 19
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                16,
+                20
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                16,
+                21
             ],
             "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
-                19,
-                20
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                19,
-                21
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                19,
+                16,
                 22
             ],
             "anchorHeight": 0.0,
@@ -4748,7 +4028,7 @@
         },
         {
             "boardPosition": [
-                19,
+                16,
                 23
             ],
             "anchorHeight": 0.0,
@@ -4756,55 +4036,55 @@
         },
         {
             "boardPosition": [
-                19,
+                16,
                 24
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
-                19,
+                16,
                 25
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
-        },
-        {
-            "boardPosition": [
-                19,
-                26
             ],
             "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                19,
+                16,
+                26
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                16,
                 27
             ],
             "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                16,
+                28
+            ],
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
-                19,
-                28
+                16,
+                29
             ],
             "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
             "boardPosition": [
-                19,
-                29
-            ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                20,
+                17,
                 0
             ],
             "anchorHeight": 0.0,
@@ -4812,11 +4092,731 @@
         },
         {
             "boardPosition": [
+                17,
+                1
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                2
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                3
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                4
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                5
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                6
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                7
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                8
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                9
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                10
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                11
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                12
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                17,
+                13
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                17,
+                14
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                17,
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                17,
+                16
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                17
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                18
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                19
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                17,
+                20
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                21
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                22
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                17,
+                23
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                25
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                17,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                27
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                17,
+                28
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                17,
+                29
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                0
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                1
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                18,
+                2
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                18,
+                3
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                4
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                5
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                6
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                7
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                8
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                9
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                10
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                11
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                18,
+                12
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                13
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                14
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                16
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                17
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                18
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                19
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                18,
+                20
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                21
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                22
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                23
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                25
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                18,
+                26
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                27
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                18,
+                28
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                18,
+                29
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                0
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                1
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                2
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                3
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                4
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                5
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                6
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                7
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                8
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                9
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                10
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                11
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                12
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                13
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                14
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                16
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                17
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                18
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                19
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                20
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                21
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                22
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                23
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                24
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                25
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                26
+            ],
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                27
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                19,
+                28
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                19,
+                29
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                20,
+                0
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
                 20,
                 1
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -4831,7 +4831,7 @@
                 20,
                 3
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -4847,7 +4847,7 @@
                 20,
                 5
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -4856,15 +4856,15 @@
                 6
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 20,
                 7
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -4880,7 +4880,7 @@
                 9
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -4888,7 +4888,7 @@
                 10
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -4903,15 +4903,15 @@
                 20,
                 12
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 20,
                 13
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -4920,15 +4920,15 @@
                 14
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 20,
                 15
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -4936,15 +4936,15 @@
                 16
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 20,
                 17
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -4967,8 +4967,8 @@
                 20,
                 20
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -4983,8 +4983,8 @@
                 20,
                 22
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5000,7 +5000,7 @@
                 24
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5008,22 +5008,22 @@
                 25
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 20,
                 26
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 20,
                 27
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -5031,7 +5031,7 @@
                 20,
                 28
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5063,8 +5063,8 @@
                 21,
                 2
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5072,7 +5072,7 @@
                 3
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5087,7 +5087,7 @@
                 21,
                 5
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -5103,16 +5103,16 @@
                 21,
                 7
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 21,
                 8
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5127,7 +5127,7 @@
                 21,
                 10
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5135,8 +5135,8 @@
                 21,
                 11
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5151,29 +5151,13 @@
                 21,
                 13
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 21,
                 14
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                21,
-                15
-            ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                21,
-                16
             ],
             "anchorHeight": 0.0,
             "spriteName": "grass"
@@ -5181,10 +5165,26 @@
         {
             "boardPosition": [
                 21,
-                17
+                15
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                21,
+                16
             ],
             "anchorHeight": 0.5,
             "spriteName": "tile"
+        },
+        {
+            "boardPosition": [
+                21,
+                17
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5199,15 +5199,15 @@
                 21,
                 19
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 21,
                 20
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
@@ -5223,7 +5223,7 @@
                 21,
                 22
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5231,7 +5231,7 @@
                 21,
                 23
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5240,14 +5240,14 @@
                 24
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 21,
                 25
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5263,8 +5263,8 @@
                 21,
                 27
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5279,16 +5279,16 @@
                 21,
                 29
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 22,
                 0
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5296,7 +5296,7 @@
                 1
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5312,14 +5312,14 @@
                 3
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 22,
                 4
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -5327,15 +5327,15 @@
                 22,
                 5
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 22,
                 6
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -5352,14 +5352,14 @@
                 8
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 22,
                 9
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -5367,7 +5367,7 @@
                 22,
                 10
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -5384,14 +5384,14 @@
                 12
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 22,
                 13
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -5399,7 +5399,7 @@
                 22,
                 14
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5408,15 +5408,15 @@
                 15
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 22,
                 16
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5431,7 +5431,7 @@
                 22,
                 18
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -5447,7 +5447,7 @@
                 22,
                 20
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5455,7 +5455,7 @@
                 22,
                 21
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5471,7 +5471,7 @@
                 22,
                 23
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -5495,16 +5495,16 @@
                 22,
                 26
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 22,
                 27
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5520,7 +5520,7 @@
                 29
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5543,8 +5543,8 @@
                 23,
                 2
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5559,15 +5559,15 @@
                 23,
                 4
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 23,
                 5
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5575,7 +5575,7 @@
                 23,
                 6
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5583,7 +5583,7 @@
                 23,
                 7
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5624,7 +5624,7 @@
                 12
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5640,7 +5640,7 @@
                 14
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5664,7 +5664,7 @@
                 17
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5679,7 +5679,7 @@
                 23,
                 19
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -5687,7 +5687,7 @@
                 23,
                 20
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5695,8 +5695,8 @@
                 23,
                 21
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5711,7 +5711,7 @@
                 23,
                 23
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5720,15 +5720,15 @@
                 24
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 23,
                 25
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5736,22 +5736,22 @@
                 26
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 23,
                 27
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 23,
                 28
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5759,15 +5759,15 @@
                 23,
                 29
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 24,
                 0
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -5799,7 +5799,7 @@
                 24,
                 4
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -5815,16 +5815,16 @@
                 24,
                 6
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 24,
                 7
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5847,8 +5847,8 @@
                 24,
                 10
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5888,22 +5888,22 @@
                 15
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 24,
                 16
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 24,
                 17
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5919,8 +5919,8 @@
                 24,
                 19
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -5935,8 +5935,8 @@
                 24,
                 21
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -5959,15 +5959,15 @@
                 24,
                 24
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 24,
                 25
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -5975,15 +5975,15 @@
                 24,
                 26
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 24,
                 27
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -5999,15 +5999,15 @@
                 24,
                 29
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 25,
                 0
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6015,7 +6015,7 @@
                 25,
                 1
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
@@ -6023,8 +6023,8 @@
                 25,
                 2
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6047,7 +6047,7 @@
                 25,
                 5
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6055,7 +6055,7 @@
                 25,
                 6
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6063,8 +6063,8 @@
                 25,
                 7
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6079,7 +6079,7 @@
                 25,
                 9
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6087,8 +6087,8 @@
                 25,
                 10
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6104,7 +6104,7 @@
                 12
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6135,23 +6135,23 @@
                 25,
                 16
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
-        },
-        {
-            "boardPosition": [
-                25,
-                17
-            ],
             "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
             "boardPosition": [
                 25,
+                17
+            ],
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
+        },
+        {
+            "boardPosition": [
+                25,
                 18
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6160,15 +6160,15 @@
                 19
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 25,
                 20
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6199,7 +6199,7 @@
                 25,
                 24
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -6215,7 +6215,7 @@
                 25,
                 26
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6223,15 +6223,15 @@
                 25,
                 27
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 25,
                 28
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6239,7 +6239,7 @@
                 25,
                 29
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6247,7 +6247,7 @@
                 26,
                 0
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6255,16 +6255,16 @@
                 26,
                 1
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 26,
                 2
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6279,7 +6279,7 @@
                 26,
                 4
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "tile"
         },
         {
@@ -6295,8 +6295,8 @@
                 26,
                 6
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6304,7 +6304,7 @@
                 7
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6335,7 +6335,7 @@
                 26,
                 11
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6343,7 +6343,7 @@
                 26,
                 12
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6359,7 +6359,7 @@
                 26,
                 14
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "tile"
         },
         {
@@ -6376,7 +6376,7 @@
                 16
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6407,7 +6407,7 @@
                 26,
                 20
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6439,16 +6439,16 @@
                 26,
                 24
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 26,
                 25
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6464,30 +6464,30 @@
                 27
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 26,
                 28
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 26,
                 29
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 27,
                 0
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6495,8 +6495,8 @@
                 27,
                 1
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6520,14 +6520,14 @@
                 4
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 27,
                 5
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6543,7 +6543,7 @@
                 27,
                 7
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6576,7 +6576,7 @@
                 11
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6616,7 +6616,7 @@
                 16
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6624,7 +6624,7 @@
                 17
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6639,8 +6639,8 @@
                 27,
                 19
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6663,7 +6663,7 @@
                 27,
                 22
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6671,7 +6671,7 @@
                 27,
                 23
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6679,7 +6679,7 @@
                 27,
                 24
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6687,7 +6687,7 @@
                 27,
                 25
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6696,7 +6696,7 @@
                 26
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6704,23 +6704,23 @@
                 27
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 27,
                 28
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 27,
                 29
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6735,7 +6735,7 @@
                 28,
                 1
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6760,15 +6760,15 @@
                 4
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 28,
                 5
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6784,7 +6784,7 @@
                 7
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6799,7 +6799,7 @@
                 28,
                 9
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6808,7 +6808,7 @@
                 10
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6816,14 +6816,14 @@
                 11
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 28,
                 12
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6831,7 +6831,7 @@
                 28,
                 13
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6863,15 +6863,15 @@
                 28,
                 17
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 28,
                 18
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6879,8 +6879,8 @@
                 28,
                 19
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "anchorHeight": 0.5,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6888,7 +6888,7 @@
                 20
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6903,8 +6903,8 @@
                 28,
                 22
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -6912,14 +6912,14 @@
                 23
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 28,
                 24
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6927,7 +6927,7 @@
                 28,
                 25
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6935,15 +6935,15 @@
                 28,
                 26
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
                 28,
                 27
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -6952,7 +6952,7 @@
                 28
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6960,7 +6960,7 @@
                 29
             ],
             "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -6975,7 +6975,7 @@
                 29,
                 1
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -6983,8 +6983,8 @@
                 29,
                 2
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -7016,7 +7016,7 @@
                 6
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -7031,8 +7031,8 @@
                 29,
                 8
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -7040,15 +7040,15 @@
                 9
             ],
             "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 29,
                 10
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "grass"
+            "anchorHeight": 0.0,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -7064,7 +7064,7 @@
                 12
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -7072,7 +7072,7 @@
                 13
             ],
             "anchorHeight": 0.0,
-            "spriteName": "tile"
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -7080,7 +7080,7 @@
                 14
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -7095,7 +7095,7 @@
                 29,
                 16
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -7103,7 +7103,7 @@
                 29,
                 17
             ],
-            "anchorHeight": 0.5,
+            "anchorHeight": 0.0,
             "spriteName": "grass"
         },
         {
@@ -7111,8 +7111,8 @@
                 29,
                 18
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -7120,15 +7120,15 @@
                 19
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 29,
                 20
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -7143,8 +7143,8 @@
                 29,
                 22
             ],
-            "anchorHeight": 0.5,
-            "spriteName": "tile"
+            "anchorHeight": 0.0,
+            "spriteName": "grass"
         },
         {
             "boardPosition": [
@@ -7152,7 +7152,7 @@
                 23
             ],
             "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
@@ -7175,7 +7175,7 @@
                 29,
                 26
             ],
-            "anchorHeight": 0.0,
+            "anchorHeight": 0.5,
             "spriteName": "grass"
         },
         {
@@ -7191,16 +7191,16 @@
                 29,
                 28
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         },
         {
             "boardPosition": [
                 29,
                 29
             ],
-            "anchorHeight": 0.0,
-            "spriteName": "grass"
+            "anchorHeight": 0.5,
+            "spriteName": "tile"
         }
     ],
     "players": [
@@ -7210,15 +7210,19 @@
                 0,
                 0
             ],
-            "attackPower": 1.0,
-            "defense": 1.0,
+            "maxHealth": 10.0,
+            "currentHealth": 10.0,
+            "level": 3,
+            "attackPower": 5.0,
+            "defense": 3.0,
             "jumpHeight": 1.0,
             "moveRange": 3,
             "maxActions": 3,
             "maxBullets": 3,
             "skillNames": [
                 "Full Moon",
-                "Crescent Slash"
+                "Crescent Slash",
+                "Artillery"
             ]
         },
         {
@@ -7227,15 +7231,19 @@
                 0,
                 1
             ],
-            "attackPower": 1.0,
-            "defense": 1.0,
+            "maxHealth": 10.0,
+            "currentHealth": 10.0,
+            "level": 3,
+            "attackPower": 5.0,
+            "defense": 3.0,
             "jumpHeight": 1.0,
             "moveRange": 3,
             "maxActions": 3,
             "maxBullets": 3,
             "skillNames": [
                 "Full Moon",
-                "Crescent Slash"
+                "Crescent Slash",
+                "Artillery"
             ]
         },
         {
@@ -7244,15 +7252,19 @@
                 0,
                 2
             ],
-            "attackPower": 1.0,
-            "defense": 1.0,
+            "maxHealth": 10.0,
+            "currentHealth": 10.0,
+            "level": 3,
+            "attackPower": 5.0,
+            "defense": 3.0,
             "jumpHeight": 1.0,
             "moveRange": 3,
             "maxActions": 3,
             "maxBullets": 3,
             "skillNames": [
                 "Full Moon",
-                "Crescent Slash"
+                "Crescent Slash",
+                "Artillery"
             ]
         }
     ]

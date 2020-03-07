@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 1274945764168748948}
   - component: {fileID: 4795503479015682925}
   - component: {fileID: 1907541161333984493}
+  - component: {fileID: -443695359685166652}
   m_Layer: 0
-  m_Name: Pawn
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,9 +93,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardPosition: {x: 0, y: 0}
-  attackPower: 10
-  defense: 10
   jumpHeight: 1
   moveRange: 3
+  maxActions: 0
   maxBullets: 5
+  remainingMove: 0
+  remainingActions: 0
   bullets: 5
+  alreadyActed: 0
+  health: {fileID: 0}
+  previousAction: 0
+--- !u!114 &-443695359685166652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535245383649658801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9148fa4ee13d2e4e8fa97b626cb3967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  level: 0
+  attackPower: 0
+  defense: 0

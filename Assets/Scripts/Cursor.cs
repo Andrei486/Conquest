@@ -14,8 +14,9 @@ public class Cursor : MonoBehaviour
 	public bool moving = false;
 	public bool lockSelection = false;
 	public bool locked = false;
+	public bool rotationLocked = false;
 	
-	public GameObject camera;
+	public new GameObject camera;
 	public BoardManager board;
 	public GameObject selector;
 	

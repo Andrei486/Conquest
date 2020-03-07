@@ -63,7 +63,7 @@ public class MoveCursor : Cursor
 			return; //can't move to an unaccessible space
 		}
 		if (startSpace == space){
-			return;
+			Deselect();
 		}
 		
 		if (movedTemporary){
@@ -73,7 +73,6 @@ public class MoveCursor : Cursor
 			mainCursor.Move(space.boardPosition - startSpace.boardPosition);
 			mainCursor.MakeVisible(true);
 			menu.ShowActionList(pc);
-			mainCursor.temporarySpace = space;
 			Destroy(this.gameObject);
 		} else {
 			board.TempMoveUnit(startSpace, space);
@@ -86,6 +85,8 @@ public class MoveCursor : Cursor
 	public override void Deselect(){
 		mainCursor.locked = false;
 		mainCursor.MakeVisible(true);
+		selector.transform.position = startSpace.anchorPosition;
+		mainCursor.selectedSpace = startSpace;
 		menu.ShowActionList(pc);
 		Destroy(this.gameObject);
 	}

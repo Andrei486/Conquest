@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Objects;
 
 public class CursorSelector : MonoBehaviour
@@ -11,7 +9,7 @@ public class CursorSelector : MonoBehaviour
 	GameObject cursor;
 	GameObject activeSelect;
 	Cursor cursorScript;
-	SpriteRenderer renderer;
+	new SpriteRenderer renderer;
     // Start is called before the first frame update
     void Start()
     {

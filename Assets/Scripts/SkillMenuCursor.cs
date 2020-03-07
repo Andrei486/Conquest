@@ -8,13 +8,12 @@ public class SkillMenuCursor : MenuCursor
 {
 	public Quaternion skillRotation;
 	public BoardManager board;
-	GameObject camera;
+	new GameObject camera;
 	public Vector2 boardPosition;
     // Start is called before the first frame update
     protected override void Start()
     {
 		base.Start();
-		
         camera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
 		board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
 		this.skillRotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
@@ -26,12 +25,10 @@ public class SkillMenuCursor : MenuCursor
 		if (this.menu != null){
 			if (Input.GetKeyDown("a")){
 				skillRotation *= Quaternion.AngleAxis(90, Vector3.forward);
-				Debug.Log(skillRotation.eulerAngles);
 				HoverItem(currentItem);
 			}
 			if (Input.GetKeyDown("d")){
 				skillRotation *= Quaternion.AngleAxis(90, Vector3.back);
-				Debug.Log(skillRotation.eulerAngles);
 				HoverItem(currentItem);
 			}
 			if (Input.GetKeyDown("space")){
@@ -46,11 +43,13 @@ public class SkillMenuCursor : MenuCursor
 		this.skillRotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
 		this.boardPosition = cursor.position;
 		cursor.MakeVisible(false);
+		cursor.rotationLocked = true;
 	}
 	
 	public override void UnlinkMenu(){
 		base.UnlinkMenu();
 		cursor.MakeVisible(true);
+		cursor.rotationLocked = false;
 	}
 	
 	protected override void HoverItem(GameObject item){
@@ -69,9 +68,19 @@ public class SkillMenuCursor : MenuCursor
 		cursor.Select(cursor.board.GetSpace(cursor.position));
 		string skillName = this.currentItem.transform.Find("Name").gameObject.GetComponent<Text>().text;
 		PlayerController player = board.GetSpace(boardPosition).occupyingUnit.GetComponent<PlayerController>();
+		if (skillName == "BACK"){
+			menuController.ToggleSkills(false);
+			return;
+		}
 		foreach (Skill skill in player.skillList){
 			if (skill.name == skillName){
-				player.UseSkill(skill);
+				if (skill.IsValid(board.GetSpace(boardPosition), skillRotation)){
+					player.UseSkill(skill, skillRotation);
+					player.previousAction = UnitAction.SKILL;
+				} else {
+					Debug.Log("can't use that skill here");
+				}
+				
 			}
 		}
 		menuController.ToggleSkills(false);

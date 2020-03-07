@@ -25,8 +25,11 @@ class Player:
 	attackPower = 1.0
 	defense = 1.0
 	jumpHeight = 1.0
+	maxHealth = 10.0
+	currentHealth = 10.0
+	level = 1
 	moveRange = 3
-	maxActions = 1
+	maxActions = 3
 	maxBullets = 3
 	skillNames = []
 
@@ -53,19 +56,22 @@ def addUnitPlaceholders(board: Board, count: int) -> Board:
 		player = Player()
 		player.name = "Unit " + str(i)
 		player.boardPosition = board.spaces[i]["boardPosition"]
-		player.attackPower = 1.0
-		player.defense = 1.0
+		player.maxHealth = 10.0
+		player.currentHealth = 10.0
+		player.level = 3
+		player.attackPower = 5.0
+		player.defense = 3.0
 		player.jumpHeight = 1.0
 		player.moveRange = 3
-		player.maxActions = 1
+		player.maxActions = 3
 		player.maxBullets = 3
-		player.skillNames = ["Full Moon", "Crescent Slash"]
+		player.skillNames = ["Full Moon", "Crescent Slash", "Artillery"]
 		player = player.__dict__
 		players.append(player)
 	board.players = players
 	return board
 	
-def toJSON(board: Board):
+def toJSON(board: Board) -> None:
 	board = board.__dict__
 	with open('mapData.json', 'w') as file:
 		json.dump(obj = board, fp = file, indent = 4)

@@ -9,8 +9,6 @@ public class PlayerController : MonoBehaviour
 {
 	public const float MOVE_ANIMATION_TIME = 0.5f;
 	public Vector2 boardPosition;
-	public float attackPower;
-	public float defense;
 	public float jumpHeight;
 	public int moveRange;
 	public int maxActions;
@@ -22,12 +20,14 @@ public class PlayerController : MonoBehaviour
 	public int remainingActions;
 	public int bullets;
 	public bool alreadyActed = false;
+	public Health health;
 	public UnitAction previousAction;
 	
     // Start is called before the first frame update
     void Start()
     {
         board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+		health = this.gameObject.GetComponent<Health>();
 		bullets = maxBullets;
 		remainingMove = moveRange;
 		remainingActions = maxActions;
@@ -176,12 +176,14 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	
-	public void UseSkill(Skill skill){
+	public void UseSkill(Skill skill, Quaternion direction){
 		/**Uses the Skill skill. Assumes that using it is possible.*/
 		this.remainingMove -= skill.moveCost;
 		this.remainingActions -= skill.actionCost;
 		this.bullets -= skill.bulletCost;
 		Debug.Log(this.name + " used " + skill.name);
+		health.UseSkill(skill, direction);
+		this.previousAction = UnitAction.SKILL;
 	}
 	
 	public bool CanMove(){

@@ -26,7 +26,8 @@ public class ActionMenuCursor : MenuCursor
 
 	protected override void HoverItem(GameObject item){
 		base.HoverItem(item);
-		UnitAction action = (UnitAction) Enum.Parse(typeof(UnitAction), item.transform.Find("Name").gameObject.GetComponent<Text>().text);
+		string itemName = item.transform.Find("Name").gameObject.GetComponent<Text>().text;
+		UnitAction action = (UnitAction) Enum.Parse(typeof(UnitAction), itemName);
 		switch (action){
 			case UnitAction.MOVE:
 				cursor.selectedSpace.occupyingUnit.GetComponent<PlayerController>().ShowAccessibleSpaces();
@@ -45,7 +46,11 @@ public class ActionMenuCursor : MenuCursor
 	}
 	
 	protected override void SelectItem(GameObject item){
-		UnitAction action = (UnitAction) Enum.Parse(typeof(UnitAction), item.transform.Find("Name").gameObject.GetComponent<Text>().text);
+		string itemName = item.transform.Find("Name").gameObject.GetComponent<Text>().text;
+		if (itemName == "BACK"){
+			; //logic for canceling or ending turn
+		}
+		UnitAction action = (UnitAction) Enum.Parse(typeof(UnitAction), itemName);
 		switch (action){
 			case UnitAction.MOVE:
 				Instantiate(cursor.moveCursorPrefab);
@@ -55,6 +60,7 @@ public class ActionMenuCursor : MenuCursor
 				break;
 			case UnitAction.WAIT:
 				cursor.selectedSpace.occupyingUnit.GetComponent<PlayerController>().EndTurn();
+				cursor.selectedSpace.occupyingUnit.GetComponent<PlayerController>().previousAction = UnitAction.WAIT;
 				break;
 			default:
 				break;

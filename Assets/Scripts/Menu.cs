@@ -85,6 +85,11 @@ public class Menu : MonoBehaviour
 			
 			skillCount++;
 		}
+		menuItem = Instantiate(skillItemPrefab, this.transform.Find("Skills"));
+		menuItem.transform.Translate(new Vector3(0f, skillStackHeight * skillCount, 0f));
+		text = menuItem.transform.Find("Name").gameObject.GetComponent<Text>();
+		text.text = "BACK";
+		
 		ToggleSkills(true);
 		//skillCursor.GetComponent<MenuCursor>().LinkMenu(this.gameObject.transform.Find("Skills").gameObject);
 	}

@@ -19,6 +19,7 @@ namespace Objects{
 		public int moveCost = 1;
 		public const float BOARD_SIZE = 2.0f;
 		public bool impassable = false;
+		public bool voidSpace = false;
 		
 		public float GetHeight(){
 			return this.anchorPosition.y;
@@ -90,7 +91,8 @@ namespace Objects{
 			GameObject tile;
 			Vector2 newPosition;
 			foreach (Attack attack in attacks){
-				newPosition = new Vector2((int) (space.boardPosition.x), (int) (space.boardPosition.y)) + (Vector2) (unitRotation * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
+				newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
+				Debug.Log(newPosition);
 				if (!board.IsWithinBounds(newPosition)){
 					continue;
 				}
@@ -98,7 +100,7 @@ namespace Objects{
 				tile.transform.position = board.GetSpace(newPosition).anchorPosition + new Vector3(0, 0.1f, 0);
 				tile.GetComponent<MeshRenderer>().materials = new Material[] {tile.GetComponent<MeshRenderer>().materials[2]};
 				if (attack.knockbackPosition != new Vector2(0, 0)){
-					newPosition = new Vector2((int) (space.boardPosition.x), (int) (space.boardPosition.y)) + (Vector2) (unitRotation * new Vector3(attack.knockbackPosition.x, attack.knockbackPosition.y, 0));
+					newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(attack.knockbackPosition.x, attack.knockbackPosition.y, 0));
 					if (!board.IsWithinBounds(newPosition)){
 						continue;
 					}
@@ -110,13 +112,76 @@ namespace Objects{
 			
 			if(this.movePosition != new Vector2(0,0)){
 				tile = UnityEngine.Object.Instantiate(skillTile, skillVisual.transform);
-				newPosition = new Vector2((int) (space.boardPosition.x), (int) (space.boardPosition.y)) + (Vector2) (unitRotation * new Vector3(movePosition.x, movePosition.y, 0));
+				newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(movePosition.x, movePosition.y, 0));
 				tile.transform.position = board.GetSpace(newPosition).anchorPosition + new Vector3(0, 0.1f, 0);
 				tile.GetComponent<MeshRenderer>().materials = new Material[] {tile.GetComponent<MeshRenderer>().materials[0]};
 			}
 		}
 		
-		public bool IsValid(BoardSpace space, Vector2 direction){
+		public bool IsValid(BoardSpace space, Quaternion direction){
+			/**Returns true if using this skill from space in chosen direction is a valid move.*/
+			return (IsMoveValid(space, direction) && IsTargetValid(space, direction));
+		}
+		
+		public bool IsMoveValid(BoardSpace space, Quaternion direction){
+			/**Returns true if and only if unit's skill-related movement is not hindered by obstacles.
+			It is assumed that movement occurs only in a straight line.*/
+			if (this.movePosition == Vector2.zero){
+				return true; // if there is no movement it cannot be blocked
+			}
+			
+			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();
+			float start;
+			float end;
+			float currentHeight = space.GetHeight();
+			BoardSpace nextSpace;
+			BoardSpace endSpace = board.GetSpace(space.boardPosition + (Vector2) (direction * new Vector3(movePosition.x, movePosition.y, 0)));
+			
+			if (endSpace.occupyingUnit != null){ //cannot move to an occupied space
+				return false;
+			}
+			
+			if (space.boardPosition.x == endSpace.boardPosition.x){
+				start = space.boardPosition.y;
+				end = endSpace.boardPosition.y;
+				for (float y = start + 1; y < end; y++){
+					nextSpace = board.GetSpace(new Vector2(space.boardPosition.x, y));
+					if (nextSpace.impassable || Math.Abs(currentHeight - nextSpace.GetHeight()) > pc.jumpHeight){
+						return false; //there is something preventing movement through it
+					} else {
+						currentHeight = nextSpace.GetHeight();
+					}
+				}
+				
+			} else if (space.boardPosition.y == endSpace.boardPosition.y){ 
+				start = space.boardPosition.x;
+				end = endSpace.boardPosition.x;
+				for (float x = start + 1; x < end; x++){
+					nextSpace = board.GetSpace(new Vector2(x, space.boardPosition.y));
+					if (nextSpace.impassable || Math.Abs(currentHeight - nextSpace.GetHeight()) > pc.jumpHeight){
+						return false; //there is something preventing movement through it
+					} else {
+						currentHeight = nextSpace.GetHeight();
+					}
+				}
+			}
+			return true; //reached the end space without obstruction
+			
+		}
+		public bool IsTargetValid(BoardSpace space, Quaternion direction){
+			/**Returns true if and only if the attack will hit at least one targetable entity.*/
+			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			Vector2 newPosition;
+			foreach (Attack attack in this.attacks){
+				newPosition = space.boardPosition + (Vector2) (direction * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
+				if (!board.IsWithinBounds(newPosition)){
+					continue;
+				}
+				if (board.GetSpace(newPosition).occupyingUnit != null){
+					return true;
+				}
+			}
 			return false;
 		}
 		
