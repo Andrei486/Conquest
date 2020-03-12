@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Objects{
-	
-	/**Represents a single space on the game board.*/
-	public class BoardSpace {
+namespace Objects
+{
+
+    /**Represents a single space on the game board.*/
+    public class BoardSpace {
 		
 		public Vector2 boardPosition;
 		public Vector3 anchorPosition;
@@ -20,7 +21,6 @@ namespace Objects{
 		public const float BOARD_SIZE = 2.0f;
 		public bool impassable = false;
 		public bool voidSpace = false;
-		
 		public float GetHeight(){
 			return this.anchorPosition.y;
 		}
@@ -33,6 +33,48 @@ namespace Objects{
 		//relative to user, in board space, when user faces upwards.
 		public Vector2 targetPosition = new Vector2(0, 0);
 		public Vector2 knockbackPosition = new Vector2(0, 0);
+
+		public float CalculateDamage(Health user, Health target){
+			/**Returns the damage that would be dealt on a successful hit by this attack,
+			used by the unit user on the unit target.*/
+			float damageDealt;
+			float totalOffense = basePower /100 * user.attackPower;
+			float totalDefense = target.defense;
+			damageDealt = (1 + user.level / 10f) * totalOffense/totalDefense;
+			return damageDealt;
+		}
+		public float CalculateHitChance(Health user, Health target){
+			/**Returns the effective hit chance of this attack, used by the unit user
+			on the unit target, which is standing on the space targetSpace.*/
+			float effectiveAccuracy = accuracy;
+			return Math.Min(100.0f, effectiveAccuracy); //accuracy cannot be higher than 100%
+		}
+		public void VisualizeTarget(GameObject parent, Health user, BoardSpace target){
+			/**Creates a visualization for an attack targeting a unit, as a child of the parent GameObject.*/
+			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			GameObject targetUnit = target.occupyingUnit;
+			PlayerController targetPc = targetUnit.GetComponent<PlayerController>();
+			Health targetHealth = targetUnit.GetComponent<Health>();
+			MeshRenderer renderer = targetUnit.GetComponent<MeshRenderer>();
+			float damage = CalculateDamage(user, targetHealth);
+			float accuracy = CalculateHitChance(user, targetHealth);
+			bool lethal = (damage >= targetHealth.currentHealth) && (accuracy > 0); //if attack would reduce HP to zero and can hit, it may be lethal
+
+			GameObject vis = UnityEngine.Object.Instantiate(board.skillHitPrefab, parent.transform);
+			Vector3 topOfUnit = Vector3.up * renderer.bounds.extents.y  + renderer.GetComponent<MeshRenderer>().bounds.center;
+			UnityEngine.Camera mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<UnityEngine.Camera>();
+			vis.transform.position = mainCamera.WorldToScreenPoint(topOfUnit);
+			
+			Text damageText = vis.transform.Find("Damage").GetComponent<Text>();
+			Text hitText = vis.transform.Find("Hit Chance").GetComponent<Text>();
+
+			hitText.text = ((int) accuracy).ToString() + "%";
+			damageText.text = Math.Round(damage, 2).ToString();
+
+			if (lethal){
+				damageText.color = new Color(128, 0, 0);
+			}
+		}
 	}
 	
 	[Serializable]
@@ -86,19 +128,28 @@ namespace Objects{
 			GameObject skillVisual = new GameObject(); //empty object to child tiles to, and destroy later
 			skillVisual.tag = "Visualization";
 			skillVisual.name = "Skill Visualization";
+			GameObject hitVisual = new GameObject("Hit Visualization"); //empty object childed to Canvas for hit visuals
+			hitVisual.transform.parent = GameObject.Find("Canvas").transform;
+			hitVisual.tag = "Visualization";
+			
 			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
 			GameObject skillTile = board.skillTilePrefab;
 			GameObject tile;
 			Vector2 newPosition;
 			foreach (Attack attack in attacks){
 				newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
-				Debug.Log(newPosition);
+				
 				if (!board.IsWithinBounds(newPosition)){
 					continue;
 				}
 				tile = UnityEngine.Object.Instantiate(skillTile, skillVisual.transform);	
 				tile.transform.position = board.GetSpace(newPosition).anchorPosition + new Vector3(0, 0.1f, 0);
 				tile.GetComponent<MeshRenderer>().materials = new Material[] {tile.GetComponent<MeshRenderer>().materials[2]};
+				
+				if (board.GetSpace(newPosition).occupyingUnit != null){
+					attack.VisualizeTarget(hitVisual, h, board.GetSpace(newPosition));
+				}
+				
 				if (attack.knockbackPosition != new Vector2(0, 0)){
 					newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(attack.knockbackPosition.x, attack.knockbackPosition.y, 0));
 					if (!board.IsWithinBounds(newPosition)){

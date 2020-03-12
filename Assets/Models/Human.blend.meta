@@ -15,6 +15,9 @@ ModelImporter:
   - first:
       74: 3542613571910385267
     second: Light.001|Light.001Action
+  - first:
+      74: -9180895774499272927
+    second: Armature|Slash
   externalObjects: {}
   materials:
     importMaterials: 1

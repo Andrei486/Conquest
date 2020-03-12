@@ -24,6 +24,7 @@ public class BoardManager : MonoBehaviour
 	public GameObject boardTilePrefab;
 	public GameObject moveTilePrefab;
 	public GameObject skillTilePrefab;
+	public GameObject skillHitPrefab;
 	public TextAsset mapData;
 	public TextAsset skillData;
     // Start is called before the first frame update

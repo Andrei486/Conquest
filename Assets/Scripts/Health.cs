@@ -43,14 +43,11 @@ public class Health : MonoBehaviour
 	
 	void UseAttack(Attack attack, Health target, Quaternion direction){
 		System.Random rng = new System.Random();
-		float effectiveAccuracy = attack.accuracy;
+		float effectiveAccuracy = attack.CalculateHitChance(this, target);
 		if (rng.NextDouble() >= effectiveAccuracy / 100.0f){ //attack misses
 			return;
 		}
-		float damageDealt;
-		float totalOffense = attack.basePower /100 * this.attackPower;
-		float totalDefense = target.defense;
-		damageDealt = (1 + level / 10f) * totalOffense/totalDefense;
+		float damageDealt = attack.CalculateDamage(this, target);
 
 		target.currentHealth -= damageDealt;
 		Debug.Log("Dealt " + damageDealt + " damage to " + target.pc.name);
