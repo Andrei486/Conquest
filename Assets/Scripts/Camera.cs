@@ -9,6 +9,7 @@ public class Camera : MonoBehaviour
 	public float timeToRotate = 0.2f;
 	public bool rotating = false;
 	public float zAngle = 60.0f;
+	ControlsManager controls = ControlsManager.GetControls();
     // Start is called before the first frame update
     void Start()
     {
@@ -25,25 +26,23 @@ public class Camera : MonoBehaviour
 			return;
 		}
 		Vector3 rotationPivot = cursor.transform.position;
-        if(Input.GetKeyDown("a")){
+        if(Input.GetKeyDown(controls.GetCommand(Command.CAMERA_LEFT))){
 			StartCoroutine(GradualRotation(rotationPivot, Vector3.up, 90.0f));
 		}
-		if(Input.GetKeyDown("d")){
+		if(Input.GetKeyDown(controls.GetCommand(Command.CAMERA_RIGHT))){
 			StartCoroutine(GradualRotation(rotationPivot, Vector3.down, 90.0f));
 		}
-		if(Input.GetKeyDown("s")){
+		if(Input.GetKeyDown(controls.GetCommand(Command.CAMERA_DOWN))){
 			if (zAngle >= 15.0f){
 				StartCoroutine(GradualRotation(rotationPivot, Vector3.Cross(this.transform.position - rotationPivot, Vector3.down), 15.0f));
 			zAngle -= 15.0f;
 			}
-			Debug.Log(zAngle);
 		}
-		if(Input.GetKeyDown("w")){
+		if(Input.GetKeyDown(controls.GetCommand(Command.CAMERA_UP))){
 			if (zAngle <= 60.0f){
 				StartCoroutine(GradualRotation(rotationPivot, Vector3.Cross(this.transform.position - rotationPivot, Vector3.up), 15.0f));
 			zAngle += 15.0f;
 			}
-			Debug.Log(zAngle);
 		}
     }
 	

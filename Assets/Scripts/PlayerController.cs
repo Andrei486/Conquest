@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
 	public int remainingMove;
 	public int remainingActions;
 	public int bullets;
-	public bool alreadyActed = false;
+	public bool turnEnded = false;
+	public bool hasActed = false;
 	public Health health;
 	public UnitAction previousAction;
 	
@@ -145,7 +146,7 @@ public class PlayerController : MonoBehaviour
 	
 	public void EndTurn(){
 		/**Ends the unit's turn and resets its movement and actions.*/
-		this.alreadyActed = true;
+		this.turnEnded = true;
 		this.remainingActions = maxActions;
 		this.remainingMove = moveRange;
 	}
@@ -188,12 +189,12 @@ public class PlayerController : MonoBehaviour
 	
 	public bool CanMove(){
 		/**Returns true if the user can still move, even if there is no space to move to due to obstacles; false otherwise.*/
-		return (remainingMove > 0 && previousAction != UnitAction.MOVE && !alreadyActed); //cannot move if the last action taken was a move.
+		return (remainingMove > 0 && previousAction != UnitAction.MOVE && !turnEnded); //cannot move if the last action taken was a move.
 	}
 	
 	public bool CanAct(){
 		/**Returns true if the unit has actions left to use, false otherwise.*/
-		return (remainingActions > 0 && !alreadyActed);
+		return (remainingActions > 0 && !turnEnded);
 	}
 	
 	public bool CanUse(Skill skill){

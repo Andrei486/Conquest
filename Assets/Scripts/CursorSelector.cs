@@ -47,7 +47,7 @@ public class CursorSelector : MonoBehaviour
 						BoardManager.ClearVisualization();
 						cursorScript.movedTemporary = true;
 						cursorScript.temporarySpace = space;
-						menu.ShowSkillList(cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>());
+						//menu.ShowSkillList(cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>());
 					}
 				}
 			} else {
@@ -65,7 +65,7 @@ public class CursorSelector : MonoBehaviour
 	
 	private void SelectUnit(BoardSpace space){
 		/**Selects the unit on the specified space, if it is selectable.*/
-		if (space.occupyingUnit != null && space.occupyingUnit.GetComponent<PlayerController>().alreadyActed == false){
+		if (space.occupyingUnit != null && space.occupyingUnit.GetComponent<PlayerController>().turnEnded == false){
 			cursorScript.selectedSpace = space; //select the space if none already selected and not empty
 			activeSelect.GetComponent<SpriteRenderer>().enabled = true;
 			//cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>().ShowAccessibleSpaces();

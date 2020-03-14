@@ -17,7 +17,7 @@ public class ActionMenuCursor : MenuCursor
     void Update()
     {
         if (this.menu != null){
-			if (Input.GetKeyDown("space")){
+			if (Input.GetKeyDown(controls.GetCommand(Command.CONFIRM))){
 				cursor.locked = false;
 				SelectItem(currentItem);
 			}

@@ -10,7 +10,7 @@ public class MenuCursor : MonoBehaviour
 	protected Cursor cursor;
 	public GameObject currentItem;
 	public int index;
-	
+	protected ControlsManager controls = ControlsManager.GetControls();
 	Vector3 offset;
     // Start is called before the first frame update
     virtual protected void Start()

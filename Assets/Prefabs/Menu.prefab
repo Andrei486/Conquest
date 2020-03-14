@@ -115,6 +115,8 @@ MonoBehaviour:
     type: 3}
   actionItemPrefab: {fileID: 3452037990696858790, guid: eaf2446051c3af2419589a405314b0dc,
     type: 3}
+  attributePrefab: {fileID: 7503437468460101255, guid: 3099ed997481f6d4996c486e66a8be38,
+    type: 3}
   cursorPrefab: {fileID: 5427956221323645369, guid: 82b586c11c482e246802951e7a17b377,
     type: 3}
   skillTypes:
@@ -136,6 +138,10 @@ MonoBehaviour:
   - action: 2
     emblemSprite: {fileID: -7297115139210449235, guid: 7abb49ca5dc72244c8888ac5ca43dcc6,
       type: 3}
+  attributeStackHeight: 0
+  cursor: {fileID: 0}
+  skillCursor: {fileID: 0}
+  actionCursor: {fileID: 0}
 --- !u!1 &6482677070360432070
 GameObject:
   m_ObjectHideFlags: 0

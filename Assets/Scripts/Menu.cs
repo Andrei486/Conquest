@@ -10,14 +10,17 @@ public class Menu : MonoBehaviour
 	bool showingActions = false;
 	public GameObject skillItemPrefab;
 	public GameObject actionItemPrefab;
+	public GameObject attributePrefab;
 	public GameObject cursorPrefab;
 	public SkillTypeInfo[] skillTypes;
 	public ActionInfo[] actionItems;
 	float skillStackHeight;
 	float actionStackHeight;
+	public float attributeStackHeight;
 	Quaternion skillRotation;
 	public Cursor cursor;
 	BoardManager board;
+	ControlsManager controls = ControlsManager.GetControls();
 	public GameObject skillCursor;
 	public GameObject actionCursor;
     // Start is called before the first frame update
@@ -26,6 +29,7 @@ public class Menu : MonoBehaviour
 		board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
 		skillStackHeight = skillItemPrefab.GetComponent<RectTransform>().rect.height * skillItemPrefab.transform.localScale.y * 1.1f;
 		actionStackHeight = actionItemPrefab.GetComponent<RectTransform>().rect.height * actionItemPrefab.transform.localScale.y * 1.1f;
+		attributeStackHeight = attributePrefab.GetComponent<RectTransform>().rect.height * attributePrefab.transform.localScale.y * 1.1f;
 		
 		skillCursor = Instantiate(cursorPrefab, this.gameObject.transform.Find("Cursors"));
 		skillCursor.AddComponent(typeof(SkillMenuCursor));
@@ -37,18 +41,18 @@ public class Menu : MonoBehaviour
     void Update()
     {
 		if (showingSkills){
-			if (Input.GetKeyDown("down")){
+			if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_DOWN))){
 				skillCursor.GetComponent<MenuCursor>().MoveDown();
 			}
-			if (Input.GetKeyDown("up")){
+			if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_UP))){
 				skillCursor.GetComponent<MenuCursor>().MoveUp();
 			}
 		}
 		if (showingActions){
-			if (Input.GetKeyDown("down")){
+			if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_DOWN))){
 				actionCursor.GetComponent<MenuCursor>().MoveDown();
 			}
-			if (Input.GetKeyDown("up")){
+			if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_UP))){
 				actionCursor.GetComponent<MenuCursor>().MoveUp();
 			}
 		}
@@ -72,7 +76,7 @@ public class Menu : MonoBehaviour
 			menuItem = Instantiate(skillItemPrefab, this.transform.Find("Skills")); //for each skill create a menu item as child of menu
 			menuItem.transform.Translate(new Vector3(0f, skillStackHeight * skillCount, 0f));
 			
-			text = menuItem.transform.Find("Name").gameObject.GetComponent<Text>();
+			text = menuItem.transform.Find("Name").GetComponent<Text>();
 			text.text = toShow.name;
 			
 			emblem = menuItem.transform.Find("Emblem").gameObject.GetComponent<Image>();
@@ -85,10 +89,6 @@ public class Menu : MonoBehaviour
 			
 			skillCount++;
 		}
-		menuItem = Instantiate(skillItemPrefab, this.transform.Find("Skills"));
-		menuItem.transform.Translate(new Vector3(0f, skillStackHeight * skillCount, 0f));
-		text = menuItem.transform.Find("Name").gameObject.GetComponent<Text>();
-		text.text = "BACK";
 		
 		ToggleSkills(true);
 		//skillCursor.GetComponent<MenuCursor>().LinkMenu(this.gameObject.transform.Find("Skills").gameObject);
@@ -98,8 +98,8 @@ public class Menu : MonoBehaviour
 		cursor.locked = true;
 		List<UnitAction> actions = pc.GetUsableActions();
 		
-		if (actions.Count == 0){
-			pc.alreadyActed = true;
+		if (actions.Count == 1){ //the only action is WAIT, must end turn
+			pc.turnEnded = true;
 			return;
 		}
 		

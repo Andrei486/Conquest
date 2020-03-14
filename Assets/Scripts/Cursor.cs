@@ -22,6 +22,7 @@ public class Cursor : MonoBehaviour
 	
 	public GameObject cursorSelectPrefab;
 	public GameObject moveCursorPrefab;
+	protected ControlsManager controls = ControlsManager.GetControls();
     // Start is called before the first frame update
     void Start()
     {
@@ -45,25 +46,25 @@ public class Cursor : MonoBehaviour
 		if (!(camera.GetComponent<Camera>().rotating || this.moving || this.movedTemporary)){ //to prevent camera going off-center, do not move if already moving or turning
 			//cursor movement
 			Quaternion rotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
-			if (Input.GetKey("down")){
+			if (Input.GetKey(controls.GetCommand(Command.MOVE_DOWN))){
 				Move(rotation * Vector3.down);
 			}
-			if (Input.GetKey("up")){
+			if (Input.GetKey(controls.GetCommand(Command.MOVE_UP))){
 				Move(rotation * Vector3.up);
 			}
-			if (Input.GetKey("left")){
+			if (Input.GetKey(controls.GetCommand(Command.MOVE_LEFT))){
 				Move(rotation * Vector3.left);
 			}
-			if (Input.GetKey("right")){
+			if (Input.GetKey(controls.GetCommand(Command.MOVE_RIGHT))){
 				Move(rotation * Vector3.right);
 			}
 		}
 		
 		//select and deselect commands work regardless
-		if (Input.GetKeyDown("space")){
+		if (Input.GetKeyDown(controls.GetCommand(Command.CONFIRM))){
 			Select(board.boardSpaces[(int) position.x, (int) position.y]);
 		}
-		if (Input.GetKeyDown("backspace")){
+		if (Input.GetKeyDown(controls.GetCommand(Command.BACK))){
 			Deselect();
 		}
     }

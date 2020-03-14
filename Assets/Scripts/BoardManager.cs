@@ -27,6 +27,7 @@ public class BoardManager : MonoBehaviour
 	public GameObject skillHitPrefab;
 	public TextAsset mapData;
 	public TextAsset skillData;
+	ControlsManager controls = ControlsManager.GetControls();
     // Start is called before the first frame update
     void Start()
     {
@@ -205,10 +206,15 @@ public class BoardManager : MonoBehaviour
 				BoardSpace space = GetSpace(new Vector2(i, j));
 				if (space.occupyingUnit != null){
 					PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();
-					pc.alreadyActed = false;
+					RefreshUnit(pc);
 				}
 			}
 		}
+	}
+
+	public void RefreshUnit(PlayerController pc){
+		pc.turnEnded = false;
+		pc.previousAction = UnitAction.WAIT;
 	}
 	
 	void CreateUnits(){
