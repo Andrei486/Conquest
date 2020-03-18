@@ -51,7 +51,7 @@ namespace Objects
 		}
 		public void VisualizeTarget(GameObject parent, Health user, BoardSpace target){
 			/**Creates a visualization for an attack targeting a unit, as a child of the parent GameObject.*/
-			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			BoardManager board = BoardManager.GetBoard();
 			GameObject targetUnit = target.occupyingUnit;
 			PlayerController targetPc = targetUnit.GetComponent<PlayerController>();
 			Health targetHealth = targetUnit.GetComponent<Health>();
@@ -97,6 +97,14 @@ namespace Objects
 		MOVE,
 		WAIT
 	}
+
+	[Serializable]
+	public enum UnitAffiliation{
+		PLAYER,
+		ENEMY,
+		ALLY,
+		OTHER
+	}
 	
 	[Serializable]
 	public struct ActionInfo{
@@ -132,7 +140,7 @@ namespace Objects
 			hitVisual.transform.parent = GameObject.Find("Canvas").transform;
 			hitVisual.tag = "Visualization";
 			
-			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			BoardManager board = BoardManager.GetBoard();
 			GameObject skillTile = board.skillTilePrefab;
 			GameObject tile;
 			Vector2 newPosition;
@@ -181,7 +189,7 @@ namespace Objects
 				return true; // if there is no movement it cannot be blocked
 			}
 			
-			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			BoardManager board = BoardManager.GetBoard();
 			PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();
 			float start;
 			float end;
@@ -222,7 +230,7 @@ namespace Objects
 		}
 		public bool IsTargetValid(BoardSpace space, Quaternion direction){
 			/**Returns true if and only if the attack will hit at least one targetable entity.*/
-			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			BoardManager board = BoardManager.GetBoard();
 			Vector2 newPosition;
 			foreach (Attack attack in this.attacks){
 				newPosition = space.boardPosition + (Vector2) (direction * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));

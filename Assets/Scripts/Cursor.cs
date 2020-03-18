@@ -26,7 +26,7 @@ public class Cursor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>(); //find board object and script
+		board = BoardManager.GetBoard(); //find board object and script
 		position = new Vector2(0, 0);
 		this.gameObject.transform.position = board.boardSpaces[0, 0].anchorPosition + new Vector3 (0f, 4f, 0f);
 		if (board.boardSpaces[0, 0].occupyingUnit != null){

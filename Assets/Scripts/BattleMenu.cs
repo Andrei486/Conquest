@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Objects;
 
-public class Menu : MonoBehaviour
+public class BattleMenu : MonoBehaviour
 {
 	bool showingSkills = false;
 	bool showingActions = false;
+	public bool showInfo = false;
 	public GameObject skillItemPrefab;
 	public GameObject actionItemPrefab;
 	public GameObject attributePrefab;
@@ -26,7 +27,7 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+		board = BoardManager.GetBoard();
 		skillStackHeight = skillItemPrefab.GetComponent<RectTransform>().rect.height * skillItemPrefab.transform.localScale.y * 1.1f;
 		actionStackHeight = actionItemPrefab.GetComponent<RectTransform>().rect.height * actionItemPrefab.transform.localScale.y * 1.1f;
 		attributeStackHeight = attributePrefab.GetComponent<RectTransform>().rect.height * attributePrefab.transform.localScale.y * 1.1f;
@@ -47,13 +48,25 @@ public class Menu : MonoBehaviour
 			if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_UP))){
 				skillCursor.GetComponent<MenuCursor>().MoveUp();
 			}
+			if (Input.GetKeyDown(controls.GetCommand(Command.BACK))){
+				cursor.locked = false;
+				cursor.Deselect();
+				cursor.Select(cursor.board.GetSpace(skillCursor.GetComponent<SkillMenuCursor>().boardPosition));
+			}
 		}
-		if (showingActions){
+		else if (showingActions){
+			PlayerController playerController = actionCursor.GetComponent<ActionMenuCursor>().playerController;
 			if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_DOWN))){
 				actionCursor.GetComponent<MenuCursor>().MoveDown();
 			}
 			if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_UP))){
 				actionCursor.GetComponent<MenuCursor>().MoveUp();
+			}
+			//cannot cancel if unit has already acted or moved
+			if (Input.GetKeyDown(controls.GetCommand(Command.BACK)) && !playerController.hasActed){
+				cursor.locked = false;
+				cursor.Deselect();
+				ToggleActions(false);
 			}
 		}
     }
@@ -100,10 +113,12 @@ public class Menu : MonoBehaviour
 		
 		if (actions.Count == 1){ //the only action is WAIT, must end turn
 			pc.turnEnded = true;
+			pc.EndTurn();
 			return;
 		}
 		
 		foreach (Transform child in transform.Find("Actions")){
+			//child.SetAsLastSibling();
 			Destroy(child.gameObject);
 		}
 		ToggleSkills(false);
@@ -154,5 +169,9 @@ public class Menu : MonoBehaviour
 		} else {
 			actionCursor.GetComponent<MenuCursor>().UnlinkMenu();
 		}
+	}
+
+	public static BattleMenu GetMenu(){
+		return GameObject.FindWithTag("MenuController").GetComponent<BattleMenu>();
 	}
 }

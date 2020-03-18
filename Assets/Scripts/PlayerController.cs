@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 	public int remainingMove;
 	public int remainingActions;
 	public int bullets;
+	public UnitAffiliation affiliation;
 	public bool turnEnded = false;
 	public bool hasActed = false;
 	public Health health;
@@ -27,11 +28,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+        board = BoardManager.GetBoard();
 		health = this.gameObject.GetComponent<Health>();
-		bullets = maxBullets;
-		remainingMove = moveRange;
-		remainingActions = maxActions;
+		// bullets = maxBullets;
+		// remainingMove = moveRange;
+		// remainingActions = maxActions;
 		moveGrid = new int[board.columns, board.rows];
 		UpdateMoveGrid((int) boardPosition.x, (int) boardPosition.y);
     }
@@ -182,14 +183,14 @@ public class PlayerController : MonoBehaviour
 		this.remainingMove -= skill.moveCost;
 		this.remainingActions -= skill.actionCost;
 		this.bullets -= skill.bulletCost;
-		Debug.Log(this.name + " used " + skill.name);
+		BattleLog.GetLog().Log(this.name + " used " + skill.name);
 		health.UseSkill(skill, direction);
 		this.previousAction = UnitAction.SKILL;
 	}
 	
 	public bool CanMove(){
 		/**Returns true if the user can still move, even if there is no space to move to due to obstacles; false otherwise.*/
-		return (remainingMove > 0 && previousAction != UnitAction.MOVE && !turnEnded); //cannot move if the last action taken was a move.
+		return (remainingMove > 0 && !turnEnded); //cannot move if the last action taken was a move.
 	}
 	
 	public bool CanAct(){

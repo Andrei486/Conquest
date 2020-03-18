@@ -19,8 +19,10 @@ class Board:
 	columns = None
 	players = []
 
-class Player:
+class PlayerInfo:
+	shorthand = False
 	name = None
+	affiliation = None
 	boardPosition = []
 	attackPower = 1.0
 	defense = 1.0
@@ -32,6 +34,14 @@ class Player:
 	maxActions = 3
 	maxBullets = 3
 	skillNames = []
+
+class ShorthandPlayer:
+	shorthand = True
+	name = None
+	affiliation = None
+	boardPosition = []
+	currentHealth = 10.0
+	level = 1
 
 SPRITE_NAME_POOL = ["grass", "grass", "tile"]
 HEIGHT_POOL = [0.0, 0.5]
@@ -53,8 +63,9 @@ def generateBoard(rows: int, columns: int) -> Board:
 def addUnitPlaceholders(board: Board, count: int) -> Board:
 	players = []
 	for i in range(count):
-		player = Player()
+		player = PlayerInfo()
 		player.name = "Unit " + str(i)
+		player.affiliation = "PLAYER"
 		player.boardPosition = board.spaces[i]["boardPosition"]
 		player.maxHealth = 10.0
 		player.currentHealth = 10.0

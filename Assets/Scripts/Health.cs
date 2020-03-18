@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+        board = BoardManager.GetBoard();
 		pc = this.gameObject.GetComponent<PlayerController>();
     }
 
@@ -45,12 +45,13 @@ public class Health : MonoBehaviour
 		System.Random rng = new System.Random();
 		float effectiveAccuracy = attack.CalculateHitChance(this, target);
 		if (rng.NextDouble() >= effectiveAccuracy / 100.0f){ //attack misses
+			BattleLog.GetLog().Log("The attack missed " + target.pc.name + "...");
 			return;
 		}
 		float damageDealt = attack.CalculateDamage(this, target);
 
 		target.currentHealth -= damageDealt;
-		Debug.Log("Dealt " + damageDealt + " damage to " + target.pc.name);
+		BattleLog.GetLog().Log("Dealt " + damageDealt + " damage to " + target.pc.name);
 		
 		if (attack.knockbackPosition != Vector2.zero){
 			Vector2 knockbackPosition = target.boardPosition + (Vector2) (direction * (attack.knockbackPosition - attack.targetPosition));

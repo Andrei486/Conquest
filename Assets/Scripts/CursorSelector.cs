@@ -5,7 +5,7 @@ public class CursorSelector : MonoBehaviour
 {
 	public Sprite normalSelector;
 	public Sprite activeSelector;
-	public Menu menu;
+	public BattleMenu menu;
 	GameObject cursor;
 	GameObject activeSelect;
 	Cursor cursorScript;
@@ -21,7 +21,7 @@ public class CursorSelector : MonoBehaviour
 		activeSelect.GetComponent<SpriteRenderer>().sprite = activeSelector;
 		activeSelect.GetComponent<SpriteRenderer>().enabled = false;
 		activeSelect.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-		menu = GameObject.FindGameObjectsWithTag("MenuController")[0].GetComponent<Menu>();
+		menu = BattleMenu.GetMenu();
     }
 
     // Update is called once per frame

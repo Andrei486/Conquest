@@ -15,8 +15,9 @@ public class BoardManager : MonoBehaviour
 	[Tooltip("A list of colors to use for board tile pillars. In order, tile and grass.")]
 	public List<Color> tileColors;
 	GameObject board;
-	Menu menu;
+	BattleMenu menu;
 	Cursor cursor;
+	public UnitAffiliation phase;
 	public BoardSpace[,] boardSpaces;
 	public GameObject cursorPrefab;
 	public GameObject pawn;
@@ -32,7 +33,7 @@ public class BoardManager : MonoBehaviour
     void Start()
     {
 		board = this.gameObject;
-		menu = GameObject.FindGameObjectsWithTag("MenuController")[0].GetComponent<Menu>();
+		menu = BattleMenu.GetMenu();
 		CreateMap();
 		CreateUnits();
 		menu.cursor = Instantiate(cursorPrefab).GetComponent<Cursor>();
@@ -98,11 +99,13 @@ public class BoardManager : MonoBehaviour
 		pc.boardPosition = end.boardPosition;
 		pc.remainingMove = pc.moveGrid[(int) end.boardPosition.x, (int) end.boardPosition.y];
 		pc.previousAction = UnitAction.MOVE;
+		pc.hasActed = true;
 		// if there was a temporary move player then remove it
 		if (end.occupyingUnit.transform.Find("Temporary") != null){
 			Destroy(end.occupyingUnit.transform.Find("Temporary").gameObject);
 		}
 		cursor.selectedSpace = end;
+		BattleLog.GetLog().Log(pc.name + " moved.");
 	}
 	
 	public void MoveUnit(Vector2 start, Vector2 end){
@@ -136,7 +139,7 @@ public class BoardManager : MonoBehaviour
 	public void KnockbackMoveUnit(BoardSpace start, BoardSpace end, bool throughUnits){
 		/**Moves a unit from start to end, going through units if specified.
 		Used to move a unit due to a skill from applied knockback.*/
-		BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+		BoardManager board = BoardManager.GetBoard();
 		PlayerController pc = start.occupyingUnit.GetComponent<PlayerController>();
 		float startPos;
 		float endPos;
@@ -215,6 +218,15 @@ public class BoardManager : MonoBehaviour
 	public void RefreshUnit(PlayerController pc){
 		pc.turnEnded = false;
 		pc.previousAction = UnitAction.WAIT;
+		pc.hasActed = false;
+	}
+
+	void CheckEndPhase(){
+
+	}
+
+	public static BoardManager GetBoard(){
+		return GameObject.FindWithTag("Board").GetComponent<BoardManager>();
 	}
 	
 	void CreateUnits(){
@@ -262,7 +274,7 @@ public class BoardManager : MonoBehaviour
 		}
 		
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer){
-			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			BoardManager board = BoardManager.GetBoard();
 			if (objectType == typeof(BoardSpace)){ //if it is a single space
 				JObject item = JObject.Load(reader);
 				BoardSpace space = new BoardSpace();
@@ -321,13 +333,14 @@ public class BoardManager : MonoBehaviour
 		}
 		
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer){
-			BoardManager board = GameObject.FindGameObjectsWithTag("Board")[0].GetComponent<BoardManager>();
+			BoardManager board = BoardManager.GetBoard();
 			if (objectType == typeof(GameObject)){ //if it is a single player
 				JObject playerInfo = JObject.Load(reader);
 				GameObject player = Instantiate(board.pawn, board.transform);
 				PlayerController pc = player.GetComponent<PlayerController>();
 				Health h = player.GetComponent<Health>();
 				pc.name = playerInfo["name"].Value<string>();
+				pc.affiliation = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), playerInfo["affiliation"].Value<string>());
 				h.attackPower = playerInfo["attackPower"].Value<float>();
 				h.defense = playerInfo["defense"].Value<float>();
 				h.level = playerInfo["level"].Value<int>();
@@ -335,9 +348,12 @@ public class BoardManager : MonoBehaviour
 				h.currentHealth = playerInfo["currentHealth"].Value<float>();
 				pc.jumpHeight = playerInfo["jumpHeight"].Value<float>();
 				pc.moveRange = playerInfo["moveRange"].Value<int>();
+				pc.remainingMove = pc.moveRange;
 				pc.maxActions = playerInfo["moveRange"].Value<int>();
+				pc.remainingActions = pc.maxActions;
 				pc.boardPosition = new Vector2(playerInfo["boardPosition"][0].Value<int>(), playerInfo["boardPosition"][1].Value<int>());
 				pc.maxBullets = playerInfo["maxBullets"].Value<int>();
+				pc.bullets = pc.maxBullets;
 				foreach (JToken skillName in playerInfo["skillNames"]){
 					pc.skillList.Add(Skill.GetSkillByName(skillName.ToString(), board.skillData));
 				}

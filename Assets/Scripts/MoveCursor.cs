@@ -6,7 +6,7 @@ using Objects;
 public class MoveCursor : Cursor
 {
 	public Cursor mainCursor;
-	public Menu menu;
+	public BattleMenu menu;
 	BoardSpace startSpace;
 	PlayerController pc;
     // Start is called before the first frame update
@@ -24,6 +24,7 @@ public class MoveCursor : Cursor
 		this.camera = mainCursor.camera;
 		selector = mainCursor.selector;
 		menu = mainCursor.selector.GetComponent<CursorSelector>().menu;
+		controls = ControlsManager.GetControls();
     }
 
     // Update is called once per frame
@@ -35,25 +36,25 @@ public class MoveCursor : Cursor
 		if (!(camera.GetComponent<Camera>().rotating || this.moving || this.movedTemporary)){ //to prevent camera going off-center, do not move if already moving or turning
 			//cursor movement
 			Quaternion rotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
-			if (Input.GetKey("down")){
+			if (Input.GetKey(controls.GetCommand(Command.MOVE_DOWN))){
 				Move(rotation * Vector3.down);
 			}
-			if (Input.GetKey("up")){
+			if (Input.GetKey(controls.GetCommand(Command.MOVE_UP))){
 				Move(rotation * Vector3.up);
 			}
-			if (Input.GetKey("left")){
+			if (Input.GetKey(controls.GetCommand(Command.MOVE_LEFT))){
 				Move(rotation * Vector3.left);
 			}
-			if (Input.GetKey("right")){
+			if (Input.GetKey(controls.GetCommand(Command.MOVE_RIGHT))){
 				Move(rotation * Vector3.right);
 			}
 		}
 		
 		//select and deselect commands work regardless
-		if (Input.GetKeyDown("space")){
+		if (Input.GetKeyDown(controls.GetCommand(Command.CONFIRM))){
 			Select(board.boardSpaces[(int) position.x, (int) position.y]);
 		}
-		if (Input.GetKeyDown("backspace")){
+		if (Input.GetKeyDown(controls.GetCommand(Command.BACK))){
 			Deselect();
 		}
     }
@@ -72,7 +73,11 @@ public class MoveCursor : Cursor
 			mainCursor.locked = false;
 			mainCursor.Move(space.boardPosition - startSpace.boardPosition);
 			mainCursor.MakeVisible(true);
-			menu.ShowActionList(pc);
+			if (!pc.turnEnded){
+				menu.ShowActionList(pc);
+			} else {
+				mainCursor.Deselect();
+			}
 			Destroy(this.gameObject);
 		} else {
 			board.TempMoveUnit(startSpace, space);
@@ -88,6 +93,10 @@ public class MoveCursor : Cursor
 		selector.transform.position = startSpace.anchorPosition;
 		mainCursor.selectedSpace = startSpace;
 		menu.ShowActionList(pc);
+		BoardManager.ClearVisualization();
+		if (startSpace.occupyingUnit.transform.Find("Temporary") != null){
+			Destroy(startSpace.occupyingUnit.transform.Find("Temporary").gameObject);
+		}
 		Destroy(this.gameObject);
 	}
 }
