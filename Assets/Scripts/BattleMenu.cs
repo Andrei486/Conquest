@@ -113,6 +113,10 @@ public class BattleMenu : MonoBehaviour
 		
 		if (actions.Count == 1){ //the only action is WAIT, must end turn
 			pc.turnEnded = true;
+			//free the cursor
+			cursor.locked = false;
+			cursor.rotationLocked = false;
+			cursor.Deselect();
 			pc.EndTurn();
 			return;
 		}

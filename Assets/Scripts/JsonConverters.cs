@@ -100,7 +100,7 @@ namespace JsonConverters{
 				}
             }
 			//global aesthetics
-			JObject pillarColor = JObject.FromObject(board.pillarColor);
+			JObject pillarColor = JObject.Parse(JsonConvert.SerializeObject(board.pillarColor, new VectorConverter()));
             
 			JObject toWrite = new JObject(
 				new JProperty("rows", board.rows),
@@ -155,7 +155,6 @@ namespace JsonConverters{
     public class PlayerConverter : JsonConverter{
 		/**A class which converts JSON representations of players to player GameObjects and vice versa.*/
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer){
-			BoardManager board = BoardManager.GetBoard();
 			GameObject player = (GameObject) value;
 			PlayerController pc = player.GetComponent<PlayerController>();
 			Health h = player.GetComponent<Health>();

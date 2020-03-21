@@ -52,9 +52,6 @@ public class MenuCursor : MonoBehaviour
 	}
 	
 	protected void HoverItem(int childNumber){
-		Debug.Log(menu.transform);
-		Debug.Log(menu.transform.GetChild(childNumber));
-		Debug.Log(menu.transform.GetChild(childNumber).gameObject);
 		HoverItem(menu.transform.GetChild(childNumber).gameObject);
 	}
 	

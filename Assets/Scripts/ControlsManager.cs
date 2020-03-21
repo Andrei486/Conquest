@@ -26,6 +26,8 @@ public sealed class ControlsManager
         keyMappings.Add(Command.CONFIRM, KeyCode.Space);
         keyMappings.Add(Command.BACK, KeyCode.Backspace);
         keyMappings.Add(Command.MENU, KeyCode.X);
+        keyMappings.Add(Command.QUICKSAVE, KeyCode.Equals);
+        keyMappings.Add(Command.QUICKLOAD, KeyCode.Minus);
         keyMappings.Add(Command.TOGGLE_INFO, KeyCode.RightControl);
         this.SetCameraControls(ControlsManager.WASD);
         this.SetMoveControls(ControlsManager.ARROWS);
@@ -82,6 +84,7 @@ public sealed class ControlsManager
 public enum Command{
     CONFIRM, MENU, BACK,
     TOGGLE_INFO,
+    QUICKSAVE, QUICKLOAD,
     CAMERA_UP, CAMERA_DOWN, CAMERA_LEFT, CAMERA_RIGHT,
     MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT
 }

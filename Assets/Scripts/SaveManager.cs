@@ -7,6 +7,7 @@ using Objects;
 using JsonConverters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Threading;
 public class SaveManager : MonoBehaviour
 {
     public bool isBattleSaved = false;
@@ -16,6 +17,7 @@ public class SaveManager : MonoBehaviour
     public static string battleSave;
     public static string backupFile;
     public static string baseUnits;
+    ControlsManager controls = ControlsManager.GetControls();
     void Start()
     {
         
@@ -23,26 +25,45 @@ public class SaveManager : MonoBehaviour
         backupFile = Application.persistentDataPath + "/SaveData/backupFile.txt";
         baseUnits = Application.persistentDataPath + "/SaveData/baseUnits.txt";
         Debug.Log(Application.persistentDataPath);
-        StartNewBattle("mapData");
+        StartCoroutine(StartNewBattle("mapData"));
     }
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(controls.GetCommand(Command.QUICKSAVE))){
+            SaveBoard(BoardManager.GetBoard());
+        }
+        if (Input.GetKeyDown(controls.GetCommand(Command.QUICKLOAD))){
+            StartCoroutine(LoadBattle(battleSave));
+        }
     }
 
-    public void LoadBattle(string mapData){
+    public IEnumerator LoadBattle(string mapData){
         /**Loads the battlefield corresponding to the JSON file in mapData.
         If no argument is given, loads the battle save instead, assuming it exists.*/
+        RemovePreviousBoard();
+        yield return new WaitForEndOfFrame();
         string fullInfo = File.ReadAllText(mapData);
         GameObject boardObject = JsonConvert.DeserializeObject<GameObject>(fullInfo, new BoardConverter());
+        Debug.Log("loaded");
     }
 
-    public void StartNewBattle(string mapData){
+    public IEnumerator StartNewBattle(string mapData){
         /**Loads the battlefield corresponding to the JSON file in mapData.
         If no argument is given, loads the battle save instead, assuming it exists.*/
+        RemovePreviousBoard();
+        yield return new WaitForEndOfFrame();
         TextAsset fullInfo = Resources.Load<TextAsset>("Maps/" + mapData);
         GameObject boardObject = JsonConvert.DeserializeObject<GameObject>(fullInfo.text, new BoardConverter());
+    }
+
+    public void RemovePreviousBoard(){
+        /**Destroys the previous board GameObject.
+        If there is none, does nothing.*/
+        GameObject board = GameObject.FindWithTag("Board");
+        if (board != null){
+            Destroy(board);
+        }
     }
 
     public List<GameObject> LoadUnits(JArray unitsInfo){
@@ -73,21 +94,13 @@ public class SaveManager : MonoBehaviour
         BackupSave();
         
 
-        //get map name (and other info: event flags?) in a map object
-        JObject boardInfo = JObject.Parse(JsonUtility.ToJson(board));
-
-        //get units and positions (this ignores and overwrites the information in the map data)
-        JArray units = GetUnitsInfo(board);
-
-        JObject fullInfo = new JObject(
-            new JProperty("board", boardInfo),
-            new JProperty("units", units)
-        );
+        string json = JsonConvert.SerializeObject(board.gameObject, new BoardConverter());
 
         //write the info
-        File.WriteAllText(battleSave, fullInfo.ToString());
+        File.WriteAllText(battleSave, json);
 
         isBattleSaved = true;
+        Debug.Log("saved!");
     }
 
     public void BackupSave(){
