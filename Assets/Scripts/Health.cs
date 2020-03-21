@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using Objects;
 
+[Serializable]
 public class Health : MonoBehaviour
 {
 	public float maxHealth;

@@ -115,7 +115,7 @@ public class ActionMenuCursor : MenuCursor
 		UnitAction action = (UnitAction) Enum.Parse(typeof(UnitAction), itemName);
 		switch (action){
 			case UnitAction.MOVE:
-				Instantiate(cursor.moveCursorPrefab);
+				Instantiate(cursor.moveCursorPrefab, BoardManager.GetBoard().transform);
 				break;
 			case UnitAction.SKILL:
 				menuController.ShowSkillList(cursor.selectedSpace.occupyingUnit.GetComponent<PlayerController>());

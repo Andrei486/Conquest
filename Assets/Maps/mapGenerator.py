@@ -8,22 +8,65 @@ import json
 from json import JSONEncoder
 import random
 
+class Vector2:
+	x = 0
+	y = 0
+
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+
+class Vector3:
+	x = 0
+	y = 0
+	z = 0
+
+	def __init__(self, x, y, z):
+		self.x = x
+		self.y = y
+		self.z = z
+
+class Color:
+	r = 0
+	g = 0
+	b = 0
+	a = 0
+
+	def __init__(self, r, g, b, a):
+		self.r = r
+		self.g = g
+		self.b = b
+		self.a = a
+
 class BoardSpace:
-	boardPosition = []
-	anchorHeight = None
+	boardPosition = None
+	anchorPosition = None
 	spriteName = None
+
+	def __init__(self, i, j, z, spriteName):
+		self.boardPosition = Vector2(i, j).__dict__
+		self.anchorPosition = Vector3(i * BOARD_SIZE, z, j * BOARD_SIZE).__dict__
+		self.spriteName = spriteName
 
 class Board:
 	spaces = []
 	rows = None
 	columns = None
-	players = []
+	units = []
+	pillarColor = None
+
+	def __init__(self, rows, columns, spaces):
+		self.rows = rows
+		self.columns = columns
+		self.spaces = spaces
+
+	def setAesthetics(self, color):
+		self.pillarColor = color.__dict__
 
 class PlayerInfo:
-	shorthand = False
 	name = None
 	affiliation = None
-	boardPosition = []
+	boardPosition = None
 	attackPower = 1.0
 	defense = 1.0
 	jumpHeight = 1.0
@@ -33,40 +76,38 @@ class PlayerInfo:
 	moveRange = 3
 	maxActions = 3
 	maxBullets = 3
+	bullets = 3
+	turnEnded = False
 	skillNames = []
 
-class ShorthandPlayer:
-	shorthand = True
-	name = None
-	affiliation = None
-	boardPosition = []
-	currentHealth = 10.0
-	level = 1
+	def __init__(self, name, affiliation):
+		self.name = name
+		self.affiliation = affiliation
+	
+	def setPosition(self, space):
+		self.boardPosition = space["boardPosition"]
+
 
 SPRITE_NAME_POOL = ["grass", "grass", "tile"]
+SKILL_NAME_POOL = ["Full Moon", "Crescent Slash", "Artillery", "Sniper"]
 HEIGHT_POOL = [0.0, 0.5]
+BOARD_SIZE = 2.0
+
 def generateBoard(rows: int, columns: int) -> Board:
-	board = Board()
-	board.rows = rows
-	board.columns = columns
 	spaces = []
 	for i in range(0, columns):
 		for j in range(0, rows):
-			space = BoardSpace()
-			space.boardPosition = [i, j]
-			space.anchorHeight = random.choice(HEIGHT_POOL)
-			space.spriteName = random.choice(SPRITE_NAME_POOL)
+			anchorHeight = random.choice(HEIGHT_POOL)
+			spriteName = random.choice(SPRITE_NAME_POOL)
+			space = BoardSpace(i, j, anchorHeight, spriteName)
 			spaces.append(space.__dict__)
-	board.spaces = spaces
-	return board
+	return Board(rows, columns, spaces)
 
 def addUnitPlaceholders(board: Board, count: int) -> Board:
 	players = []
 	for i in range(count):
-		player = PlayerInfo()
-		player.name = "Unit " + str(i)
-		player.affiliation = "PLAYER"
-		player.boardPosition = board.spaces[i]["boardPosition"]
+		player = PlayerInfo("Unit " + str(i), "PLAYER")
+		player.setPosition(board.spaces[i])
 		player.maxHealth = 10.0
 		player.currentHealth = 10.0
 		player.level = 3
@@ -76,10 +117,12 @@ def addUnitPlaceholders(board: Board, count: int) -> Board:
 		player.moveRange = 3
 		player.maxActions = 3
 		player.maxBullets = 3
-		player.skillNames = ["Full Moon", "Crescent Slash", "Artillery"]
+		player.bullets = 3
+		player.turnEnded = False
+		player.skillNames = random.sample(SKILL_NAME_POOL, 3)
 		player = player.__dict__
 		players.append(player)
-	board.players = players
+	board.units = players
 	return board
 	
 def toJSON(board: Board) -> None:
@@ -88,4 +131,7 @@ def toJSON(board: Board) -> None:
 		json.dump(obj = board, fp = file, indent = 4)
 		file.close()
 
-toJSON(addUnitPlaceholders(generateBoard(30, 30), 3))
+
+board = addUnitPlaceholders(generateBoard(30, 30), 3)
+board.setAesthetics(Color(0.22745, 0.15686, 0.12549, 1.0))
+toJSON(board)

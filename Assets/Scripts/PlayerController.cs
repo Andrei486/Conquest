@@ -4,7 +4,10 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Objects;
+using Newtonsoft.Json;
+using JsonConverters;
 
+[Serializable]
 public class PlayerController : MonoBehaviour
 {
 	public const float MOVE_ANIMATION_TIME = 0.5f;
@@ -150,6 +153,13 @@ public class PlayerController : MonoBehaviour
 		this.turnEnded = true;
 		this.remainingActions = maxActions;
 		this.remainingMove = moveRange;
+	}
+
+	public PlayerInfo GetPlayerInfo(){
+		PlayerInfo info = new PlayerInfo();
+		info.playerController = this;
+		info.health = this.health;
+		return info;
 	}
 	
 	public HashSet<BoardSpace> GetAccessibleSpaces(int startX, int startY){

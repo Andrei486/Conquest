@@ -12,7 +12,6 @@ public class Cursor : MonoBehaviour
 	public bool movedTemporary = false;
 	public float moveTime = 0.03f; //it takes the cursor 0.1s to move one space
 	public bool moving = false;
-	public bool lockSelection = false;
 	public bool locked = false;
 	public bool rotationLocked = false;
 	
@@ -27,6 +26,7 @@ public class Cursor : MonoBehaviour
     void Start()
     {
 		board = BoardManager.GetBoard(); //find board object and script
+		selectedSpace = null;
 		position = new Vector2(0, 0);
 		this.gameObject.transform.position = board.boardSpaces[0, 0].anchorPosition + new Vector3 (0f, 4f, 0f);
 		if (board.boardSpaces[0, 0].occupyingUnit != null){
@@ -38,7 +38,7 @@ public class Cursor : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 		if (this.locked){
 			return;

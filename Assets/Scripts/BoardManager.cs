@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System;
 using UnityEngine;
 using Objects;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using JsonConverters;
 
 public class BoardManager : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class BoardManager : MonoBehaviour
 	[Tooltip("A list of sprites to use for tile defaults. In order, tile and grass.")]
 	public List<Sprite> defaultSprites;
 	[Tooltip("A list of colors to use for board tile pillars. In order, tile and grass.")]
-	public List<Color> tileColors;
+	public Color pillarColor;
 	GameObject board;
 	BattleMenu menu;
 	Cursor cursor;
@@ -29,14 +29,16 @@ public class BoardManager : MonoBehaviour
 	public TextAsset mapData;
 	public TextAsset skillData;
 	ControlsManager controls = ControlsManager.GetControls();
+	private List<GameObject> players;
+	private List<BoardSpace> spaces;
     // Start is called before the first frame update
     void Start()
     {
 		board = this.gameObject;
 		menu = BattleMenu.GetMenu();
-		CreateMap();
-		CreateUnits();
-		menu.cursor = Instantiate(cursorPrefab).GetComponent<Cursor>();
+		InitializeMap(spaces);
+		InitializeUnits(players);
+		menu.cursor = Instantiate(cursorPrefab, this.transform).GetComponent<Cursor>();
 		cursor = menu.cursor;
     }
 
@@ -45,6 +47,13 @@ public class BoardManager : MonoBehaviour
     {
         
     }
+
+	public void SetSpaces(List<BoardSpace> spaces){
+		this.spaces = spaces;
+	}
+	public void SetPlayers(List<GameObject> players){
+		this.players = players;
+	}
 	
 	public BoardSpace GetSpace(Vector2 position){
 		/**Returns the BoardSpace at the (x, y) coordinates specified by position.
@@ -56,13 +65,18 @@ public class BoardManager : MonoBehaviour
 		}
 	}
 	
-	void showTile(BoardSpace space){
+	void ShowTile(BoardSpace space){
 		/**Shows a board tile corresponding to a BoardSpace.*/
 		GameObject tile = Instantiate(boardTilePrefab, board.transform);
 		tile.transform.position = space.anchorPosition;
 		SpriteRenderer renderer = tile.GetComponent<SpriteRenderer>();
-		tile.transform.Find("Pillar").gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color", space.pillarColor);
-		renderer.sprite = space.sprite;
+		tile.transform.Find("Pillar").gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color", pillarColor);
+		Sprite[] sprites = Resources.LoadAll<Sprite>(string.Format("BoardSprites/boardTiles"));
+		foreach (Sprite sprite in sprites){
+			if (sprite.name == space.spriteName){
+				renderer.sprite = sprite;
+			}
+		}
 		renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
 		renderer.receiveShadows = true;
 	}
@@ -233,10 +247,26 @@ public class BoardManager : MonoBehaviour
 		/**Creates units from the JSON file of map data. Must be called after CreateMap.*/
 		JToken array = JObject.Parse(mapData.text)["players"];
 		List<GameObject> players = JsonConvert.DeserializeObject<List<GameObject>>(array.ToString(), new PlayerConverter());
-		foreach (GameObject player in players){
-			Vector2 position = player.GetComponent<PlayerController>().boardPosition;
-			boardSpaces[(int) position.x, (int) position.y].occupyingUnit = player;
-			player.transform.position = boardSpaces[(int) position.x, (int) position.y].anchorPosition;
+		InitializeUnits(players);
+	}
+
+	public void InitializeUnits(List<GameObject> units){
+		/**Places the specified units at their respective positions.*/
+		foreach (GameObject unit in units){
+			PlayerController pc = unit.GetComponent<PlayerController>();
+			Vector2 position = pc.boardPosition;
+			GetSpace(position).occupyingUnit = unit;
+			unit.transform.position = GetSpace(position).anchorPosition;
+		}
+	}
+
+	public void InitializeMap(List<BoardSpace> spaces){
+		boardSpaces = new BoardSpace[columns, rows];
+		foreach (BoardSpace space in spaces){
+			int i = (int) space.boardPosition.x;
+			int j = (int) space.boardPosition.y;
+			boardSpaces[i, j] = space;
+			ShowTile(boardSpaces[i, j]);
 		}
 	}
 	
@@ -248,7 +278,7 @@ public class BoardManager : MonoBehaviour
 			int i = (int) space.boardPosition.x;
 			int j = (int) space.boardPosition.y;
 			boardSpaces[i, j] = space;
-			showTile(boardSpaces[i, j]);
+			ShowTile(boardSpaces[i, j]);
 		}
 	}
 	
@@ -256,117 +286,6 @@ public class BoardManager : MonoBehaviour
 		/**Clears all visualizations for skills, movement, etc.*/
 		foreach (GameObject vis in GameObject.FindGameObjectsWithTag("Visualization")){
 			Destroy(vis);
-		}
-	}
-	
-	internal class BoardConverter : JsonConverter{
-		/**A class which converts JSON representations of BoardSpaces to BoardSpace objects.*/
-		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer){
-			throw new System.NotImplementedException(); //can't use to serialize json
-		}
-		
-		public override bool CanConvert(Type type){
-			if (type == typeof(BoardSpace) || type == typeof(List<BoardSpace>)){
-				return true;
-			} else {
-				return false;
-			}
-		}
-		
-		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer){
-			BoardManager board = BoardManager.GetBoard();
-			if (objectType == typeof(BoardSpace)){ //if it is a single space
-				JObject item = JObject.Load(reader);
-				BoardSpace space = new BoardSpace();
-				space.boardPosition = new Vector2(item["boardPosition"][0].Value<int>(), item["boardPosition"][1].Value<int>());
-				space.anchorPosition = new Vector3((float) space.boardPosition.x * BoardSpace.BOARD_SIZE,
-													item["anchorHeight"].Value<float>(),
-													(float) space.boardPosition.y * BoardSpace.BOARD_SIZE);
-													
-				List<Sprite> defaultSprites = board.defaultSprites;
-				List<Color> tileColors = board.tileColors;
-				switch (item["spriteName"].Value<string>()){
-					case "tile":
-						space.sprite = defaultSprites[0];
-						space.pillarColor = tileColors[0];
-						break;
-					case "grass":
-						space.sprite = defaultSprites[1];
-						space.pillarColor = tileColors[1];
-						break;
-					default:
-						space.sprite = defaultSprites[1]; //make an actual default sprite?
-						space.pillarColor = tileColors[1];
-						break;
-				}
-				return space;
-			} else { //if it is the entire map
-				JObject boardInfo = JObject.Load(reader);
-				//set board size
-				JToken rows = boardInfo["rows"];
-				JToken columns = boardInfo["columns"];
-				board.rows = rows.Value<int>();
-				board.columns = columns.Value<int>();
-				//get list of spaces, arrange them later
-				JArray array = (JArray) boardInfo["spaces"];
-				List<BoardSpace> spaces = new List<BoardSpace>();
-				foreach (JToken token in array){
-					JsonTextReader newReader = new JsonTextReader(new StringReader(token.ToString()));
-					spaces.Add(this.ReadJson(newReader, typeof(BoardSpace), existingValue, serializer) as BoardSpace); 
-				}
-				return spaces;
-			}
-		}
-	}
-	internal class PlayerConverter : JsonConverter{
-		/**A class which converts JSON representations of players to player GameObjects.*/
-		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer){
-			throw new System.NotImplementedException(); //can't use to serialize json
-		}
-		
-		public override bool CanConvert(Type type){
-			if (type == typeof(GameObject) || type == typeof(List<GameObject>)){
-				return true;
-			} else {
-				return false;
-			}
-		}
-		
-		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer){
-			BoardManager board = BoardManager.GetBoard();
-			if (objectType == typeof(GameObject)){ //if it is a single player
-				JObject playerInfo = JObject.Load(reader);
-				GameObject player = Instantiate(board.pawn, board.transform);
-				PlayerController pc = player.GetComponent<PlayerController>();
-				Health h = player.GetComponent<Health>();
-				pc.name = playerInfo["name"].Value<string>();
-				pc.affiliation = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), playerInfo["affiliation"].Value<string>());
-				h.attackPower = playerInfo["attackPower"].Value<float>();
-				h.defense = playerInfo["defense"].Value<float>();
-				h.level = playerInfo["level"].Value<int>();
-				h.maxHealth = playerInfo["maxHealth"].Value<float>();
-				h.currentHealth = playerInfo["currentHealth"].Value<float>();
-				pc.jumpHeight = playerInfo["jumpHeight"].Value<float>();
-				pc.moveRange = playerInfo["moveRange"].Value<int>();
-				pc.remainingMove = pc.moveRange;
-				pc.maxActions = playerInfo["moveRange"].Value<int>();
-				pc.remainingActions = pc.maxActions;
-				pc.boardPosition = new Vector2(playerInfo["boardPosition"][0].Value<int>(), playerInfo["boardPosition"][1].Value<int>());
-				pc.maxBullets = playerInfo["maxBullets"].Value<int>();
-				pc.bullets = pc.maxBullets;
-				foreach (JToken skillName in playerInfo["skillNames"]){
-					pc.skillList.Add(Skill.GetSkillByName(skillName.ToString(), board.skillData));
-				}
-				return player;
-			} else {
-				JArray array = JArray.Load(reader);
-				List<GameObject> players = new List<GameObject>();
-				foreach (JToken token in array){
-					JsonTextReader newReader = new JsonTextReader(new StringReader(token.ToString()));
-					players.Add(this.ReadJson(newReader, typeof(GameObject), existingValue, serializer) as GameObject); 
-				}
-				return players;
-			}
 		}
 	}
 }

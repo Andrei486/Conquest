@@ -62,15 +62,13 @@
      <Compile Include="Assets\Scripts\Cursor.cs" />
      <Compile Include="Assets\Scripts\CursorSelector.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\JsonConverters.cs" />
      <Compile Include="Assets\Scripts\MenuCursor.cs" />
      <Compile Include="Assets\Scripts\MoveCursor.cs" />
      <Compile Include="Assets\Scripts\ObjectClasses.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SaveManager.cs" />
      <Compile Include="Assets\Scripts\SkillMenuCursor.cs" />
-     <None Include="Assets\Miscellaneous\saveFile.txt" />
-     <None Include="Assets\Miscellaneous\baseUnits.txt" />
-     <None Include="Assets\Miscellaneous\backupFile.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Users/Andrei/Conquest/Conquest/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

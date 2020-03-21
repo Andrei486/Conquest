@@ -1,9 +1,16 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BattleLog
+    - BattleMenu
     - BoardManager
-    - Menu
+    - Camera
+    - Cursor
+    - CursorSelector
+    - Health
+    - MoveCursor
     - PlayerController
+    - SaveManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -23,14 +30,20 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/battlefield.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
@@ -46,6 +59,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -57,17 +72,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9836}
     - Class: 114
+      Script: {instanceID: 9838}
+    - Class: 114
       Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 10280}
+      Script: {instanceID: 9978}
     - Class: 114
-      Script: {instanceID: 10324}
+      Script: {instanceID: 10078}
     - Class: 114
-      Script: {instanceID: 10816}
+      Script: {instanceID: 10218}
     - Class: 114
-      Script: {instanceID: 11132}
+      Script: {instanceID: 10258}
     - Class: 114
-      Script: {instanceID: 11504}
+      Script: {instanceID: 10266}
+    - Class: 114
+      Script: {instanceID: 10284}
+    - Class: 114
+      Script: {instanceID: 10328}
+    - Class: 114
+      Script: {instanceID: 10412}
+    - Class: 114
+      Script: {instanceID: 10452}
+    - Class: 114
+      Script: {instanceID: 10466}
+    - Class: 114
+      Script: {instanceID: 10546}
+    - Class: 114
+      Script: {instanceID: 10822}
+    - Class: 114
+      Script: {instanceID: 11138}
+    - Class: 114
+      Script: {instanceID: 11510}
+    - Class: 114
+      Script: {instanceID: 11584}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -129,7 +166,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 8dc0a4d6e0820f40f6ffbd9de2441b85
+      Hash: 69a725d6127328dd9dcf5b855741e373
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -243,7 +280,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 0093a47e4e03170af9719bee3f14bc3b
+      Hash: e78be68d0ee823549cbd26699e3959c7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkillMenuCursor
@@ -261,10 +298,22 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 89d0247a959342ef8f7c24315b11a5e4
+      Hash: 2f479f481ef2d06c04215b73fc568357
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SaveManager
+  - hash:
+      serializedVersion: 2
+      Hash: e27b1351bc6410731db81d254ad88b60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Health
+  - hash:
+      serializedVersion: 2
+      Hash: bd44ee1b299a4767c63030f4ee8ea0ab
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveCursor
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -291,10 +340,10 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: bef5aa08dd670ed856f3b5d3cba6cca5
+      Hash: 3d543280cc115a4ff07bc3c074f65378
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Menu
+    className: BattleMenu
   - hash:
       serializedVersion: 2
       Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
@@ -303,7 +352,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: db1624a163d5a0019deb55cb869daaa2
+      Hash: abc9113ffd807ccb64672b023a5aab45
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Camera
@@ -315,7 +364,7 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: 916988bc0c526b4d3fe445cf4028359b
+      Hash: cea8a5dd42b3eecd7533d440ea48e139
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cursor
@@ -339,7 +388,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 9434bb6e0042010c6868e58cdc31a84e
+      Hash: febd20967b415eb63ff73484ee0a6bcf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CursorSelector
@@ -375,7 +424,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 9f225caf3fc050f46a55f8c2100cd75e
+      Hash: 476f2c9f040e4bd1a4e514e1369c489c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BoardManager
@@ -465,7 +514,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 86024296ee36b02f180c9f43eacb8949
+      Hash: 4bc9498082eab2b454899c430439ddae
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ActionMenuCursor
@@ -559,6 +608,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 4ce15e99c635d2567873d27549d1f16f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BattleLog
   platform: 19
   scenePathNames:
   - Assets/Scenes/battlefield.unity

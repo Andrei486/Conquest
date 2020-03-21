@@ -5,18 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using JsonConverters;
 
 namespace Objects
 {
 
     /**Represents a single space on the game board.*/
+	[Serializable]
     public class BoardSpace {
-		
+		[JsonConverter(typeof(VectorConverter))]
 		public Vector2 boardPosition;
+		[JsonConverter(typeof(VectorConverter))]
 		public Vector3 anchorPosition;
+		[JsonIgnore]
 		public GameObject occupyingUnit;
-		public Sprite sprite;
-		public Color pillarColor;
+		public string spriteName;
 		public int moveCost = 1;
 		public const float BOARD_SIZE = 2.0f;
 		public bool impassable = false;
@@ -26,12 +29,15 @@ namespace Objects
 		}
 	}
 	
+	[Serializable]
 	public class Attack{
 		
 		public float basePower;
 		public float accuracy;
 		//relative to user, in board space, when user faces upwards.
+		[JsonConverter(typeof(VectorConverter))]
 		public Vector2 targetPosition = new Vector2(0, 0);
+		[JsonConverter(typeof(VectorConverter))]
 		public Vector2 knockbackPosition = new Vector2(0, 0);
 
 		public float CalculateDamage(Health user, Health target){
@@ -90,6 +96,13 @@ namespace Objects
 		public SkillType type;
 		public Sprite emblemSprite;
 	}
+
+	[Serializable]
+	public struct PlayerInfo{
+		/**Information used to recreate a player while saving/loading.*/
+		public PlayerController playerController;
+		public Health health;
+	}
 	
 	[Serializable]
 	public enum UnitAction{
@@ -113,6 +126,7 @@ namespace Objects
 		public Sprite emblemSprite;
 	}
 	
+	[Serializable]
 	public class Skill{
 		
 		public string name;
@@ -123,6 +137,7 @@ namespace Objects
 		public int bulletCost = 0;
 		public int moveCost = 0;
 		//relative to user, in board space, when user faces upwards.
+		[JsonConverter(typeof(VectorConverter))]
 		public Vector2 movePosition = new Vector2(0, 0); 
 		
 		public void VisualizeTarget(BoardSpace space, GameObject player, Quaternion unitRotation){

@@ -9,17 +9,19 @@ public class MoveCursor : Cursor
 	public BattleMenu menu;
 	BoardSpace startSpace;
 	PlayerController pc;
+	bool firstFrame = true;
     // Start is called before the first frame update
     void Start()
     {
 		mainCursor = GameObject.FindGameObjectsWithTag("Cursor")[0].GetComponent<Cursor>();
 		mainCursor.locked = true;
 		mainCursor.MakeVisible(false);
-		board = mainCursor.board;
+		this.locked = false;
+		board = BoardManager.GetBoard();
 		position = mainCursor.position;
 		startSpace = board.GetSpace(position);
 		pc = startSpace.occupyingUnit.GetComponent<PlayerController>();
-		pc.ShowAccessibleSpaces();
+		// pc.ShowAccessibleSpaces();
 		this.gameObject.transform.position = startSpace.anchorPosition + new Vector3 (0f, 5f, 0f);
 		this.camera = mainCursor.camera;
 		selector = mainCursor.selector;
@@ -28,8 +30,12 @@ public class MoveCursor : Cursor
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+		if (this.firstFrame){
+			this.firstFrame = false;
+			return;
+		}
         if (this.locked){
 			return;
 		}
@@ -60,6 +66,9 @@ public class MoveCursor : Cursor
     }
 	
 	public override void Select(BoardSpace space){
+		if (firstFrame){
+			return;
+		}
 		if (!pc.GetAccessibleSpaces((int) pc.boardPosition.x, (int) pc.boardPosition.y).Contains(space)){
 			return; //can't move to an unaccessible space
 		}
