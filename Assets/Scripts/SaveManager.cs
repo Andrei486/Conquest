@@ -7,7 +7,6 @@ using Objects;
 using JsonConverters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Threading;
 public class SaveManager : MonoBehaviour
 {
     public bool isBattleSaved = false;
@@ -17,10 +16,10 @@ public class SaveManager : MonoBehaviour
     public static string battleSave;
     public static string backupFile;
     public static string baseUnits;
-    ControlsManager controls = ControlsManager.GetControls();
+    ControlsManager controls;
     void Start()
     {
-        
+        controls = ControlsManager.GetControls();
         battleSave = Application.persistentDataPath + "/SaveData/saveFile.txt";
         backupFile = Application.persistentDataPath + "/SaveData/backupFile.txt";
         baseUnits = Application.persistentDataPath + "/SaveData/baseUnits.txt";
@@ -142,6 +141,6 @@ public class SaveManager : MonoBehaviour
     }
 
     public static SaveManager GetSaveManager(){
-        return GameObject.FindWithTag("SaveManager").GetComponent<SaveManager>();
+        return GameObject.FindWithTag("Global").GetComponent<SaveManager>();
     }
 }

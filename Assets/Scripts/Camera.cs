@@ -9,11 +9,12 @@ public class Camera : MonoBehaviour
 	public float timeToRotate = 0.2f;
 	public bool rotating = false;
 	public float zAngle = 60.0f;
-	ControlsManager controls = ControlsManager.GetControls();
+	ControlsManager controls;
     // Start is called before the first frame update
     void Start()
     {
 		cursor = GameObject.FindGameObjectsWithTag("Cursor")[0].GetComponent<Cursor>();
+		controls = ControlsManager.GetControls();
     }
 
     // Update is called once per frame

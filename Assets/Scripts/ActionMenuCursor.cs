@@ -11,6 +11,7 @@ public class ActionMenuCursor : MenuCursor
     protected override void Start()
     {
         base.Start();
+		menuController = BattleMenu.GetMenu();
     }
 
     // Update is called once per frame

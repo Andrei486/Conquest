@@ -17,6 +17,7 @@ public class BoardManager : MonoBehaviour
 	GameObject board;
 	BattleMenu menu;
 	Cursor cursor;
+	public Cursor moveCursor;
 	public UnitAffiliation phase;
 	public BoardSpace[,] boardSpaces;
 	public GameObject cursorPrefab;
@@ -28,7 +29,6 @@ public class BoardManager : MonoBehaviour
 	public GameObject skillHitPrefab;
 	public TextAsset mapData;
 	public TextAsset skillData;
-	ControlsManager controls = ControlsManager.GetControls();
 	private List<GameObject> players;
 	private List<BoardSpace> spaces;
     // Start is called before the first frame update
@@ -40,6 +40,7 @@ public class BoardManager : MonoBehaviour
 		InitializeUnits(players);
 		menu.cursor = Instantiate(cursorPrefab, this.transform).GetComponent<Cursor>();
 		cursor = menu.cursor;
+		ControlsManager.GetControls().board = this.gameObject;
     }
 
     // Update is called once per frame
@@ -287,5 +288,17 @@ public class BoardManager : MonoBehaviour
 		foreach (GameObject vis in GameObject.FindGameObjectsWithTag("Visualization")){
 			Destroy(vis);
 		}
+	}
+
+	public static void SetLock(bool enabled){
+		BoardManager board = BoardManager.GetBoard();
+		board.cursor.locked = enabled;
+		board.cursor.rotationLocked = enabled;
+		if (board.moveCursor != null){
+			board.moveCursor.locked = enabled;
+			board.moveCursor.rotationLocked = enabled;
+		}
+		board.menu.actionCursor.GetComponent<MenuCursor>().locked = enabled;
+		board.menu.skillCursor.GetComponent<MenuCursor>().locked = enabled;
 	}
 }

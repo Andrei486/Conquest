@@ -21,13 +21,14 @@ public class BattleMenu : MonoBehaviour
 	Quaternion skillRotation;
 	public Cursor cursor;
 	BoardManager board;
-	ControlsManager controls = ControlsManager.GetControls();
+	ControlsManager controls;
 	public GameObject skillCursor;
 	public GameObject actionCursor;
     // Start is called before the first frame update
     void Start()
     {
 		board = BoardManager.GetBoard();
+		controls = ControlsManager.GetControls();
 		skillStackHeight = skillItemPrefab.GetComponent<RectTransform>().rect.height * skillItemPrefab.transform.localScale.y * 1.1f;
 		actionStackHeight = actionItemPrefab.GetComponent<RectTransform>().rect.height * actionItemPrefab.transform.localScale.y * 1.1f;
 		attributeStackHeight = attributePrefab.GetComponent<RectTransform>().rect.height * attributePrefab.transform.localScale.y * 1.1f;

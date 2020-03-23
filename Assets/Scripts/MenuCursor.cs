@@ -10,20 +10,24 @@ public class MenuCursor : MonoBehaviour
 	protected Cursor cursor;
 	public GameObject currentItem;
 	public int index;
-	protected ControlsManager controls = ControlsManager.GetControls();
+	public bool locked = false;
+	protected ControlsManager controls;
 	protected float infoMoveTime = 0.1f;
 	Vector3 offset;
     // Start is called before the first frame update
     virtual protected void Start()
     {
+		controls = ControlsManager.GetControls();
         this.gameObject.GetComponent<Image>().enabled = false;
-		menuController = BattleMenu.GetMenu();
 		cursor = GameObject.FindGameObjectsWithTag("Cursor")[0].GetComponent<Cursor>();
     }
 
     // Update is called once per frame
     virtual protected void Update()
     {
+		if (this.locked){
+			return;
+		}
         if (this.menu != null){
 			if (Input.GetKeyDown(controls.GetCommand(Command.TOGGLE_INFO))){
 				menuController.showInfo = !menuController.showInfo;
@@ -33,6 +37,7 @@ public class MenuCursor : MonoBehaviour
     }
 	
 	virtual public void LinkMenu(GameObject menu){
+		this.locked = false;
 		this.menu = menu;
 		ResetItem();
 		offset = new Vector3(this.gameObject.GetComponent<RectTransform>().rect.width * this.gameObject.transform.localScale.x * -1.1f, 0f, 0f);

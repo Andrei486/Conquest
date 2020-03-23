@@ -18,6 +18,7 @@ public class MoveCursor : Cursor
 		mainCursor.MakeVisible(false);
 		this.locked = false;
 		board = BoardManager.GetBoard();
+		board.moveCursor = this;
 		position = mainCursor.position;
 		startSpace = board.GetSpace(position);
 		pc = startSpace.occupyingUnit.GetComponent<PlayerController>();

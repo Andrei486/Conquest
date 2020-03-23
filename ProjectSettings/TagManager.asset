@@ -9,7 +9,7 @@ TagManager:
   - Visualization
   - MenuController
   - Log
-  - SaveManager
+  - Global
   layers:
   - Default
   - TransparentFX

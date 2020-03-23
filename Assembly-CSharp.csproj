@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\BoardManager.cs" />
      <Compile Include="Assets\Scripts\Camera.cs" />
      <Compile Include="Assets\Scripts\ControlsManager.cs" />
+     <Compile Include="Assets\Scripts\ControlsMenuCursor.cs" />
      <Compile Include="Assets\Scripts\Cursor.cs" />
      <Compile Include="Assets\Scripts\CursorSelector.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />

@@ -21,11 +21,12 @@ public class Cursor : MonoBehaviour
 	
 	public GameObject cursorSelectPrefab;
 	public GameObject moveCursorPrefab;
-	protected ControlsManager controls = ControlsManager.GetControls();
+	protected ControlsManager controls;
     // Start is called before the first frame update
     void Start()
     {
 		board = BoardManager.GetBoard(); //find board object and script
+		controls = ControlsManager.GetControls();
 		selectedSpace = null;
 		position = new Vector2(0, 0);
 		this.gameObject.transform.position = board.boardSpaces[0, 0].anchorPosition + new Vector3 (0f, 4f, 0f);

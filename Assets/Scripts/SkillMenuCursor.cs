@@ -13,6 +13,7 @@ public class SkillMenuCursor : MenuCursor
     protected override void Start()
     {
 		base.Start();
+		menuController = BattleMenu.GetMenu();
         camera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
 		board = BoardManager.GetBoard();
 		this.skillRotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
