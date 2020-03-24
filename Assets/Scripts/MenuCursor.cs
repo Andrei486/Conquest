@@ -37,7 +37,6 @@ public class MenuCursor : MonoBehaviour
     }
 	
 	virtual public void LinkMenu(GameObject menu){
-		this.locked = false;
 		this.menu = menu;
 		ResetItem();
 		offset = new Vector3(this.gameObject.GetComponent<RectTransform>().rect.width * this.gameObject.transform.localScale.x * -1.1f, 0f, 0f);

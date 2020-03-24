@@ -13,6 +13,7 @@ public class ControlsManager: MonoBehaviour
     public GameObject menuItem;
     public GameObject board;
     public bool showingControls = false;
+    public bool showingPopup = false;
     public const int COLUMN_HEIGHT = 10;
     float menuItemStackHeight;
     float menuItemRowWidth;
@@ -21,7 +22,7 @@ public class ControlsManager: MonoBehaviour
     public const int ARROWS = 1;
     public GameObject cursorPrefab;
     GameObject menuCursor;
-    Dictionary<Command, KeyCode> keyMappings;
+    public Dictionary<Command, KeyCode> keyMappings;
     List<KeyCode> validCodes;
 
     void Start(){
@@ -34,37 +35,36 @@ public class ControlsManager: MonoBehaviour
         menuCursor = Instantiate(cursorPrefab, this.transform);
         menuCursor.AddComponent(typeof(ControlsMenuCursor));
 
-        //set up key mappings
-        keyMappings = new Dictionary<Command, KeyCode>();
-        keyMappings.Add(Command.CONFIRM, KeyCode.Space);
-        keyMappings.Add(Command.BACK, KeyCode.Backspace);
-        keyMappings.Add(Command.MENU, KeyCode.X);
-        keyMappings.Add(Command.QUICKSAVE, KeyCode.Equals);
-        keyMappings.Add(Command.QUICKLOAD, KeyCode.Minus);
-        keyMappings.Add(Command.TOGGLE_INFO, KeyCode.RightControl);
-        this.SetCameraControls(ControlsManager.WASD);
-        this.SetMoveControls(ControlsManager.ARROWS);
+        //key mappings are loaded with the battlefield, but otherwise reset them
+        ResetControls();
     }
 
     void Update(){
-        if (Input.GetKeyDown(GetCommand(Command.MENU))){
-            if (!showingControls){
-                ShowControlsMenu();
+        if (!showingPopup){
+            if (Input.GetKeyDown(GetCommand(Command.MENU))){
+                if (!showingControls){
+                    ShowControlsMenu();
+                }
+                else {
+                    HideControlsMenu();
+                }
             }
-            else {
+            if (Input.GetKeyDown(GetCommand(Command.BACK))){
                 HideControlsMenu();
             }
         }
-        if (Input.GetKeyDown(GetCommand(Command.BACK))){
-            HideControlsMenu();
-        }
-        if (showingControls && !menuCursor.GetComponent<MenuCursor>().locked){
+        
+        if (showingControls && !showingPopup){
             if (Input.GetKeyDown(GetCommand(Command.MOVE_DOWN))){
                 menuCursor.GetComponent<MenuCursor>().MoveDown();
             }
             if (Input.GetKeyDown(GetCommand(Command.MOVE_UP))){
                 menuCursor.GetComponent<MenuCursor>().MoveUp();
             }
+        }
+
+        if (!showingControls && Input.GetKeyDown(GetCommand(Command.RESET_CONTROLS))){
+            ResetControls();
         }
     }
 
@@ -96,6 +96,19 @@ public class ControlsManager: MonoBehaviour
             keyMappings.Add(Command.MOVE_LEFT, KeyCode.LeftArrow);
             keyMappings.Add(Command.MOVE_RIGHT, KeyCode.RightArrow);
         }
+    }
+
+    public void ResetControls(){
+        keyMappings = new Dictionary<Command, KeyCode>();
+        keyMappings.Add(Command.CONFIRM, KeyCode.Space);
+        keyMappings.Add(Command.BACK, KeyCode.Backspace);
+        keyMappings.Add(Command.MENU, KeyCode.X);
+        keyMappings.Add(Command.QUICKSAVE, KeyCode.Equals);
+        keyMappings.Add(Command.QUICKLOAD, KeyCode.Minus);
+        keyMappings.Add(Command.TOGGLE_INFO, KeyCode.RightControl);
+        keyMappings.Add(Command.RESET_CONTROLS, KeyCode.R);
+        this.SetCameraControls(ControlsManager.WASD);
+        this.SetMoveControls(ControlsManager.ARROWS);
     }
 
     public void SetCommand(Command command, KeyCode newKey){
@@ -151,10 +164,12 @@ public class ControlsManager: MonoBehaviour
             Destroy(item.gameObject);
         }
         showingControls = false;
+        SaveManager.GetSaveManager().SaveControls(); //save the controls whenever the menu is closed.
     }
 
     public IEnumerator SetCommandPopup(Command command){
         menuCursor.GetComponent<MenuCursor>().locked = true;
+        this.showingPopup = true;
         GameObject popup = Instantiate(menuItem, this.transform);
         popup.transform.Find("Command Name").GetComponent<Text>().text = "Enter new key";
         popup.transform.Find("Current Keybind").GetComponent<Text>().text = "";
@@ -169,7 +184,8 @@ public class ControlsManager: MonoBehaviour
             }
         }
         Destroy(popup);
-        menuCursor.SetActive(true);
+        this.showingPopup = false;
+        menuCursor.GetComponent<MenuCursor>().locked = false;
         //update the menu
         HideControlsMenu();
         ShowControlsMenu();
@@ -206,6 +222,7 @@ public enum Command{
     [Description("Open Menu")] MENU,
     [Description("Back/Cancel")] BACK,
     [Description("Show/Hide Details")] TOGGLE_INFO,
+    [Description("Reset Controls")] RESET_CONTROLS,
     [Description("Quicksave")] QUICKSAVE, [Description("Quickload")] QUICKLOAD,
     [Description("Cam. Tilt Up")]CAMERA_UP, [Description("Cam. Tilt Down")]CAMERA_DOWN,
     [Description("Cam. Turn Left")] CAMERA_LEFT, [Description("Cam. Turn Right")] CAMERA_RIGHT,

@@ -13,17 +13,19 @@ public class SaveManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject boardPrefab;
     //file paths
-    public static string battleSave;
-    public static string backupFile;
-    public static string baseUnits;
+    public string battleSave;
+    public string backupFile;
+    public string controlsData;
+    public TextAsset baseUnits;
     ControlsManager controls;
     void Start()
     {
         controls = ControlsManager.GetControls();
         battleSave = Application.persistentDataPath + "/SaveData/saveFile.txt";
         backupFile = Application.persistentDataPath + "/SaveData/backupFile.txt";
-        baseUnits = Application.persistentDataPath + "/SaveData/baseUnits.txt";
+        controlsData = Application.persistentDataPath + "/SaveData/controlsData.txt";
         Debug.Log(Application.persistentDataPath);
+        LoadControls();
         StartCoroutine(StartNewBattle("mapData"));
     }
 
@@ -91,7 +93,7 @@ public class SaveManager : MonoBehaviour
         
         //back up the save
         BackupSave();
-        
+        SaveControls();
 
         string json = JsonConvert.SerializeObject(board.gameObject, new BoardConverter());
 
@@ -137,7 +139,18 @@ public class SaveManager : MonoBehaviour
 
     public void CreateDefaultFile(){
         /**Creates a basic save file.*/
-        File.Copy(baseUnits, battleSave);
+        File.WriteAllText(battleSave, baseUnits.text);
+    }
+
+    public void LoadControls(){
+        ControlsManager controls = ControlsManager.GetControls();
+        string json = File.ReadAllText(controlsData);
+        controls.keyMappings = JsonConvert.DeserializeObject<Dictionary<Command, KeyCode>>(json);
+    }
+    public void SaveControls(){
+        ControlsManager controls = ControlsManager.GetControls();
+        string json = JsonConvert.SerializeObject(controls.keyMappings);
+        File.WriteAllText(controlsData, json);
     }
 
     public static SaveManager GetSaveManager(){

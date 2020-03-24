@@ -14,7 +14,7 @@ public class ControlsMenuCursor : MenuCursor
     // Update is called once per frame
     protected override void Update()
     {
-        if (locked){
+        if (locked || !menuController.showingControls){
             return;
         }
         if (Input.GetKeyDown(menuController.GetCommand(Command.CONFIRM))){

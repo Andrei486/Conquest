@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SaveManager.cs" />
      <Compile Include="Assets\Scripts\SkillMenuCursor.cs" />
+     <None Include="Assets\Miscellaneous\baseUnits.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Users/Andrei/Conquest/Conquest/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
