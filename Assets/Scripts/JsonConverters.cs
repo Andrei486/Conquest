@@ -99,15 +99,13 @@ namespace JsonConverters{
 					units.Add(JObject.Parse(JsonConvert.SerializeObject(space.occupyingUnit, new PlayerConverter())));
 				}
             }
-			//global aesthetics
-			JObject pillarColor = JObject.Parse(JsonConvert.SerializeObject(board.pillarColor, new VectorConverter()));
             
 			JObject toWrite = new JObject(
 				new JProperty("rows", board.rows),
 				new JProperty("columns", board.columns),
 				new JProperty("spaces", spaces),
 				new JProperty("units", units),
-				new JProperty("pillarColor", pillarColor)
+				new JProperty("modelName", board.modelName)
 			);
 
 			toWrite.WriteTo(writer);
@@ -130,9 +128,7 @@ namespace JsonConverters{
 			//set dimensions
 			board.columns = boardInfo["columns"].Value<int>();
 			board.rows = boardInfo["rows"].Value<int>();
-
-			//set global aesthetics
-			board.pillarColor = JsonConvert.DeserializeObject<Color>(boardInfo["pillarColor"].ToString(), new VectorConverter());
+			board.modelName = boardInfo["modelName"].Value<string>();
 
 			//initialize and show the map
 			List<BoardSpace> spaces = new List<BoardSpace>();

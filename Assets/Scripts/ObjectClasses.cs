@@ -17,6 +17,8 @@ namespace Objects
 		public Vector2 boardPosition;
 		[JsonConverter(typeof(VectorConverter))]
 		public Vector3 anchorPosition;
+		[JsonProperty(ItemConverterType = typeof(VectorConverter))]
+		public Vector3[] corners;
 		[JsonIgnore]
 		public GameObject occupyingUnit;
 		public string spriteName;
@@ -26,6 +28,18 @@ namespace Objects
 		public bool voidSpace = false;
 		public float GetHeight(){
 			return this.anchorPosition.y;
+		}
+
+		public void SetHighlightMaterial(BoardManager board, HighlightType type){
+			Material material = null;
+			foreach (HighlightColor hcolor in board.highlightColors){
+				if (hcolor.htype == type){
+					material = hcolor.material;
+					break;
+				}
+			}
+			GameObject tile = board.GetTile(this);
+			tile.GetComponent<MeshRenderer>().material.color = material.color;
 		}
 	}
 	
@@ -55,7 +69,7 @@ namespace Objects
 			float effectiveAccuracy = accuracy;
 			return Math.Min(100.0f, effectiveAccuracy); //accuracy cannot be higher than 100%
 		}
-		public void VisualizeTarget(GameObject parent, Health user, BoardSpace target){
+		public void VisualizeTarget(Transform parent, Health user, BoardSpace target){
 			/**Creates a visualization for an attack targeting a unit, as a child of the parent GameObject.*/
 			BoardManager board = BoardManager.GetBoard();
 			GameObject targetUnit = target.occupyingUnit;
@@ -66,10 +80,11 @@ namespace Objects
 			float accuracy = CalculateHitChance(user, targetHealth);
 			bool lethal = (damage >= targetHealth.currentHealth) && (accuracy > 0); //if attack would reduce HP to zero and can hit, it may be lethal
 
-			GameObject vis = UnityEngine.Object.Instantiate(board.skillHitPrefab, parent.transform);
+			GameObject vis = UnityEngine.Object.Instantiate(board.skillHitPrefab, parent);
 			Vector3 topOfUnit = Vector3.up * renderer.bounds.extents.y  + renderer.GetComponent<MeshRenderer>().bounds.center;
 			UnityEngine.Camera mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<UnityEngine.Camera>();
 			vis.transform.position = mainCamera.WorldToScreenPoint(topOfUnit);
+			vis.tag = "Visualization";
 			
 			Text damageText = vis.transform.Find("Damage").GetComponent<Text>();
 			Text hitText = vis.transform.Find("Hit Chance").GetComponent<Text>();
@@ -88,6 +103,19 @@ namespace Objects
 		MELEE,
 		RANGED,
 		SUPPORT
+	}
+
+	[Serializable]
+	public enum HighlightType{
+		MOVE,
+		ATTACK,
+		KNOCKBACK
+	}
+
+	[Serializable]
+	public struct HighlightColor{
+		public HighlightType htype;
+		public Material material;
 	}
 	
 	[Serializable]
@@ -148,29 +176,22 @@ namespace Objects
 			PlayerController pc = player.GetComponent<PlayerController>();
 			Health h = player.GetComponent<Health>();
 			
-			GameObject skillVisual = new GameObject(); //empty object to child tiles to, and destroy later
-			skillVisual.tag = "Visualization";
-			skillVisual.name = "Skill Visualization";
-			GameObject hitVisual = new GameObject("Hit Visualization"); //empty object childed to Canvas for hit visuals
-			hitVisual.transform.parent = GameObject.Find("Canvas").transform;
-			hitVisual.tag = "Visualization";
-			
 			BoardManager board = BoardManager.GetBoard();
-			GameObject skillTile = board.skillTilePrefab;
-			GameObject tile;
+			GameObject hitVisual = new GameObject();
+			hitVisual.transform.parent = GameObject.FindWithTag("MainCanvas").transform;
 			Vector2 newPosition;
+			HashSet<BoardSpace> affectedSpaces = new HashSet<BoardSpace>();
 			foreach (Attack attack in attacks){
 				newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
 				
 				if (!board.IsWithinBounds(newPosition)){
 					continue;
 				}
-				tile = UnityEngine.Object.Instantiate(skillTile, skillVisual.transform);	
-				tile.transform.position = board.GetSpace(newPosition).anchorPosition + new Vector3(0, 0.1f, 0);
-				tile.GetComponent<MeshRenderer>().materials = new Material[] {tile.GetComponent<MeshRenderer>().materials[2]};
+				affectedSpaces.Add(board.GetSpace(newPosition));
+				board.GetSpace(newPosition).SetHighlightMaterial(board, HighlightType.ATTACK);
 				
 				if (board.GetSpace(newPosition).occupyingUnit != null){
-					attack.VisualizeTarget(hitVisual, h, board.GetSpace(newPosition));
+					attack.VisualizeTarget(hitVisual.transform, h, board.GetSpace(newPosition));
 				}
 				
 				if (attack.knockbackPosition != new Vector2(0, 0)){
@@ -178,18 +199,17 @@ namespace Objects
 					if (!board.IsWithinBounds(newPosition)){
 						continue;
 					}
-					tile = UnityEngine.Object.Instantiate(skillTile, skillVisual.transform);
-					tile.transform.position = board.GetSpace(newPosition).anchorPosition + new Vector3(0, 0.1f, 0);
-					tile.GetComponent<MeshRenderer>().materials = new Material[] {tile.GetComponent<MeshRenderer>().materials[1]};
+					affectedSpaces.Add(board.GetSpace(newPosition));
+					board.GetSpace(newPosition).SetHighlightMaterial(board, HighlightType.KNOCKBACK);
 				}
 			}
 			
 			if(this.movePosition != new Vector2(0,0)){
-				tile = UnityEngine.Object.Instantiate(skillTile, skillVisual.transform);
 				newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(movePosition.x, movePosition.y, 0));
-				tile.transform.position = board.GetSpace(newPosition).anchorPosition + new Vector3(0, 0.1f, 0);
-				tile.GetComponent<MeshRenderer>().materials = new Material[] {tile.GetComponent<MeshRenderer>().materials[0]};
+				affectedSpaces.Add(board.GetSpace(newPosition));
+				board.GetSpace(newPosition).SetHighlightMaterial(board, HighlightType.MOVE);
 			}
+			board.HighlightSpaces(affectedSpaces);
 		}
 		
 		public bool IsValid(BoardSpace space, Quaternion direction){

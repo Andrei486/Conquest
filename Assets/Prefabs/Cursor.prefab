@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587640148685082739}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8109813620206893502}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4839092502109100118
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -93,11 +93,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0}
+  selectedSpace:
+    boardPosition: {x: 0, y: 0}
+    anchorPosition: {x: 0, y: 0, z: 0}
+    corners: []
+    occupyingUnit: {fileID: 0}
+    spriteName: 
+    moveCost: 1
+    impassable: 0
+    voidSpace: 0
+  temporarySpace:
+    boardPosition: {x: 0, y: 0}
+    anchorPosition: {x: 0, y: 0, z: 0}
+    corners: []
+    occupyingUnit: {fileID: 0}
+    spriteName: 
+    moveCost: 1
+    impassable: 0
+    voidSpace: 0
   movedTemporary: 0
   moveTime: 0.1
   moving: 0
-  lockSelection: 0
   locked: 0
+  rotationLocked: 0
   camera: {fileID: 0}
   board: {fileID: 0}
   selector: {fileID: 0}
@@ -131,13 +149,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8261064899847466723}
-  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
-  m_LocalPosition: {x: 0, y: -10, z: -5}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 5, z: -10}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
   m_Children: []
   m_Father: {fileID: 4502735698485781088}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!20 &4676551865762509293
 Camera:
   m_ObjectHideFlags: 0
@@ -201,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181a43068cde01048841e9ad809e4401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursor: {fileID: 0}
   timeToRotate: 0.3
   rotating: 0
   zAngle: 60

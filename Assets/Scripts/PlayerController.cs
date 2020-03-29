@@ -178,14 +178,12 @@ public class PlayerController : MonoBehaviour
 	
 	public void ShowAccessibleSpaces(){
 		/**Shows a visualization of the area that the unit can move to with its remaining movement.*/
-		GameObject moveTilePrefab = board.moveTilePrefab;
-		GameObject visualization = new GameObject("Accessible Spaces");
-		visualization.tag = "Visualization";
 		HashSet<BoardSpace> accessibleSpaces = GetAccessibleSpaces((int) this.boardPosition.x, (int) this.boardPosition.y);
-		foreach(BoardSpace space in accessibleSpaces){
-			GameObject moveTile = Instantiate(moveTilePrefab, visualization.transform);
-			moveTile.transform.position = space.anchorPosition + new Vector3(0f, 0.02f, 0f);
+		BoardManager board = BoardManager.GetBoard();
+		foreach (BoardSpace space in accessibleSpaces){
+			space.SetHighlightMaterial(board, HighlightType.MOVE);
 		}
+		BoardManager.GetBoard().HighlightSpaces(accessibleSpaces);
 	}
 	
 	public void UseSkill(Skill skill, Quaternion direction){

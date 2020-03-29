@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using Objects;
+using System.Linq;
 
 public class CursorSelector : MonoBehaviour
 {
-	public Sprite normalSelector;
-	public Sprite activeSelector;
 	public BattleMenu menu;
 	GameObject cursor;
-	GameObject activeSelect;
+	Vector3 offset = new Vector3(0, 0.1f, 0);
+
 	Cursor cursorScript;
 	new SpriteRenderer renderer;
     // Start is called before the first frame update
@@ -16,11 +16,6 @@ public class CursorSelector : MonoBehaviour
         renderer = this.gameObject.GetComponent<SpriteRenderer>();
 		cursor = GameObject.FindGameObjectsWithTag("Cursor")[0];
 		cursorScript = cursor.GetComponent<Cursor>();
-		activeSelect = new GameObject("SelectedTile");
-		activeSelect.AddComponent(typeof(SpriteRenderer));
-		activeSelect.GetComponent<SpriteRenderer>().sprite = activeSelector;
-		activeSelect.GetComponent<SpriteRenderer>().enabled = false;
-		activeSelect.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
 		menu = BattleMenu.GetMenu();
     }
 
@@ -29,6 +24,16 @@ public class CursorSelector : MonoBehaviour
     {
 		
     }
+
+	public void SetPosition(Vector2 newPosition){
+		SetPosition(BoardManager.GetBoard().GetSpace(newPosition));
+	}
+
+	public void SetPosition(BoardSpace space){
+		LineRenderer renderer = this.GetComponent<LineRenderer>();
+		Vector3[] corners = (from corner in space.corners select corner + offset).ToArray();
+		renderer.SetPositions(corners);
+	}
 	
 	public void Select(BoardSpace space){
 		/**Selects a space with a unit.*/
@@ -67,10 +72,7 @@ public class CursorSelector : MonoBehaviour
 		/**Selects the unit on the specified space, if it is selectable.*/
 		if (space.occupyingUnit != null && space.occupyingUnit.GetComponent<PlayerController>().turnEnded == false){
 			cursorScript.selectedSpace = space; //select the space if none already selected and not empty
-			activeSelect.GetComponent<SpriteRenderer>().enabled = true;
-			//cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>().ShowAccessibleSpaces();
 			menu.ShowActionList(cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>());
-			activeSelect.transform.position = space.anchorPosition + new Vector3(0f, 0.02f, 0f);
 		}
 	}
 	
@@ -86,7 +88,8 @@ public class CursorSelector : MonoBehaviour
 		}
 		cursorScript.movedTemporary = false;
 		cursorScript.selectedSpace = null;
-		activeSelect.GetComponent<SpriteRenderer>().enabled = false;
 		BoardManager.ClearVisualization();
+		BattleMenu.GetMenu().ToggleSkills(false);
+		BattleMenu.GetMenu().ToggleActions(false);
 	}
 }

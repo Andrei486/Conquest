@@ -1,0 +1,9553 @@
+{
+  "rows": 16,
+  "columns": 16,
+  "spaces": [
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 2.78346848,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.46871138,
+          "z": 0.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.704132,
+          "z": 0.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.10026836,
+          "z": 2.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.8607626,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 3.055427,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.903933,
+          "z": 2.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.135021,
+          "z": 2.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.21043873,
+          "z": 4.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.97231531,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 3.14232278,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.97829628,
+          "z": 4.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.23089552,
+          "z": 4.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.361772,
+          "z": 6.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.99832726,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 3.075893,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.98249388,
+          "z": 6.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.36306643,
+          "z": 6.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.19504762,
+          "z": 8.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.76296449,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 2.925807,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.72383976,
+          "z": 8.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.14434576,
+          "z": 8.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.89755034,
+          "z": 10.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.937492,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 2.96615267,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 3.00924516,
+          "z": 10.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.880198,
+          "z": 10.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.82138467,
+          "z": 12.0
+        },
+        {
+          "x": 0.0,
+          "y": 3.15378237,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 2.84355783,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 3.12793732,
+          "z": 12.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.80455232,
+          "z": 12.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.60432959,
+          "z": 14.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.83741236,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 2.49024868,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.776001,
+          "z": 14.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.5545857,
+          "z": 14.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.21841,
+          "z": 16.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.4119978,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 2.11401987,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.34262586,
+          "z": 16.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.16528821,
+          "z": 16.0
+        },
+        {
+          "x": 2.0,
+          "y": 1.98402059,
+          "z": 18.0
+        },
+        {
+          "x": 0.0,
+          "y": 1.96414435,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 1.978523,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 1.937649,
+          "z": 18.0
+        },
+        {
+          "x": 2.0,
+          "y": 1.97105551,
+          "z": 18.0
+        },
+        {
+          "x": 2.0,
+          "y": 1.994591,
+          "z": 20.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.01079679,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 2.01188946,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.02398443,
+          "z": 20.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.00263166,
+          "z": 20.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.02017117,
+          "z": 22.0
+        },
+        {
+          "x": 0.0,
+          "y": 2.000771,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 2.21106124,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.00819921,
+          "z": 22.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.03425741,
+          "z": 22.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.82333636,
+          "z": 24.0
+        },
+        {
+          "x": 0.0,
+          "y": 1.97845185,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 3.37493944,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 2.09210539,
+          "z": 24.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.041214,
+          "z": 24.0
+        },
+        {
+          "x": 2.0,
+          "y": 4.89419365,
+          "z": 26.0
+        },
+        {
+          "x": 0.0,
+          "y": 3.47224426,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 6.015188,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 3.7983675,
+          "z": 26.0
+        },
+        {
+          "x": 2.0,
+          "y": 5.314629,
+          "z": 26.0
+        },
+        {
+          "x": 2.0,
+          "y": 8.22078,
+          "z": 28.0
+        },
+        {
+          "x": 0.0,
+          "y": 6.72697544,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 10.4121971,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 10.1546383,
+          "z": 28.0
+        },
+        {
+          "x": 2.0,
+          "y": 9.037323,
+          "z": 28.0
+        },
+        {
+          "x": 2.0,
+          "y": 11.2257042,
+          "z": 30.0
+        },
+        {
+          "x": 0.0,
+          "y": 11.2311211,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 0.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 1.0,
+        "y": 11.27914,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 0.0,
+          "y": 11.2619505,
+          "z": 30.0
+        },
+        {
+          "x": 2.0,
+          "y": 11.2748423,
+          "z": 30.0
+        },
+        {
+          "x": 2.0,
+          "y": 11.3881,
+          "z": 32.0
+        },
+        {
+          "x": 0.0,
+          "y": 11.1916714,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 2.92217517,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 2.72526288,
+          "z": 0.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.725263,
+          "z": 0.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.11908722,
+          "z": 2.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.11908722,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 3.190824,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 3.15318561,
+          "z": 2.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.15318561,
+          "z": 2.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.2284627,
+          "z": 4.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.2284627,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 3.32433224,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 3.24928236,
+          "z": 4.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.24928236,
+          "z": 4.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.399382,
+          "z": 6.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.399382,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 3.32775164,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 3.401986,
+          "z": 6.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.40198612,
+          "z": 6.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.25351667,
+          "z": 8.0
+        },
+        {
+          "x": 2.0,
+          "y": 3.25351667,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 3.06998038,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 3.20621347,
+          "z": 8.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.20621347,
+          "z": 8.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.93374729,
+          "z": 10.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.93374729,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 2.86381054,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 2.90822744,
+          "z": 10.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.90822744,
+          "z": 10.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.81939387,
+          "z": 12.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.81939363,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 2.69583464,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 2.79925251,
+          "z": 12.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.79925251,
+          "z": 12.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.59241724,
+          "z": 14.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.59241724,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 2.36941624,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 2.53973961,
+          "z": 14.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.53973961,
+          "z": 14.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.19909263,
+          "z": 16.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.19909263,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 2.07100654,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 2.15113974,
+          "z": 16.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.15113974,
+          "z": 16.0
+        },
+        {
+          "x": 4.0,
+          "y": 1.99087358,
+          "z": 18.0
+        },
+        {
+          "x": 2.0,
+          "y": 1.99087358,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 1.97525156,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 1.97681069,
+          "z": 18.0
+        },
+        {
+          "x": 4.0,
+          "y": 1.97681069,
+          "z": 18.0
+        },
+        {
+          "x": 4.0,
+          "y": 1.97369242,
+          "z": 20.0
+        },
+        {
+          "x": 2.0,
+          "y": 1.97369254,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 1.99419689,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 1.9804759,
+          "z": 20.0
+        },
+        {
+          "x": 4.0,
+          "y": 1.9804759,
+          "z": 20.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.00791764,
+          "z": 22.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.0079186,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 2.43214059,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 2.02273846,
+          "z": 22.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.02314,
+          "z": 22.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.84992027,
+          "z": 24.0
+        },
+        {
+          "x": 2.0,
+          "y": 2.83276367,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 3.998204,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 3.05379915,
+          "z": 24.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.06999969,
+          "z": 24.0
+        },
+        {
+          "x": 4.0,
+          "y": 4.93939,
+          "z": 26.0
+        },
+        {
+          "x": 2.0,
+          "y": 4.92962742,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 6.838505,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 5.359667,
+          "z": 26.0
+        },
+        {
+          "x": 4.0,
+          "y": 5.37409449,
+          "z": 26.0
+        },
+        {
+          "x": 4.0,
+          "y": 8.309755,
+          "z": 28.0
+        },
+        {
+          "x": 2.0,
+          "y": 8.310502,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 10.1796284,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 9.13328552,
+          "z": 28.0
+        },
+        {
+          "x": 4.0,
+          "y": 9.132971,
+          "z": 28.0
+        },
+        {
+          "x": 4.0,
+          "y": 11.22613,
+          "z": 30.0
+        },
+        {
+          "x": 2.0,
+          "y": 11.22613,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 1.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 3.0,
+        "y": 11.3414536,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 2.0,
+          "y": 11.2759352,
+          "z": 30.0
+        },
+        {
+          "x": 4.0,
+          "y": 11.2759352,
+          "z": 30.0
+        },
+        {
+          "x": 4.0,
+          "y": 11.4069729,
+          "z": 32.0
+        },
+        {
+          "x": 2.0,
+          "y": 11.4069719,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 2.783476,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 2.704132,
+          "z": 0.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.46871185,
+          "z": 0.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.8607924,
+          "z": 2.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.10026836,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 3.05542922,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 3.135021,
+          "z": 2.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.90394115,
+          "z": 2.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.97231531,
+          "z": 4.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.21043873,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 3.142323,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 3.23089552,
+          "z": 4.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.97829628,
+          "z": 4.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.99832726,
+          "z": 6.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.3617723,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 3.07589316,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 3.36306667,
+          "z": 6.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.98249388,
+          "z": 6.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.76296473,
+          "z": 8.0
+        },
+        {
+          "x": 4.0,
+          "y": 3.19504762,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 2.925807,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 3.14434576,
+          "z": 8.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.72383976,
+          "z": 8.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.937492,
+          "z": 10.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.89755058,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 2.96615267,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 2.880198,
+          "z": 10.0
+        },
+        {
+          "x": 6.0,
+          "y": 3.00924516,
+          "z": 10.0
+        },
+        {
+          "x": 6.0,
+          "y": 3.15378237,
+          "z": 12.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.821385,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 2.84355783,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 2.80455232,
+          "z": 12.0
+        },
+        {
+          "x": 6.0,
+          "y": 3.12793732,
+          "z": 12.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.83741236,
+          "z": 14.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.60432959,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 2.49024868,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 2.55458546,
+          "z": 14.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.776001,
+          "z": 14.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.41199756,
+          "z": 16.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.21841,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 2.11401963,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 2.165288,
+          "z": 16.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.34262586,
+          "z": 16.0
+        },
+        {
+          "x": 6.0,
+          "y": 1.96414435,
+          "z": 18.0
+        },
+        {
+          "x": 4.0,
+          "y": 1.98402059,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 1.97852314,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 1.97105551,
+          "z": 18.0
+        },
+        {
+          "x": 6.0,
+          "y": 1.937649,
+          "z": 18.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.01079655,
+          "z": 20.0
+        },
+        {
+          "x": 4.0,
+          "y": 1.99459112,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 2.01189041,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 2.002632,
+          "z": 20.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.02398443,
+          "z": 20.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.000771,
+          "z": 22.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.0201745,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 2.43099642,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 2.03556633,
+          "z": 22.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.00819921,
+          "z": 22.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.82395124,
+          "z": 24.0
+        },
+        {
+          "x": 4.0,
+          "y": 2.85626936,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 3.8769927,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 3.07299113,
+          "z": 24.0
+        },
+        {
+          "x": 6.0,
+          "y": 3.01388264,
+          "z": 24.0
+        },
+        {
+          "x": 6.0,
+          "y": 4.50806046,
+          "z": 26.0
+        },
+        {
+          "x": 4.0,
+          "y": 4.913037,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 6.548876,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 5.34297,
+          "z": 26.0
+        },
+        {
+          "x": 6.0,
+          "y": 4.88989067,
+          "z": 26.0
+        },
+        {
+          "x": 6.0,
+          "y": 7.74270535,
+          "z": 28.0
+        },
+        {
+          "x": 4.0,
+          "y": 8.219936,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 10.0827951,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 9.036966,
+          "z": 28.0
+        },
+        {
+          "x": 6.0,
+          "y": 8.837388,
+          "z": 28.0
+        },
+        {
+          "x": 6.0,
+          "y": 11.2311211,
+          "z": 30.0
+        },
+        {
+          "x": 4.0,
+          "y": 11.2257042,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 2.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 5.0,
+        "y": 11.27914,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 4.0,
+          "y": 11.2748423,
+          "z": 30.0
+        },
+        {
+          "x": 6.0,
+          "y": 11.2619505,
+          "z": 30.0
+        },
+        {
+          "x": 6.0,
+          "y": 11.1916714,
+          "z": 32.0
+        },
+        {
+          "x": 4.0,
+          "y": 11.3880987,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 2.416219,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.41511917,
+          "z": 0.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.026095,
+          "z": 0.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.41923976,
+          "z": 2.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.80442214,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 2.68091,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.84790564,
+          "z": 2.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.43609881,
+          "z": 2.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.52949858,
+          "z": 4.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.91013718,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 2.69714069,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.91178751,
+          "z": 4.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.52409554,
+          "z": 4.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.42806387,
+          "z": 6.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.92461586,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 2.61690521,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.90557456,
+          "z": 6.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.403553,
+          "z": 6.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.471179,
+          "z": 8.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.6873138,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 3.00140738,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.65885019,
+          "z": 8.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.588275,
+          "z": 8.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.738088,
+          "z": 10.0
+        },
+        {
+          "x": 6.0,
+          "y": 3.020416,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 3.58491373,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 3.112316,
+          "z": 10.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.874383,
+          "z": 10.0
+        },
+        {
+          "x": 8.0,
+          "y": 4.076434,
+          "z": 12.0
+        },
+        {
+          "x": 6.0,
+          "y": 3.27652168,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 3.41584349,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 3.24116778,
+          "z": 12.0
+        },
+        {
+          "x": 8.0,
+          "y": 4.02657461,
+          "z": 12.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.48700476,
+          "z": 14.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.908626,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 2.95825768,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.848422,
+          "z": 14.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.40685415,
+          "z": 14.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.10037756,
+          "z": 16.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.47737646,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 2.46417284,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.40697074,
+          "z": 16.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.046882,
+          "z": 16.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.42020464,
+          "z": 18.0
+        },
+        {
+          "x": 6.0,
+          "y": 1.98263454,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 2.05102038,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 1.94682789,
+          "z": 18.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.2985785,
+          "z": 18.0
+        },
+        {
+          "x": 8.0,
+          "y": 1.95550537,
+          "z": 20.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.00317025,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 1.99678206,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.01417112,
+          "z": 20.0
+        },
+        {
+          "x": 8.0,
+          "y": 1.96320128,
+          "z": 20.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.020038,
+          "z": 22.0
+        },
+        {
+          "x": 6.0,
+          "y": 1.98971772,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 2.335658,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 1.99998438,
+          "z": 22.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.02347445,
+          "z": 22.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.52136326,
+          "z": 24.0
+        },
+        {
+          "x": 6.0,
+          "y": 2.79781055,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 3.41851044,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 2.97657967,
+          "z": 24.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.62433,
+          "z": 24.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.68237138,
+          "z": 26.0
+        },
+        {
+          "x": 6.0,
+          "y": 4.39076,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 5.814117,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 4.762342,
+          "z": 26.0
+        },
+        {
+          "x": 8.0,
+          "y": 4.018152,
+          "z": 26.0
+        },
+        {
+          "x": 8.0,
+          "y": 6.89229,
+          "z": 28.0
+        },
+        {
+          "x": 6.0,
+          "y": 7.58368254,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 9.780252,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 8.83302,
+          "z": 28.0
+        },
+        {
+          "x": 8.0,
+          "y": 8.170353,
+          "z": 28.0
+        },
+        {
+          "x": 8.0,
+          "y": 10.887845,
+          "z": 30.0
+        },
+        {
+          "x": 6.0,
+          "y": 11.2297935,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 3.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 7.0,
+        "y": 10.8492374,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 6.0,
+          "y": 11.2540693,
+          "z": 30.0
+        },
+        {
+          "x": 8.0,
+          "y": 10.9077158,
+          "z": 30.0
+        },
+        {
+          "x": 8.0,
+          "y": 10.0828094,
+          "z": 32.0
+        },
+        {
+          "x": 6.0,
+          "y": 11.1523561,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 1.95779085,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 1.9582634,
+          "z": 0.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.64366734,
+          "z": 0.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.88632512,
+          "z": 2.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.342908,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 2.17503214,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 2.358103,
+          "z": 2.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.89162874,
+          "z": 2.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.98829091,
+          "z": 4.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.46210551,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 2.22818828,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 2.46252656,
+          "z": 4.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.0065217,
+          "z": 4.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.06357527,
+          "z": 6.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.38012934,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 2.32653379,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 2.35737658,
+          "z": 6.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.07630754,
+          "z": 6.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.39289618,
+          "z": 8.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.47955513,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 3.14095736,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 2.61023426,
+          "z": 8.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.52622342,
+          "z": 8.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.627107,
+          "z": 10.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.80026579,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 3.96279216,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 3.93663049,
+          "z": 10.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.76795053,
+          "z": 10.0
+        },
+        {
+          "x": 10.0,
+          "y": 4.014566,
+          "z": 12.0
+        },
+        {
+          "x": 8.0,
+          "y": 4.132022,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 3.81034279,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 4.08152771,
+          "z": 12.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.9794178,
+          "z": 12.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.629866,
+          "z": 14.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.55055952,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 3.44448519,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 3.47113657,
+          "z": 14.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.575192,
+          "z": 14.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.52788186,
+          "z": 16.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.20373058,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 3.03467512,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 3.1552372,
+          "z": 16.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.51392841,
+          "z": 16.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.94953585,
+          "z": 18.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.519998,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 2.27864814,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 2.386878,
+          "z": 18.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.77434349,
+          "z": 18.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.97264457,
+          "z": 20.0
+        },
+        {
+          "x": 8.0,
+          "y": 1.98072648,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 2.018725,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 1.98881125,
+          "z": 20.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.95493519,
+          "z": 20.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.08422232,
+          "z": 22.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.04693031,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 2.19414139,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 2.04654837,
+          "z": 22.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.10249186,
+          "z": 22.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.16319156,
+          "z": 24.0
+        },
+        {
+          "x": 8.0,
+          "y": 2.464334,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 2.73060822,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 2.55749846,
+          "z": 24.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.174968,
+          "z": 24.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.61285329,
+          "z": 26.0
+        },
+        {
+          "x": 8.0,
+          "y": 3.577113,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 4.51842,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 3.89010978,
+          "z": 26.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.86128521,
+          "z": 26.0
+        },
+        {
+          "x": 10.0,
+          "y": 4.6495533,
+          "z": 28.0
+        },
+        {
+          "x": 8.0,
+          "y": 6.67273331,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 7.72179365,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 7.763944,
+          "z": 28.0
+        },
+        {
+          "x": 10.0,
+          "y": 5.24954462,
+          "z": 28.0
+        },
+        {
+          "x": 10.0,
+          "y": 7.216363,
+          "z": 30.0
+        },
+        {
+          "x": 8.0,
+          "y": 10.6573238,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 4.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 9.0,
+        "y": 8.79017448,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 8.0,
+          "y": 10.7021046,
+          "z": 30.0
+        },
+        {
+          "x": 10.0,
+          "y": 7.51835442,
+          "z": 30.0
+        },
+        {
+          "x": 10.0,
+          "y": 7.15785837,
+          "z": 32.0
+        },
+        {
+          "x": 8.0,
+          "y": 9.782379,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 1.66855264,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 1.61083031,
+          "z": 0.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.527483,
+          "z": 0.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.70092583,
+          "z": 2.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.83497167,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 1.73789716,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 1.83250427,
+          "z": 2.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.6477555,
+          "z": 2.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.55939317,
+          "z": 4.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.91193581,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 1.78209674,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 1.93080568,
+          "z": 4.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.56647336,
+          "z": 4.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.62954366,
+          "z": 6.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.001564,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 1.97542751,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 2.01815557,
+          "z": 6.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.65011978,
+          "z": 6.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.893254,
+          "z": 8.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.34018087,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 2.60281754,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 2.464844,
+          "z": 8.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.94919062,
+          "z": 8.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.496192,
+          "z": 10.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.5010438,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 3.35074329,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 3.639741,
+          "z": 10.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.612807,
+          "z": 10.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.22159,
+          "z": 12.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.92883444,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 3.55977035,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 3.90440941,
+          "z": 12.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.29430771,
+          "z": 12.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.42954588,
+          "z": 14.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.61081767,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 3.43145752,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 3.56328368,
+          "z": 14.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.412612,
+          "z": 14.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.218306,
+          "z": 16.0
+        },
+        {
+          "x": 10.0,
+          "y": 3.53162742,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 3.0435462,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 3.52091861,
+          "z": 16.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.174819,
+          "z": 16.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.51939082,
+          "z": 18.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.95905542,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 2.20745444,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 2.78107071,
+          "z": 18.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.353927,
+          "z": 18.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.74830914,
+          "z": 20.0
+        },
+        {
+          "x": 10.0,
+          "y": 1.946511,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 1.83486891,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 1.92364836,
+          "z": 20.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.71105719,
+          "z": 20.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.67299664,
+          "z": 22.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.03177357,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 1.90150642,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 2.05018544,
+          "z": 22.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.679351,
+          "z": 22.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.750329,
+          "z": 24.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.12616014,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 2.04063416,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 2.12691069,
+          "z": 24.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.76047492,
+          "z": 24.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.8153,
+          "z": 26.0
+        },
+        {
+          "x": 10.0,
+          "y": 2.45985126,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 2.92901039,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 2.69982243,
+          "z": 26.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.94235194,
+          "z": 26.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.74396849,
+          "z": 28.0
+        },
+        {
+          "x": 10.0,
+          "y": 4.329899,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 4.44142532,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 4.88465643,
+          "z": 28.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.86907387,
+          "z": 28.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.32211161,
+          "z": 30.0
+        },
+        {
+          "x": 10.0,
+          "y": 6.68986034,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 5.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 11.0,
+        "y": 4.935946,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 10.0,
+          "y": 6.837167,
+          "z": 30.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.41119623,
+          "z": 30.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.913471,
+          "z": 32.0
+        },
+        {
+          "x": 10.0,
+          "y": 6.581949,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.56699061,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.52149868,
+          "z": 0.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.50744951,
+          "z": 0.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.55557752,
+          "z": 2.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.68343639,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.54940271,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.62892866,
+          "z": 2.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.531306,
+          "z": 2.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.50095057,
+          "z": 4.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.53642583,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.531401,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.54050636,
+          "z": 4.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.501027,
+          "z": 4.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.50168657,
+          "z": 6.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.58238411,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.61522651,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.59849548,
+          "z": 6.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.50223136,
+          "z": 6.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.54143286,
+          "z": 8.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.81874657,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.87042832,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.86828923,
+          "z": 8.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.55772769,
+          "z": 8.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.71276784,
+          "z": 10.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.342929,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 2.356609,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 2.45173883,
+          "z": 10.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.75272226,
+          "z": 10.0
+        },
+        {
+          "x": 14.0,
+          "y": 2.14263344,
+          "z": 12.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.07934213,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 2.78697228,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 3.16282177,
+          "z": 12.0
+        },
+        {
+          "x": 14.0,
+          "y": 2.218154,
+          "z": 12.0
+        },
+        {
+          "x": 14.0,
+          "y": 2.41912317,
+          "z": 14.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.34779024,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 2.73605132,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 3.333908,
+          "z": 14.0
+        },
+        {
+          "x": 14.0,
+          "y": 2.40562248,
+          "z": 14.0
+        },
+        {
+          "x": 14.0,
+          "y": 2.094788,
+          "z": 16.0
+        },
+        {
+          "x": 12.0,
+          "y": 3.10988665,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 2.29670072,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 3.05771446,
+          "z": 16.0
+        },
+        {
+          "x": 14.0,
+          "y": 2.02332282,
+          "z": 16.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.72237122,
+          "z": 18.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.38339424,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.82501864,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 2.23571134,
+          "z": 18.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.70021462,
+          "z": 18.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.63364649,
+          "z": 20.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.73050213,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.653064,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.69865954,
+          "z": 20.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.62984586,
+          "z": 20.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.62016308,
+          "z": 22.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.66358733,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.65467381,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.66835022,
+          "z": 22.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.62070417,
+          "z": 22.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.613546,
+          "z": 24.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.71609521,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.6666131,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.72409081,
+          "z": 24.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.61092091,
+          "z": 24.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.59695661,
+          "z": 26.0
+        },
+        {
+          "x": 12.0,
+          "y": 1.73448443,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 1.88101172,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 1.80304837,
+          "z": 26.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.59401059,
+          "z": 26.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.59218621,
+          "z": 28.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.53480148,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 2.20356274,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 2.63125968,
+          "z": 28.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.5973196,
+          "z": 28.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.61078119,
+          "z": 30.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.97489,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 6.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 13.0,
+        "y": 2.1657877,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 12.0,
+          "y": 2.998929,
+          "z": 30.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.60473013,
+          "z": 30.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.53720474,
+          "z": 32.0
+        },
+        {
+          "x": 12.0,
+          "y": 2.52228665,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.5093348,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.50435567,
+          "z": 0.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 0.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 2.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.53298378,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.50429022,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.51679933,
+          "z": 2.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 2.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 4.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.50036156,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.500285,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.50039923,
+          "z": 4.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 4.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 6.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.50074089,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.50588012,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.50093,
+          "z": 6.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 6.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 8.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.52259088,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.54532516,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.53272855,
+          "z": 8.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 8.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50056148,
+          "z": 10.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.64801073,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.67153347,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.67955136,
+          "z": 10.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50107718,
+          "z": 10.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5120225,
+          "z": 12.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.993483,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.8334291,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 2.05792713,
+          "z": 12.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.51517487,
+          "z": 12.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5279268,
+          "z": 14.0
+        },
+        {
+          "x": 14.0,
+          "y": 2.23268747,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.79802084,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 2.21809864,
+          "z": 14.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.52741039,
+          "z": 14.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.51558542,
+          "z": 16.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.930989,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.63990211,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.87260509,
+          "z": 16.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.51367664,
+          "z": 16.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50542927,
+          "z": 18.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.667897,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.56909454,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.65481472,
+          "z": 18.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50484228,
+          "z": 18.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5037868,
+          "z": 20.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.61293459,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.55432653,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.61073494,
+          "z": 20.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50357068,
+          "z": 20.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50166225,
+          "z": 22.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.60133862,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.54751992,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.600505,
+          "z": 22.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50138307,
+          "z": 22.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50030887,
+          "z": 24.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.58788264,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.53782094,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.58484089,
+          "z": 24.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50022674,
+          "z": 24.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50001335,
+          "z": 26.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.56620264,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.52923727,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.56335366,
+          "z": 26.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50000691,
+          "z": 26.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50000107,
+          "z": 28.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.55358768,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.52977324,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.554375,
+          "z": 28.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.500001,
+          "z": 28.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50003147,
+          "z": 30.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.56468534,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 7.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 15.0,
+        "y": 1.52212667,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 14.0,
+          "y": 1.56389284,
+          "z": 30.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.500042,
+          "z": 30.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50008082,
+          "z": 32.0
+        },
+        {
+          "x": 14.0,
+          "y": 1.52449119,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.5,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 0.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 0.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 2.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.5,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 2.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 2.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 4.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.5,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 4.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 4.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 6.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.5,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 6.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 6.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 8.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50000823,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 8.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 8.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 10.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5000329,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50089216,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.50009644,
+          "z": 10.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 10.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 12.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50347257,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50358343,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.50455689,
+          "z": 12.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 12.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 14.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50977707,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50401676,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.50975859,
+          "z": 14.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 14.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 16.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50630856,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50185513,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.505683,
+          "z": 16.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 16.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.50006378,
+          "z": 18.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5016737,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50059414,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.50135136,
+          "z": 18.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.50008571,
+          "z": 18.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.50000358,
+          "z": 20.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50093567,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50027776,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.50085545,
+          "z": 20.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 20.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 22.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50025535,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50005293,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.500191,
+          "z": 22.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 22.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 24.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.500021,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50000322,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.50001276,
+          "z": 24.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 24.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 26.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.5,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 26.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 26.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 28.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50000107,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.5,
+          "z": 28.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 28.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 30.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50000441,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 8.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 17.0,
+        "y": 1.50000656,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 16.0,
+          "y": 1.50000691,
+          "z": 30.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 30.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.5,
+          "z": 32.0
+        },
+        {
+          "x": 16.0,
+          "y": 1.50001955,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 6.986786,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 7.01657963,
+          "z": 0.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.95454645,
+          "z": 0.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.94702053,
+          "z": 2.0
+        },
+        {
+          "x": 18.0,
+          "y": 7.028995,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 6.981366,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 7.02720356,
+          "z": 2.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.944048,
+          "z": 2.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.934158,
+          "z": 4.0
+        },
+        {
+          "x": 18.0,
+          "y": 7.020055,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 6.97760773,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 7.01755333,
+          "z": 4.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.93506336,
+          "z": 4.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.940675,
+          "z": 6.0
+        },
+        {
+          "x": 18.0,
+          "y": 7.01714039,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.00253,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 7.01533031,
+          "z": 6.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.95164442,
+          "z": 6.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.029711,
+          "z": 8.0
+        },
+        {
+          "x": 18.0,
+          "y": 7.01343441,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.02774429,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 7.01343441,
+          "z": 8.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.0315876,
+          "z": 8.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.05252028,
+          "z": 10.0
+        },
+        {
+          "x": 18.0,
+          "y": 7.01343441,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.032075,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 7.01343441,
+          "z": 10.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.05482769,
+          "z": 10.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.046602,
+          "z": 12.0
+        },
+        {
+          "x": 18.0,
+          "y": 7.01343441,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.01878357,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 7.01343441,
+          "z": 12.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.039272,
+          "z": 12.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.012355,
+          "z": 14.0
+        },
+        {
+          "x": 18.0,
+          "y": 7.010074,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 1.53745639,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 1.53313589,
+          "z": 14.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.54078865,
+          "z": 14.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.542765,
+          "z": 16.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.53313589,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 1.54653215,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 1.53313935,
+          "z": 16.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.54624724,
+          "z": 16.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.57324851,
+          "z": 18.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.53349352,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 1.56392252,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 1.53357625,
+          "z": 18.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.57723188,
+          "z": 18.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.59258187,
+          "z": 20.0
+        },
+        {
+          "x": 18.0,
+          "y": 1.55229986,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 6.99347353,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 6.95603132,
+          "z": 20.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.01426172,
+          "z": 20.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 22.0
+        },
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.00180054,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 22.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 22.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 24.0
+        },
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.00180054,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 24.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 24.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 26.0
+        },
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.00180054,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 26.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 26.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 28.0
+        },
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.00180054,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 28.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 28.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 30.0
+        },
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 9.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 19.0,
+        "y": 7.00180054,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 30.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 30.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.04153252,
+          "z": 32.0
+        },
+        {
+          "x": 18.0,
+          "y": 6.96206856,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 6.761856,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 6.918253,
+          "z": 0.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.540072,
+          "z": 0.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.67733765,
+          "z": 2.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.91176128,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 6.856814,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 6.906202,
+          "z": 2.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.660293,
+          "z": 2.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.955824,
+          "z": 4.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.904936,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 6.91526,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 6.907649,
+          "z": 4.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.940057,
+          "z": 4.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.88231373,
+          "z": 6.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.93102026,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 7.014268,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 6.94532347,
+          "z": 6.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.93272972,
+          "z": 6.0
+        },
+        {
+          "x": 22.0,
+          "y": 7.13012552,
+          "z": 8.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.048893,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 7.028072,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 7.05589,
+          "z": 8.0
+        },
+        {
+          "x": 22.0,
+          "y": 7.1295,
+          "z": 8.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.85955429,
+          "z": 10.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.067343,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 6.880883,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 7.06971264,
+          "z": 10.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.804275,
+          "z": 10.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.595172,
+          "z": 12.0
+        },
+        {
+          "x": 20.0,
+          "y": 7.054374,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 6.8379283,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 7.043295,
+          "z": 12.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.573122,
+          "z": 12.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.757112,
+          "z": 14.0
+        },
+        {
+          "x": 20.0,
+          "y": 6.978184,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 1.56536555,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 1.51548457,
+          "z": 14.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.59181428,
+          "z": 14.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.63732576,
+          "z": 16.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.51683736,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 1.63477623,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 1.52207732,
+          "z": 16.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.66224,
+          "z": 16.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.79314613,
+          "z": 18.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.56164122,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 1.71452665,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 1.567366,
+          "z": 18.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.80930114,
+          "z": 18.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.86267614,
+          "z": 20.0
+        },
+        {
+          "x": 20.0,
+          "y": 1.61876333,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 2.41197586,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 20.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.8624382,
+          "z": 20.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.815146,
+          "z": 22.0
+        },
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 2.3834877,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 22.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.80963135,
+          "z": 22.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.75400019,
+          "z": 24.0
+        },
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 2.38924146,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 24.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.75361967,
+          "z": 24.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.83302665,
+          "z": 26.0
+        },
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 2.401015,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 26.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.836014,
+          "z": 26.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.79772687,
+          "z": 28.0
+        },
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 2.35964012,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 28.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.77935934,
+          "z": 28.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.68888152,
+          "z": 30.0
+        },
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 10.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 21.0,
+        "y": 2.292182,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 30.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.661102,
+          "z": 30.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.53730607,
+          "z": 32.0
+        },
+        {
+          "x": 20.0,
+          "y": 2.98515987,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 5.80807,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 6.27325773,
+          "z": 0.0
+        },
+        {
+          "x": 24.0,
+          "y": 5.096362,
+          "z": 0.0
+        },
+        {
+          "x": 24.0,
+          "y": 5.26201963,
+          "z": 2.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.60064173,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 5.641869,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 6.57395744,
+          "z": 2.0
+        },
+        {
+          "x": 24.0,
+          "y": 5.22613,
+          "z": 2.0
+        },
+        {
+          "x": 24.0,
+          "y": 4.690855,
+          "z": 4.0
+        },
+        {
+          "x": 22.0,
+          "y": 6.07653475,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 4.834798,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 5.99442339,
+          "z": 4.0
+        },
+        {
+          "x": 24.0,
+          "y": 4.57067347,
+          "z": 4.0
+        },
+        {
+          "x": 24.0,
+          "y": 3.86828971,
+          "z": 6.0
+        },
+        {
+          "x": 22.0,
+          "y": 4.90580368,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 3.9634552,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 4.5865736,
+          "z": 6.0
+        },
+        {
+          "x": 24.0,
+          "y": 3.77115488,
+          "z": 6.0
+        },
+        {
+          "x": 24.0,
+          "y": 3.14329886,
+          "z": 8.0
+        },
+        {
+          "x": 22.0,
+          "y": 4.35279226,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 3.331707,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 3.982502,
+          "z": 8.0
+        },
+        {
+          "x": 24.0,
+          "y": 3.03613567,
+          "z": 8.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.55134773,
+          "z": 10.0
+        },
+        {
+          "x": 22.0,
+          "y": 3.75684237,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 2.82389474,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 3.478858,
+          "z": 10.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.474606,
+          "z": 10.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.05705428,
+          "z": 12.0
+        },
+        {
+          "x": 22.0,
+          "y": 3.28506112,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 2.41874433,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 3.04978943,
+          "z": 12.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.99668169,
+          "z": 12.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.71207821,
+          "z": 14.0
+        },
+        {
+          "x": 22.0,
+          "y": 2.91642833,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.68982744,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.60611546,
+          "z": 14.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.69077885,
+          "z": 14.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.79475689,
+          "z": 16.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.667659,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.83952308,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.694642,
+          "z": 16.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.82846212,
+          "z": 16.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.00158882,
+          "z": 18.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.8333993,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.96787,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.85055852,
+          "z": 18.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.022697,
+          "z": 18.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.0873518,
+          "z": 20.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.91087246,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.974114,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.91190457,
+          "z": 20.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.087714,
+          "z": 20.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.03744626,
+          "z": 22.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.85939145,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.93746638,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.85276127,
+          "z": 22.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.021572,
+          "z": 22.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.07939053,
+          "z": 24.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.79614139,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.95523047,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.79083228,
+          "z": 24.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.09655,
+          "z": 24.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.03946447,
+          "z": 26.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.89407563,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.94664717,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.89393234,
+          "z": 26.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.028293,
+          "z": 26.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.02653861,
+          "z": 28.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.83782458,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.882303,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.83165741,
+          "z": 28.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.03586531,
+          "z": 28.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.93978,
+          "z": 30.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.72190952,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 11.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 23.0,
+        "y": 1.69658375,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 22.0,
+          "y": 1.68912256,
+          "z": 30.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.89858615,
+          "z": 30.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.64852524,
+          "z": 32.0
+        },
+        {
+          "x": 22.0,
+          "y": 1.550101,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 4.76104975,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 4.9772644,
+          "z": 0.0
+        },
+        {
+          "x": 26.0,
+          "y": 4.48475838,
+          "z": 0.0
+        },
+        {
+          "x": 26.0,
+          "y": 4.47773457,
+          "z": 2.0
+        },
+        {
+          "x": 24.0,
+          "y": 5.104442,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 4.565856,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 5.070349,
+          "z": 2.0
+        },
+        {
+          "x": 26.0,
+          "y": 4.443576,
+          "z": 2.0
+        },
+        {
+          "x": 26.0,
+          "y": 4.138942,
+          "z": 4.0
+        },
+        {
+          "x": 24.0,
+          "y": 4.61055756,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 3.99803,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 4.50449944,
+          "z": 4.0
+        },
+        {
+          "x": 26.0,
+          "y": 4.07236433,
+          "z": 4.0
+        },
+        {
+          "x": 26.0,
+          "y": 3.582325,
+          "z": 6.0
+        },
+        {
+          "x": 24.0,
+          "y": 3.83293056,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 3.327024,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 3.73600769,
+          "z": 6.0
+        },
+        {
+          "x": 26.0,
+          "y": 3.49104834,
+          "z": 6.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.96002483,
+          "z": 8.0
+        },
+        {
+          "x": 24.0,
+          "y": 3.121015,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 2.71764469,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 3.02026129,
+          "z": 8.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.88071346,
+          "z": 8.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.43169451,
+          "z": 10.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.53790951,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 2.21307921,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 2.46383834,
+          "z": 10.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.35802937,
+          "z": 10.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.97813129,
+          "z": 12.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.05231762,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 1.84623742,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 1.99444151,
+          "z": 12.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.93038511,
+          "z": 12.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.73619723,
+          "z": 14.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.72392571,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 1.76274323,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 1.70314932,
+          "z": 14.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.7253505,
+          "z": 14.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.81609678,
+          "z": 16.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.80637646,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 1.93105865,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 1.8403666,
+          "z": 16.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.84594274,
+          "z": 16.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.021153,
+          "z": 18.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.01677227,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 2.04876375,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 2.03791142,
+          "z": 18.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.04040766,
+          "z": 18.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.0212214,
+          "z": 20.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.09551454,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 2.02843857,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 2.0941937,
+          "z": 20.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.008905,
+          "z": 20.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.968353,
+          "z": 22.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.04230261,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 2.00872326,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 2.02750659,
+          "z": 22.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.96649933,
+          "z": 22.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.97210693,
+          "z": 24.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.06878,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 2.07428074,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 2.08693552,
+          "z": 24.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.98476958,
+          "z": 24.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.1569643,
+          "z": 26.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.068454,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 2.13986063,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 2.06198335,
+          "z": 26.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.19999814,
+          "z": 26.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.22951818,
+          "z": 28.0
+        },
+        {
+          "x": 24.0,
+          "y": 2.06794214,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 2.079526,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 2.08251834,
+          "z": 28.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.19706726,
+          "z": 28.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.069808,
+          "z": 30.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.96870983,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 12.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 25.0,
+        "y": 1.83793211,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 24.0,
+          "y": 1.93133235,
+          "z": 30.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.048053,
+          "z": 30.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.70848513,
+          "z": 32.0
+        },
+        {
+          "x": 24.0,
+          "y": 1.66385794,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 4.08420372,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 4.387794,
+          "z": 0.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.77940726,
+          "z": 0.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.794093,
+          "z": 2.0
+        },
+        {
+          "x": 26.0,
+          "y": 4.37552071,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 3.9267807,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 4.343475,
+          "z": 2.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.772647,
+          "z": 2.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.53853273,
+          "z": 4.0
+        },
+        {
+          "x": 26.0,
+          "y": 4.05246925,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 3.52996159,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 3.99021387,
+          "z": 4.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.48497939,
+          "z": 4.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.12184787,
+          "z": 6.0
+        },
+        {
+          "x": 26.0,
+          "y": 3.52280545,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 3.02719116,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 3.434126,
+          "z": 6.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.06159449,
+          "z": 6.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.68873882,
+          "z": 8.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.924305,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 2.52109,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 2.84629369,
+          "z": 8.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.622242,
+          "z": 8.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.211153,
+          "z": 10.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.40467143,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 2.0665803,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 2.33297515,
+          "z": 10.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.13538337,
+          "z": 10.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.8367126,
+          "z": 12.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.96125066,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 1.77748275,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 1.9149971,
+          "z": 12.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.80079556,
+          "z": 12.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.66510677,
+          "z": 14.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.72903156,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 1.74182367,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 1.71993279,
+          "z": 14.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.66783071,
+          "z": 14.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.767729,
+          "z": 16.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.81180215,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 1.88253546,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 1.839782,
+          "z": 16.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.7891618,
+          "z": 16.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.89539075,
+          "z": 18.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.00580716,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 1.96701956,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 2.02406764,
+          "z": 18.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.90901041,
+          "z": 18.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.94072962,
+          "z": 20.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.99427056,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 1.9566834,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 1.98192191,
+          "z": 20.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.938247,
+          "z": 20.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.95615637,
+          "z": 22.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.9504087,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 1.98838723,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 1.95198441,
+          "z": 22.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.96844935,
+          "z": 22.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.05498934,
+          "z": 24.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.978126,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 2.09233046,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 1.992044,
+          "z": 24.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.07661,
+          "z": 24.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.17691374,
+          "z": 26.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.12375355,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 2.20014524,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 2.16653776,
+          "z": 26.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.18464851,
+          "z": 26.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.2225523,
+          "z": 28.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.22684216,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 2.14334965,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 2.19979262,
+          "z": 28.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.17851877,
+          "z": 28.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.10935569,
+          "z": 30.0
+        },
+        {
+          "x": 26.0,
+          "y": 2.08573174,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 13.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 27.0,
+        "y": 1.89695716,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 26.0,
+          "y": 2.06539321,
+          "z": 30.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.10456038,
+          "z": 30.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.70655251,
+          "z": 32.0
+        },
+        {
+          "x": 26.0,
+          "y": 1.71132278,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 3.35365725,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 3.6733923,
+          "z": 0.0
+        },
+        {
+          "x": 30.0,
+          "y": 3.03953886,
+          "z": 0.0
+        },
+        {
+          "x": 30.0,
+          "y": 3.0124774,
+          "z": 2.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.68922043,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 3.24158263,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 3.669342,
+          "z": 2.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.99666119,
+          "z": 2.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.85448027,
+          "z": 4.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.44584751,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 2.96846581,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 3.394342,
+          "z": 4.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.82426357,
+          "z": 4.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.601861,
+          "z": 6.0
+        },
+        {
+          "x": 28.0,
+          "y": 3.0533967,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 2.62241364,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 2.9966197,
+          "z": 6.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.558994,
+          "z": 6.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.29015279,
+          "z": 8.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.64388824,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 2.22961879,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 2.58041453,
+          "z": 8.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.2448287,
+          "z": 8.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.9207561,
+          "z": 10.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.17247581,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 1.86706984,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 2.097882,
+          "z": 10.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.87719727,
+          "z": 10.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.6777153,
+          "z": 12.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.8154844,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 1.66046965,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 1.78082156,
+          "z": 12.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.64841115,
+          "z": 12.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.56066906,
+          "z": 14.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.65197706,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 1.67264438,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 1.65591812,
+          "z": 14.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.56955552,
+          "z": 14.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.70519257,
+          "z": 16.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.75991178,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 1.80847049,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 1.78094184,
+          "z": 16.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.72883368,
+          "z": 16.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.838742,
+          "z": 18.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.88536453,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 1.92478156,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 1.89936543,
+          "z": 18.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.85316551,
+          "z": 18.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.007286,
+          "z": 20.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.939309,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 2.051255,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 1.93955326,
+          "z": 20.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.034386,
+          "z": 20.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.2637856,
+          "z": 22.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.96729493,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 2.144807,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 1.98572779,
+          "z": 22.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.27898955,
+          "z": 22.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.24398851,
+          "z": 24.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.07052255,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 2.18189955,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 2.09199476,
+          "z": 24.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.22897649,
+          "z": 24.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.222224,
+          "z": 26.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.184402,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 2.188486,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 2.19131255,
+          "z": 26.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.21695685,
+          "z": 26.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.13817835,
+          "z": 28.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.20749712,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 2.12419224,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 2.17017984,
+          "z": 28.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.140013,
+          "z": 28.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.0835278,
+          "z": 30.0
+        },
+        {
+          "x": 28.0,
+          "y": 2.10304832,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 14.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 29.0,
+        "y": 1.884712,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 28.0,
+          "y": 2.099473,
+          "z": 30.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.060875,
+          "z": 30.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.67067432,
+          "z": 32.0
+        },
+        {
+          "x": 28.0,
+          "y": 1.70782542,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 0.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 2.54222822,
+        "z": 1.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.92865849,
+          "z": 0.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.07086039,
+          "z": 0.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.265054,
+          "z": 2.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.90433931,
+          "z": 2.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 1.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 2.521513,
+        "z": 3.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.889791,
+          "z": 2.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.26272964,
+          "z": 2.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.174005,
+          "z": 4.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.75952673,
+          "z": 4.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 2.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 2.370358,
+        "z": 5.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.73152542,
+          "z": 4.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.156128,
+          "z": 4.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.07058167,
+          "z": 6.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.52319717,
+          "z": 6.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 3.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 2.15446472,
+        "z": 7.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.482546,
+          "z": 6.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.04726124,
+          "z": 6.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.85938859,
+          "z": 8.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.228663,
+          "z": 8.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 4.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.8786248,
+        "z": 9.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.18582726,
+          "z": 8.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.81804919,
+          "z": 8.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.62907338,
+          "z": 10.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.88154936,
+          "z": 10.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 5.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.65079308,
+        "z": 11.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 1.841882,
+          "z": 10.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.60048723,
+          "z": 10.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.5097,
+          "z": 12.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.6511029,
+          "z": 12.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 6.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.54340172,
+        "z": 13.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 1.62331772,
+          "z": 12.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.50903368,
+          "z": 12.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.49401259,
+          "z": 14.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.547243,
+          "z": 14.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 7.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.57922959,
+        "z": 15.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 1.55525076,
+          "z": 14.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.49774444,
+          "z": 14.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.57383728,
+          "z": 16.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.69008577,
+          "z": 16.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 8.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.7078594,
+        "z": 17.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 1.71393955,
+          "z": 16.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.5914762,
+          "z": 16.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.698766,
+          "z": 18.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.82725585,
+          "z": 18.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 9.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.82961416,
+        "z": 19.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 1.84240556,
+          "z": 18.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.71389413,
+          "z": 18.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.77906919,
+          "z": 20.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.98308778,
+          "z": 20.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 10.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.9865346,
+        "z": 21.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.01963925,
+          "z": 20.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.785485,
+          "z": 20.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.84680963,
+          "z": 22.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.29420447,
+          "z": 22.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 11.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 2.087659,
+        "z": 23.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.310775,
+          "z": 22.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.85602736,
+          "z": 22.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.940708,
+          "z": 24.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.24312449,
+          "z": 24.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 12.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 2.11296916,
+        "z": 25.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.22154546,
+          "z": 24.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.9621371,
+          "z": 24.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.03448772,
+          "z": 26.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.23370647,
+          "z": 26.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 13.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 2.08255053,
+        "z": 27.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.22758031,
+          "z": 26.0
+        },
+        {
+          "x": 32.0,
+          "y": 2.02203131,
+          "z": 26.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.93273687,
+          "z": 28.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.14785337,
+          "z": 28.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 14.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.991952,
+        "z": 29.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.14984679,
+          "z": 28.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.92724419,
+          "z": 28.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.81967473,
+          "z": 30.0
+        },
+        {
+          "x": 30.0,
+          "y": 2.0710423,
+          "z": 30.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    },
+    {
+      "boardPosition": {
+        "x": 15.0,
+        "y": 15.0
+      },
+      "anchorPosition": {
+        "x": 31.0,
+        "y": 1.75938857,
+        "z": 31.0
+      },
+      "corners": [
+        {
+          "x": 30.0,
+          "y": 2.039959,
+          "z": 30.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.782403,
+          "z": 30.0
+        },
+        {
+          "x": 32.0,
+          "y": 1.5636853,
+          "z": 32.0
+        },
+        {
+          "x": 30.0,
+          "y": 1.65150678,
+          "z": 32.0
+        }
+      ],
+      "spriteName": null,
+      "moveCost": 1,
+      "impassable": false,
+      "voidSpace": false
+    }
+  ],
+  "units": [
+      {
+          "name": "Unit 0",
+          "affiliation": "PLAYER",
+          "boardPosition": {
+              "x": 0,
+              "y": 0
+          },
+          "maxHealth": 10.0,
+          "currentHealth": 10.0,
+          "level": 3,
+          "attackPower": 5.0,
+          "defense": 3.0,
+          "jumpHeight": 1.0,
+          "moveRange": 3,
+          "maxActions": 3,
+          "maxBullets": 3,
+          "bullets": 3,
+          "turnEnded": false,
+          "skillNames": [
+              "Crescent Slash",
+              "Full Moon",
+              "Sniper"
+          ]
+      },
+      {
+          "name": "Unit 1",
+          "affiliation": "PLAYER",
+          "boardPosition": {
+              "x": 0,
+              "y": 1
+          },
+          "maxHealth": 10.0,
+          "currentHealth": 10.0,
+          "level": 3,
+          "attackPower": 5.0,
+          "defense": 3.0,
+          "jumpHeight": 1.0,
+          "moveRange": 3,
+          "maxActions": 3,
+          "maxBullets": 3,
+          "bullets": 3,
+          "turnEnded": false,
+          "skillNames": [
+              "Full Moon",
+              "Crescent Slash",
+              "Artillery"
+          ]
+      },
+      {
+          "name": "Unit 2",
+          "affiliation": "PLAYER",
+          "boardPosition": {
+              "x": 0,
+              "y": 2
+          },
+          "maxHealth": 10.0,
+          "currentHealth": 10.0,
+          "level": 3,
+          "attackPower": 5.0,
+          "defense": 3.0,
+          "jumpHeight": 1.0,
+          "moveRange": 3,
+          "maxActions": 3,
+          "maxBullets": 3,
+          "bullets": 3,
+          "turnEnded": false,
+          "skillNames": [
+              "Crescent Slash",
+              "Artillery",
+              "Full Moon"
+          ]
+      }
+  ],
+  "modelName": "test_map"
+}

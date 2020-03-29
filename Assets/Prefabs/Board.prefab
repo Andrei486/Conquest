@@ -149,8 +149,16 @@ MonoBehaviour:
   defaultSprites:
   - {fileID: 8204095343765444867, guid: 4e1d42f4db37f574eb7e52ba706c9c10, type: 3}
   - {fileID: 8648822512753860137, guid: 4e1d42f4db37f574eb7e52ba706c9c10, type: 3}
-  pillarColor: {r: 0.2264151, g: 0.1554794, b: 0.1270915, a: 0}
+  modelName: 
+  moveCursor: {fileID: 0}
   phase: 0
+  highlightColors:
+  - htype: 0
+    material: {fileID: 2100000, guid: 191ea7aca283b3a4b8cc20f557872824, type: 2}
+  - htype: 1
+    material: {fileID: 2100000, guid: 774fd3dd9331c40418088dd6163096b0, type: 2}
+  - htype: 2
+    material: {fileID: 2100000, guid: 0860f7ef69fb80141b7dbb2a8334e478, type: 2}
   cursorPrefab: {fileID: 587640148685082739, guid: 00b628af59913a342ac6a932cb10e2ca,
     type: 3}
   pawn: {fileID: 6535245383649658801, guid: b79204adbe5cbff4bb79e5b59276710c, type: 3}
@@ -282,32 +290,32 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5754645281925157677, guid: edea51bbf4d988f419210b6379112b7e,
+    - target: {fileID: 106030227602762774, guid: edea51bbf4d988f419210b6379112b7e,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 5754645281925157677, guid: edea51bbf4d988f419210b6379112b7e,
+    - target: {fileID: 106030227602762774, guid: edea51bbf4d988f419210b6379112b7e,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5754645281925157677, guid: edea51bbf4d988f419210b6379112b7e,
+    - target: {fileID: 106030227602762774, guid: edea51bbf4d988f419210b6379112b7e,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 106030227602762774, guid: edea51bbf4d988f419210b6379112b7e,
+    - target: {fileID: 5754645281925157677, guid: edea51bbf4d988f419210b6379112b7e,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 106030227602762774, guid: edea51bbf4d988f419210b6379112b7e,
+    - target: {fileID: 5754645281925157677, guid: edea51bbf4d988f419210b6379112b7e,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 106030227602762774, guid: edea51bbf4d988f419210b6379112b7e,
+    - target: {fileID: 5754645281925157677, guid: edea51bbf4d988f419210b6379112b7e,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -462,11 +470,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8097151301833355123, guid: 0231536caae9a574faaa20ae928e5eaa,
-        type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7182270489028675773, guid: 0231536caae9a574faaa20ae928e5eaa,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -481,6 +484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097151301833355123, guid: 0231536caae9a574faaa20ae928e5eaa,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0231536caae9a574faaa20ae928e5eaa, type: 3}

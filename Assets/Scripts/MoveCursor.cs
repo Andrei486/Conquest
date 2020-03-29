@@ -37,7 +37,7 @@ public class MoveCursor : Cursor
 			this.firstFrame = false;
 			return;
 		}
-        if (this.locked){
+        if (this.locked || board.locked){
 			return;
 		}
 		if (!(camera.GetComponent<Camera>().rotating || this.moving || this.movedTemporary)){ //to prevent camera going off-center, do not move if already moving or turning
@@ -79,6 +79,7 @@ public class MoveCursor : Cursor
 		
 		if (movedTemporary){
 			board.MoveUnit(startSpace, space);
+			pc.hasActed = true; //moving counts as an action
 			pc.EndTurnIfNeeded();
 			mainCursor.locked = false;
 			mainCursor.Move(space.boardPosition - startSpace.boardPosition);
@@ -100,7 +101,7 @@ public class MoveCursor : Cursor
 	public override void Deselect(){
 		mainCursor.locked = false;
 		mainCursor.MakeVisible(true);
-		selector.transform.position = startSpace.anchorPosition;
+		selector.GetComponent<CursorSelector>().SetPosition(startSpace);
 		mainCursor.selectedSpace = startSpace;
 		menu.ShowActionList(pc);
 		BoardManager.ClearVisualization();

@@ -10,6 +10,7 @@ TagManager:
   - MenuController
   - Log
   - Global
+  - MainCanvas
   layers:
   - Default
   - TransparentFX

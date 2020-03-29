@@ -13,13 +13,16 @@ public class BoardManager : MonoBehaviour
 	[Tooltip("A list of sprites to use for tile defaults. In order, tile and grass.")]
 	public List<Sprite> defaultSprites;
 	[Tooltip("A list of colors to use for board tile pillars. In order, tile and grass.")]
-	public Color pillarColor;
 	GameObject board;
+	public string modelName;
 	BattleMenu menu;
+	public bool locked = false;
 	Cursor cursor;
 	public Cursor moveCursor;
 	public UnitAffiliation phase;
 	public BoardSpace[,] boardSpaces;
+	public GameObject[,] boardTiles;
+	public HighlightColor[] highlightColors;
 	public GameObject cursorPrefab;
 	public GameObject pawn;
 	public Material spriteShader;
@@ -65,21 +68,56 @@ public class BoardManager : MonoBehaviour
 			return null;
 		}
 	}
+
+	public GameObject GetTile(BoardSpace space){
+		/**Returns the tile of the BoardSpace at the (x, y) coordinates specified by position.
+		If the coordinates are out of bounds, returns null instead.*/
+		Vector2 position = space.boardPosition;
+		if (IsWithinBounds(position)){
+			return this.boardTiles[(int) Math.Round(position.x), (int) Math.Round(position.y)];
+		} else {
+			return null;
+		}
+	}
 	
-	void ShowTile(BoardSpace space){
+	void AddTile(BoardSpace space){
 		/**Shows a board tile corresponding to a BoardSpace.*/
-		GameObject tile = Instantiate(boardTilePrefab, board.transform);
-		tile.transform.position = space.anchorPosition;
-		SpriteRenderer renderer = tile.GetComponent<SpriteRenderer>();
-		tile.transform.Find("Pillar").gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color", pillarColor);
-		Sprite[] sprites = Resources.LoadAll<Sprite>(string.Format("BoardSprites/boardTiles"));
-		foreach (Sprite sprite in sprites){
-			if (sprite.name == space.spriteName){
-				renderer.sprite = sprite;
+		
+		GameObject tile = Instantiate(boardTilePrefab, this.transform);
+		//move the tile up a bit so it looks better
+		tile.transform.Translate(Vector3.up * 0.1f * BoardSpace.BOARD_SIZE);
+		LineRenderer lrenderer = tile.GetComponent<LineRenderer>();
+		MeshRenderer mrenderer = tile.GetComponent<MeshRenderer>();
+		lrenderer.positionCount = 4;
+		lrenderer.SetPositions(space.corners);
+		Mesh mesh = new Mesh();
+		mesh.vertices = space.corners;
+		mesh.triangles = new int[]{2, 1, 0, 0, 3, 2};
+		mesh.RecalculateBounds();
+		mesh.RecalculateNormals();
+		tile.GetComponent<MeshFilter>().mesh = mesh;
+		lrenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+		mrenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+		mrenderer.receiveShadows = false;
+		mrenderer.enabled = false;
+		boardTiles[(int) space.boardPosition.x, (int) space.boardPosition.y] = tile;
+	}
+
+	void ToggleOutlines(bool enabled){
+		foreach (GameObject tile in boardTiles){
+			tile.GetComponent<LineRenderer>().enabled = enabled;
+		}
+	}
+
+	public void HighlightSpaces(HashSet<BoardSpace> spaces){
+		foreach (BoardSpace space in boardSpaces){
+			GetTile(space).GetComponent<MeshRenderer>().enabled = false;
+		}
+		if (spaces != null){
+			foreach (BoardSpace space in spaces){
+				GetTile(space).GetComponent<MeshRenderer>().enabled = true;
 			}
 		}
-		renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-		renderer.receiveShadows = true;
 	}
 	
 	public bool IsWithinBounds(Vector2 position){
@@ -243,13 +281,6 @@ public class BoardManager : MonoBehaviour
 	public static BoardManager GetBoard(){
 		return GameObject.FindWithTag("Board").GetComponent<BoardManager>();
 	}
-	
-	void CreateUnits(){
-		/**Creates units from the JSON file of map data. Must be called after CreateMap.*/
-		JToken array = JObject.Parse(mapData.text)["players"];
-		List<GameObject> players = JsonConvert.DeserializeObject<List<GameObject>>(array.ToString(), new PlayerConverter());
-		InitializeUnits(players);
-	}
 
 	public void InitializeUnits(List<GameObject> units){
 		/**Places the specified units at their respective positions.*/
@@ -262,25 +293,17 @@ public class BoardManager : MonoBehaviour
 	}
 
 	public void InitializeMap(List<BoardSpace> spaces){
+		GameObject modelObject = (GameObject) Resources.Load("MapModels/" + modelName);
+		Instantiate(modelObject);
 		boardSpaces = new BoardSpace[columns, rows];
+		boardTiles = new GameObject[columns, rows];
 		foreach (BoardSpace space in spaces){
 			int i = (int) space.boardPosition.x;
 			int j = (int) space.boardPosition.y;
 			boardSpaces[i, j] = space;
-			ShowTile(boardSpaces[i, j]);
+			AddTile(boardSpaces[i, j]);
 		}
-	}
-	
-	void CreateMap(){
-		/**Creates a board of BoardSpaces from the JSON file of map data.*/
-		List<BoardSpace> spacesList = JsonConvert.DeserializeObject<List<BoardSpace>>(mapData.text, new BoardConverter());
-		boardSpaces = new BoardSpace[columns, rows];
-		foreach (BoardSpace space in spacesList){
-			int i = (int) space.boardPosition.x;
-			int j = (int) space.boardPosition.y;
-			boardSpaces[i, j] = space;
-			ShowTile(boardSpaces[i, j]);
-		}
+		ToggleOutlines(true);
 	}
 	
 	public static void ClearVisualization(){
@@ -288,17 +311,6 @@ public class BoardManager : MonoBehaviour
 		foreach (GameObject vis in GameObject.FindGameObjectsWithTag("Visualization")){
 			Destroy(vis);
 		}
-	}
-
-	public static void SetLock(bool enabled){
-		BoardManager board = BoardManager.GetBoard();
-		board.cursor.locked = enabled;
-		board.cursor.rotationLocked = enabled;
-		if (board.moveCursor != null){
-			board.moveCursor.locked = enabled;
-			board.moveCursor.rotationLocked = enabled;
-		}
-		board.menu.actionCursor.GetComponent<MenuCursor>().locked = enabled;
-		board.menu.skillCursor.GetComponent<MenuCursor>().locked = enabled;
+		BoardManager.GetBoard().HighlightSpaces(null);
 	}
 }

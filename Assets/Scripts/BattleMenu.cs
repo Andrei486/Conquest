@@ -50,6 +50,7 @@ public class BattleMenu : MonoBehaviour
 				skillCursor.GetComponent<MenuCursor>().MoveUp();
 			}
 			if (Input.GetKeyDown(controls.GetCommand(Command.BACK))){
+				Debug.Log("no longer showing skills");
 				cursor.locked = false;
 				cursor.Deselect();
 				cursor.Select(cursor.board.GetSpace(skillCursor.GetComponent<SkillMenuCursor>().boardPosition));
@@ -65,9 +66,9 @@ public class BattleMenu : MonoBehaviour
 			}
 			//cannot cancel if unit has already acted or moved
 			if (Input.GetKeyDown(controls.GetCommand(Command.BACK)) && !playerController.hasActed){
+				Debug.Log("no longer showing actions");
 				cursor.locked = false;
 				cursor.Deselect();
-				ToggleActions(false);
 			}
 		}
     }

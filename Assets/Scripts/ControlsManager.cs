@@ -107,6 +107,7 @@ public class ControlsManager: MonoBehaviour
         keyMappings.Add(Command.QUICKLOAD, KeyCode.Minus);
         keyMappings.Add(Command.TOGGLE_INFO, KeyCode.RightControl);
         keyMappings.Add(Command.RESET_CONTROLS, KeyCode.R);
+        keyMappings.Add(Command.TOGGLE_GRID, KeyCode.G);
         this.SetCameraControls(ControlsManager.WASD);
         this.SetMoveControls(ControlsManager.ARROWS);
     }
@@ -152,13 +153,13 @@ public class ControlsManager: MonoBehaviour
     }
 
     public void ShowControlsMenu(){
-        BoardManager.SetLock(true);
+        BoardManager.GetBoard().locked = true;
         CreateControlsMenu();
         menuCursor.GetComponent<MenuCursor>().LinkMenu(this.transform.GetChild(0).gameObject);
         showingControls = true;
     }
     public void HideControlsMenu(){
-        BoardManager.SetLock(false);
+        BoardManager.GetBoard().locked = false;
         menuCursor.GetComponent<MenuCursor>().UnlinkMenu();
         foreach (Transform item in this.transform.GetChild(0)){
             Destroy(item.gameObject);
@@ -223,6 +224,7 @@ public enum Command{
     [Description("Back/Cancel")] BACK,
     [Description("Show/Hide Details")] TOGGLE_INFO,
     [Description("Reset Controls")] RESET_CONTROLS,
+    [Description("Show/Hide Grid")] TOGGLE_GRID,
     [Description("Quicksave")] QUICKSAVE, [Description("Quickload")] QUICKLOAD,
     [Description("Cam. Tilt Up")]CAMERA_UP, [Description("Cam. Tilt Down")]CAMERA_DOWN,
     [Description("Cam. Turn Left")] CAMERA_LEFT, [Description("Cam. Turn Right")] CAMERA_RIGHT,

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MenuCursor : MonoBehaviour
 {
 	protected GameObject menu;
+	BoardManager board;
 	protected BattleMenu menuController;
 	protected Cursor cursor;
 	public GameObject currentItem;
@@ -17,6 +18,7 @@ public class MenuCursor : MonoBehaviour
     // Start is called before the first frame update
     virtual protected void Start()
     {
+		board = BoardManager.GetBoard();
 		controls = ControlsManager.GetControls();
         this.gameObject.GetComponent<Image>().enabled = false;
 		cursor = GameObject.FindGameObjectsWithTag("Cursor")[0].GetComponent<Cursor>();
@@ -25,7 +27,7 @@ public class MenuCursor : MonoBehaviour
     // Update is called once per frame
     virtual protected void Update()
     {
-		if (this.locked){
+		if (this.locked || board.locked){
 			return;
 		}
         if (this.menu != null){

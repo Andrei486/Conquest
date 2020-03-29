@@ -26,7 +26,7 @@ public class SaveManager : MonoBehaviour
         controlsData = Application.persistentDataPath + "/SaveData/controlsData.txt";
         Debug.Log(Application.persistentDataPath);
         LoadControls();
-        StartCoroutine(StartNewBattle("mapData"));
+        StartCoroutine(StartNewBattle("map5"));
     }
 
     void Update()

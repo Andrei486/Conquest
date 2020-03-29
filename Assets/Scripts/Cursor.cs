@@ -14,6 +14,8 @@ public class Cursor : MonoBehaviour
 	public bool moving = false;
 	public bool locked = false;
 	public bool rotationLocked = false;
+	Vector3 offset = new Vector3 (0f, 2.5f, 0f);
+	Vector3 playerOffset = new Vector3 (0f, 1f, 0f);
 	
 	public new GameObject camera;
 	public BoardManager board;
@@ -29,19 +31,19 @@ public class Cursor : MonoBehaviour
 		controls = ControlsManager.GetControls();
 		selectedSpace = null;
 		position = new Vector2(0, 0);
-		this.gameObject.transform.position = board.boardSpaces[0, 0].anchorPosition + new Vector3 (0f, 4f, 0f);
+		this.gameObject.transform.position = board.boardSpaces[0, 0].anchorPosition + offset;
 		if (board.boardSpaces[0, 0].occupyingUnit != null){
-			this.gameObject.transform.position += new Vector3 (0f, 1f, 0f);
+			this.gameObject.transform.position += playerOffset;
 		}
 		selector = Instantiate(cursorSelectPrefab, this.gameObject.transform);
-		selector.transform.position = board.boardSpaces[0, 0].anchorPosition + new Vector3 (0f, 0.01f, 0f);
+		selector.GetComponent<CursorSelector>().SetPosition(new Vector2(0, 0));
 		camera = GameObject.FindGameObjectsWithTag("MainCamera")[0]; //find camera object
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-		if (this.locked){
+		if (this.locked || board.locked){
 			return;
 		}
 		if (!(camera.GetComponent<Camera>().rotating || this.moving || this.movedTemporary)){ //to prevent camera going off-center, do not move if already moving or turning
@@ -65,9 +67,9 @@ public class Cursor : MonoBehaviour
 		if (Input.GetKeyDown(controls.GetCommand(Command.CONFIRM))){
 			Select(board.boardSpaces[(int) position.x, (int) position.y]);
 		}
-		if (Input.GetKeyDown(controls.GetCommand(Command.BACK))){
-			Deselect();
-		}
+		// if (Input.GetKeyDown(controls.GetCommand(Command.BACK))){
+		// 	Deselect();
+		// }
     }
 	
 	public void Move(Vector2 movement){
@@ -96,18 +98,18 @@ public class Cursor : MonoBehaviour
 	void UpdatePosition(Vector2 newPosition){
 		/**Updates position of cursor to match the new position.*/
 		Vector3 startPosition = this.gameObject.transform.position;
-		BoardSpace endSpace = board.boardSpaces[(int) newPosition.x, (int) newPosition.y];
-		Vector3 endPosition = endSpace.anchorPosition + new Vector3 (0f, 4f, 0f);
+		BoardSpace endSpace = board.GetSpace(newPosition);
+		Vector3 endPosition = endSpace.anchorPosition + offset;
 		if (endSpace.occupyingUnit != null){
-			endPosition += new Vector3 (0f, 1f, 0f);
+			endPosition += playerOffset;
 		}
-		Vector3 selectorEnd = board.boardSpaces[(int) newPosition.x, (int) newPosition.y].anchorPosition + new Vector3 (0f, 0.01f, 0f);
-		StartCoroutine(MoveForSeconds(startPosition, endPosition, selectorEnd));
+		selector.GetComponent<CursorSelector>().SetPosition(newPosition);
+		StartCoroutine(MoveForSeconds(startPosition, endPosition));
 		//actually set the position
 		this.position = newPosition;
 	}
 	
-	public IEnumerator MoveForSeconds(Vector3 startPosition, Vector3 endPosition, Vector3 selectorEnd){
+	public IEnumerator MoveForSeconds(Vector3 startPosition, Vector3 endPosition){
 		/**Moves the cursor from startPosition to endPosition and the selector is moved accordingly.*/
 		moving = true;
 		float startTime = Time.time;
@@ -121,7 +123,6 @@ public class Cursor : MonoBehaviour
 		}
 		
 		this.gameObject.transform.position = endPosition;
-		selector.transform.position = selectorEnd;
 		moving = false;
 	}
 	
