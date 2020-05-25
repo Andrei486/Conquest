@@ -22,6 +22,7 @@ public class ControlsManager: MonoBehaviour
     public const int ARROWS = 1;
     public GameObject cursorPrefab;
     GameObject menuCursor;
+    GameObject controlsMenu;
     public Dictionary<Command, KeyCode> keyMappings;
     List<KeyCode> validCodes;
 
@@ -34,6 +35,8 @@ public class ControlsManager: MonoBehaviour
         //set up cursor for showing controls
         menuCursor = Instantiate(cursorPrefab, this.transform);
         menuCursor.AddComponent(typeof(ControlsMenuCursor));
+
+        controlsMenu = GameObject.FindWithTag("MainCanvas").transform.Find("Controls Menu").gameObject;
 
         //key mappings are loaded with the battlefield, but otherwise reset them
         ResetControls();
@@ -135,11 +138,10 @@ public class ControlsManager: MonoBehaviour
     }
 
     public void CreateControlsMenu(){
-        GameObject menu = this.transform.GetChild(0).gameObject;
         int row = 0;
         int column = 0;
         foreach (Command command in keyMappings.Keys){
-            GameObject item = Instantiate(menuItem, menu.transform);
+            GameObject item = Instantiate(menuItem, controlsMenu.transform);
             item.transform.Translate(new Vector3(menuItemRowWidth * column, menuItemStackHeight * row, 0f)); //stack items properly
             item.transform.Find("Command Name").GetComponent<Text>().text = ControlsManager.GetCommandName(command);
             item.transform.Find("Current Keybind").GetComponent<Text>().text = keyMappings[command].ToString();
@@ -155,13 +157,13 @@ public class ControlsManager: MonoBehaviour
     public void ShowControlsMenu(){
         BoardManager.GetBoard().locked = true;
         CreateControlsMenu();
-        menuCursor.GetComponent<MenuCursor>().LinkMenu(this.transform.GetChild(0).gameObject);
+        menuCursor.GetComponent<MenuCursor>().LinkMenu(controlsMenu);
         showingControls = true;
     }
     public void HideControlsMenu(){
         BoardManager.GetBoard().locked = false;
         menuCursor.GetComponent<MenuCursor>().UnlinkMenu();
-        foreach (Transform item in this.transform.GetChild(0)){
+        foreach (Transform item in controlsMenu.transform){
             Destroy(item.gameObject);
         }
         showingControls = false;

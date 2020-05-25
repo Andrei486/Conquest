@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
@@ -25,8 +26,8 @@ public class SaveManager : MonoBehaviour
         backupFile = Application.persistentDataPath + "/SaveData/backupFile.txt";
         controlsData = Application.persistentDataPath + "/SaveData/controlsData.txt";
         Debug.Log(Application.persistentDataPath);
-        LoadControls();
-        StartCoroutine(StartNewBattle("map5"));
+        //LoadControls();
+        StartCoroutine(StartNewBattle("mission"));
     }
 
     void Update()
@@ -35,27 +36,46 @@ public class SaveManager : MonoBehaviour
             SaveBoard(BoardManager.GetBoard());
         }
         if (Input.GetKeyDown(controls.GetCommand(Command.QUICKLOAD))){
-            StartCoroutine(LoadBattle(battleSave));
+            ResumeSavedBattle();
         }
     }
 
-    public IEnumerator LoadBattle(string mapData){
-        /**Loads the battlefield corresponding to the JSON file in mapData.
-        If no argument is given, loads the battle save instead, assuming it exists.*/
-        RemovePreviousBoard();
-        yield return new WaitForEndOfFrame();
-        string fullInfo = File.ReadAllText(mapData);
-        GameObject boardObject = JsonConvert.DeserializeObject<GameObject>(fullInfo, new BoardConverter());
-        Debug.Log("loaded");
+    public GameObject LoadMission(GameObject boardObject, JObject missionInfo){
+        BoardManager board = boardObject.GetComponent<BoardManager>();
+        List<GameObject> units = new List<GameObject>();
+			foreach (JToken item in missionInfo["units"].Children()){
+				Debug.Log(item);
+				units.Add(JsonConvert.DeserializeObject<GameObject>(item.ToString(), new PlayerConverter()));
+			}
+			board.SetUnits(units);
+            board.currentTurn = missionInfo["currentTurn"].Value<int>();
+            board.phase = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), missionInfo["currentPhase"].Value<string>());
+            board.mapName = missionInfo["map"].Value<string>();
+        return boardObject;
     }
 
-    public IEnumerator StartNewBattle(string mapData){
-        /**Loads the battlefield corresponding to the JSON file in mapData.
+    public IEnumerator StartNewBattle(string missionData, bool fromSave = false){
+        /**Loads the battlefield corresponding to the JSON file in missionData.
         If no argument is given, loads the battle save instead, assuming it exists.*/
         RemovePreviousBoard();
+        string mapData;
+        JObject missionInfo;
         yield return new WaitForEndOfFrame();
+        if (!fromSave){
+            TextAsset fullMission = Resources.Load<TextAsset>("Missions/" + missionData);
+            missionInfo = JObject.Parse(fullMission.text);
+        } else {
+            missionInfo = JObject.Parse(File.ReadAllText(missionData));
+        }
+        
+        mapData = missionInfo["map"].Value<string>();
         TextAsset fullInfo = Resources.Load<TextAsset>("Maps/" + mapData);
         GameObject boardObject = JsonConvert.DeserializeObject<GameObject>(fullInfo.text, new BoardConverter());
+        boardObject = LoadMission(boardObject, missionInfo);
+    }
+
+    public void ResumeSavedBattle(){
+        StartCoroutine(StartNewBattle(battleSave, true));
     }
 
     public void RemovePreviousBoard(){

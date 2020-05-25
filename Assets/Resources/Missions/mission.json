@@ -1,0 +1,80 @@
+{
+    "units": [
+        {
+            "name": "Unit 0",
+            "affiliation": "PLAYER",
+            "boardPosition": {
+                "x": 0,
+                "y": 0
+            },
+            "maxHealth": 10.0,
+            "currentHealth": 10.0,
+            "level": 3,
+            "attackPower": 5.0,
+            "defense": 3.0,
+            "jumpHeight": 1.0,
+            "moveRange": 3,
+            "maxActions": 3,
+            "maxBullets": 3,
+            "bullets": 3,
+            "turnEnded": false,
+            "skillNames": [
+                "Crescent Slash",
+                "Full Moon",
+                "Sniper"
+            ]
+        },
+        {
+            "name": "Unit 1",
+            "affiliation": "PLAYER",
+            "boardPosition": {
+                "x": 0,
+                "y": 1
+            },
+            "maxHealth": 10.0,
+            "currentHealth": 10.0,
+            "level": 3,
+            "attackPower": 5.0,
+            "defense": 3.0,
+            "jumpHeight": 1.0,
+            "moveRange": 3,
+            "maxActions": 3,
+            "maxBullets": 3,
+            "bullets": 3,
+            "turnEnded": false,
+            "skillNames": [
+                "Full Moon",
+                "Crescent Slash",
+                "Artillery"
+            ]
+        },
+        {
+            "name": "Unit 2",
+            "affiliation": "ENEMY",
+            "boardPosition": {
+                "x": 0,
+                "y": 2
+            },
+            "maxHealth": 10.0,
+            "currentHealth": 10.0,
+            "level": 3,
+            "attackPower": 5.0,
+            "defense": 3.0,
+            "jumpHeight": 1.0,
+            "moveRange": 3,
+            "maxActions": 3,
+            "maxBullets": 3,
+            "bullets": 3,
+            "turnEnded": false,
+            "skillNames": [
+                "Crescent Slash",
+                "Artillery",
+                "Full Moon"
+            ]
+        }
+    ],
+    "currentTurn": 1,
+    "currentPhase": "PLAYER",
+    "map": "map5",
+    "flags": []
+}

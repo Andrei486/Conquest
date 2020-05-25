@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.Linq;
 using UnityEngine;
 using Objects;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using JsonConverters;
 
 public class BoardManager : MonoBehaviour
 {
 	public int rows;
 	public int columns;
+	public int currentTurn;
 	[Tooltip("A list of sprites to use for tile defaults. In order, tile and grass.")]
 	public List<Sprite> defaultSprites;
 	[Tooltip("A list of colors to use for board tile pillars. In order, tile and grass.")]
 	GameObject board;
 	public string modelName;
+	public string mapName;
 	BattleMenu menu;
 	public bool locked = false;
 	Cursor cursor;
@@ -30,17 +30,22 @@ public class BoardManager : MonoBehaviour
 	public GameObject moveTilePrefab;
 	public GameObject skillTilePrefab;
 	public GameObject skillHitPrefab;
-	public TextAsset mapData;
 	public TextAsset skillData;
-	private List<GameObject> players;
+	private List<GameObject> units;
 	private List<BoardSpace> spaces;
+	private bool outlinesOn = true;
+	private ControlsManager controls;
+	private UIController uI;
     // Start is called before the first frame update
     void Start()
     {
 		board = this.gameObject;
+		phase = UnitAffiliation.PLAYER;
+		controls = ControlsManager.GetControls();
 		menu = BattleMenu.GetMenu();
+		uI = UIController.GetUI();
 		InitializeMap(spaces);
-		InitializeUnits(players);
+		InitializeUnits(units);
 		menu.cursor = Instantiate(cursorPrefab, this.transform).GetComponent<Cursor>();
 		cursor = menu.cursor;
 		ControlsManager.GetControls().board = this.gameObject;
@@ -49,14 +54,27 @@ public class BoardManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+		if (locked){
+			return;
+		}
+        if (Input.GetKeyDown(controls.GetCommand(Command.TOGGLE_GRID))){
+			outlinesOn = !outlinesOn;
+			ToggleOutlines(outlinesOn);
+		}
+		if (Input.GetKeyDown(controls.GetCommand(Command.TOGGLE_INFO))){
+            BoardSpace space = GetHoveredSpace();
+            if (space.occupyingUnit != null){
+                uI.ShowUnitInfo(space.occupyingUnit.GetComponent<PlayerController>());
+            }
+        }
     }
+
 
 	public void SetSpaces(List<BoardSpace> spaces){
 		this.spaces = spaces;
 	}
-	public void SetPlayers(List<GameObject> players){
-		this.players = players;
+	public void SetUnits(List<GameObject> units){
+		this.units = units;
 	}
 	
 	public BoardSpace GetSpace(Vector2 position){
@@ -67,6 +85,11 @@ public class BoardManager : MonoBehaviour
 		} else {
 			return null;
 		}
+	}
+
+	public BoardSpace GetHoveredSpace(){
+		/**Returns the BoardSpace currently hovered over by the cursor.!--*/
+		return GetSpace(cursor.position);
 	}
 
 	public GameObject GetTile(BoardSpace space){
@@ -255,14 +278,16 @@ public class BoardManager : MonoBehaviour
 		cursor.selectedSpace = end;
 	}
 	
-	public void RefreshUnits(){
+	public void RefreshUnits(UnitAffiliation toRestore){
 		/**Called at the end of turn to allow all units a new turn.*/
 		for (int i = 0; i < columns; i++){
 			for (int j = 0; j < rows; j++){
 				BoardSpace space = GetSpace(new Vector2(i, j));
 				if (space.occupyingUnit != null){
 					PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();
-					RefreshUnit(pc);
+					if (pc.affiliation == toRestore){
+						RefreshUnit(pc);
+					}
 				}
 			}
 		}
@@ -274,8 +299,49 @@ public class BoardManager : MonoBehaviour
 		pc.hasActed = false;
 	}
 
-	void CheckEndPhase(){
+	public bool AdvancePhase(){
+		List<PlayerController> actingUnits = new List<PlayerController>(from unit in this.units
+			where unit.GetComponent<PlayerController>().affiliation == this.phase
+			select unit.GetComponent<PlayerController>());
+		foreach (PlayerController unit in actingUnits){
+			if (!unit.turnEnded){
+				//at least one unit has not acted but still can
+				Debug.Log("unit can still act");
+				return false;
+			}
+		}
+		//all units that can act on this phase have acted
+		BattleLog log = BattleLog.GetLog();
+		log.Log(this.phase + " phase ended.");
+		RefreshUnits(this.phase);
+		this.phase = this.phase.Next();
+		log.Log(this.phase + " phase started.");
+		return true;
+	}
 
+	void RemoveDeadUnits(){
+		for (int x = 0; x < columns; x++){
+			for (int y = 0; y < rows; y++){
+				BoardSpace space = GetSpace(new Vector2(x, y));
+				if (space.occupyingUnit != null){
+					PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();
+					if (pc.health.currentHealth <= 0){
+						RemoveUnit(pc);
+					}
+				}
+			}
+		}
+	}
+
+	void RemoveUnit(PlayerController pc){
+		BoardSpace space = GetSpace(pc.boardPosition);
+		if (space == cursor.selectedSpace){
+			cursor.Deselect();
+		}
+		space.occupyingUnit = null;
+		// show death dialogue or other effects here if needed
+		// for player units, write info back to units file if applicable
+		Destroy(pc.gameObject);
 	}
 
 	public static BoardManager GetBoard(){

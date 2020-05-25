@@ -91,15 +91,15 @@ namespace JsonConverters{
             BoardManager board = ((GameObject) value).GetComponent<BoardManager>();
 			
 			//serialize the spaces and units on them
-            JArray spaces = new JArray();
+            //JArray spaces = new JArray();
 			JArray units = new JArray();
             foreach (BoardSpace space in board.boardSpaces){
-                spaces.Add(JObject.Parse(JsonConvert.SerializeObject(space)));
+                //spaces.Add(JObject.Parse(JsonConvert.SerializeObject(space)));
 				if (space.occupyingUnit != null){
 					units.Add(JObject.Parse(JsonConvert.SerializeObject(space.occupyingUnit, new PlayerConverter())));
 				}
             }
-            
+            /*
 			JObject toWrite = new JObject(
 				new JProperty("rows", board.rows),
 				new JProperty("columns", board.columns),
@@ -107,8 +107,15 @@ namespace JsonConverters{
 				new JProperty("units", units),
 				new JProperty("modelName", board.modelName)
 			);
+			*/
+			JObject missionInfo = new JObject(
+				new JProperty("units", units),
+				new JProperty("currentTurn", board.currentTurn),
+				new JProperty("currentPhase", board.phase),
+				new JProperty("map", board.mapName)
+			);
 
-			toWrite.WriteTo(writer);
+			missionInfo.WriteTo(writer);
 		}
 		
 		public override bool CanConvert(Type type){
@@ -138,12 +145,6 @@ namespace JsonConverters{
 			board.SetSpaces(spaces);
 
 			//initialize the units
-			List<GameObject> units = new List<GameObject>();
-			foreach (JToken item in boardInfo["units"].Children()){
-				Debug.Log(item);
-				units.Add(JsonConvert.DeserializeObject<GameObject>(item.ToString(), new PlayerConverter()));
-			}
-			board.SetPlayers(units);
 
 			return boardObject;
 		}

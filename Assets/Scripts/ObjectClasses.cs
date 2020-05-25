@@ -153,6 +153,65 @@ namespace Objects
 		public UnitAction action;
 		public Sprite emblemSprite;
 	}
+
+	/**Credit goes to husayt from StackOverflow for the Next method.
+	https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp*/
+	public static class Extensions
+	{
+
+		public static T Next<T>(this T src) where T : struct
+		{
+			if (!typeof(T).IsEnum) throw new ArgumentException(String.Format("Argument {0} is not an Enum", typeof(T).FullName));
+
+			T[] Arr = (T[])Enum.GetValues(src.GetType());
+			int j = Array.IndexOf<T>(Arr, src) + 1;
+			return (Arr.Length==j) ? Arr[0] : Arr[j];            
+		}
+
+		public static Color BorderColor(this UnitAffiliation affiliation){
+			Color color;
+			switch (affiliation){
+				case UnitAffiliation.PLAYER:
+					color = new Color(0f, 0.2f, 0.9f); //blue
+					break;
+				case UnitAffiliation.ENEMY:
+					color = new Color(0.8f, 0.1f, 0.1f); //red
+					break;
+				case UnitAffiliation.ALLY:
+					color = new Color(0.3f, 0.7f, 0.1f); //forest green
+					break;
+				case UnitAffiliation.OTHER:
+					color = new Color(0.8f, 0.7f, 0f); //golden yellow
+					break;
+				default:
+					color = Color.black;
+					break;
+			}
+			return color;
+		}
+
+		public static Color BgColor(this UnitAffiliation affiliation){
+			Color color;
+			switch (affiliation){
+				case UnitAffiliation.PLAYER:
+					color = new Color(0.85f, 0.9f, 1f); //light blue
+					break;
+				case UnitAffiliation.ENEMY:
+					color = new Color(1f, 0.85f, 0.85f); //light red
+					break;
+				case UnitAffiliation.ALLY:
+					color = new Color(0.85f, 1f, 0.85f); //light green
+					break;
+				case UnitAffiliation.OTHER:
+					color = new Color(1f, 0.9f, 0.8f); //golden yellow
+					break;
+				default:
+					color = Color.white;
+					break;
+			}
+			return color;
+		}
+	}
 	
 	[Serializable]
 	public class Skill{

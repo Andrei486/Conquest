@@ -11,6 +11,8 @@ TagManager:
   - Log
   - Global
   - MainCanvas
+  - UIBorder
+  - UIBackground
   layers:
   - Default
   - TransparentFX

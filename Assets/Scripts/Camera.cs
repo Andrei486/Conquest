@@ -8,7 +8,7 @@ public class Camera : MonoBehaviour
 	public Cursor cursor;
 	public float timeToRotate = 0.2f;
 	public bool rotating = false;
-	public float zAngle = 60.0f;
+	float zAngle = 30.0f;
 	ControlsManager controls;
     // Start is called before the first frame update
     void Start()

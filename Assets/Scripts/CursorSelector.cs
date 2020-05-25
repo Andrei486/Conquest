@@ -70,9 +70,14 @@ public class CursorSelector : MonoBehaviour
 	
 	private void SelectUnit(BoardSpace space){
 		/**Selects the unit on the specified space, if it is selectable.*/
-		if (space.occupyingUnit != null && space.occupyingUnit.GetComponent<PlayerController>().turnEnded == false){
-			cursorScript.selectedSpace = space; //select the space if none already selected and not empty
-			menu.ShowActionList(cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>());
+		if (space.occupyingUnit != null){
+			PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();
+			if (pc.affiliation == BoardManager.GetBoard().phase && !pc.turnEnded){
+				//select the space if none already selected and the unit on it is selectable
+				cursorScript.selectedSpace = space; 
+				menu.ShowActionList(cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>());
+			}
+			
 		}
 	}
 	

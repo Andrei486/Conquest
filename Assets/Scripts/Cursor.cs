@@ -24,11 +24,13 @@ public class Cursor : MonoBehaviour
 	public GameObject cursorSelectPrefab;
 	public GameObject moveCursorPrefab;
 	protected ControlsManager controls;
+	protected UIController uI;
     // Start is called before the first frame update
     void Start()
     {
 		board = BoardManager.GetBoard(); //find board object and script
 		controls = ControlsManager.GetControls();
+		uI = UIController.GetUI();
 		selectedSpace = null;
 		position = new Vector2(0, 0);
 		this.gameObject.transform.position = board.boardSpaces[0, 0].anchorPosition + offset;
@@ -38,6 +40,7 @@ public class Cursor : MonoBehaviour
 		selector = Instantiate(cursorSelectPrefab, this.gameObject.transform);
 		selector.GetComponent<CursorSelector>().SetPosition(new Vector2(0, 0));
 		camera = GameObject.FindGameObjectsWithTag("MainCamera")[0]; //find camera object
+		UpdatePosition(Vector2.zero);
     }
 
     // Update is called once per frame
@@ -88,11 +91,13 @@ public class Cursor : MonoBehaviour
 	virtual public void Select(BoardSpace space){
 		/**Forwards the call to the attached cursor selector.*/
 		selector.GetComponent<CursorSelector>().Select(space);
+		uI.ShowUnitSummary(space);
 	}
 	
 	virtual public void Deselect(){
 		/**Forwards the call to the attached cursor selector.*/
 		selector.GetComponent<CursorSelector>().Deselect();
+		uI.ShowUnitSummary(board.GetSpace(position));
 	}
 	
 	void UpdatePosition(Vector2 newPosition){
@@ -107,6 +112,7 @@ public class Cursor : MonoBehaviour
 		StartCoroutine(MoveForSeconds(startPosition, endPosition));
 		//actually set the position
 		this.position = newPosition;
+		uI.ShowUnitSummary(board.GetSpace(newPosition));
 	}
 	
 	public IEnumerator MoveForSeconds(Vector3 startPosition, Vector3 endPosition){

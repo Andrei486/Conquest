@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
 	public bool hasActed = false;
 	public Health health;
 	public UnitAction previousAction;
+	public string classTitle = "";
+	public Sprite unitSprite;
+	public Sprite armySprite;
 	
     // Start is called before the first frame update
     void Start()
@@ -153,6 +156,9 @@ public class PlayerController : MonoBehaviour
 		this.turnEnded = true;
 		this.remainingActions = maxActions;
 		this.remainingMove = moveRange;
+		while (this.board.AdvancePhase()){
+			; //advance phases until the next available one
+		}
 	}
 
 	public PlayerInfo GetPlayerInfo(){

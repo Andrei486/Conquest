@@ -90,6 +90,7 @@ public class BattleMenu : MonoBehaviour
 		foreach (Skill toShow in skillList){
 			menuItem = Instantiate(skillItemPrefab, this.transform.Find("Skills")); //for each skill create a menu item as child of menu
 			menuItem.transform.Translate(new Vector3(0f, skillStackHeight * skillCount, 0f));
+			UIController.SetTheme(menuItem.transform, pc.affiliation);
 			
 			text = menuItem.transform.Find("Name").GetComponent<Text>();
 			text.text = toShow.name;
@@ -137,6 +138,7 @@ public class BattleMenu : MonoBehaviour
 			menuItem = Instantiate(actionItemPrefab, this.transform.Find("Actions"));
 			menuItem.name = action.ToString();
 			menuItem.transform.Translate(new Vector3(0f, actionStackHeight * actionCount, 0f));
+			UIController.SetTheme(menuItem.transform, pc.affiliation);
 			text = menuItem.transform.Find("Name").gameObject.GetComponent<Text>();
 			text.text = action.ToString();
 			

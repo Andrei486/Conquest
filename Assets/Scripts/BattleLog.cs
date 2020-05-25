@@ -10,8 +10,7 @@ public class BattleLog : MonoBehaviour
     List<string> messageLog;
     void Start()
     {
-        messageLog = new List<string>();
-        UpdateText();
+        Clear();
     }
 
     void Update()
