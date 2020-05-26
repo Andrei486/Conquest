@@ -8,8 +8,8 @@ public class UIController: MonoBehaviour
 {
     public GameObject unitInfoPrefab;
     public GameObject unitSummaryPrefab;
-    public GameObject unitInfoBox;
-    public GameObject unitSummaryBox;
+    private GameObject unitInfoBox;
+    private GameObject unitSummaryBox;
     private ControlsManager controls;
     private BoardManager board;
 
@@ -21,7 +21,7 @@ public class UIController: MonoBehaviour
     public GameObject ShowUnitInfo(PlayerController unit){
         /**Shows detailed information about the specified unit.!--*/
         if (unitInfoBox != null){
-            Destroy(unitInfoBox); //remove previous unit info if it exists
+            ClearUnitInfo(); //remove previous unit info if it exists
         }
         Transform section;
 
@@ -148,5 +148,13 @@ public class UIController: MonoBehaviour
             SetTheme(uiChild, theme);
         }
         return;
+    }
+
+    public bool ShowingInfo(){
+        return (unitInfoBox != null);
+    }
+
+    public void ClearUnitInfo(){
+        Destroy(unitInfoBox);
     }
 }

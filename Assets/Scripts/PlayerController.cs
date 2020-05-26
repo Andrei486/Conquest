@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 	public string classTitle = "";
 	public Sprite unitSprite;
 	public Sprite armySprite;
+	public string modelName;
 	
     // Start is called before the first frame update
     void Start()

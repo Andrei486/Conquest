@@ -67,8 +67,8 @@ public class BattleMenu : MonoBehaviour
 			//cannot cancel if unit has already acted or moved
 			if (Input.GetKeyDown(controls.GetCommand(Command.BACK)) && !playerController.hasActed){
 				Debug.Log("no longer showing actions");
-				cursor.locked = false;
 				cursor.Deselect();
+				cursor.locked = false;
 			}
 		}
     }

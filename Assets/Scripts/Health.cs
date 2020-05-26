@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
 				UseAttack(attack, board.GetSpace(newPosition).occupyingUnit.GetComponent<PlayerController>().health, direction);
 			}
 		}
-		
+		BoardManager.GetBoard().RemoveDeadUnits();
 	}
 	
 	void UseAttack(Attack attack, Health target, Quaternion direction){
@@ -52,7 +52,7 @@ public class Health : MonoBehaviour
 		float damageDealt = attack.CalculateDamage(this, target);
 
 		target.currentHealth -= damageDealt;
-		BattleLog.GetLog().Log("Dealt " + damageDealt + " damage to " + target.pc.name);
+		BattleLog.GetLog().Log("Dealt " + (int) damageDealt + " damage to " + target.pc.name);
 		
 		if (attack.knockbackPosition != Vector2.zero){
 			Vector2 knockbackPosition = target.boardPosition + (Vector2) (direction * (attack.knockbackPosition - attack.targetPosition));

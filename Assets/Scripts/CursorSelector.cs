@@ -37,34 +37,7 @@ public class CursorSelector : MonoBehaviour
 	
 	public void Select(BoardSpace space){
 		/**Selects a space with a unit.*/
-		if (cursorScript.selectedSpace == null){ //no space selected
-			SelectUnit(space);
-		} else { //something already selected
-		
-			PlayerController pc = cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>();
-			if (!cursorScript.movedTemporary){
-				if (space == cursorScript.selectedSpace){
-					Deselect(); //can't double-select a space
-				} else {
-					if (pc.GetAccessibleSpaces((int) pc.boardPosition.x, (int) pc.boardPosition.y).Contains(space)){
-						cursorScript.board.TempMoveUnit(cursorScript.selectedSpace, space); //move player if possible
-						cursorScript.Move(new Vector2(0, 0)); //update the cursor's height if needed
-						BoardManager.ClearVisualization();
-						cursorScript.movedTemporary = true;
-						cursorScript.temporarySpace = space;
-						//menu.ShowSkillList(cursorScript.selectedSpace.occupyingUnit.GetComponent<PlayerController>());
-					}
-				}
-			} else {
-				if (pc.GetAccessibleSpaces((int) pc.boardPosition.x, (int) pc.boardPosition.y).Contains(space)){
-					cursorScript.board.MoveUnit(cursorScript.selectedSpace, space); //move player if possible
-					cursorScript.Move(new Vector2(0, 0)); //update the cursor's height if needed
-					Deselect();
-					cursorScript.movedTemporary = false;
-					cursorScript.temporarySpace = null;
-				}
-			}
-		}
+		SelectUnit(space);
 		
 	}
 	
@@ -86,7 +59,6 @@ public class CursorSelector : MonoBehaviour
 		if (cursorScript.selectedSpace == null){
 			return;
 		}
-		
 		// if there was a temporary move player then remove it
 		if (cursorScript.selectedSpace.occupyingUnit != null && cursorScript.selectedSpace.occupyingUnit.transform.Find("Temporary") != null){
 			Destroy(cursorScript.selectedSpace.occupyingUnit.transform.Find("Temporary").gameObject);

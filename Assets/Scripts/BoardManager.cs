@@ -36,14 +36,15 @@ public class BoardManager : MonoBehaviour
 	private bool outlinesOn = true;
 	private ControlsManager controls;
 	private UIController uI;
+	private BattleLog log;
     // Start is called before the first frame update
     void Start()
     {
 		board = this.gameObject;
-		phase = UnitAffiliation.PLAYER;
 		controls = ControlsManager.GetControls();
 		menu = BattleMenu.GetMenu();
 		uI = UIController.GetUI();
+		log = BattleLog.GetLog();
 		InitializeMap(spaces);
 		InitializeUnits(units);
 		menu.cursor = Instantiate(cursorPrefab, this.transform).GetComponent<Cursor>();
@@ -62,10 +63,17 @@ public class BoardManager : MonoBehaviour
 			ToggleOutlines(outlinesOn);
 		}
 		if (Input.GetKeyDown(controls.GetCommand(Command.TOGGLE_INFO))){
-            BoardSpace space = GetHoveredSpace();
-            if (space.occupyingUnit != null){
-                uI.ShowUnitInfo(space.occupyingUnit.GetComponent<PlayerController>());
-            }
+			if (uI.ShowingInfo()){
+				uI.ClearUnitInfo();
+				cursor.locked = false;
+			} else {
+				BoardSpace space = GetHoveredSpace();
+				if (space.occupyingUnit != null){
+					uI.ShowUnitInfo(space.occupyingUnit.GetComponent<PlayerController>());
+					cursor.locked = true;
+				}
+				
+			}
         }
     }
 
@@ -293,7 +301,7 @@ public class BoardManager : MonoBehaviour
 		}
 	}
 
-	public void RefreshUnit(PlayerController pc){
+	private void RefreshUnit(PlayerController pc){
 		pc.turnEnded = false;
 		pc.previousAction = UnitAction.WAIT;
 		pc.hasActed = false;
@@ -306,11 +314,12 @@ public class BoardManager : MonoBehaviour
 		foreach (PlayerController unit in actingUnits){
 			if (!unit.turnEnded){
 				//at least one unit has not acted but still can
-				Debug.Log("unit can still act");
+				//Debug.Log("unit can still act");
 				return false;
 			}
 		}
 		//all units that can act on this phase have acted
+		RemoveDeadUnits();
 		BattleLog log = BattleLog.GetLog();
 		log.Log(this.phase + " phase ended.");
 		RefreshUnits(this.phase);
@@ -319,7 +328,7 @@ public class BoardManager : MonoBehaviour
 		return true;
 	}
 
-	void RemoveDeadUnits(){
+	public void RemoveDeadUnits(){
 		for (int x = 0; x < columns; x++){
 			for (int y = 0; y < rows; y++){
 				BoardSpace space = GetSpace(new Vector2(x, y));
@@ -333,12 +342,14 @@ public class BoardManager : MonoBehaviour
 		}
 	}
 
-	void RemoveUnit(PlayerController pc){
+	private void RemoveUnit(PlayerController pc){
 		BoardSpace space = GetSpace(pc.boardPosition);
 		if (space == cursor.selectedSpace){
 			cursor.Deselect();
 		}
 		space.occupyingUnit = null;
+		units.Remove(pc.gameObject);
+		log.Log(pc.name + " died.");
 		// show death dialogue or other effects here if needed
 		// for player units, write info back to units file if applicable
 		Destroy(pc.gameObject);

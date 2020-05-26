@@ -41,6 +41,7 @@ public class MoveCursor : Cursor
         if (this.locked || board.locked){
 			return;
 		}
+		movedFrame = false;
 		if (!(camera.GetComponent<Camera>().rotating || this.moving || this.movedTemporary)){ //to prevent camera going off-center, do not move if already moving or turning
 			//cursor movement
 			Quaternion rotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
@@ -59,10 +60,10 @@ public class MoveCursor : Cursor
 		}
 		
 		//select and deselect commands work regardless
-		if (Input.GetKeyDown(controls.GetCommand(Command.CONFIRM))){
+		if (!movedFrame && Input.GetKeyDown(controls.GetCommand(Command.CONFIRM))){
 			Select(board.boardSpaces[(int) position.x, (int) position.y]);
 		}
-		if (Input.GetKeyDown(controls.GetCommand(Command.BACK))){
+		if (!movedFrame && Input.GetKeyDown(controls.GetCommand(Command.BACK))){
 			Deselect();
 		}
     }

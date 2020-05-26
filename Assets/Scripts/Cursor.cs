@@ -25,6 +25,7 @@ public class Cursor : MonoBehaviour
 	public GameObject moveCursorPrefab;
 	protected ControlsManager controls;
 	protected UIController uI;
+	protected bool movedFrame = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,7 @@ public class Cursor : MonoBehaviour
 		if (this.locked || board.locked){
 			return;
 		}
+		movedFrame = false;
 		if (!(camera.GetComponent<Camera>().rotating || this.moving || this.movedTemporary)){ //to prevent camera going off-center, do not move if already moving or turning
 			//cursor movement
 			Quaternion rotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
@@ -67,7 +69,7 @@ public class Cursor : MonoBehaviour
 		}
 		
 		//select and deselect commands work regardless
-		if (Input.GetKeyDown(controls.GetCommand(Command.CONFIRM))){
+		if (!movedFrame && Input.GetKeyDown(controls.GetCommand(Command.CONFIRM))){
 			Select(board.boardSpaces[(int) position.x, (int) position.y]);
 		}
 		// if (Input.GetKeyDown(controls.GetCommand(Command.BACK))){
@@ -81,6 +83,7 @@ public class Cursor : MonoBehaviour
 		if (board.IsWithinBounds(newPosition)){
 			UpdatePosition(newPosition);
 		}
+		movedFrame = true;
 	}
 	
 	public void Move(Vector3 movement){
@@ -109,9 +112,10 @@ public class Cursor : MonoBehaviour
 			endPosition += playerOffset;
 		}
 		selector.GetComponent<CursorSelector>().SetPosition(newPosition);
-		StartCoroutine(MoveForSeconds(startPosition, endPosition));
 		//actually set the position
 		this.position = newPosition;
+		//move the cursor
+		StartCoroutine(MoveForSeconds(startPosition, endPosition));
 		uI.ShowUnitSummary(board.GetSpace(newPosition));
 	}
 	

@@ -158,6 +158,7 @@ namespace JsonConverters{
 			JObject toWrite = new JObject(
 				new JProperty("name", pc.name),
 				new JProperty("affiliation", pc.affiliation),
+				new JProperty("model", pc.modelName),
 				new JProperty("jumpHeight", pc.jumpHeight),
 				new JProperty("moveRange", pc.moveRange),
 				new JProperty("maxActions", pc.maxActions),
@@ -190,11 +191,14 @@ namespace JsonConverters{
 
 			BoardManager board = BoardManager.GetBoard();
 			JObject playerInfo = JObject.Load(reader);
-			GameObject player = UnityEngine.Object.Instantiate(SaveManager.GetSaveManager().playerPrefab, board.transform);
-			PlayerController pc = player.GetComponent<PlayerController>();
-			Health h = player.GetComponent<Health>();
+			//need to instantiate specific model instead, from json attribute.
+			GameObject modelObject = (GameObject) Resources.Load("UnitAesthetics/Models/" + playerInfo["model"]);
+			GameObject player = UnityEngine.Object.Instantiate(modelObject, board.transform);
+			PlayerController pc = player.AddComponent<PlayerController>();
+			Health h = player.AddComponent<Health>();
 
 			pc.name = playerInfo["name"].Value<string>();
+			pc.modelName = playerInfo["model"].Value<string>();
 			pc.affiliation = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), playerInfo["affiliation"].Value<string>());
 			pc.jumpHeight = playerInfo["jumpHeight"].Value<float>();
 			pc.moveRange = playerInfo["moveRange"].Value<int>();
