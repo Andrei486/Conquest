@@ -65,14 +65,14 @@ public class MenuCursor : MonoBehaviour
 		
 	}
 	
-	public void MoveUp(){
+	virtual public void MoveUp(){
 		if (index < menu.transform.childCount - 1){
 			index++;
 			HoverItem(index);
 		}
 	}
 	
-	public void MoveDown(){
+	virtual public void MoveDown(){
 		if (index > 0){
 			index--;
 			HoverItem(index);

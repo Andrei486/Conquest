@@ -24,12 +24,9 @@ public class BoardManager : MonoBehaviour
 	public GameObject[,] boardTiles;
 	public HighlightColor[] highlightColors;
 	public GameObject cursorPrefab;
-	public GameObject pawn;
-	public Material spriteShader;
 	public GameObject boardTilePrefab;
-	public GameObject moveTilePrefab;
-	public GameObject skillTilePrefab;
 	public GameObject skillHitPrefab;
+	public GameObject directionArrowPrefab;
 	public TextAsset skillData;
 	private List<GameObject> units;
 	private List<BoardSpace> spaces;

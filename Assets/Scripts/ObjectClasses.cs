@@ -211,6 +211,17 @@ namespace Objects
 			}
 			return color;
 		}
+
+		public static T NextOf<T>(this IList<T> list, T item)
+		{
+			var indexOf = list.IndexOf(item);
+			return list[indexOf == list.Count - 1 ? 0 : indexOf + 1];
+		}
+		public static T PreviousOf<T>(this IList<T> list, T item)
+		{
+			var indexOf = list.IndexOf(item);
+			return list[indexOf == 0 ? list.Count - 1 : indexOf - 1];
+		}
 	}
 	
 	[Serializable]
@@ -234,9 +245,12 @@ namespace Objects
 			}
 			PlayerController pc = player.GetComponent<PlayerController>();
 			Health h = player.GetComponent<Health>();
+
+			unitRotation = SpaceToPlane(unitRotation);
 			
 			BoardManager board = BoardManager.GetBoard();
 			GameObject hitVisual = new GameObject();
+			hitVisual.tag = "Visualization";
 			hitVisual.transform.parent = GameObject.FindWithTag("MainCanvas").transform;
 			Vector2 newPosition;
 			HashSet<BoardSpace> affectedSpaces = new HashSet<BoardSpace>();
@@ -282,6 +296,7 @@ namespace Objects
 			if (this.movePosition == Vector2.zero){
 				return true; // if there is no movement it cannot be blocked
 			}
+			direction = SpaceToPlane(direction);
 			
 			BoardManager board = BoardManager.GetBoard();
 			PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();
@@ -326,6 +341,7 @@ namespace Objects
 			/**Returns true if and only if the attack will hit at least one targetable entity.*/
 			BoardManager board = BoardManager.GetBoard();
 			Vector2 newPosition;
+			direction = SpaceToPlane(direction);
 			foreach (Attack attack in this.attacks){
 				newPosition = space.boardPosition + (Vector2) (direction * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
 				if (!board.IsWithinBounds(newPosition)){
@@ -347,6 +363,12 @@ namespace Objects
 				}
 			}
 			return null;
+		}
+
+		private Quaternion SpaceToPlane(Quaternion rotation){
+			Vector3 euler = rotation.eulerAngles;
+			euler = new Vector3(euler.x, euler.z, euler.y);
+			return Quaternion.Euler(euler);
 		}
 		
 		internal class SkillConverter : JsonConverter{

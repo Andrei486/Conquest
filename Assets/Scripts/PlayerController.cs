@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 	public Sprite unitSprite;
 	public Sprite armySprite;
 	public string modelName;
+	public Vector3 defaultEulerAngles;
 	
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
 		// remainingMove = moveRange;
 		// remainingActions = maxActions;
 		moveGrid = new int[board.columns, board.rows];
+		defaultEulerAngles = gameObject.transform.eulerAngles;
 		UpdateMoveGrid((int) boardPosition.x, (int) boardPosition.y);
     }
 
