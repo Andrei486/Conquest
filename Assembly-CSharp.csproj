@@ -53,26 +53,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ActionMenuCursor.cs" />
-     <Compile Include="Assets\Scripts\BattleLog.cs" />
-     <Compile Include="Assets\Scripts\BattleMenu.cs" />
-     <Compile Include="Assets\Scripts\BoardManager.cs" />
-     <Compile Include="Assets\Scripts\Camera.cs" />
-     <Compile Include="Assets\Scripts\ControlsManager.cs" />
-     <Compile Include="Assets\Scripts\ControlsMenuCursor.cs" />
-     <Compile Include="Assets\Scripts\Cursor.cs" />
-     <Compile Include="Assets\Scripts\CursorSelector.cs" />
-     <Compile Include="Assets\Scripts\FillBar.cs" />
-     <Compile Include="Assets\Scripts\Health.cs" />
-     <Compile Include="Assets\Scripts\JsonConverters.cs" />
-     <Compile Include="Assets\Scripts\MenuCursor.cs" />
-     <Compile Include="Assets\Scripts\MoveCursor.cs" />
-     <Compile Include="Assets\Scripts\ObjectClasses.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\SaveManager.cs" />
-     <Compile Include="Assets\Scripts\SkillMenuCursor.cs" />
-     <Compile Include="Assets\Scripts\StateManager.cs" />
-     <Compile Include="Assets\Scripts\UIController.cs" />
+     <Compile Include="Assets\Scripts\Common\InfoObject.cs" />
+     <Compile Include="Assets\Scripts\Common\JsonConverters.cs" />
+     <Compile Include="Assets\Scripts\Common\Menu.cs" />
+     <Compile Include="Assets\Scripts\Common\MenuCursor.cs" />
+     <Compile Include="Assets\Scripts\Common\ObjectClasses.cs" />
+     <Compile Include="Assets\Scripts\Common\PrefabManager.cs" />
+     <Compile Include="Assets\Scripts\InBattle\ActionMenuCursor.cs" />
+     <Compile Include="Assets\Scripts\InBattle\BattleLog.cs" />
+     <Compile Include="Assets\Scripts\InBattle\BattleMenu.cs" />
+     <Compile Include="Assets\Scripts\InBattle\BoardManager.cs" />
+     <Compile Include="Assets\Scripts\InBattle\Camera.cs" />
+     <Compile Include="Assets\Scripts\InBattle\ControlsManager.cs" />
+     <Compile Include="Assets\Scripts\InBattle\ControlsMenuCursor.cs" />
+     <Compile Include="Assets\Scripts\InBattle\Cursor.cs" />
+     <Compile Include="Assets\Scripts\InBattle\CursorSelector.cs" />
+     <Compile Include="Assets\Scripts\InBattle\FillBar.cs" />
+     <Compile Include="Assets\Scripts\InBattle\Health.cs" />
+     <Compile Include="Assets\Scripts\InBattle\MoveCursor.cs" />
+     <Compile Include="Assets\Scripts\InBattle\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\InBattle\SaveManager.cs" />
+     <Compile Include="Assets\Scripts\InBattle\SkillMenuCursor.cs" />
+     <Compile Include="Assets\Scripts\InBattle\UIController.cs" />
+     <Compile Include="Assets\Scripts\MissionSelect\MissionCursor.cs" />
+     <Compile Include="Assets\Scripts\MissionSelect\MissionManager.cs" />
      <None Include="Assets\Miscellaneous\baseUnits.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Users/Andrei/Conquest/Conquest/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

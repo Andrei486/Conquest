@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/battlefield.unity
     guid: 7defb82f5ddcee94cac095d1f083dbe0
+  - enabled: 1
+    path: Assets/Scenes/battleselect.unity
+    guid: 3ee98e6ee926ba749a9671b2d9a2f7ba
   m_configObjects: {}

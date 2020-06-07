@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7162420282124330497}
   - component: {fileID: 867022103174525671}
   m_Layer: 5
-  m_Name: Current Keybind
+  m_Name: Keybind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3514835181988146807}
   - component: {fileID: 8455417608629264976}
   m_Layer: 5
-  m_Name: Command Name
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1200, y: 200}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &2319991956179846161
 CanvasRenderer:
   m_ObjectHideFlags: 0

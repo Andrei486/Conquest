@@ -8,6 +8,7 @@ using UnityEditor;
 using Objects;
 using Newtonsoft.Json;
 using JsonConverters;
+using InBattle;
 
 public class MeshToBoard : EditorWindow
 {

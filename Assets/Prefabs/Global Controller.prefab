@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7176006636890486614}
   - component: {fileID: 4081619897645118001}
   - component: {fileID: 2154954725434625089}
+  - component: {fileID: 7359348565359997679}
   m_Layer: 0
   m_Name: Global Controller
   m_TagString: Global
@@ -95,8 +96,6 @@ MonoBehaviour:
     type: 3}
   unitSummaryPrefab: {fileID: 3302064102184246646, guid: c7d7bba67d015b444b9d75ad89cf23f7,
     type: 3}
-  unitInfoBox: {fileID: 0}
-  unitSummaryBox: {fileID: 0}
 --- !u!114 &2154954725434625089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +109,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+--- !u!114 &7359348565359997679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920038609588280472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d62442ca7187143b397f4040d15fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCursorPrefab: {fileID: 5427956221323645369, guid: 82b586c11c482e246802951e7a17b377,
+    type: 3}
+  menuItemPrefab: {fileID: 3452037990696858790, guid: eaf2446051c3af2419589a405314b0dc,
+    type: 3}
