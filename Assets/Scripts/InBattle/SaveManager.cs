@@ -23,7 +23,7 @@ namespace InBattle{
         public TextAsset baseUnits;
         ControlsManager controls;
 
-        Mission currentMission;
+        public Mission currentMission;
         void Start()
         {
             controls = ControlsManager.GetControls();
@@ -33,9 +33,9 @@ namespace InBattle{
             Debug.Log(Application.persistentDataPath);
             //LoadControls();
 
-            GameObject info = GameObject.FindWithTag("InfoObject");
+            InfoObject info = InfoObject.Find();
             if (info != null){
-                currentMission = info.GetComponent<InfoObject>().missionToLoad;
+                currentMission = info.missionToLoad;
                 string toLoad = currentMission.filename;
                 StartCoroutine(StartNewBattle(toLoad));
             } else {
@@ -128,7 +128,7 @@ namespace InBattle{
             BackupSave();
             SaveControls();
 
-            string json = JsonConvert.SerializeObject(board.gameObject, new BoardConverter());
+            string json = JsonConvert.SerializeObject(board.gameObject, Formatting.Indented, new BoardConverter());
 
             //write the info
             File.WriteAllText(battleSave, json);
@@ -175,11 +175,6 @@ namespace InBattle{
             File.WriteAllText(battleSave, baseUnits.text);
         }
 
-        public void LoadControls(){
-            ControlsManager controls = ControlsManager.GetControls();
-            string json = File.ReadAllText(controlsData);
-            controls.keyMappings = JsonConvert.DeserializeObject<Dictionary<Command, KeyCode>>(json);
-        }
         public void SaveControls(){
             ControlsManager controls = ControlsManager.GetControls();
             string json = JsonConvert.SerializeObject(controls.keyMappings);

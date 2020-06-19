@@ -23,7 +23,7 @@ namespace InBattle{
 			camera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
 			controls = ControlsManager.GetControls();
 			board = BoardManager.GetBoard();
-			this.skillRotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
+			this.skillRotation = Quaternion.identity;
 		}
 
 		// Update is called once per frame

@@ -8,8 +8,8 @@
                 "y": 2
             },
             "model": "Pawn",
-            "maxHealth": 10.0,
-            "currentHealth": 10.0,
+            "maxHealth": 1.0,
+            "currentHealth": 1.0,
             "level": 3,
             "attackPower": 5.0,
             "defense": 3.0,
@@ -33,8 +33,8 @@
                 "x": 0,
                 "y": 3
             },
-            "maxHealth": 10.0,
-            "currentHealth": 10.0,
+            "maxHealth": 1.0,
+            "currentHealth": 1.0,
             "level": 3,
             "attackPower": 5.0,
             "defense": 3.0,

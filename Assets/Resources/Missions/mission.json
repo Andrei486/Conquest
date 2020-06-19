@@ -58,8 +58,8 @@
                 "x": 0,
                 "y": 2
             },
-            "maxHealth": 10.0,
-            "currentHealth": 10.0,
+            "maxHealth": 3.0,
+            "currentHealth": 3.0,
             "level": 3,
             "attackPower": 5.0,
             "defense": 3.0,

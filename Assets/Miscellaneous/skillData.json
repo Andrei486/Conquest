@@ -114,27 +114,27 @@
 		"attacks": [
 			{
 				"basePower": 90,
-				"accuracy": 65,
+				"accuracy": 100,
 				"targetPosition": [0, 1]
 			},
 			{
 				"basePower": 95,
-				"accuracy": 80,
+				"accuracy": 100,
 				"targetPosition": [0, 2]
 			},
 			{
 				"basePower": 90,
-				"accuracy": 65,
+				"accuracy": 100,
 				"targetPosition": [1, 2]
 			},
 			{
 				"basePower": 90,
-				"accuracy": 65,
+				"accuracy": 100,
 				"targetPosition": [-1, 2]
 			},
 			{
 				"basePower": 90,
-				"accuracy": 65,
+				"accuracy": 100,
 				"targetPosition": [0, 3]
 			}
 		]
@@ -154,5 +154,5 @@
 				"knockbackPosition": [0, 2]
 			}
 		]
-	},
+	}
 ]

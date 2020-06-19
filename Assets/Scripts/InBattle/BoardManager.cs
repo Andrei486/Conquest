@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Objects;
 
 namespace InBattle{
@@ -10,6 +11,8 @@ namespace InBattle{
 		public int rows;
 		public int columns;
 		public int currentTurn;
+		public int lastTurn = 100;
+		public bool winOnTimeout = false;
 		[Tooltip("A list of sprites to use for tile defaults. In order, tile and grass.")]
 		public List<Sprite> defaultSprites;
 		[Tooltip("A list of colors to use for board tile pillars. In order, tile and grass.")]
@@ -29,12 +32,14 @@ namespace InBattle{
 		public GameObject skillHitPrefab;
 		public GameObject directionArrowPrefab;
 		public TextAsset skillData;
+		private List<PlayerController> toSave = new List<PlayerController>();
 		private List<GameObject> units;
 		private List<BoardSpace> spaces;
 		private bool outlinesOn = true;
 		private ControlsManager controls;
 		private UIController uI;
 		private BattleLog log;
+
 		// Start is called before the first frame update
 		void Start()
 		{
@@ -74,7 +79,6 @@ namespace InBattle{
 				}
 			}
 		}
-
 
 		public void SetSpaces(List<BoardSpace> spaces){
 			this.spaces = spaces;
@@ -326,6 +330,36 @@ namespace InBattle{
 			return true;
 		}
 
+		private bool ArmyDefeated(UnitAffiliation army){
+			List<GameObject> standingUnits = new List<GameObject>(from unit in this.units
+				where unit.GetComponent<PlayerController>().affiliation == army
+				select unit);
+			return (standingUnits.Count == 0);
+		}
+
+		public void CheckEndMission(){
+			/**Ends the mission if needed.*/
+			if (ArmyDefeated(UnitAffiliation.PLAYER) || ArmyDefeated(UnitAffiliation.ENEMY) || currentTurn > lastTurn){
+				EndMission(); 
+			}
+		}
+
+		private void EndMission(){
+			/**Ends the current mission and exits to the mission select screen, updating the mission's
+			status if needed.*/
+			bool victory = false;
+
+			SaveRemainingUnits();
+			if (ArmyDefeated(UnitAffiliation.ENEMY) || (currentTurn > lastTurn && winOnTimeout)){
+				victory = true;
+			}
+			Mission updated = SaveManager.GetSaveManager().currentMission;
+			updated.completed = updated.completed || victory;
+			InfoObject info = InfoObject.Create();
+			info.missionToUpdate = updated;
+			SceneManager.LoadScene("Scenes/battleselect", LoadSceneMode.Single);
+		}
+
 		public void RemoveDeadUnits(){
 			for (int x = 0; x < columns; x++){
 				for (int y = 0; y < rows; y++){
@@ -350,6 +384,9 @@ namespace InBattle{
 			log.Log(pc.name + " died.");
 			// show death dialogue or other effects here if needed
 			// for player units, write info back to units file if applicable
+			if (pc.saveAfterBattle){
+				toSave.Add(pc);
+			}
 			Destroy(pc.gameObject);
 		}
 
@@ -379,6 +416,16 @@ namespace InBattle{
 				AddTile(boardSpaces[i, j]);
 			}
 			ToggleOutlines(true);
+		}
+
+		public void SaveRemainingUnits(){
+			PlayerController pc;
+			foreach (GameObject unit in units){
+				pc = unit.GetComponent<PlayerController>();
+				if (pc.saveAfterBattle){
+					toSave.Add(pc);
+				}
+			}
 		}
 		
 		public static void ClearVisualization(){

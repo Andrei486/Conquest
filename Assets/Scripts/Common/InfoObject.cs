@@ -32,4 +32,9 @@ public class InfoObject : MonoBehaviour
         DontDestroyOnLoad(info);
         return info.AddComponent<InfoObject>();
     }
+
+    public static InfoObject Find(){
+        GameObject info = GameObject.FindWithTag("InfoObject");
+        return info != null ? info.GetComponent<InfoObject>() : null;
+    }
 }

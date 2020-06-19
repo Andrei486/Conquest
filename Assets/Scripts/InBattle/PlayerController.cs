@@ -33,6 +33,7 @@ namespace InBattle{
 		public Sprite armySprite;
 		public string modelName;
 		public Vector3 defaultEulerAngles;
+		public bool saveAfterBattle = false; //if true, save the unit's info to units file after battle.
 		
 		// Start is called before the first frame update
 		void Start()
@@ -198,11 +199,11 @@ namespace InBattle{
 		
 		public void UseSkill(Skill skill, Quaternion direction){
 			/**Uses the Skill skill. Assumes that using it is possible.*/
+			BattleLog.GetLog().Log(this.name + " used " + skill.name);
+			health.UseSkill(skill, direction);
 			this.remainingMove -= skill.moveCost;
 			this.remainingActions -= skill.actionCost;
 			this.bullets -= skill.bulletCost;
-			BattleLog.GetLog().Log(this.name + " used " + skill.name);
-			health.UseSkill(skill, direction);
 			this.previousAction = UnitAction.SKILL;
 		}
 		

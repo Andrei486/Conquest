@@ -38,11 +38,13 @@ namespace InBattle
 			Vector2 newPosition;
 			foreach (Attack attack in skill.attacks){
 				newPosition = boardPosition + (Vector2) (direction * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
+				Debug.Log(newPosition);
 				if (board.IsWithinBounds(newPosition) && board.GetSpace(newPosition).occupyingUnit != null){
 					UseAttack(attack, board.GetSpace(newPosition).occupyingUnit.GetComponent<PlayerController>().health, direction);
 				}
 			}
 			BoardManager.GetBoard().RemoveDeadUnits();
+			BoardManager.GetBoard().CheckEndMission();
 		}
 		
 		void UseAttack(Attack attack, Health target, Quaternion direction){
@@ -50,12 +52,14 @@ namespace InBattle
 			float effectiveAccuracy = attack.CalculateHitChance(this, target);
 			if (rng.NextDouble() >= effectiveAccuracy / 100.0f){ //attack misses
 				BattleLog.GetLog().Log("The attack missed " + target.pc.name + "...");
+				Debug.Log("attack missed");
 				return;
 			}
 			float damageDealt = attack.CalculateDamage(this, target);
 
 			target.currentHealth -= damageDealt;
-			BattleLog.GetLog().Log("Dealt " + (int) damageDealt + " damage to " + target.pc.name);
+			BattleLog.GetLog().Log("Dealt " + damageDealt + " damage to " + target.pc.name);
+			Debug.Log("damage dealt");
 			
 			if (attack.knockbackPosition != Vector2.zero){
 				Vector2 knockbackPosition = target.boardPosition + (Vector2) (direction * (attack.knockbackPosition - attack.targetPosition));

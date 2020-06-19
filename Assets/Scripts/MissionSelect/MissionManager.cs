@@ -20,6 +20,8 @@ namespace MissionSelect{
         {
             missionsFile = Application.persistentDataPath + "/SaveData/missionsFile.txt";
             LoadMissions(missionsFile);
+            UpdateMissions(); //if any missions are updated from InfoObject, do it before creating menu
+            SaveMissions(missionsFile);
             menu = MissionSelectMenu(selectableMissions);
         }
 
@@ -30,21 +32,22 @@ namespace MissionSelect{
         }
 
         void LoadMissions(string filename){
-            /**Returns the list of currently playable missions, from the list in the specified file.!--*/
+            /**Sets selectableMissions to the list of currently playable missions, from the list in the specified file.!--*/
             allMissions = JsonConvert.DeserializeObject<List<Mission>>(File.ReadAllText(filename));
             selectableMissions = (from mission in allMissions where IsSelectable(mission, allMissions) select mission).ToList();
+            Debug.Log(selectableMissions.Count);
         }
 
         void SaveMissions(string filename){
-            string json = JsonConvert.SerializeObject(allMissions);
+            string json = JsonConvert.SerializeObject(allMissions, Formatting.Indented);
             File.WriteAllText(filename, json);
         }
 
         void UpdateMissions(){
-            GameObject info = GameObject.FindWithTag("InfoObject");
+            InfoObject info = InfoObject.Find();
             if (info != null){
                 //do stuff
-                Mission updatedMission = info.GetComponent<InfoObject>().missionToUpdate;
+                Mission updatedMission = info.missionToUpdate;
                 int index;
                 foreach (Mission mission in allMissions){
                     if (mission.name == updatedMission.name){
@@ -58,6 +61,7 @@ namespace MissionSelect{
                 Destroy(info);
             }
             selectableMissions = (from mission in allMissions where IsSelectable(mission, allMissions) select mission).ToList();
+            Debug.Log(selectableMissions.Count);
         }
 
         public void StartMission(Mission mission){
@@ -91,6 +95,21 @@ namespace MissionSelect{
 
             //otherwise, the mission can be played.
             return true;
+        }
+
+        public Mission? FindByName(string missionName){
+            /**Returns the mission with name missionName (assumes names are unique);
+            if there is no mission with that name returns null.*/
+            foreach (Mission mission in selectableMissions){
+                if (mission.name == missionName){
+                    return mission;
+                }
+            }
+            return null;
+        }
+
+        public static MissionManager GetManager(){
+            return GameObject.FindWithTag("Global").GetComponent<MissionManager>();
         }
 
         // void CreateMissions(string filename){

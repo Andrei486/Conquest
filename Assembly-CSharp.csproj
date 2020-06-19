@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Common\ControlsManager.cs" />
+     <Compile Include="Assets\Scripts\Common\ControlsMenuCursor.cs" />
      <Compile Include="Assets\Scripts\Common\InfoObject.cs" />
      <Compile Include="Assets\Scripts\Common\JsonConverters.cs" />
      <Compile Include="Assets\Scripts\Common\Menu.cs" />
@@ -64,8 +66,6 @@
      <Compile Include="Assets\Scripts\InBattle\BattleMenu.cs" />
      <Compile Include="Assets\Scripts\InBattle\BoardManager.cs" />
      <Compile Include="Assets\Scripts\InBattle\Camera.cs" />
-     <Compile Include="Assets\Scripts\InBattle\ControlsManager.cs" />
-     <Compile Include="Assets\Scripts\InBattle\ControlsMenuCursor.cs" />
      <Compile Include="Assets\Scripts\InBattle\Cursor.cs" />
      <Compile Include="Assets\Scripts\InBattle\CursorSelector.cs" />
      <Compile Include="Assets\Scripts\InBattle\FillBar.cs" />
