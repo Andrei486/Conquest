@@ -166,6 +166,15 @@ namespace Objects
 			return (Arr.Length==j) ? Arr[0] : Arr[j];            
 		}
 
+		public static Vector2 Rotate(this Vector2 v2, float angle)
+		{
+			/**Rotates the vector by angle degrees COUNTERCLOCKWISE.!--*/
+			angle *= Mathf.Deg2Rad;
+			float x = Mathf.Cos(angle) * v2.x - Mathf.Sin(angle) * v2.y;
+			float y = Mathf.Sin(angle) * v2.x + Mathf.Cos(angle) * v2.y;
+			return new Vector2(x, y);
+		}
+
 		public static Color BorderColor(this UnitAffiliation affiliation){
 			Color color;
 			switch (affiliation){
@@ -248,8 +257,6 @@ namespace Objects
 			}
 			PlayerController pc = player.GetComponent<PlayerController>();
 			Health h = player.GetComponent<Health>();
-
-			unitRotation = SpaceToPlane(unitRotation);
 			
 			BoardManager board = BoardManager.GetBoard();
 			GameObject hitVisual = new GameObject();
@@ -258,7 +265,7 @@ namespace Objects
 			Vector2 newPosition;
 			HashSet<BoardSpace> affectedSpaces = new HashSet<BoardSpace>();
 			foreach (Attack attack in attacks){
-				newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
+				newPosition = space.boardPosition + attack.targetPosition.Rotate(unitRotation.eulerAngles.y);
 				
 				if (!board.IsWithinBounds(newPosition)){
 					continue;
@@ -271,7 +278,7 @@ namespace Objects
 				}
 				
 				if (attack.knockbackPosition != new Vector2(0, 0)){
-					newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(attack.knockbackPosition.x, attack.knockbackPosition.y, 0));
+					newPosition = space.boardPosition + attack.knockbackPosition.Rotate(unitRotation.eulerAngles.y);
 					if (!board.IsWithinBounds(newPosition)){
 						continue;
 					}
@@ -281,7 +288,7 @@ namespace Objects
 			}
 			
 			if(this.movePosition != new Vector2(0,0)){
-				newPosition = space.boardPosition + (Vector2) (unitRotation * new Vector3(movePosition.x, movePosition.y, 0));
+				newPosition = space.boardPosition + movePosition.Rotate(unitRotation.eulerAngles.y);
 				affectedSpaces.Add(board.GetSpace(newPosition));
 				board.GetSpace(newPosition).SetHighlightMaterial(board, HighlightType.MOVE);
 			}
@@ -299,7 +306,6 @@ namespace Objects
 			if (this.movePosition == Vector2.zero){
 				return true; // if there is no movement it cannot be blocked
 			}
-			direction = SpaceToPlane(direction);
 			
 			BoardManager board = BoardManager.GetBoard();
 			PlayerController pc = space.occupyingUnit.GetComponent<PlayerController>();
@@ -307,7 +313,7 @@ namespace Objects
 			float end;
 			float currentHeight = space.GetHeight();
 			BoardSpace nextSpace;
-			BoardSpace endSpace = board.GetSpace(space.boardPosition + (Vector2) (direction * new Vector3(movePosition.x, movePosition.y, 0)));
+			BoardSpace endSpace = board.GetSpace(space.boardPosition + movePosition.Rotate(direction.eulerAngles.y));
 			
 			if (endSpace.occupyingUnit != null){ //cannot move to an occupied space
 				return false;
@@ -344,9 +350,9 @@ namespace Objects
 			/**Returns true if and only if the attack will hit at least one targetable entity.*/
 			BoardManager board = BoardManager.GetBoard();
 			Vector2 newPosition;
-			direction = SpaceToPlane(direction);
 			foreach (Attack attack in this.attacks){
-				newPosition = space.boardPosition + (Vector2) (direction * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
+				newPosition = space.boardPosition + attack.targetPosition.Rotate(direction.eulerAngles.y);
+				Debug.Log(newPosition);
 				if (!board.IsWithinBounds(newPosition)){
 					continue;
 				}

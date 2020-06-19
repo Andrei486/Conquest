@@ -109,6 +109,7 @@ namespace InBattle{
 				for (int j = 0; j < i; j++){
 					rotation *= stepRotation;
 				}
+				Debug.Log(rotation.eulerAngles);
 				if (skill.IsValid(space, rotation)){
 					valid.Add(rotation);
 				}
@@ -128,9 +129,9 @@ namespace InBattle{
 				arrow = Instantiate(board.directionArrowPrefab);
 				arrow.name = "arrow";
 				arrow.transform.position = unit.transform.position;
-				arrow.transform.Translate(Vector3.up, Space.World);
+				arrow.transform.Translate(Vector3.up, Space.World); //arrow should be above terrain
 				arrow.transform.Rotate(-direction.eulerAngles, Space.World);
-				arrow.transform.Translate(Vector3.up, Space.Self);
+				arrow.transform.Translate(Vector3.up, Space.Self); //move arrow in the direction it points
 				if (skillRotation.ApproximatelyEqual(direction)){
 					Debug.Log("highlighted");
 					arrow.GetComponent<SpriteRenderer>().color = new Color(0.95f, 0.85f, 0.1f); //orange

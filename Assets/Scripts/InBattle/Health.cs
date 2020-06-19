@@ -37,7 +37,7 @@ namespace InBattle
 			board.SkillMoveUnit(skill, board.GetSpace(boardPosition), direction);
 			Vector2 newPosition;
 			foreach (Attack attack in skill.attacks){
-				newPosition = boardPosition + (Vector2) (direction * new Vector3(attack.targetPosition.x, attack.targetPosition.y, 0));
+				newPosition = boardPosition + attack.targetPosition.Rotate(direction.eulerAngles.y);
 				Debug.Log(newPosition);
 				if (board.IsWithinBounds(newPosition) && board.GetSpace(newPosition).occupyingUnit != null){
 					UseAttack(attack, board.GetSpace(newPosition).occupyingUnit.GetComponent<PlayerController>().health, direction);
@@ -62,7 +62,7 @@ namespace InBattle
 			Debug.Log("damage dealt");
 			
 			if (attack.knockbackPosition != Vector2.zero){
-				Vector2 knockbackPosition = target.boardPosition + (Vector2) (direction * (attack.knockbackPosition - attack.targetPosition));
+				Vector2 knockbackPosition = target.boardPosition + attack.knockbackPosition.Rotate(direction.eulerAngles.y);
 				board.KnockbackMoveUnit(board.GetSpace(target.boardPosition), board.GetSpace(knockbackPosition), false);
 			}
 		}
