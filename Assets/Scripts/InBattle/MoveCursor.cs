@@ -81,6 +81,7 @@ namespace InBattle{
 			}
 			
 			if (movedTemporary){
+				pc.GetShortestPath(Vector2Int.RoundToInt(space.boardPosition)).ForEach(b => Debug.Log(b.boardPosition));
 				board.MoveUnit(startSpace, space);
 				pc.hasActed = true; //moving counts as an action
 				pc.EndTurnIfNeeded();

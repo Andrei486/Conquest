@@ -181,7 +181,8 @@ namespace InBattle{
 			}
 			end.occupyingUnit = start.occupyingUnit;
 			start.occupyingUnit = null;
-			end.occupyingUnit.transform.position = end.anchorPosition; //lerp here
+			StartCoroutine(pc.FollowPath(CollapsePath(pc.GetShortestPath(Vector2Int.RoundToInt(end.boardPosition)), pc)));
+			// end.occupyingUnit.transform.position = end.anchorPosition; //lerp here
 			pc.boardPosition = end.boardPosition;
 			pc.remainingMove = pc.moveGrid[(int) end.boardPosition.x, (int) end.boardPosition.y];
 			pc.previousAction = UnitAction.MOVE;
@@ -197,6 +198,71 @@ namespace InBattle{
 		public void MoveUnit(Vector2 start, Vector2 end){
 			/**Moves the unit on the BoardSpace at coordinates start to the BoardSpace at coordinates end, if any.*/
 			MoveUnit(this.GetSpace(start), this.GetSpace(end));
+		}
+
+		public bool CanMoveThrough(Vector2Int previous, Vector2Int next, PlayerController pc){
+			/**Returns true if and only if a unit could move directly from previous to next
+			without going through the omitted middle point, assuming that the movement is possible at all.!--*/
+			int minX = Math.Min(previous.x, next.x);
+			int maxX = Math.Max(previous.x, next.x);
+			int minY = Math.Min(previous.y, next.y);
+			int maxY = Math.Max(previous.y, next.y);
+
+			float minHeight = GetSpace(previous).GetHeight();
+			float maxHeight = minHeight;
+			float height;
+			BoardSpace space;
+			for (int i = minX; i <= maxX; i++){
+				for (int j = minY; j <= maxY; j++){
+					space = GetSpace(new Vector2Int(i, j));
+					height = space.GetHeight();
+					minHeight = (height < minHeight) ? height : minHeight;
+					maxHeight = (height > maxHeight) ? height : maxHeight;
+					if (space.impassable
+                        || (space.occupyingUnit != null && space.occupyingUnit.GetComponent<PlayerController>().affiliation != pc.affiliation)){
+						return false; //can't go through if any space is impassable
+					}
+				}
+			}
+			if (maxHeight - minHeight > pc.jumpHeight){
+				return false; //can't go through if the terrain is too uneven
+			}
+			return true;
+		}
+
+		public List<BoardSpace> CollapsePath(List<BoardSpace> path, PlayerController pc){
+			/**Returns a collapsed version of the path path, along which the
+			unit can still move. The original path is modified.!--*/
+			List<BoardSpace> toRemove;
+			bool removedBend;
+			Vector2 previousDirection;
+			Vector2 nextDirection;
+			if (path.Count <= 2){
+				return path; //if the path is too short, do not attempt to reduce it furthers
+			}
+			//try to smooth bends from the path
+			do {
+				removedBend = false;
+				toRemove = new List<BoardSpace>();
+				for (int x=1; x < path.Count - 1; x++){
+					previousDirection = path[x].boardPosition - path[x-1].boardPosition;
+					nextDirection = path[x+1].boardPosition - path[x].boardPosition;
+					if (Vector2.Angle(previousDirection, nextDirection) > 1.0f && CanMoveThrough(Vector2Int.RoundToInt(path[x-1].boardPosition),
+																									   Vector2Int.RoundToInt(path[x+1].boardPosition),
+																									   pc)){
+						toRemove.Add(path[x]);
+						x++; //skip the next one, because its previous space (x-1) will have been removed.
+						removedBend = true;
+					}
+				}
+				foreach (BoardSpace space in toRemove){
+					path.Remove(space);
+				}
+				if (path.Count <= 2){
+					return path; //if the path becomes too short, do not attempt to reduce it furthers
+				}
+			} while (removedBend);
+			return path;
 		}
 		
 		public void TempMoveUnit(BoardSpace start, BoardSpace end){

@@ -85,6 +85,7 @@ public class Menu : MonoBehaviour
     }
 
     public void Destroy(){
+        menuCursor.UnlinkMenu();
         Destroy(cursor);
         Destroy(this.gameObject);
     }

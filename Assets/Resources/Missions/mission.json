@@ -7,14 +7,14 @@
                 "x": 0,
                 "y": 0
             },
-            "model": "Pawn",
+            "model": "UniversalModel",
             "maxHealth": 10.0,
             "currentHealth": 10.0,
             "level": 3,
             "attackPower": 5.0,
             "defense": 3.0,
             "jumpHeight": 1.0,
-            "moveRange": 3,
+            "moveRange": 6,
             "maxActions": 3,
             "maxBullets": 3,
             "bullets": 3,
@@ -28,7 +28,7 @@
         {
             "name": "Unit 1",
             "affiliation": "PLAYER",
-            "model": "Knight",
+            "model": "UniversalModel",
             "boardPosition": {
                 "x": 0,
                 "y": 1
@@ -39,7 +39,7 @@
             "attackPower": 5.0,
             "defense": 3.0,
             "jumpHeight": 1.0,
-            "moveRange": 3,
+            "moveRange": 6,
             "maxActions": 3,
             "maxBullets": 3,
             "bullets": 3,
@@ -53,7 +53,7 @@
         {
             "name": "Unit 2",
             "affiliation": "ENEMY",
-            "model": "Knight",
+            "model": "UniversalModel",
             "boardPosition": {
                 "x": 0,
                 "y": 2
@@ -64,7 +64,7 @@
             "attackPower": 5.0,
             "defense": 3.0,
             "jumpHeight": 1.0,
-            "moveRange": 3,
+            "moveRange": 6,
             "maxActions": 3,
             "maxBullets": 3,
             "bullets": 3,

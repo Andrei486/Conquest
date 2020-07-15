@@ -27,6 +27,9 @@ namespace InBattle{
 		protected ControlsManager controls;
 		protected UIController uI;
 		protected bool movedFrame = false;
+
+		private float EMPTY_SPACE_HEIGHT = 2.0f;
+		private float ABOVE_UNIT_HEIGHT = 1.0f;
 		// Start is called before the first frame update
 		void Start()
 		{
@@ -108,10 +111,7 @@ namespace InBattle{
 			/**Updates position of cursor to match the new position.*/
 			Vector3 startPosition = this.gameObject.transform.position;
 			BoardSpace endSpace = board.GetSpace(newPosition);
-			Vector3 endPosition = endSpace.anchorPosition + offset;
-			if (endSpace.occupyingUnit != null){
-				endPosition += playerOffset;
-			}
+			Vector3 endPosition = GetFloatPosition(endSpace);
 			selector.GetComponent<CursorSelector>().SetPosition(newPosition);
 			//actually set the position
 			this.position = newPosition;
@@ -140,6 +140,18 @@ namespace InBattle{
 		public void MakeVisible(bool enabled){
 			/**Makes the cursor visible or invisible.*/
 			this.gameObject.GetComponent<MeshRenderer>().enabled = enabled;
+		}
+
+		public Vector3 GetFloatPosition(BoardSpace space){
+			/**Returns the transform position that this cursor should have if hovered
+			on the given BoardSpace.!--*/
+			Vector3 basePos = space.anchorPosition;
+			if (space.occupyingUnit == null){
+				return basePos + Vector3.up * EMPTY_SPACE_HEIGHT;
+			} else {
+				float unitHeight = space.occupyingUnit.GetComponent<PlayerController>().playerRenderer.bounds.size.y * space.occupyingUnit.transform.localScale.y;
+				return basePos + Vector3.up * (unitHeight + ABOVE_UNIT_HEIGHT);
+			}
 		}
 	}
 }

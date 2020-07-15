@@ -61,8 +61,6 @@ namespace InBattle{
 				yield return new WaitForEndOfFrame();
 			}
 			
-			Vector3 endPosition = cursor.transform.position;
-			
 			this.gameObject.transform.RotateAround(point, axis, angle - totalRotation); //account for errors produced
 			
 			rotating = false;

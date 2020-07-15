@@ -60,6 +60,12 @@ MonoBehaviour:
   backupFile: 
   controlsData: 
   baseUnits: {fileID: 0}
+  currentMission:
+    name: 
+    filename: 
+    completed: 0
+    replayable: 0
+    required: []
 --- !u!114 &4081619897645118001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +98,7 @@ MonoBehaviour:
     type: 3}
   menuItemPrefab: {fileID: 3452037990696858790, guid: eaf2446051c3af2419589a405314b0dc,
     type: 3}
+  animatorController: {fileID: 9100000, guid: 45f1c19edbdb7fe4387357f72fda5e44, type: 2}
 --- !u!114 &3060979954033172192
 MonoBehaviour:
   m_ObjectHideFlags: 0

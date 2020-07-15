@@ -11,7 +11,13 @@ namespace InBattle{
 	[Serializable]
 	public class PlayerController : MonoBehaviour
 	{
-		public const float MOVE_ANIMATION_TIME = 0.5f;
+		public const float MOVE_TILE_TIME = 0.5f;
+		public const float SHORT_ROTATION_TIME = 0.1f;
+		public const float LONG_ROTATION_TIME = 0.5f;
+		public const float LONG_ROTATION_THRESHOLD = 60f; //in degrees
+		public const float BASE_JUMP_HEIGHT = 0.5f;
+		private static Vector2Int[] HORIZONTAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.left, Vector2Int.right};
+		private static Vector2Int[] VERTICAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.up, Vector2Int.down};
 		public Vector2 boardPosition;
 		public float jumpHeight;
 		public int moveRange;
@@ -34,6 +40,11 @@ namespace InBattle{
 		public string modelName;
 		public Vector3 defaultEulerAngles;
 		public bool saveAfterBattle = false; //if true, save the unit's info to units file after battle.
+		public bool rotating = false;
+		public bool moving = false;
+
+		public Renderer playerRenderer;
+		private Animator animator;
 		
 		// Start is called before the first frame update
 		void Start()
@@ -46,6 +57,13 @@ namespace InBattle{
 			moveGrid = new int[board.columns, board.rows];
 			defaultEulerAngles = gameObject.transform.eulerAngles;
 			UpdateMoveGrid((int) boardPosition.x, (int) boardPosition.y);
+
+			if (GetComponentInChildren<Renderer>() != null){
+				playerRenderer = GetComponentInChildren<Renderer>();
+			}
+
+			animator = GetComponentInChildren<Animator>();
+			animator.runtimeAnimatorController = Instantiate(PrefabManager.GetPrefabs().animatorController); //set the animator controller
 		}
 
 		// Update is called once per frame
@@ -54,56 +72,34 @@ namespace InBattle{
 			
 		}
 		
-		void FillMoveGrid(int startX, int startY){
+		void FillMoveGrid(Vector2Int pos, bool preferHorizontal){
 			/**Recursive function to fill the move grid.*/
-			if (moveGrid[startX, startY] == 0){
+			if (moveGrid[pos.x, pos.y] == 0){
 				return;
 			}
 			
-			BoardSpace currentSpace = board.boardSpaces[startX, startY];
+			BoardSpace currentSpace = board.GetSpace(pos);
 			BoardSpace toCheck;
-			int movementLeft = moveGrid[startX, startY];
-			
-			if (startX > 0){ //check left space if possible
-				toCheck = board.boardSpaces[startX - 1, startY];
-				if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight){
-					if (movementLeft >= toCheck.moveCost && toCheck.occupyingUnit == null){
-						if (moveGrid[startX - 1, startY] < moveGrid[startX, startY] - toCheck.moveCost){
-							moveGrid[startX - 1, startY] = moveGrid[startX, startY] - toCheck.moveCost;
-							FillMoveGrid(startX - 1, startY);
-						}
-					}
-				}
+			Vector2Int newPos;
+			int movementLeft = moveGrid[pos.x, pos.y];
+			List<Vector2Int> directions = new List<Vector2Int>();
+			if (preferHorizontal){
+				directions.AddRange(HORIZONTAL_DIRECTIONS);
+				directions.AddRange(VERTICAL_DIRECTIONS);
+			} else {
+				directions.AddRange(VERTICAL_DIRECTIONS);
+				directions.AddRange(HORIZONTAL_DIRECTIONS);
 			}
-			if (startY > 0){ //check lower space if possible
-				toCheck = board.boardSpaces[startX, startY - 1];
-				if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight){
-					if (movementLeft >= toCheck.moveCost && toCheck.occupyingUnit == null){
-						if (moveGrid[startX, startY - 1] < moveGrid[startX, startY] - toCheck.moveCost){
-							moveGrid[startX, startY - 1] = moveGrid[startX, startY] - toCheck.moveCost;
-							FillMoveGrid(startX, startY - 1);
-						}
-					}
-				}
-			}
-			if (startX < board.columns - 1){ //check right space if possible
-				toCheck = board.boardSpaces[startX + 1, startY];
-				if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight){
-					if (movementLeft >= toCheck.moveCost && toCheck.occupyingUnit == null){
-						if (moveGrid[startX + 1, startY] < moveGrid[startX, startY] - toCheck.moveCost){
-							moveGrid[startX + 1, startY] = moveGrid[startX, startY] - toCheck.moveCost;
-							FillMoveGrid(startX + 1, startY);
-						}
-					}
-				}
-			}
-			if (startY < board.rows - 1){ //check top space if possible
-				toCheck = board.boardSpaces[startX, startY + 1];
-				if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight){
-					if (movementLeft >= toCheck.moveCost && toCheck.occupyingUnit == null){
-						if (moveGrid[startX, startY + 1] < moveGrid[startX, startY] - toCheck.moveCost){
-							moveGrid[startX, startY + 1] = moveGrid[startX, startY] - toCheck.moveCost;
-							FillMoveGrid(startX, startY + 1);
+			foreach (Vector2Int direction in directions){
+				newPos = pos + direction;
+				if (board.IsWithinBounds(newPos)){ //check if space exists
+					toCheck = board.GetSpace(newPos);
+					if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight){
+						if (movementLeft >= toCheck.moveCost && toCheck.occupyingUnit == null){
+							if (moveGrid[newPos.x, newPos.y] < moveGrid[pos.x, pos.y] - toCheck.moveCost){
+								moveGrid[newPos.x, newPos.y] = moveGrid[pos.x, pos.y] - toCheck.moveCost;
+								FillMoveGrid(newPos, !preferHorizontal); //prefer zigzag patterns
+							}
 						}
 					}
 				}
@@ -118,38 +114,43 @@ namespace InBattle{
 				}
 			}
 			moveGrid[startX, startY] = remainingMove;
-			FillMoveGrid(startX, startY);
+			FillMoveGrid(new Vector2Int(startX, startY), true);
 		}
 		
-		public List<BoardSpace> GetShortestPath(int startX, int startY){
+		public List<BoardSpace> GetShortestPath(Vector2Int target){
 			/**Returns a list of BoardSpaces corresponding to the shortest path from the current space to the target space.
 			Assumes that the target space can be reached given the unit's movement.*/
-			int targetX = (int) this.boardPosition.x;
-			int targetY = (int) this.boardPosition.y;
-			int currentMove;
-			int[] surroundings = new int[4];
-			List<BoardSpace> path = new List<BoardSpace>();
-			path.Add(board.GetSpace(new Vector2(startX, startY)));
-			while (targetX != startX || targetY != startY){
-				currentMove = moveGrid[startX, startY];
-				surroundings = new int[4]{moveGrid[startX - 1, startY], moveGrid[startX, startY - 1], moveGrid[startX + 1, startY], moveGrid[startX, startY + 1]};
-				switch(Array.IndexOf(surroundings, surroundings.Max())){
-					case 0:
-						startX -= 1;
-						path.Add(board.GetSpace(new Vector2(startX, startY)));
-						break;
-					case 1:
-						startY -= 1;
-						path.Add(board.GetSpace(new Vector2(startX, startY)));
-						break;
-					case 2:
-						startX += 1;
-						path.Add(board.GetSpace(new Vector2(startX, startY)));
-						break;
-					case 3:
-						startY += 1;
-						path.Add(board.GetSpace(new Vector2(startX, startY)));
-						break;
+			Vector2Int pos = target;
+			Vector2Int newPos;
+			BoardSpace currentSpace;
+			BoardSpace newSpace;
+			List<BoardSpace> path = new List<BoardSpace>(){board.GetSpace(pos)};
+			bool preferHorizontal = false;
+			List<Vector2Int> directions;
+			while (pos != this.boardPosition){
+				currentSpace = board.GetSpace(pos);
+				if (preferHorizontal){
+					directions = new List<Vector2Int>();
+					directions.AddRange(HORIZONTAL_DIRECTIONS);
+					directions.AddRange(VERTICAL_DIRECTIONS);
+				} else {
+					directions = new List<Vector2Int>();
+					directions.AddRange(VERTICAL_DIRECTIONS);
+					directions.AddRange(HORIZONTAL_DIRECTIONS);
+				}
+				foreach (Vector2Int direction in directions){
+					newPos = pos + direction;
+					newSpace = board.GetSpace(newPos);
+					if (board.IsWithinBounds(newPos)){ //if space is within bounds
+						if (Math.Abs(newSpace.GetHeight() - currentSpace.GetHeight()) <= jumpHeight){  //if it can be moved to directly
+							if (moveGrid[pos.x, pos.y] + currentSpace.moveCost == moveGrid[newPos.x, newPos.y]){ //may not be necessary
+								path.Add(newSpace);
+								pos = newPos;
+								preferHorizontal = (direction.x == 0); //make zigzags: if was going horizontal, stop, and vice versa
+								break;
+							}
+						}
+					}
 				}
 			}
 			path.Reverse();
@@ -261,15 +262,91 @@ namespace InBattle{
 		}
 		
 		public void MakeSemiTransparent(bool enabled){
-			Color color = this.gameObject.GetComponent<MeshRenderer>().material.color;
+			Color color = playerRenderer.material.color;
 			if (enabled){
-				this.gameObject.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0f); //make nonmetallic and semitransparent
+				playerRenderer.material.SetFloat("_Metallic", 0f); //make nonmetallic and semitransparent
 				color.a = 0.5f;
 			} else {
-				this.gameObject.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.4f); //make metallic and opaque
+				playerRenderer.material.SetFloat("_Metallic", 0.4f); //make metallic and opaque
 				color.a = 1.0f;
 			}
-			this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color", color);
+			playerRenderer.material.SetColor("_Color", color);
+		}
+
+		private IEnumerator Rotate(Vector2 previous, Vector2 final){
+			/**Rotates the player by the angle between the two vectors.!--*/
+			float angle = Vector2.SignedAngle(final, previous);
+			float timeToRotate;
+			bool wasMoving = true;
+			if (Math.Abs(angle) > 1.0f){ //do not rotate if the path is straight, to avoid random stops
+				this.rotating = true;
+				if (Math.Abs(angle) >= LONG_ROTATION_THRESHOLD){
+					timeToRotate = LONG_ROTATION_TIME;
+					wasMoving = animator.GetBool("moving");
+					animator.SetBool("moving", false);
+				} else {
+					timeToRotate = SHORT_ROTATION_TIME;
+				}
+				
+				float rotationPerFrame = angle / timeToRotate * Time.deltaTime;
+				float totalRotation = 0f;
+				
+				while (totalRotation < Math.Abs(angle) - 0.5f){ //it is better to undershoot so error correction is less noticeable
+					totalRotation += Math.Abs(rotationPerFrame);
+					this.gameObject.transform.Rotate(Vector3.up * rotationPerFrame, Space.World);
+					yield return new WaitForEndOfFrame();
+				}
+				
+				this.gameObject.transform.Rotate(Vector3.up * (angle - totalRotation * Math.Sign(angle)), Space.World); //account for errors produced
+				
+				this.rotating = false;
+				if (Math.Abs(angle) >= LONG_ROTATION_THRESHOLD){
+					timeToRotate = LONG_ROTATION_TIME;
+					animator.SetBool("moving", wasMoving);
+				}
+			}
+			yield return null;
+		}
+
+		public IEnumerator RotateTo(Vector2 final){
+			/**Rotates the player to the angle specified by the vector.!--*/
+			Vector2 initialRotation = Vector2.up.Rotate(-transform.eulerAngles.y);
+			StartCoroutine(Rotate(initialRotation, final));
+			yield return null;
+		}
+
+		public IEnumerator Move(BoardSpace start, BoardSpace end){
+			/**Moves the player from start to end.!--*/
+			this.moving = true;
+			Vector3 startPos = start.anchorPosition;
+			Vector3 endPos = end.anchorPosition;
+			float totalMoveTime = MOVE_TILE_TIME * Vector2.Distance(start.boardPosition, end.boardPosition);
+			float t = 0f;
+			while (t < 1){
+				t += Time.deltaTime / totalMoveTime;
+				transform.position = Vector3.Lerp(startPos, endPos, t);
+				yield return new WaitForEndOfFrame();
+			}
+			transform.position = endPos;
+			this.moving = false;
+			yield return null;
+		}
+
+		public IEnumerator FollowPath(List<BoardSpace> path){
+			/**Moves this unit along the path of BoardSpaces.!--*/
+			Vector2 currentPosition = this.boardPosition;
+			Vector2 nextDirection;
+			animator.SetBool("moving", true);
+			foreach (BoardSpace next in path){
+				nextDirection = next.boardPosition - currentPosition;
+				StartCoroutine(RotateTo(nextDirection)); //rotate to face the next space
+				yield return new WaitUntil(() => !this.rotating);
+				StartCoroutine(Move(board.GetSpace(currentPosition), next)); //move to it
+				yield return new WaitUntil(() => !this.moving);
+				currentPosition = next.boardPosition;
+			}
+			animator.SetBool("moving", false);
+			yield return null;
 		}
 	}
 }
