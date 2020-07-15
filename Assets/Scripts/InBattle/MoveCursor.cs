@@ -81,19 +81,22 @@ namespace InBattle{
 			}
 			
 			if (movedTemporary){
-				pc.GetShortestPath(Vector2Int.RoundToInt(space.boardPosition)).ForEach(b => Debug.Log(b.boardPosition));
 				board.MoveUnit(startSpace, space);
 				pc.hasActed = true; //moving counts as an action
 				pc.EndTurnIfNeeded();
-				mainCursor.locked = false;
-				mainCursor.Move(space.boardPosition - startSpace.boardPosition);
-				mainCursor.MakeVisible(true);
-				if (!pc.turnEnded){
-					menu.ShowActionList(pc);
-				} else {
-					mainCursor.Deselect();
-				}
-				Destroy(this.gameObject);
+				StartCoroutine(board.WhenUnitStops(() =>
+					{
+						mainCursor.locked = false;
+						mainCursor.Move(space.boardPosition - startSpace.boardPosition);
+						mainCursor.MakeVisible(true);
+						if (!pc.turnEnded){
+							menu.ShowActionList(pc);
+						} else {
+							mainCursor.Deselect();
+						}
+						Destroy(this.gameObject);
+					}));
+				
 			} else {
 				board.TempMoveUnit(startSpace, space);
 				movedTemporary = true;

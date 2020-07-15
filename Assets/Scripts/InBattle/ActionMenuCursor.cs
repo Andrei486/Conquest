@@ -27,7 +27,7 @@ namespace InBattle{
 		protected override void Update()
 		{
 			base.Update();
-			if (this.menu != null){
+			if (this.menu != null && !board.movingUnit){
 				if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_DOWN))){
 					MoveDown();
 				}

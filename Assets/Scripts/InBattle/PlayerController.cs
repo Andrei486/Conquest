@@ -16,6 +16,7 @@ namespace InBattle{
 		public const float LONG_ROTATION_TIME = 0.5f;
 		public const float LONG_ROTATION_THRESHOLD = 60f; //in degrees
 		public const float BASE_JUMP_HEIGHT = 0.5f;
+		public const float FAST_FORWARD_SPEED = 2.5f;
 		private static Vector2Int[] HORIZONTAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.left, Vector2Int.right};
 		private static Vector2Int[] VERTICAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.up, Vector2Int.down};
 		public Vector2 boardPosition;
@@ -42,7 +43,6 @@ namespace InBattle{
 		public bool saveAfterBattle = false; //if true, save the unit's info to units file after battle.
 		public bool rotating = false;
 		public bool moving = false;
-
 		public Renderer playerRenderer;
 		private Animator animator;
 		
@@ -69,7 +69,11 @@ namespace InBattle{
 		// Update is called once per frame
 		void Update()
 		{
-			
+			if (Input.GetKey(ControlsManager.GetControls().GetCommand(Command.CONFIRM))){
+				animator.speed = FAST_FORWARD_SPEED;
+			} else {
+				animator.speed = 1;
+			}
 		}
 		
 		void FillMoveGrid(Vector2Int pos, bool preferHorizontal){
@@ -292,8 +296,8 @@ namespace InBattle{
 				float totalRotation = 0f;
 				
 				while (totalRotation < Math.Abs(angle) - 0.5f){ //it is better to undershoot so error correction is less noticeable
-					totalRotation += Math.Abs(rotationPerFrame);
-					this.gameObject.transform.Rotate(Vector3.up * rotationPerFrame, Space.World);
+					totalRotation += Math.Abs(rotationPerFrame * animator.speed);
+					this.gameObject.transform.Rotate(Vector3.up * rotationPerFrame * animator.speed, Space.World);
 					yield return new WaitForEndOfFrame();
 				}
 				
@@ -323,7 +327,7 @@ namespace InBattle{
 			float totalMoveTime = MOVE_TILE_TIME * Vector2.Distance(start.boardPosition, end.boardPosition);
 			float t = 0f;
 			while (t < 1){
-				t += Time.deltaTime / totalMoveTime;
+				t += Time.deltaTime * animator.speed / totalMoveTime;
 				transform.position = Vector3.Lerp(startPos, endPos, t);
 				yield return new WaitForEndOfFrame();
 			}
@@ -334,6 +338,7 @@ namespace InBattle{
 
 		public IEnumerator FollowPath(List<BoardSpace> path){
 			/**Moves this unit along the path of BoardSpaces.!--*/
+			board.movingUnit = true;
 			Vector2 currentPosition = this.boardPosition;
 			Vector2 nextDirection;
 			animator.SetBool("moving", true);
@@ -346,6 +351,7 @@ namespace InBattle{
 				currentPosition = next.boardPosition;
 			}
 			animator.SetBool("moving", false);
+			board.movingUnit = false;
 			yield return null;
 		}
 	}

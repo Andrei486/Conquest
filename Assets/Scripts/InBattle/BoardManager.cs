@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace InBattle{
 		public string mapName;
 		BattleMenu menu;
 		public bool locked = false;
+		public bool movingUnit = false;
 		Cursor cursor;
 		public Cursor moveCursor;
 		public UnitAffiliation phase;
@@ -500,6 +502,13 @@ namespace InBattle{
 				Destroy(vis);
 			}
 			BoardManager.GetBoard().HighlightSpaces(null);
+		}
+
+		public IEnumerator WhenUnitStops(Action toDo){
+			/**Executes the given action once no unit is moving around the board.!--*/
+			yield return new WaitWhile(() => this.movingUnit);
+			toDo();
+			yield return null;
 		}
 	}
 }
