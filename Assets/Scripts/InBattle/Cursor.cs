@@ -51,11 +51,11 @@ namespace InBattle{
 		// Update is called once per frame
 		void LateUpdate()
 		{
-			if (this.locked || board.locked){
+			if (this.locked || board.locked || board.movingUnit){
 				return;
 			}
 			movedFrame = false;
-			if (!(camera.GetComponent<Camera>().rotating || this.moving || this.movedTemporary)){ //to prevent camera going off-center, do not move if already moving or turning
+			if (!(camera.GetComponent<Camera>().locked || this.moving || this.movedTemporary)){ //to prevent camera going off-center, do not move if already moving or turning
 				//cursor movement
 				Quaternion rotation = Quaternion.AngleAxis((int) camera.transform.eulerAngles.y, Vector3.back);
 				if (Input.GetKey(controls.GetCommand(Command.MOVE_DOWN))){

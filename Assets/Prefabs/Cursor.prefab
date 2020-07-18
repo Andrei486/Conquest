@@ -222,4 +222,3 @@ MonoBehaviour:
   cursor: {fileID: 0}
   timeToRotate: 0.3
   rotating: 0
-  zAngle: 0

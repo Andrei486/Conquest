@@ -73,58 +73,69 @@ public class ControlsManager: MonoBehaviour
         }
 
         if (!showingControls && Input.GetKeyDown(GetCommand(Command.RESET_CONTROLS))){
-            ResetControls();
+            keyMappings = DefaultControls();
         }
     }
 
-    public void SetCameraControls(int mode){
+    public void SetCameraControls(Dictionary<Command, KeyCode> mappings, int mode){
         /**Set the camera controls to the specified mode.*/
         if (mode == ControlsManager.WASD){
-            keyMappings.Add(Command.CAMERA_UP, KeyCode.W);
-            keyMappings.Add(Command.CAMERA_DOWN, KeyCode.S);
-            keyMappings.Add(Command.CAMERA_LEFT, KeyCode.A);
-            keyMappings.Add(Command.CAMERA_RIGHT, KeyCode.D);
+            mappings.Add(Command.CAMERA_UP, KeyCode.W);
+            mappings.Add(Command.CAMERA_DOWN, KeyCode.S);
+            mappings.Add(Command.CAMERA_LEFT, KeyCode.A);
+            mappings.Add(Command.CAMERA_RIGHT, KeyCode.D);
         } else {
-            keyMappings.Add(Command.CAMERA_UP, KeyCode.UpArrow);
-            keyMappings.Add(Command.CAMERA_DOWN, KeyCode.DownArrow);
-            keyMappings.Add(Command.CAMERA_LEFT, KeyCode.LeftArrow);
-            keyMappings.Add(Command.CAMERA_RIGHT, KeyCode.RightArrow);
+            mappings.Add(Command.CAMERA_UP, KeyCode.UpArrow);
+            mappings.Add(Command.CAMERA_DOWN, KeyCode.DownArrow);
+            mappings.Add(Command.CAMERA_LEFT, KeyCode.LeftArrow);
+            mappings.Add(Command.CAMERA_RIGHT, KeyCode.RightArrow);
         }
     
     }
-    public void SetMoveControls(int mode){
+    public void SetMoveControls(Dictionary<Command, KeyCode> mappings, int mode){
         /**Set the movement controls to the specified mode.*/
         if (mode == ControlsManager.WASD){
-            keyMappings.Add(Command.MOVE_UP, KeyCode.W);
-            keyMappings.Add(Command.MOVE_DOWN, KeyCode.A);
-            keyMappings.Add(Command.MOVE_LEFT, KeyCode.S);
-            keyMappings.Add(Command.MOVE_RIGHT, KeyCode.D);
+            mappings.Add(Command.MOVE_UP, KeyCode.W);
+            mappings.Add(Command.MOVE_DOWN, KeyCode.A);
+            mappings.Add(Command.MOVE_LEFT, KeyCode.S);
+            mappings.Add(Command.MOVE_RIGHT, KeyCode.D);
         } else {
-            keyMappings.Add(Command.MOVE_UP, KeyCode.UpArrow);
-            keyMappings.Add(Command.MOVE_DOWN, KeyCode.DownArrow);
-            keyMappings.Add(Command.MOVE_LEFT, KeyCode.LeftArrow);
-            keyMappings.Add(Command.MOVE_RIGHT, KeyCode.RightArrow);
+            mappings.Add(Command.MOVE_UP, KeyCode.UpArrow);
+            mappings.Add(Command.MOVE_DOWN, KeyCode.DownArrow);
+            mappings.Add(Command.MOVE_LEFT, KeyCode.LeftArrow);
+            mappings.Add(Command.MOVE_RIGHT, KeyCode.RightArrow);
         }
     }
 
-    public void ResetControls(){
-        keyMappings = new Dictionary<Command, KeyCode>();
-        keyMappings.Add(Command.CONFIRM, KeyCode.Space);
-        keyMappings.Add(Command.BACK, KeyCode.Backspace);
-        keyMappings.Add(Command.MENU, KeyCode.X);
-        keyMappings.Add(Command.QUICKSAVE, KeyCode.Equals);
-        keyMappings.Add(Command.QUICKLOAD, KeyCode.Minus);
-        keyMappings.Add(Command.TOGGLE_INFO, KeyCode.RightControl);
-        keyMappings.Add(Command.RESET_CONTROLS, KeyCode.R);
-        keyMappings.Add(Command.TOGGLE_GRID, KeyCode.G);
-        this.SetCameraControls(ControlsManager.WASD);
-        this.SetMoveControls(ControlsManager.ARROWS);
+    public Dictionary<Command, KeyCode> DefaultControls(){
+        Dictionary<Command, KeyCode> mappings = new Dictionary<Command, KeyCode>();
+        mappings.Add(Command.CONFIRM, KeyCode.Space);
+        mappings.Add(Command.BACK, KeyCode.Backspace);
+        mappings.Add(Command.MENU, KeyCode.X);
+        mappings.Add(Command.QUICKSAVE, KeyCode.Equals);
+        mappings.Add(Command.QUICKLOAD, KeyCode.Minus);
+        mappings.Add(Command.TOGGLE_INFO, KeyCode.RightControl);
+        mappings.Add(Command.RESET_CONTROLS, KeyCode.R);
+        mappings.Add(Command.TOGGLE_GRID, KeyCode.G);
+        mappings.Add(Command.ZOOM_IN, KeyCode.N);
+        mappings.Add(Command.ZOOM_OUT, KeyCode.M);
+        this.SetCameraControls(mappings, ControlsManager.WASD);
+        this.SetMoveControls(mappings, ControlsManager.ARROWS);
+        return mappings;
     }
 
     public void LoadControls(){
         string controlsData = Application.persistentDataPath + "/SaveData/controlsData.txt";
         string json = File.ReadAllText(controlsData);
         keyMappings = JsonConvert.DeserializeObject<Dictionary<Command, KeyCode>>(json);
+        
+        //fill in any missing commands
+        Dictionary<Command, KeyCode> defaults = DefaultControls();
+        foreach (Command command in defaults.Keys){
+            if (!keyMappings.ContainsKey(command)){
+                keyMappings.Add(command, defaults[command]);
+            }
+        }
     }
 
     public void SetCommand(Command command, KeyCode newKey){
@@ -243,5 +254,6 @@ public enum Command{
     [Description("Cam. Tilt Up")]CAMERA_UP, [Description("Cam. Tilt Down")]CAMERA_DOWN,
     [Description("Cam. Turn Left")] CAMERA_LEFT, [Description("Cam. Turn Right")] CAMERA_RIGHT,
     [Description("Move Up")] MOVE_UP, [Description("Move Down")] MOVE_DOWN,
-    [Description("Move Left")] MOVE_LEFT, [Description("Move Right")] MOVE_RIGHT
+    [Description("Move Left")] MOVE_LEFT, [Description("Move Right")] MOVE_RIGHT,
+    [Description("Zoom In")] ZOOM_IN, [Description("Zoom Out")] ZOOM_OUT, 
 }

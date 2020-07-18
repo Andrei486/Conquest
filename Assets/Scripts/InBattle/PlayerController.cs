@@ -17,8 +17,8 @@ namespace InBattle{
 		public const float LONG_ROTATION_THRESHOLD = 60f; //in degrees
 		public const float BASE_JUMP_HEIGHT = 0.5f;
 		public const float FAST_FORWARD_SPEED = 2.5f;
-		private static Vector2Int[] HORIZONTAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.left, Vector2Int.right};
-		private static Vector2Int[] VERTICAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.up, Vector2Int.down};
+		public static Vector2Int[] HORIZONTAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.left, Vector2Int.right};
+		public static Vector2Int[] VERTICAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.up, Vector2Int.down};
 		public Vector2 boardPosition;
 		public float jumpHeight;
 		public int moveRange;
@@ -64,6 +64,7 @@ namespace InBattle{
 
 			animator = GetComponentInChildren<Animator>();
 			animator.runtimeAnimatorController = Instantiate(PrefabManager.GetPrefabs().animatorController); //set the animator controller
+			MakeCollider();
 		}
 
 		// Update is called once per frame
@@ -74,6 +75,18 @@ namespace InBattle{
 			} else {
 				animator.speed = 1;
 			}
+		}
+
+		private void MakeCollider(){
+			/**Adds a CapsuleCollider to the current player, adjusted to the player's renderer.!--*/
+			CapsuleCollider collider = gameObject.AddComponent<CapsuleCollider>();
+			float radius = playerRenderer.bounds.size.y * 0.1f;
+			float height = playerRenderer.bounds.size.y * 0.8f;
+			Vector3 centerPos = playerRenderer.bounds.extents;
+			collider.radius = radius;
+			collider.height = height;
+			collider.center = centerPos;
+			collider.direction = 1; //capsule points upwards (along y axis)
 		}
 		
 		void FillMoveGrid(Vector2Int pos, bool preferHorizontal){
