@@ -100,23 +100,6 @@ namespace InBattle{
 			VisualizeDirections(cursor.selectedSpace);
 		}
 
-		private List<Quaternion> GetDirections(Skill skill, BoardSpace space){
-			List<Quaternion> valid = new List<Quaternion>();
-			Quaternion stepRotation = Quaternion.AngleAxis(90, Vector3.up);
-			Quaternion rotation;
-			for (int i=0; i<=3; i++){
-				rotation = Quaternion.identity;
-				for (int j = 0; j < i; j++){
-					rotation *= stepRotation;
-				}
-				Debug.Log(rotation.eulerAngles);
-				if (skill.IsValid(space, rotation)){
-					valid.Add(rotation);
-				}
-			}
-			return valid;
-		}
-
 		private void VisualizeDirections(BoardSpace space){
 			GameObject unit = space.occupyingUnit;
 			PlayerController pc = unit.GetComponent<PlayerController>();
@@ -159,7 +142,7 @@ namespace InBattle{
 			Skill skill = Skill.GetSkillByName(skillName, board.skillData);
 
 			player.gameObject.transform.eulerAngles = player.defaultEulerAngles;
-			validRotations = GetDirections(skill, cursor.selectedSpace);
+			validRotations = skill.GetDirections(cursor.selectedSpace);
 			skillRotation = validRotations.Count == 0 ? Quaternion.identity : validRotations[0];
 			player.gameObject.transform.Rotate(-skillRotation.eulerAngles, Space.World);
 			RotateRight();

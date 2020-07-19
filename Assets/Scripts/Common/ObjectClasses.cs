@@ -50,13 +50,14 @@ namespace Objects
 		
 		public float basePower;
 		public float accuracy;
+		public const float RANDOM_VARIANCE = 0.1f;
 		//relative to user, in board space, when user faces upwards.
 		[JsonConverter(typeof(VectorConverter))]
 		public Vector2 targetPosition = new Vector2(0, 0);
 		[JsonConverter(typeof(VectorConverter))]
 		public Vector2 knockbackPosition = new Vector2(0, 0);
 
-		public float CalculateDamage(Health user, Health target){
+		public float CalculateAverageDamage(Health user, Health target){
 			/**Returns the damage that would be dealt on a successful hit by this attack,
 			used by the unit user on the unit target.*/
 			float damageDealt;
@@ -69,7 +70,25 @@ namespace Objects
 			/**Returns the effective hit chance of this attack, used by the unit user
 			on the unit target, which is standing on the space targetSpace.*/
 			float effectiveAccuracy = accuracy;
-			return Math.Min(100.0f, effectiveAccuracy); //accuracy cannot be higher than 100%
+			return Math.Max(0f, Math.Min(100.0f, effectiveAccuracy)); //accuracy cannot be higher than 100%
+		}
+
+		public string CalculateDamageRange(Health user, Health target){
+			/**Returns the miminum and maximum damage that can be dealt by this attack,
+			in a display-friendly format.!--*/
+			double minDamage = Math.Round(CalculateAverageDamage(user, target) * (1f - RANDOM_VARIANCE), 2);
+			double maxDamage = Math.Round(CalculateAverageDamage(user, target) * (1f + RANDOM_VARIANCE), 2);
+			return (minDamage.ToString() + " - " + maxDamage.ToString());
+		}
+
+		public float CalculateEffectiveDamage(Health user, Health target){
+			/**Returns the average damage dealt to the target.!--*/
+			return CalculateAverageDamage(user, target) * CalculateHitChance(user, target) / 100.0f;
+		}
+
+		public float IsPotentiallyLethal(Health user, Health target){
+			float maxDamage = CalculateAverageDamage(user, target) * (1.0f + RANDOM_VARIANCE);
+			return (maxDamage >= target.currentHealth) && (CalculateHitChance(user, target) > 0f) ? 1 : 0;
 		}
 		public void VisualizeTarget(Transform parent, Health user, BoardSpace target){
 			/**Creates a visualization for an attack targeting a unit, as a child of the parent GameObject.*/
@@ -77,7 +96,7 @@ namespace Objects
 			GameObject targetUnit = target.occupyingUnit;
 			PlayerController targetPc = targetUnit.GetComponent<PlayerController>();
 			Health targetHealth = targetUnit.GetComponent<Health>();
-			float damage = CalculateDamage(user, targetHealth);
+			float damage = CalculateAverageDamage(user, targetHealth);
 			float accuracy = CalculateHitChance(user, targetHealth);
 			bool lethal = (damage >= targetHealth.currentHealth) && (accuracy > 0); //if attack would reduce HP to zero and can hit, it may be lethal
 
@@ -91,9 +110,9 @@ namespace Objects
 			Text hitText = vis.transform.Find("Hit Chance").GetComponent<Text>();
 
 			hitText.text = ((int) accuracy).ToString() + "%";
-			damageText.text = Math.Round(damage, 2).ToString();
+			damageText.text = CalculateDamageRange(user, targetHealth);
 
-			if (lethal){
+			if (IsPotentiallyLethal(user, targetHealth) == 1){
 				damageText.color = new Color(128, 0, 0);
 			}
 		}
@@ -294,6 +313,23 @@ namespace Objects
 			}
 			board.HighlightSpaces(affectedSpaces);
 		}
+
+		public List<Quaternion> GetDirections(BoardSpace space){
+			/**Returns the list of valid rotations for this skill used at the given space.!--*/
+			List<Quaternion> valid = new List<Quaternion>();
+			Quaternion stepRotation = Quaternion.AngleAxis(90, Vector3.up);
+			Quaternion rotation;
+			for (int i=0; i<=3; i++){
+				rotation = Quaternion.identity;
+				for (int j = 0; j < i; j++){
+					rotation *= stepRotation;
+				}
+				if (IsValid(space, rotation)){
+					valid.Add(rotation);
+				}
+			}
+			return valid;
+		}
 		
 		public bool IsValid(BoardSpace space, Quaternion direction){
 			/**Returns true if using this skill from space in chosen direction is a valid move.*/
@@ -352,7 +388,6 @@ namespace Objects
 			Vector2 newPosition;
 			foreach (Attack attack in this.attacks){
 				newPosition = space.boardPosition + attack.targetPosition.Rotate(direction.eulerAngles.y);
-				Debug.Log(newPosition);
 				if (!board.IsWithinBounds(newPosition)){
 					continue;
 				}
@@ -456,5 +491,28 @@ namespace Objects
 		public bool completed;
 		public bool replayable;
 		public List<string> required;
+	}
+
+	[Serializable]
+	public struct AutoMoveInfo{
+		/**Defines how this unit should be automatically moved.!--*/
+		public float moveModCoefficient;
+        public float commanderBonus;
+        public float retreatHP;
+	}
+
+	[Serializable]
+	public struct AutoMoveAction{
+		/**Defines a course of action for automatic movement: a unit would move to the space
+		movementTarget and then use skillToUse in the direction skillDirection.!--*/
+		public BoardSpace movementTarget;
+		public Skill skillToUse;
+		public Quaternion skillDirection;
+
+		public AutoMoveAction(BoardSpace movementTarget, Skill skillToUse, Quaternion skillDirection){
+			this.movementTarget = movementTarget;
+			this.skillToUse = skillToUse;
+			this.skillDirection = skillDirection;
+		}
 	}
 }

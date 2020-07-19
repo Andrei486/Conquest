@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Common\ObjectClasses.cs" />
      <Compile Include="Assets\Scripts\Common\PrefabManager.cs" />
      <Compile Include="Assets\Scripts\InBattle\ActionMenuCursor.cs" />
+     <Compile Include="Assets\Scripts\InBattle\AutoMoveController.cs" />
      <Compile Include="Assets\Scripts\InBattle\BattleLog.cs" />
      <Compile Include="Assets\Scripts\InBattle\BattleMenu.cs" />
      <Compile Include="Assets\Scripts\InBattle\BoardManager.cs" />
@@ -77,6 +78,7 @@
      <Compile Include="Assets\Scripts\InBattle\UIController.cs" />
      <Compile Include="Assets\Scripts\MissionSelect\MissionCursor.cs" />
      <Compile Include="Assets\Scripts\MissionSelect\MissionManager.cs" />
+     <None Include="Assets\Miscellaneous\distanceGrid.txt" />
      <None Include="Assets\Miscellaneous\baseUnits.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Users/Andrei/Conquest/Conquest/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

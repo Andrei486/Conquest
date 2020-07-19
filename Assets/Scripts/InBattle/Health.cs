@@ -55,9 +55,9 @@ namespace InBattle
 				Debug.Log("attack missed");
 				return;
 			}
-			float damageDealt = attack.CalculateDamage(this, target);
-
-			target.currentHealth -= damageDealt;
+			float damageDealt = attack.CalculateAverageDamage(this, target);
+			double damageModifier = (1.0 - Attack.RANDOM_VARIANCE) + (rng.NextDouble() * 2 * Attack.RANDOM_VARIANCE);
+			target.currentHealth -= damageDealt * (float) damageModifier;
 			BattleLog.GetLog().Log("Dealt " + damageDealt + " damage to " + target.pc.name);
 			Debug.Log("damage dealt");
 			

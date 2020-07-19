@@ -23,7 +23,12 @@
                 "Crescent Slash",
                 "Full Moon",
                 "Sniper"
-            ]
+            ],
+            "autoMove": {
+                "moveModCoefficient": 0.1,
+                "commanderBonus": 5,
+                "retreatHP": 0.5
+            }
         },
         {
             "name": "Unit 1",
@@ -48,15 +53,20 @@
                 "Full Moon",
                 "Crescent Slash",
                 "Artillery"
-            ]
+            ],
+            "autoMove": {
+                "moveModCoefficient": 0.1,
+                "commanderBonus": 5,
+                "retreatHP": 0.5
+            }
         },
         {
             "name": "Unit 2",
             "affiliation": "ENEMY",
             "model": "UniversalModel",
             "boardPosition": {
-                "x": 0,
-                "y": 2
+                "x": 14,
+                "y": 14
             },
             "maxHealth": 3.0,
             "currentHealth": 3.0,
@@ -73,7 +83,42 @@
                 "Crescent Slash",
                 "Artillery",
                 "Full Moon"
-            ]
+            ],
+            "autoMove": {
+                "moveModCoefficient": 0.1,
+                "commanderBonus": 5,
+                "retreatHP": 0.5
+            }
+        },
+        {
+            "name": "Unit 3",
+            "affiliation": "ENEMY",
+            "model": "UniversalModel",
+            "boardPosition": {
+                "x": 8,
+                "y": 6
+            },
+            "maxHealth": 1.0,
+            "currentHealth": 1.0,
+            "level": 3,
+            "attackPower": 5.0,
+            "defense": 3.0,
+            "jumpHeight": 1.0,
+            "moveRange": 6,
+            "maxActions": 3,
+            "maxBullets": 3,
+            "bullets": 3,
+            "turnEnded": false,
+            "skillNames": [
+                "Crescent Slash",
+                "Artillery",
+                "Full Moon"
+            ],
+            "autoMove": {
+                "moveModCoefficient": 0.1,
+                "commanderBonus": 5,
+                "retreatHP": 0.5
+            }
         }
     ],
     "currentTurn": 1,

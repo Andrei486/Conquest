@@ -110,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933822987141416240}
   - component: {fileID: 1933822987141416241}
+  - component: {fileID: 3862227438534139844}
   m_Layer: 0
   m_Name: Board
   m_TagString: Board
@@ -147,12 +148,15 @@ MonoBehaviour:
   rows: 0
   columns: 0
   currentTurn: 0
+  lastTurn: 100
+  winOnTimeout: 0
   defaultSprites:
   - {fileID: 8204095343765444867, guid: 4e1d42f4db37f574eb7e52ba706c9c10, type: 3}
   - {fileID: 8648822512753860137, guid: 4e1d42f4db37f574eb7e52ba706c9c10, type: 3}
   modelName: 
   mapName: 
   locked: 0
+  movingUnit: 0
   moveCursor: {fileID: 0}
   phase: 0
   highlightColors:
@@ -164,8 +168,6 @@ MonoBehaviour:
     material: {fileID: 2100000, guid: 0860f7ef69fb80141b7dbb2a8334e478, type: 2}
   cursorPrefab: {fileID: 587640148685082739, guid: 00b628af59913a342ac6a932cb10e2ca,
     type: 3}
-  pawn: {fileID: 6535245383649658801, guid: b79204adbe5cbff4bb79e5b59276710c, type: 3}
-  spriteShader: {fileID: 2100000, guid: ba09810178058e54b8eb39775cca3840, type: 2}
   boardTilePrefab: {fileID: 7014652375506959953, guid: 5c1282255cc32ce428d83510cfbabf84,
     type: 3}
   skillHitPrefab: {fileID: 7155777143360432960, guid: a623f65e1f2ccc647a735327d6cac70e,
@@ -173,6 +175,20 @@ MonoBehaviour:
   directionArrowPrefab: {fileID: 5673827049677145906, guid: 0c13ac24b51f7f448b49316ec4485bd0,
     type: 3}
   skillData: {fileID: 4900000, guid: 50488dccf549aee41beeeda27abb0a6c, type: 3}
+  autoMoveController: {fileID: 3862227438534139844}
+--- !u!114 &3862227438534139844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933822987141416243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b264f91b7fb6c4ea6b292777e07298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1933822987141416241}
 --- !u!1001 &670122547
 PrefabInstance:
   m_ObjectHideFlags: 0

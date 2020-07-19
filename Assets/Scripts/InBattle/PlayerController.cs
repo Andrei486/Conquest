@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.IO;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -17,8 +18,8 @@ namespace InBattle{
 		public const float LONG_ROTATION_THRESHOLD = 60f; //in degrees
 		public const float BASE_JUMP_HEIGHT = 0.5f;
 		public const float FAST_FORWARD_SPEED = 2.5f;
-		public static Vector2Int[] HORIZONTAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.left, Vector2Int.right};
-		public static Vector2Int[] VERTICAL_DIRECTIONS = new Vector2Int[2]{Vector2Int.up, Vector2Int.down};
+		public static List<Vector2Int> HORIZONTAL_DIRECTIONS = new List<Vector2Int>{Vector2Int.left, Vector2Int.right};
+		public static List<Vector2Int> VERTICAL_DIRECTIONS = new List<Vector2Int>{Vector2Int.up, Vector2Int.down};
 		public Vector2 boardPosition;
 		public float jumpHeight;
 		public int moveRange;
@@ -31,10 +32,12 @@ namespace InBattle{
 		public int remainingActions;
 		public int bullets;
 		public UnitAffiliation affiliation;
+		public bool isCommander = false;
 		public bool turnEnded = false;
 		public bool hasActed = false;
 		public Health health;
 		public UnitAction previousAction;
+		public AutoMoveInfo autoMove;
 		public string classTitle = "";
 		public Sprite unitSprite;
 		public Sprite armySprite;
@@ -112,7 +115,9 @@ namespace InBattle{
 				if (board.IsWithinBounds(newPos)){ //check if space exists
 					toCheck = board.GetSpace(newPos);
 					if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight){
-						if (movementLeft >= toCheck.moveCost && toCheck.occupyingUnit == null){
+						if (movementLeft >= toCheck.moveCost 
+							&& (toCheck.occupyingUnit == null
+                            || toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation == affiliation)){
 							if (moveGrid[newPos.x, newPos.y] < moveGrid[pos.x, pos.y] - toCheck.moveCost){
 								moveGrid[newPos.x, newPos.y] = moveGrid[pos.x, pos.y] - toCheck.moveCost;
 								FillMoveGrid(newPos, !preferHorizontal); //prefer zigzag patterns
@@ -121,6 +126,47 @@ namespace InBattle{
 					}
 				}
 			}
+		}
+
+		public int[,] FillDistanceGrid(){
+			/**Update and return the distance grid based on this unit's current position.
+			A distance grid shows the minimum distance to a unit for all spaces on the grid.!--*/
+			int[,] distanceGrid = new int[board.columns, board.rows];
+			for (int i=0; i < board.columns; i++){
+				for (int j=0; j < board.rows; j++){
+					distanceGrid[i, j] = Int32.MaxValue;
+				}
+			}
+			Queue<Vector2Int> queue = new Queue<Vector2Int>();
+			queue.Enqueue(Vector2Int.RoundToInt(boardPosition));
+			BoardSpace currentSpace;
+			BoardSpace toCheck;
+			Vector2Int currentPos;
+			Vector2Int newPos;
+			distanceGrid[(int) boardPosition.x, (int) boardPosition.y] = 0;
+			while (queue.Count > 0){
+				currentPos = Vector2Int.RoundToInt(queue.Dequeue());
+				currentSpace = board.GetSpace(currentPos);
+				foreach (Vector2Int direction in HORIZONTAL_DIRECTIONS.Concat(VERTICAL_DIRECTIONS)){
+					newPos = currentPos + direction;
+					toCheck = board.GetSpace(newPos);
+					if (!board.IsWithinBounds(newPos)){
+						continue;
+					}
+					//if an enemy occupies the space, set the distance for that space but don't enter it
+					if (toCheck.occupyingUnit != null && toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation != affiliation){
+						distanceGrid[newPos.x, newPos.y] = distanceGrid[currentPos.x, currentPos.y]; //no move cost, don't need to move in
+					}
+					if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight && (toCheck.occupyingUnit == null
+                        || toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation == affiliation)){
+						if (distanceGrid[newPos.x, newPos.y] > distanceGrid[currentPos.x, currentPos.y] + toCheck.moveCost){ //found a closer route
+							distanceGrid[newPos.x, newPos.y] = distanceGrid[currentPos.x, currentPos.y] + toCheck.moveCost;
+							queue.Enqueue(newPos);
+						}
+					}
+				}
+			}
+			return distanceGrid;
 		}
 		
 		public void UpdateMoveGrid(int startX, int startY){
@@ -177,8 +223,7 @@ namespace InBattle{
 		public void EndTurn(){
 			/**Ends the unit's turn and resets its movement and actions.*/
 			this.turnEnded = true;
-			this.remainingActions = maxActions;
-			this.remainingMove = moveRange;
+			Debug.Log("turn ended");
 			while (this.board.AdvancePhase()){
 				; //advance phases until the next available one
 			}
@@ -271,11 +316,13 @@ namespace InBattle{
 			return actions;
 		}
 		
-		public void EndTurnIfNeeded(){
+		public bool EndTurnIfNeeded(){
 			/**If the player cannot move or act, ends the player's turn.*/
 			if (!CanMove() && !CanAct()){
 				EndTurn();
+				return true;
 			}
+			return false;
 		}
 		
 		public void MakeSemiTransparent(bool enabled){

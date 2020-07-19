@@ -166,8 +166,8 @@ public class ControlsManager: MonoBehaviour
         foreach (Command command in keyMappings.Keys){
             GameObject item = Instantiate(menuItem, controlsMenu.transform);
             item.transform.Translate(new Vector3(menuItemRowWidth * column, menuItemStackHeight * row, 0f)); //stack items properly
-            item.transform.Find("Command Name").GetComponent<Text>().text = ControlsManager.GetCommandName(command);
-            item.transform.Find("Current Keybind").GetComponent<Text>().text = keyMappings[command].ToString();
+            item.transform.Find("Name").GetComponent<Text>().text = ControlsManager.GetCommandName(command);
+            item.transform.Find("Keybind").GetComponent<Text>().text = keyMappings[command].ToString();
             row++;
             //start a new column if at max number of items
             if (row == COLUMN_HEIGHT){
@@ -197,8 +197,8 @@ public class ControlsManager: MonoBehaviour
         menuCursor.GetComponent<MenuCursor>().locked = true;
         this.showingPopup = true;
         GameObject popup = Instantiate(menuItem, this.transform);
-        popup.transform.Find("Command Name").GetComponent<Text>().text = "Enter new key";
-        popup.transform.Find("Current Keybind").GetComponent<Text>().text = "";
+        popup.transform.Find("Name").GetComponent<Text>().text = "Enter new key";
+        popup.transform.Find("Keybind").GetComponent<Text>().text = "";
         yield return null;
         while (!Input.anyKeyDown){
             yield return null;
@@ -255,5 +255,5 @@ public enum Command{
     [Description("Cam. Turn Left")] CAMERA_LEFT, [Description("Cam. Turn Right")] CAMERA_RIGHT,
     [Description("Move Up")] MOVE_UP, [Description("Move Down")] MOVE_DOWN,
     [Description("Move Left")] MOVE_LEFT, [Description("Move Right")] MOVE_RIGHT,
-    [Description("Zoom In")] ZOOM_IN, [Description("Zoom Out")] ZOOM_OUT, 
+    [Description("Zoom In")] ZOOM_IN, [Description("Zoom Out")] ZOOM_OUT
 }

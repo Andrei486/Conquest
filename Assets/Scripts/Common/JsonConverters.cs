@@ -175,7 +175,8 @@ namespace JsonConverters{
 				new JProperty("skillNames", new JArray(
 					from skill in pc.skillList
 					select skill.name
-				))
+				)),
+				new JProperty("autoMove", pc.autoMove)
 			);
 			toWrite.WriteTo(writer);
 		}
@@ -210,6 +211,7 @@ namespace JsonConverters{
 			pc.maxBullets = playerInfo["maxBullets"].Value<int>();
 			pc.bullets = playerInfo["bullets"].Value<int>();
 			pc.turnEnded = playerInfo["turnEnded"].Value<bool>();
+			pc.autoMove = JsonConvert.DeserializeObject<AutoMoveInfo>(playerInfo["autoMove"].ToString());
 
 			h.attackPower = playerInfo["attackPower"].Value<float>();
 			h.defense = playerInfo["defense"].Value<float>();

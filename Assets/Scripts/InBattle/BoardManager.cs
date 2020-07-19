@@ -36,11 +36,18 @@ namespace InBattle{
 		public TextAsset skillData;
 		private List<PlayerController> toSave = new List<PlayerController>();
 		private List<GameObject> units;
+		public List<PlayerController> players{
+			get{
+				return (from unit in units select unit.GetComponent<PlayerController>()).ToList();
+			}
+		}
 		private List<BoardSpace> spaces;
 		private bool outlinesOn = true;
 		private ControlsManager controls;
 		private UIController uI;
 		private BattleLog log;
+		[SerializeField]
+		private AutoMoveController autoMoveController;
 
 		// Start is called before the first frame update
 		void Start()
@@ -375,6 +382,9 @@ namespace InBattle{
 			pc.turnEnded = false;
 			pc.previousAction = UnitAction.WAIT;
 			pc.hasActed = false;
+			pc.remainingActions = pc.maxActions;
+			pc.remainingMove = pc.moveRange;
+			Debug.Log("refreshed " + pc.name);
 		}
 
 		public bool AdvancePhase(){
@@ -395,6 +405,9 @@ namespace InBattle{
 			RefreshUnits(this.phase);
 			this.phase = this.phase.Next();
 			log.Log(this.phase + " phase started.");
+			if (this.phase == UnitAffiliation.ENEMY){
+				StartCoroutine(autoMoveController.AutoMovePhase(phase));
+			}
 			return true;
 		}
 

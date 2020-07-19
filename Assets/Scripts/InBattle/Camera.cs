@@ -35,7 +35,7 @@ namespace InBattle{
 			if (cursor.rotationLocked){
 				return;
 			}
-			if (cursor.moving || this.locked || cursor.movedTemporary){ //to prevent camera going off-center, do not turn if already moving or turning
+			if (cursor.moving || this.locked || cursor.movedTemporary || cursor.board.locked){ //to prevent camera going off-center, do not turn if already moving or turning
 				return;
 			}
 			Vector3 rotationPivot = cursor.transform.position;
