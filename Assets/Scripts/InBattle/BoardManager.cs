@@ -48,6 +48,7 @@ namespace InBattle{
 		private BattleLog log;
 		[SerializeField]
 		private AutoMoveController autoMoveController;
+		public ArmyManager armyManager = new ArmyManager();
 
 		// Start is called before the first frame update
 		void Start()
@@ -228,7 +229,7 @@ namespace InBattle{
 					minHeight = (height < minHeight) ? height : minHeight;
 					maxHeight = (height > maxHeight) ? height : maxHeight;
 					if (space.impassable
-                        || (space.occupyingUnit != null && space.occupyingUnit.GetComponent<PlayerController>().affiliation != pc.affiliation)){
+                        || (space.occupyingUnit != null && !armyManager.IsFriendly(space.occupyingUnit.GetComponent<PlayerController>().affiliation, pc.affiliation))){
 						return false; //can't go through if any space is impassable
 					}
 				}
@@ -388,9 +389,9 @@ namespace InBattle{
 		}
 
 		public bool AdvancePhase(){
-			List<PlayerController> actingUnits = new List<PlayerController>(from unit in this.units
-				where unit.GetComponent<PlayerController>().affiliation == this.phase
-				select unit.GetComponent<PlayerController>());
+			List<PlayerController> actingUnits = new List<PlayerController>(from player in players
+				where player.affiliation == phase
+				select player);
 			foreach (PlayerController unit in actingUnits){
 				if (!unit.turnEnded){
 					//at least one unit has not acted but still can
@@ -401,11 +402,13 @@ namespace InBattle{
 			//all units that can act on this phase have acted
 			RemoveDeadUnits();
 			BattleLog log = BattleLog.GetLog();
-			log.Log(this.phase + " phase ended.");
-			RefreshUnits(this.phase);
-			this.phase = this.phase.Next();
-			log.Log(this.phase + " phase started.");
-			if (this.phase == UnitAffiliation.ENEMY){
+			log.Log(phase + " phase ended.");
+			RefreshUnits(phase);
+			do {
+				phase = phase.Next();
+			} while (!(from player in players select player.affiliation).Contains(phase)); //if the phase is empty, go to the next one immediately
+			log.Log(phase + " phase started.");
+			if (phase == UnitAffiliation.ENEMY){
 				StartCoroutine(autoMoveController.AutoMovePhase(phase));
 			}
 			return true;

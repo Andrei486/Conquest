@@ -64,6 +64,14 @@ namespace InBattle{
                 board.currentTurn = missionInfo["currentTurn"].Value<int>();
                 board.phase = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), missionInfo["currentPhase"].Value<string>());
                 board.mapName = missionInfo["map"].Value<string>();
+                if (missionInfo.ContainsKey("armyManager")){
+                    board.armyManager = JsonConvert.DeserializeObject<ArmyManager>(missionInfo["armyManager"].ToString());
+                } else {
+                    Debug.Log("using default army manager, none specified");
+                    board.armyManager = new ArmyManager();
+                    board.armyManager.SetDefault();
+                }
+                
             return boardObject;
         }
 
@@ -82,8 +90,8 @@ namespace InBattle{
             }
             
             mapData = missionInfo["map"].Value<string>();
-            TextAsset fullInfo = Resources.Load<TextAsset>("Maps/" + mapData);
-            GameObject boardObject = JsonConvert.DeserializeObject<GameObject>(fullInfo.text, new BoardConverter());
+            TextAsset boardInfo = Resources.Load<TextAsset>("Maps/" + mapData);
+            GameObject boardObject = JsonConvert.DeserializeObject<GameObject>(boardInfo.text, new BoardConverter());
             boardObject = LoadMission(boardObject, missionInfo);
         }
 

@@ -25,7 +25,6 @@ namespace InBattle{
             float distanceDifference = distanceGrid[(int) end.boardPosition.x, (int) end.boardPosition.y] - distanceGrid[(int) start.boardPosition.x, (int) start.boardPosition.y];
             float movementMod = (unit.autoMove.retreatHP - (unit.health.currentHealth / unit.health.maxHealth)) * distanceDifference * unit.autoMove.moveModCoefficient;
             (_, float skillMod) = SelectBestSkill(unit, end); //only consider the best action to take, not multiple
-            Debug.Log(movementMod + skillMod);
             return movementMod + skillMod;
         }
         (AutoMoveAction, float) SelectBestMove(PlayerController unit, BoardSpace start, int[,] distanceGrid){
@@ -33,7 +32,6 @@ namespace InBattle{
             float bestScore = -Mathf.Infinity;
             BoardSpace bestSpace = null;
             //first, find the best space to move to
-            Debug.Log(unit.remainingMove);
             foreach (BoardSpace space in unit.GetAccessibleSpaces((int) start.boardPosition.x, (int) start.boardPosition.y)){
                 if (ScoreMove(unit, start, space, distanceGrid) > bestScore){
                     bestScore = ScoreMove(unit, start, space, distanceGrid);
@@ -67,7 +65,7 @@ namespace InBattle{
                 targetSpace = board.GetSpace(newPosition);
                 if (board.IsWithinBounds(newPosition) && targetSpace.occupyingUnit != null){
                     targetPc = targetSpace.occupyingUnit.GetComponent<PlayerController>();
-                    friendlyModifier = (targetPc.affiliation == unit.affiliation) ? -1 : 1; //replace this with graph check for affiliation conflict
+                    friendlyModifier = (board.armyManager.IsFriendly(unit, targetPc)) ? -1 : 1; //replace this with graph check for affiliation conflict
                     commanderModifier = (targetPc.isCommander) ? unit.autoMove.commanderBonus : 1;
                     damageScore = attack.CalculateAverageDamage(unit.health, targetPc.health) / targetPc.health.maxHealth * friendlyModifier;
                     defeatScore = attack.IsPotentiallyLethal(unit.health, targetPc.health) * commanderModifier * friendlyModifier;
@@ -176,7 +174,7 @@ namespace InBattle{
         public int[,] BuildDistanceGrid(UnitAffiliation phase){
             /**Returns the distance grid for the given phase.!--*/
             List<int[,]> unitDistanceGrids = new List<int[,]>();
-            foreach (PlayerController unit in (from player in board.players where (player.affiliation != phase) select player)){
+            foreach (PlayerController unit in (from player in board.players where (!board.armyManager.IsFriendly(player.affiliation, phase)) select player)){
                 unitDistanceGrids.Add(unit.FillDistanceGrid());
             }
             int[,] fullGrid = new int[board.columns, board.rows];
@@ -185,9 +183,9 @@ namespace InBattle{
                     fullGrid[i, j] = (from grid in unitDistanceGrids select grid[i, j]).Min();
                 } 
             }
-            File.WriteAllLines(@"D:\Users\Andrei\Conquest\Conquest\Assets\Miscellaneous\distanceGrid.txt", fullGrid
-            .ToJagged()
-            .Select(line => String.Join("\t", line)));
+            // File.WriteAllLines(@"D:\Users\Andrei\Conquest\Conquest\Assets\Miscellaneous\distanceGrid.txt", fullGrid
+            // .ToJagged()
+            // .Select(line => String.Join("\t", line)));
 
             return fullGrid;
         }

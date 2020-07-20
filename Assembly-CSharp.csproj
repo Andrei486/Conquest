@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Common\ObjectClasses.cs" />
      <Compile Include="Assets\Scripts\Common\PrefabManager.cs" />
      <Compile Include="Assets\Scripts\InBattle\ActionMenuCursor.cs" />
+     <Compile Include="Assets\Scripts\InBattle\ArmyManager.cs" />
      <Compile Include="Assets\Scripts\InBattle\AutoMoveController.cs" />
      <Compile Include="Assets\Scripts\InBattle\BattleLog.cs" />
      <Compile Include="Assets\Scripts\InBattle\BattleMenu.cs" />

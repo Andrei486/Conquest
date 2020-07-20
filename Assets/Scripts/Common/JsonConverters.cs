@@ -113,7 +113,8 @@ namespace JsonConverters{
 				new JProperty("units", units),
 				new JProperty("currentTurn", board.currentTurn),
 				new JProperty("currentPhase", board.phase),
-				new JProperty("map", board.mapName)
+				new JProperty("map", board.mapName),
+				new JProperty("armyManager", board.armyManager)
 			);
 
 			missionInfo.WriteTo(writer);

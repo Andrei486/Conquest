@@ -117,7 +117,7 @@ namespace InBattle{
 					if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight){
 						if (movementLeft >= toCheck.moveCost 
 							&& (toCheck.occupyingUnit == null
-                            || toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation == affiliation)){
+                            || board.armyManager.IsFriendly(toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation, affiliation))){
 							if (moveGrid[newPos.x, newPos.y] < moveGrid[pos.x, pos.y] - toCheck.moveCost){
 								moveGrid[newPos.x, newPos.y] = moveGrid[pos.x, pos.y] - toCheck.moveCost;
 								FillMoveGrid(newPos, !preferHorizontal); //prefer zigzag patterns
@@ -154,11 +154,11 @@ namespace InBattle{
 						continue;
 					}
 					//if an enemy occupies the space, set the distance for that space but don't enter it
-					if (toCheck.occupyingUnit != null && toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation != affiliation){
+					if (toCheck.occupyingUnit != null && !board.armyManager.IsFriendly(toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation, affiliation)){
 						distanceGrid[newPos.x, newPos.y] = distanceGrid[currentPos.x, currentPos.y]; //no move cost, don't need to move in
 					}
 					if (Math.Abs(toCheck.GetHeight() - currentSpace.GetHeight()) <= jumpHeight && (toCheck.occupyingUnit == null
-                        || toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation == affiliation)){
+                        || board.armyManager.IsFriendly(toCheck.occupyingUnit.GetComponent<PlayerController>().affiliation, affiliation))){
 						if (distanceGrid[newPos.x, newPos.y] > distanceGrid[currentPos.x, currentPos.y] + toCheck.moveCost){ //found a closer route
 							distanceGrid[newPos.x, newPos.y] = distanceGrid[currentPos.x, currentPos.y] + toCheck.moveCost;
 							queue.Enqueue(newPos);
