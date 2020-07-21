@@ -268,6 +268,7 @@ namespace InBattle{
 			this.remainingActions -= skill.actionCost;
 			this.bullets -= skill.bulletCost;
 			this.previousAction = UnitAction.SKILL;
+			this.hasActed = true;
 		}
 		
 		public bool CanMove(){

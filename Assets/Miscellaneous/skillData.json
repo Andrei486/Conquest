@@ -23,7 +23,7 @@
 		"skillType": "MELEE",
 		"attacks": [
 			{
-				"basePower": 70,
+				"basePower": 90,
 				"accuracy": 80,
 				"targetPosition": [0, 1]
 			},

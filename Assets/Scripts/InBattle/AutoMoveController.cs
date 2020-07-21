@@ -11,7 +11,9 @@ namespace InBattle{
     public class AutoMoveController : MonoBehaviour{
         [SerializeField]
         BoardManager board;
+        public const float SKILL_PREVIEW_TIME = 1;
         bool movingUnit = false;
+        bool attacking = false;
         void Start(){
             board = GetComponent<BoardManager>();
         }
@@ -139,10 +141,9 @@ namespace InBattle{
                 yield return new WaitWhile(() => board.movingUnit);
                 //don't need to check end turn here: if the unit cannot act, skillToUse will be null
                 if (action.skillToUse != null){
-                    unit.UseSkill(action.skillToUse, action.skillDirection);
-                    unit.previousAction = UnitAction.SKILL;
-				    unit.hasActed = true;
+                    StartCoroutine(UseSkill(unit, action.skillToUse, action.skillDirection));
                 }
+                yield return new WaitWhile(() => attacking);
                 //if the best move was to do nothing, end the turn there
                 if ((action.movementTarget == null || action.movementTarget == space) && action.skillToUse == null){
                     unit.EndTurn();
@@ -181,7 +182,7 @@ namespace InBattle{
             for (int i = 0; i < board.columns; i++){
                 for (int j = 0; j < board.rows; j++){
                     fullGrid[i, j] = (from grid in unitDistanceGrids select grid[i, j]).Min();
-                } 
+                }
             }
             // File.WriteAllLines(@"D:\Users\Andrei\Conquest\Conquest\Assets\Miscellaneous\distanceGrid.txt", fullGrid
             // .ToJagged()
@@ -189,27 +190,37 @@ namespace InBattle{
 
             return fullGrid;
         }
+
+        public IEnumerator UseSkill(PlayerController unit, Skill skill, Quaternion direction){
+            /**Makes unit use the given skill in the given direction, showing the target area
+            before activating its effects.!--*/
+            attacking = true;
+            skill.VisualizeTarget(board.GetSpace(unit.boardPosition), unit.gameObject, direction);
+            yield return new WaitForSeconds(SKILL_PREVIEW_TIME);
+            BoardManager.ClearVisualization();
+            unit.UseSkill(skill, direction);
+            attacking = false;
+            yield return null;
+        }
     }
 
     public static class ArrayExtensions {
-    // In order to convert any 2d array to jagged one
-    // let's use a generic implementation
-    public static T[][] ToJagged<T>(this T[,] value) {
-        if (System.Object.ReferenceEquals(null, value))
-        return null;
+        public static T[][] ToJagged<T>(this T[,] value) {
+            if (System.Object.ReferenceEquals(null, value))
+            return null;
 
-        // Jagged array creation
-        T[][] result = new T[value.GetLength(0)][];
+            // Jagged array creation
+            T[][] result = new T[value.GetLength(0)][];
 
-        for (int i = 0; i < value.GetLength(0); ++i) 
-        result[i] = new T[value.GetLength(1)];
+            for (int i = 0; i < value.GetLength(0); ++i) 
+            result[i] = new T[value.GetLength(1)];
 
-        // Jagged array filling
-        for (int i = 0; i < value.GetLength(0); ++i)
-        for (int j = 0; j < value.GetLength(1); ++j)
-            result[i][j] = value[i, j];
+            // Jagged array filling
+            for (int i = 0; i < value.GetLength(0); ++i)
+            for (int j = 0; j < value.GetLength(1); ++j)
+                result[i][j] = value[i, j];
 
-        return result;
-    }
+            return result;
+        }
     }
 }

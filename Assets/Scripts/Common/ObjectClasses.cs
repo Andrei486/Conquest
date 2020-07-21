@@ -73,12 +73,12 @@ namespace Objects
 			return Math.Max(0f, Math.Min(100.0f, effectiveAccuracy)); //accuracy cannot be higher than 100%
 		}
 
-		public string CalculateDamageRange(Health user, Health target){
+		public (float, float) CalculateDamageRange(Health user, Health target){
 			/**Returns the miminum and maximum damage that can be dealt by this attack,
 			in a display-friendly format.!--*/
 			double minDamage = Math.Round(CalculateAverageDamage(user, target) * (1f - RANDOM_VARIANCE), 2);
 			double maxDamage = Math.Round(CalculateAverageDamage(user, target) * (1f + RANDOM_VARIANCE), 2);
-			return (minDamage.ToString() + " - " + maxDamage.ToString());
+			return ((float) minDamage, (float) maxDamage);
 		}
 
 		public float CalculateEffectiveDamage(Health user, Health target){
@@ -106,14 +106,19 @@ namespace Objects
 			vis.transform.position = mainCamera.WorldToScreenPoint(topOfUnit);
 			vis.tag = "Visualization";
 			
-			Text damageText = vis.transform.Find("Damage").GetComponent<Text>();
+			Text minText = vis.transform.Find("Minimum").GetComponent<Text>();
+			Text maxText = vis.transform.Find("Maximum").GetComponent<Text>();
 			Text hitText = vis.transform.Find("Hit Chance").GetComponent<Text>();
 
 			hitText.text = ((int) accuracy).ToString() + "%";
-			damageText.text = CalculateDamageRange(user, targetHealth);
-
-			if (IsPotentiallyLethal(user, targetHealth) == 1){
-				damageText.color = new Color(128, 0, 0);
+			(float minDamage, float maxDamage) = CalculateDamageRange(user, targetHealth);
+			minText.text = minDamage.ToString();
+			if (minDamage >= targetHealth.currentHealth){
+				minText.color = new Color(128, 0, 0);
+			}
+			maxText.text = maxDamage.ToString();
+			if (maxDamage >= targetHealth.currentHealth){
+				maxText.color = new Color(128, 0, 0);
 			}
 		}
 	}
@@ -453,7 +458,7 @@ namespace Objects
 						Attack attack = new Attack();
 						JObject attackInfo = JObject.Load(reader);
 						attack.basePower = attackInfo["basePower"].Value<float>();
-						attack.accuracy = attackInfo["basePower"].Value<float>();
+						attack.accuracy = attackInfo["accuracy"].Value<float>();
 						attack.targetPosition = new Vector2(attackInfo["targetPosition"][0].Value<int>(), attackInfo["targetPosition"][1].Value<int>());
 						if (attackInfo.ContainsKey("knockbackPosition")){
 							attack.knockbackPosition = new Vector2(attackInfo["knockbackPosition"][0].Value<int>(), attackInfo["knockbackPosition"][1].Value<int>());
