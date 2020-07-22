@@ -38,6 +38,21 @@ namespace InBattle{
 		public Health health;
 		public UnitAction previousAction;
 		public AutoMoveInfo autoMove;
+		public bool aggressive = false; //if false, the unit will not move until an enemy is in range
+		public int aggressionGroup; //all units in an aggression group become aggressive at the same time.
+		public bool Aggressive{
+			get{
+				return aggressive;
+			}
+			set{
+				//set aggression of all grouped units together
+				foreach (PlayerController player in board.players){
+					if (player.aggressionGroup == this.aggressionGroup){
+						player.aggressive = value;
+					}
+				}
+			}
+		}
 		public string classTitle = "";
 		public Sprite unitSprite;
 		public Sprite armySprite;
@@ -264,6 +279,7 @@ namespace InBattle{
 			/**Uses the Skill skill. Assumes that using it is possible.*/
 			BattleLog.GetLog().Log(this.name + " used " + skill.name);
 			health.UseSkill(skill, direction);
+			this.Aggressive = true; //using a skill means that this unit will be aggressive
 			this.remainingMove -= skill.moveCost;
 			this.remainingActions -= skill.actionCost;
 			this.bullets -= skill.bulletCost;

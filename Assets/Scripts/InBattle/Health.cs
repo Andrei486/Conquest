@@ -48,14 +48,19 @@ namespace InBattle
 		}
 		
 		void UseAttack(Attack attack, Health target, Quaternion direction){
+			/**Applies the effect of the given attack in the given direction, to the chosen target.!--*/
 			System.Random rng = new System.Random();
+			float damageDealt = attack.CalculateAverageDamage(this, target);
+			if (damageDealt > 0){
+				target.pc.Aggressive = true; //attacking a target makes it aggressive
+			}
+			//check whether attack lands
 			float effectiveAccuracy = attack.CalculateHitChance(this, target);
 			if (rng.NextDouble() >= effectiveAccuracy / 100.0f){ //attack misses
 				BattleLog.GetLog().Log("The attack missed " + target.pc.name + "...");
 				Debug.Log("attack missed");
 				return;
 			}
-			float damageDealt = attack.CalculateAverageDamage(this, target);
 			double damageModifier = (1.0 - Attack.RANDOM_VARIANCE) + (rng.NextDouble() * 2 * Attack.RANDOM_VARIANCE);
 			target.currentHealth -= damageDealt * (float) damageModifier;
 			BattleLog.GetLog().Log("Dealt " + damageDealt + " damage to " + target.pc.name);

@@ -24,9 +24,16 @@ namespace InBattle{
             -whether the unit is advancing or retreating, considering the unit's HP;
             -the potential damage or defeat of enemies arising from the use of a skill from the target space.
             This score can be either positive or negative, with more positive scores being preferred.!--*/
-            float distanceDifference = distanceGrid[(int) end.boardPosition.x, (int) end.boardPosition.y] - distanceGrid[(int) start.boardPosition.x, (int) start.boardPosition.y];
-            float movementMod = (unit.autoMove.retreatHP - (unit.health.currentHealth / unit.health.maxHealth)) * distanceDifference * unit.autoMove.moveModCoefficient;
-            (_, float skillMod) = SelectBestSkill(unit, end); //only consider the best action to take, not multiple
+            (_, float skillMod) = SelectBestSkill(unit, end); //score the best action to take, not multiple
+            float movementMod = (start == end) ? 0 : (-1 * unit.autoMove.moveModCoefficient); //if not aggressive, any movement is slightly worse than no movement
+            if (unit.Aggressive){
+                //score the movement itself if applicable
+                float distanceDifference = distanceGrid[(int)end.boardPosition.x, (int)end.boardPosition.y]
+                                           - distanceGrid[(int)start.boardPosition.x, (int)start.boardPosition.y];
+                movementMod = (unit.autoMove.retreatHP - (unit.health.currentHealth / unit.health.maxHealth))
+                              * distanceDifference
+                              * unit.autoMove.moveModCoefficient;
+            }
             return movementMod + skillMod;
         }
         (AutoMoveAction, float) SelectBestMove(PlayerController unit, BoardSpace start, int[,] distanceGrid){

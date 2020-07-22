@@ -489,8 +489,15 @@ namespace InBattle{
 		}
 
 		public void InitializeMap(List<BoardSpace> spaces){
+			//find and delete the previous map object if there is one
+			GameObject mapInstance = GameObject.FindWithTag("MapModel");
+			if (mapInstance != null){
+				Destroy(mapInstance);
+			}
+			//create the new map object
 			GameObject modelObject = (GameObject) Resources.Load("MapModels/" + modelName);
-			Instantiate(modelObject);
+			mapInstance = Instantiate(modelObject);
+			mapInstance.tag = "MapModel";
 			boardSpaces = new BoardSpace[columns, rows];
 			boardTiles = new GameObject[columns, rows];
 			foreach (BoardSpace space in spaces){

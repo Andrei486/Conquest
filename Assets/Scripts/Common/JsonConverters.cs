@@ -114,7 +114,7 @@ namespace JsonConverters{
 				new JProperty("currentTurn", board.currentTurn),
 				new JProperty("currentPhase", board.phase),
 				new JProperty("map", board.mapName),
-				new JProperty("armyManager", board.armyManager)
+				new JProperty("armyManager", JObject.Parse(JsonConvert.SerializeObject(board.armyManager)))
 			);
 
 			missionInfo.WriteTo(writer);
@@ -168,6 +168,8 @@ namespace JsonConverters{
 				new JProperty("bullets", pc.bullets),
 				new JProperty("boardPosition", JObject.Parse(JsonConvert.SerializeObject(pc.boardPosition, new VectorConverter()))),
 				new JProperty("turnEnded", pc.turnEnded),
+				new JProperty("aggressive", pc.Aggressive),
+				new JProperty("aggressionGroup", pc.aggressionGroup),
 				new JProperty("attackPower", h.attackPower),
 				new JProperty("defense", h.defense),
 				new JProperty("level", h.level),
@@ -177,7 +179,7 @@ namespace JsonConverters{
 					from skill in pc.skillList
 					select skill.name
 				)),
-				new JProperty("autoMove", pc.autoMove)
+				new JProperty("autoMove", JObject.Parse(JsonConvert.SerializeObject(pc.autoMove)))
 			);
 			toWrite.WriteTo(writer);
 		}
@@ -212,6 +214,8 @@ namespace JsonConverters{
 			pc.maxBullets = playerInfo["maxBullets"].Value<int>();
 			pc.bullets = playerInfo["bullets"].Value<int>();
 			pc.turnEnded = playerInfo["turnEnded"].Value<bool>();
+			pc.aggressionGroup = playerInfo["aggressionGroup"].Value<int>();
+			pc.aggressive = playerInfo["aggressive"].Value<bool>();
 			pc.autoMove = JsonConvert.DeserializeObject<AutoMoveInfo>(playerInfo["autoMove"].ToString());
 
 			h.attackPower = playerInfo["attackPower"].Value<float>();
