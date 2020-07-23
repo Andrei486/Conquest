@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using JsonConverters;
 
 namespace InBattle{	
-	[Serializable]
+	[Serializable] [JsonObject(MemberSerialization.OptIn)]
 	public class PlayerController : MonoBehaviour
 	{
 		public const float MOVE_TILE_TIME = 0.5f;
@@ -20,26 +20,27 @@ namespace InBattle{
 		public const float FAST_FORWARD_SPEED = 2.5f;
 		public static List<Vector2Int> HORIZONTAL_DIRECTIONS = new List<Vector2Int>{Vector2Int.left, Vector2Int.right};
 		public static List<Vector2Int> VERTICAL_DIRECTIONS = new List<Vector2Int>{Vector2Int.up, Vector2Int.down};
-		public Vector2 boardPosition;
-		public float jumpHeight;
-		public int moveRange;
-		public int maxActions;
-		public int maxBullets;
-		public List<Skill> skillList = new List<Skill>();
+		[JsonProperty] public string unitName;
+		[JsonProperty] [JsonConverter(typeof(VectorConverter))] public Vector2 boardPosition;
+		[JsonProperty] public float jumpHeight;
+		[JsonProperty] public int moveRange;
+		[JsonProperty] public int maxActions;
+		[JsonProperty] public int maxBullets;
+		[JsonIgnore] public List<Skill> skillList = new List<Skill>();
 		BoardManager board;
 		public int[,] moveGrid;
-		public int remainingMove;
-		public int remainingActions;
-		public int bullets;
-		public UnitAffiliation affiliation;
-		public bool isCommander = false;
-		public bool turnEnded = false;
-		public bool hasActed = false;
-		public Health health;
-		public UnitAction previousAction;
-		public AutoMoveInfo autoMove;
-		public bool aggressive = false; //if false, the unit will not move until an enemy is in range
-		public int aggressionGroup; //all units in an aggression group become aggressive at the same time.
+		[JsonProperty] public int remainingMove;
+		[JsonProperty] public int remainingActions;
+		[JsonProperty] public int bullets;
+		[JsonProperty] public UnitAffiliation affiliation;
+		[JsonProperty] public bool isCommander = false;
+		[JsonProperty] public bool turnEnded = false;
+		[JsonProperty] public bool hasActed = false;
+		[JsonProperty] public Health health;
+		[JsonProperty] public UnitAction previousAction;
+		[JsonProperty] public AutoMoveInfo autoMove;
+		[JsonProperty] public bool aggressive = false; //if false, the unit will not move until an enemy is in range
+		[JsonProperty] public int aggressionGroup; //all units in an aggression group become aggressive at the same time.
 		public bool Aggressive{
 			get{
 				return aggressive;
@@ -53,12 +54,12 @@ namespace InBattle{
 				}
 			}
 		}
-		public string classTitle = "";
+		[JsonProperty] public string classTitle = "";
 		public Sprite unitSprite;
 		public Sprite armySprite;
-		public string modelName;
+		[JsonProperty] public string modelName;
 		public Vector3 defaultEulerAngles;
-		public bool saveAfterBattle = false; //if true, save the unit's info to units file after battle.
+		[JsonProperty] public bool saveAfterBattle = false; //if true, save the unit's info to units file after battle.
 		public bool rotating = false;
 		public bool moving = false;
 		public Renderer playerRenderer;
@@ -277,7 +278,7 @@ namespace InBattle{
 		
 		public void UseSkill(Skill skill, Quaternion direction){
 			/**Uses the Skill skill. Assumes that using it is possible.*/
-			BattleLog.GetLog().Log(this.name + " used " + skill.name);
+			BattleLog.GetLog().Log(this.unitName + " used " + skill.name);
 			health.UseSkill(skill, direction);
 			this.Aggressive = true; //using a skill means that this unit will be aggressive
 			this.remainingMove -= skill.moveCost;

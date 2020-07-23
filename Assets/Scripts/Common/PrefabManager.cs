@@ -7,6 +7,7 @@ public class PrefabManager : MonoBehaviour
     public GameObject menuCursorPrefab;
     public GameObject menuItemPrefab;
     public RuntimeAnimatorController animatorController;
+    public TextAsset skillData;
     // Start is called before the first frame update
     void Start()
     {

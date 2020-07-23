@@ -88,7 +88,7 @@ namespace InBattle{
 			
 			string skillName = this.currentItem.transform.Find("Name").gameObject.GetComponent<Text>().text;
 			PlayerController player = board.GetSpace(boardPosition).occupyingUnit.GetComponent<PlayerController>();
-			Skill skill = Skill.GetSkillByName(skillName, board.skillData);
+			Skill skill = Skill.GetSkillByName(skillName);
 			skill.VisualizeTarget(cursor.selectedSpace, player.gameObject, skillRotation);
 			
 			// if (newSelected && menuController.showInfo){
@@ -139,7 +139,7 @@ namespace InBattle{
 		private void ResetRotation(){
 			string skillName = this.currentItem.transform.Find("Name").gameObject.GetComponent<Text>().text;
 			PlayerController player = board.GetSpace(boardPosition).occupyingUnit.GetComponent<PlayerController>();
-			Skill skill = Skill.GetSkillByName(skillName, board.skillData);
+			Skill skill = Skill.GetSkillByName(skillName);
 
 			player.gameObject.transform.eulerAngles = player.defaultEulerAngles;
 			validRotations = skill.GetDirections(cursor.selectedSpace);
@@ -155,7 +155,7 @@ namespace InBattle{
 			PlayerController player = board.GetSpace(boardPosition).occupyingUnit.GetComponent<PlayerController>();
 			string skillName = this.currentItem.transform.Find("Name").GetComponent<Text>().text;
 			
-			Skill skill = Skill.GetSkillByName(skillName, board.skillData);
+			Skill skill = Skill.GetSkillByName(skillName);
 			if (skill.IsValid(board.GetSpace(boardPosition), skillRotation)){
 				player.UseSkill(skill, skillRotation);
 				player.previousAction = UnitAction.SKILL;

@@ -39,7 +39,7 @@ namespace InBattle{
                 string toLoad = currentMission.filename;
                 StartCoroutine(StartNewBattle(toLoad));
             } else {
-                StartCoroutine(StartNewBattle("mission"));
+                StartCoroutine(StartNewBattle("mission1"));
             }
         }
 

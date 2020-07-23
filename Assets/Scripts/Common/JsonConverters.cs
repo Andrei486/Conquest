@@ -156,31 +156,8 @@ namespace JsonConverters{
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer){
 			GameObject player = (GameObject) value;
 			PlayerController pc = player.GetComponent<PlayerController>();
-			Health h = player.GetComponent<Health>();
-			JObject toWrite = new JObject(
-				new JProperty("name", pc.name),
-				new JProperty("affiliation", pc.affiliation),
-				new JProperty("model", pc.modelName),
-				new JProperty("jumpHeight", pc.jumpHeight),
-				new JProperty("moveRange", pc.moveRange),
-				new JProperty("maxActions", pc.maxActions),
-				new JProperty("maxBullets", pc.maxBullets),
-				new JProperty("bullets", pc.bullets),
-				new JProperty("boardPosition", JObject.Parse(JsonConvert.SerializeObject(pc.boardPosition, new VectorConverter()))),
-				new JProperty("turnEnded", pc.turnEnded),
-				new JProperty("aggressive", pc.Aggressive),
-				new JProperty("aggressionGroup", pc.aggressionGroup),
-				new JProperty("attackPower", h.attackPower),
-				new JProperty("defense", h.defense),
-				new JProperty("level", h.level),
-				new JProperty("maxHealth", h.maxHealth),
-				new JProperty("currentHealth", h.currentHealth),
-				new JProperty("skillNames", new JArray(
-					from skill in pc.skillList
-					select skill.name
-				)),
-				new JProperty("autoMove", JObject.Parse(JsonConvert.SerializeObject(pc.autoMove)))
-			);
+			JObject toWrite = JObject.Parse(JsonConvert.SerializeObject(pc));
+			toWrite.Add(new JProperty("skillNames", new JArray(from skill in pc.skillList select skill.name)));
 			toWrite.WriteTo(writer);
 		}
 		
@@ -197,37 +174,109 @@ namespace JsonConverters{
 			BoardManager board = BoardManager.GetBoard();
 			JObject playerInfo = JObject.Load(reader);
 			//need to instantiate specific model instead, from json attribute.
-			GameObject modelObject = (GameObject) Resources.Load("UnitAesthetics/Models/" + playerInfo["model"]);
+			GameObject modelObject = (GameObject) Resources.Load("UnitAesthetics/Models/" + playerInfo["modelName"]);
 			GameObject player = UnityEngine.Object.Instantiate(modelObject, board.transform);
 			PlayerController pc = player.AddComponent<PlayerController>();
 			Health h = player.AddComponent<Health>();
-
-			pc.name = playerInfo["name"].Value<string>();
-			pc.modelName = playerInfo["model"].Value<string>();
-			pc.affiliation = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), playerInfo["affiliation"].Value<string>());
-			pc.jumpHeight = playerInfo["jumpHeight"].Value<float>();
-			pc.moveRange = playerInfo["moveRange"].Value<int>();
-			pc.remainingMove = pc.moveRange;
-			pc.maxActions = playerInfo["maxActions"].Value<int>();
-			pc.remainingActions = pc.maxActions;
-			pc.boardPosition = JsonConvert.DeserializeObject<Vector2>(playerInfo["boardPosition"].ToString());
-			pc.maxBullets = playerInfo["maxBullets"].Value<int>();
-			pc.bullets = playerInfo["bullets"].Value<int>();
-			pc.turnEnded = playerInfo["turnEnded"].Value<bool>();
-			pc.aggressionGroup = playerInfo["aggressionGroup"].Value<int>();
-			pc.aggressive = playerInfo["aggressive"].Value<bool>();
-			pc.autoMove = JsonConvert.DeserializeObject<AutoMoveInfo>(playerInfo["autoMove"].ToString());
-
-			h.attackPower = playerInfo["attackPower"].Value<float>();
-			h.defense = playerInfo["defense"].Value<float>();
-			h.level = playerInfo["level"].Value<int>();
-			h.maxHealth = playerInfo["maxHealth"].Value<float>();
-			h.currentHealth = playerInfo["currentHealth"].Value<float>();
-
 			foreach (JToken skillName in playerInfo["skillNames"]){
-				pc.skillList.Add(Skill.GetSkillByName(skillName.ToString(), board.skillData));
+				pc.skillList.Add(Skill.GetSkillByName(skillName.ToString()));
 			}
+			playerInfo.Remove("skillNames");
+			JsonConvert.PopulateObject(playerInfo["health"].ToString(), h);
+			playerInfo.Remove("health");
+			JsonConvert.PopulateObject(playerInfo.ToString(), pc);
+
+			// pc.unitName = playerInfo["name"].Value<string>();
+			// pc.modelName = playerInfo["model"].Value<string>();
+			// pc.affiliation = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), playerInfo["affiliation"].Value<string>());
+			// pc.jumpHeight = playerInfo["jumpHeight"].Value<float>();
+			// pc.moveRange = playerInfo["moveRange"].Value<int>();
+			// pc.remainingMove = pc.moveRange;
+			// pc.maxActions = playerInfo["maxActions"].Value<int>();
+			// pc.remainingActions = pc.maxActions;
+			// pc.boardPosition = JsonConvert.DeserializeObject<Vector2>(playerInfo["boardPosition"].ToString());
+			// pc.maxBullets = playerInfo["maxBullets"].Value<int>();
+			// pc.bullets = playerInfo["bullets"].Value<int>();
+			// pc.turnEnded = playerInfo["turnEnded"].Value<bool>();
+			// pc.aggressionGroup = playerInfo["aggressionGroup"].Value<int>();
+			// pc.aggressive = playerInfo["aggressive"].Value<bool>();
+			// pc.autoMove = JsonConvert.DeserializeObject<AutoMoveInfo>(playerInfo["autoMove"].ToString());
+
+			// h.attackPower = playerInfo["attackPower"].Value<float>();
+			// h.defense = playerInfo["defense"].Value<float>();
+			// h.level = playerInfo["level"].Value<int>();
+			// h.maxHealth = playerInfo["maxHealth"].Value<float>();
+			// h.currentHealth = playerInfo["currentHealth"].Value<float>();
+
 			return player;
+		}
+	}
+
+	public class SkillConverter : JsonConverter{
+		/**A class to convert JSON representations of skills to Skill objects.*/
+		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer){
+			throw new System.NotImplementedException(); //can't use to serialize json
+		}
+		
+		public override bool CanConvert(Type type){
+			if (type == typeof(Skill) || type == typeof(List<Skill>) || type == typeof(Attack) || type == typeof(List<Attack>)){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer){
+			JsonTextReader newReader;
+			JArray array;
+			switch(objectType){
+				case Type t when t == typeof(Skill):
+					Skill skill = new Skill();
+					JObject skillInfo = JObject.Load(reader);
+					skill.name = skillInfo["name"].Value<string>();
+					skill.skillType = (SkillType) Enum.Parse(typeof(SkillType), skillInfo["skillType"].Value<string>());
+					skill.reusable = skillInfo["reusable"].Value<bool>();
+					skill.actionCost = skillInfo["actionCost"].Value<int>();
+					skill.bulletCost = skillInfo["bulletCost"].Value<int>();
+					skill.moveCost = skillInfo["moveCost"].Value<int>();
+					if (skillInfo.ContainsKey("movePosition")){
+						skill.movePosition = new Vector2(skillInfo["movePosition"][0].Value<int>(), skillInfo["movePosition"][1].Value<int>());
+					}
+					newReader = new JsonTextReader(new StringReader(skillInfo["attacks"].ToString()));
+					skill.attacks = this.ReadJson(newReader, typeof(List<Attack>), existingValue, serializer) as List<Attack>;	
+					
+					return skill;
+				case Type t when t == typeof(Attack):
+					Attack attack = new Attack();
+					JObject attackInfo = JObject.Load(reader);
+					attack.basePower = attackInfo["basePower"].Value<float>();
+					attack.accuracy = attackInfo["accuracy"].Value<float>();
+					attack.targetPosition = new Vector2(attackInfo["targetPosition"][0].Value<int>(), attackInfo["targetPosition"][1].Value<int>());
+					if (attackInfo.ContainsKey("knockbackPosition")){
+						attack.knockbackPosition = new Vector2(attackInfo["knockbackPosition"][0].Value<int>(), attackInfo["knockbackPosition"][1].Value<int>());
+					} else {
+						attack.knockbackPosition = new Vector2(0, 0);
+					}
+					return attack;
+				case Type t when t == typeof(List<Skill>):
+					List<Skill> skills = new List<Skill>();
+					array = JArray.Load(reader);
+					foreach (JToken token in array){
+						newReader = new JsonTextReader(new StringReader(token.ToString()));
+						skills.Add(this.ReadJson(newReader, typeof(Skill), existingValue, serializer) as Skill); 
+					}
+					return skills;
+				case Type t when t == typeof(List<Attack>):
+					List<Attack> attacks = new List<Attack>();
+					array = JArray.Load(reader);
+					foreach (JToken token in array){
+						newReader = new JsonTextReader(new StringReader(token.ToString()));
+						attacks.Add(this.ReadJson(newReader, typeof(Attack), existingValue, serializer) as Attack); 
+					}
+					return attacks;
+				default:
+					return null;
+			}
 		}
 	}
 }

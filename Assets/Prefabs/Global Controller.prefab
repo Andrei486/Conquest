@@ -99,6 +99,7 @@ MonoBehaviour:
   menuItemPrefab: {fileID: 3452037990696858790, guid: eaf2446051c3af2419589a405314b0dc,
     type: 3}
   animatorController: {fileID: 9100000, guid: 45f1c19edbdb7fe4387357f72fda5e44, type: 2}
+  skillData: {fileID: 4900000, guid: 50488dccf549aee41beeeda27abb0a6c, type: 3}
 --- !u!114 &3060979954033172192
 MonoBehaviour:
   m_ObjectHideFlags: 0

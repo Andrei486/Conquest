@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Common\ControlsManager.cs" />
      <Compile Include="Assets\Scripts\Common\ControlsMenuCursor.cs" />
+     <Compile Include="Assets\Scripts\Common\Extensions.cs" />
      <Compile Include="Assets\Scripts\Common\InfoObject.cs" />
      <Compile Include="Assets\Scripts\Common\JsonConverters.cs" />
      <Compile Include="Assets\Scripts\Common\Menu.cs" />

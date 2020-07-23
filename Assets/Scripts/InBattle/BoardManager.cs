@@ -14,9 +14,6 @@ namespace InBattle{
 		public int currentTurn;
 		public int lastTurn = 100;
 		public bool winOnTimeout = false;
-		[Tooltip("A list of sprites to use for tile defaults. In order, tile and grass.")]
-		public List<Sprite> defaultSprites;
-		[Tooltip("A list of colors to use for board tile pillars. In order, tile and grass.")]
 		GameObject board;
 		public string modelName;
 		public string mapName;
@@ -33,7 +30,6 @@ namespace InBattle{
 		public GameObject boardTilePrefab;
 		public GameObject skillHitPrefab;
 		public GameObject directionArrowPrefab;
-		public TextAsset skillData;
 		private List<PlayerController> toSave = new List<PlayerController>();
 		private List<GameObject> units;
 		public List<PlayerController> players{
@@ -202,7 +198,7 @@ namespace InBattle{
 				Destroy(end.occupyingUnit.transform.Find("Temporary").gameObject);
 			}
 			cursor.selectedSpace = end;
-			BattleLog.GetLog().Log(pc.name + " moved.");
+			BattleLog.GetLog().Log(pc.unitName + " moved.");
 		}
 		
 		public void MoveUnit(Vector2 start, Vector2 end){
@@ -385,7 +381,7 @@ namespace InBattle{
 			pc.hasActed = false;
 			pc.remainingActions = pc.maxActions;
 			pc.remainingMove = pc.moveRange;
-			Debug.Log("refreshed " + pc.name);
+			Debug.Log("refreshed " + pc.unitName);
 		}
 
 		public bool AdvancePhase(){
@@ -465,7 +461,7 @@ namespace InBattle{
 			}
 			space.occupyingUnit = null;
 			units.Remove(pc.gameObject);
-			log.Log(pc.name + " died.");
+			log.Log(pc.unitName + " died.");
 			// show death dialogue or other effects here if needed
 			// for player units, write info back to units file if applicable
 			if (pc.saveAfterBattle){

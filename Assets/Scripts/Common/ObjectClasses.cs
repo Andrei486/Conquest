@@ -15,14 +15,10 @@ namespace Objects
     /**Represents a single space on the game board.*/
 	[Serializable]
     public class BoardSpace {
-		[JsonConverter(typeof(VectorConverter))]
-		public Vector2 boardPosition;
-		[JsonConverter(typeof(VectorConverter))]
-		public Vector3 anchorPosition;
-		[JsonProperty(ItemConverterType = typeof(VectorConverter))]
-		public Vector3[] corners;
-		[JsonIgnore]
-		public GameObject occupyingUnit;
+		[JsonConverter(typeof(VectorConverter))] public Vector2 boardPosition;
+		[JsonConverter(typeof(VectorConverter))] public Vector3 anchorPosition;
+		[JsonProperty(ItemConverterType = typeof(VectorConverter))] public Vector3[] corners;
+		[JsonIgnore] public GameObject occupyingUnit;
 		public string spriteName;
 		public int moveCost = 1;
 		public const float BOARD_SIZE = 2.0f;
@@ -52,10 +48,8 @@ namespace Objects
 		public float accuracy;
 		public const float RANDOM_VARIANCE = 0.1f;
 		//relative to user, in board space, when user faces upwards.
-		[JsonConverter(typeof(VectorConverter))]
-		public Vector2 targetPosition = new Vector2(0, 0);
-		[JsonConverter(typeof(VectorConverter))]
-		public Vector2 knockbackPosition = new Vector2(0, 0);
+		[JsonConverter(typeof(VectorConverter))] public Vector2 targetPosition = new Vector2(0, 0);
+		[JsonConverter(typeof(VectorConverter))] public Vector2 knockbackPosition = new Vector2(0, 0);
 
 		public float CalculateAverageDamage(Health user, Health target){
 			/**Returns the damage that would be dealt on a successful hit by this attack,
@@ -179,86 +173,7 @@ namespace Objects
 		public Sprite emblemSprite;
 	}
 
-	public static class Extensions
-	{
-		public static T Next<T>(this T src) where T : struct
-		{
-			if (!typeof(T).IsEnum) throw new ArgumentException(String.Format("Argument {0} is not an Enum", typeof(T).FullName));
-
-			T[] Arr = (T[])Enum.GetValues(src.GetType());
-			int j = Array.IndexOf<T>(Arr, src) + 1;
-			return (Arr.Length==j) ? Arr[0] : Arr[j];            
-		}
-
-		public static Vector2 Rotate(this Vector2 v2, float angle)
-		{
-			/**Rotates the vector by angle degrees COUNTERCLOCKWISE.!--*/
-			angle *= Mathf.Deg2Rad;
-			float x = Mathf.Cos(angle) * v2.x - Mathf.Sin(angle) * v2.y;
-			float y = Mathf.Sin(angle) * v2.x + Mathf.Cos(angle) * v2.y;
-			return new Vector2(x, y);
-		}
-
-		public static Color BorderColor(this UnitAffiliation affiliation){
-			Color color;
-			switch (affiliation){
-				case UnitAffiliation.PLAYER:
-					color = new Color(0f, 0.2f, 0.9f); //blue
-					break;
-				case UnitAffiliation.ENEMY:
-					color = new Color(0.8f, 0.1f, 0.1f); //red
-					break;
-				case UnitAffiliation.ALLY:
-					color = new Color(0.3f, 0.7f, 0.1f); //forest green
-					break;
-				case UnitAffiliation.OTHER:
-					color = new Color(0.8f, 0.7f, 0f); //golden yellow
-					break;
-				default:
-					color = Color.black;
-					break;
-			}
-			return color;
-		}
-
-		public static Color BgColor(this UnitAffiliation affiliation){
-			Color color;
-			switch (affiliation){
-				case UnitAffiliation.PLAYER:
-					color = new Color(0.85f, 0.9f, 1f); //light blue
-					break;
-				case UnitAffiliation.ENEMY:
-					color = new Color(1f, 0.85f, 0.85f); //light red
-					break;
-				case UnitAffiliation.ALLY:
-					color = new Color(0.85f, 1f, 0.85f); //light green
-					break;
-				case UnitAffiliation.OTHER:
-					color = new Color(1f, 0.9f, 0.8f); //golden yellow
-					break;
-				default:
-					color = Color.white;
-					break;
-			}
-			return color;
-		}
-
-		public static T NextOf<T>(this IList<T> list, T item)
-		{
-			var indexOf = list.IndexOf(item);
-			return list[indexOf == list.Count - 1 ? 0 : indexOf + 1];
-		}
-		public static T PreviousOf<T>(this IList<T> list, T item)
-		{
-			var indexOf = list.IndexOf(item);
-			return list[indexOf == 0 ? list.Count - 1 : indexOf - 1];
-		}
-
-		public static bool ApproximatelyEqual(this Quaternion quatA, Quaternion quatB, float acceptableRange = (float)(1e-5))
-		{
-			return 1 - Mathf.Abs(Quaternion.Dot(quatA, quatB)) < acceptableRange;
-		}  
-	}
+	
 	
 	[Serializable]
 	public class Skill{
@@ -271,8 +186,7 @@ namespace Objects
 		public int bulletCost = 0;
 		public int moveCost = 0;
 		//relative to user, in board space, when user faces upwards.
-		[JsonConverter(typeof(VectorConverter))]
-		public Vector2 movePosition = new Vector2(0, 0); 
+		[JsonConverter(typeof(VectorConverter))] public Vector2 movePosition = new Vector2(0, 0); 
 		
 		public void VisualizeTarget(BoardSpace space, GameObject player, Quaternion unitRotation){
 			/**Shows a visualization for the area affected by the skill on the board.*/
@@ -403,9 +317,9 @@ namespace Objects
 			return false;
 		}
 		
-		public static Skill GetSkillByName(string skillName, TextAsset skillData){
+		public static Skill GetSkillByName(string skillName){
 			/**Gets the skill with the name skillName from the skillData JSON file.*/
-			List<Skill> skillList = JsonConvert.DeserializeObject<List<Skill>>(skillData.text, new SkillConverter());
+			List<Skill> skillList = JsonConvert.DeserializeObject<List<Skill>>(PrefabManager.GetPrefabs().skillData.text);
 			foreach(Skill skill in skillList){
 				if (skill.name == skillName){
 					return skill;
@@ -418,74 +332,6 @@ namespace Objects
 			Vector3 euler = rotation.eulerAngles;
 			euler = new Vector3(euler.x, euler.z, euler.y);
 			return Quaternion.Euler(euler);
-		}
-		
-		internal class SkillConverter : JsonConverter{
-			/**A class to convert JSON representations of skills to Skill objects.*/
-			public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer){
-				throw new System.NotImplementedException(); //can't use to serialize json
-			}
-			
-			public override bool CanConvert(Type type){
-				if (type == typeof(Skill) || type == typeof(List<Skill>) || type == typeof(Attack) || type == typeof(List<Attack>)){
-					return true;
-				} else {
-					return false;
-				}
-			}
-			
-			public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer){
-				JsonTextReader newReader;
-				JArray array;
-				switch(objectType){
-					case Type t when t == typeof(Skill):
-						Skill skill = new Skill();
-						JObject skillInfo = JObject.Load(reader);
-						skill.name = skillInfo["name"].Value<string>();
-						skill.skillType = (SkillType) Enum.Parse(typeof(SkillType), skillInfo["skillType"].Value<string>());
-						skill.reusable = skillInfo["reusable"].Value<bool>();
-						skill.actionCost = skillInfo["actionCost"].Value<int>();
-						skill.bulletCost = skillInfo["bulletCost"].Value<int>();
-						skill.moveCost = skillInfo["moveCost"].Value<int>();
-						if (skillInfo.ContainsKey("movePosition")){
-							skill.movePosition = new Vector2(skillInfo["movePosition"][0].Value<int>(), skillInfo["movePosition"][1].Value<int>());
-						}
-						newReader = new JsonTextReader(new StringReader(skillInfo["attacks"].ToString()));
-						skill.attacks = this.ReadJson(newReader, typeof(List<Attack>), existingValue, serializer) as List<Attack>;	
-						
-						return skill;
-					case Type t when t == typeof(Attack):
-						Attack attack = new Attack();
-						JObject attackInfo = JObject.Load(reader);
-						attack.basePower = attackInfo["basePower"].Value<float>();
-						attack.accuracy = attackInfo["accuracy"].Value<float>();
-						attack.targetPosition = new Vector2(attackInfo["targetPosition"][0].Value<int>(), attackInfo["targetPosition"][1].Value<int>());
-						if (attackInfo.ContainsKey("knockbackPosition")){
-							attack.knockbackPosition = new Vector2(attackInfo["knockbackPosition"][0].Value<int>(), attackInfo["knockbackPosition"][1].Value<int>());
-						} else {
-							attack.knockbackPosition = new Vector2(0, 0);
-						}
-						return attack;
-					case Type t when t == typeof(List<Skill>):
-						List<Skill> skills = new List<Skill>();
-						array = JArray.Load(reader);
-						foreach (JToken token in array){
-							newReader = new JsonTextReader(new StringReader(token.ToString()));
-							skills.Add(this.ReadJson(newReader, typeof(Skill), existingValue, serializer) as Skill); 
-						}
-						return skills;
-					case Type t when t == typeof(List<Attack>):
-						List<Attack> attacks = new List<Attack>();
-						array = JArray.Load(reader);
-						foreach (JToken token in array){
-							newReader = new JsonTextReader(new StringReader(token.ToString()));
-							attacks.Add(this.ReadJson(newReader, typeof(Attack), existingValue, serializer) as Attack); 
-						}
-						return attacks;
-					default:
-						return null;
-				}
-			}
 		}
 	}
 

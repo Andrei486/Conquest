@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Objects;
-
+using Newtonsoft.Json;
 
 namespace InBattle
 {
-	[Serializable]
+	[Serializable] [JsonObject(MemberSerialization.OptIn)]
 	public class Health : MonoBehaviour
 	{
-		public float maxHealth;
-		public float currentHealth;
-		public int level;
-		public float attackPower;
-		public float defense;
+		[JsonProperty] public float maxHealth;
+		[JsonProperty] public float currentHealth;
+		[JsonProperty] public int level;
+		[JsonProperty] public float attackPower;
+		[JsonProperty] public float defense;
 		BoardManager board;
 		PlayerController pc;
 		Vector2 boardPosition;
@@ -57,13 +57,13 @@ namespace InBattle
 			//check whether attack lands
 			float effectiveAccuracy = attack.CalculateHitChance(this, target);
 			if (rng.NextDouble() >= effectiveAccuracy / 100.0f){ //attack misses
-				BattleLog.GetLog().Log("The attack missed " + target.pc.name + "...");
+				BattleLog.GetLog().Log("The attack missed " + target.pc.unitName + "...");
 				Debug.Log("attack missed");
 				return;
 			}
 			double damageModifier = (1.0 - Attack.RANDOM_VARIANCE) + (rng.NextDouble() * 2 * Attack.RANDOM_VARIANCE);
 			target.currentHealth -= damageDealt * (float) damageModifier;
-			BattleLog.GetLog().Log("Dealt " + damageDealt + " damage to " + target.pc.name);
+			BattleLog.GetLog().Log("Dealt " + damageDealt + " damage to " + target.pc.unitName);
 			Debug.Log("damage dealt");
 			
 			if (attack.knockbackPosition != Vector2.zero){

@@ -31,7 +31,7 @@ namespace InBattle{
             UIController.SetTheme(unitInfoBox.transform, unit.affiliation);
             //fill general info
             section = unitInfoBox.transform.Find("General");
-            section.Find("Unit Name").GetComponent<Text>().text = unit.name;
+            section.Find("Unit Name").GetComponent<Text>().text = unit.unitName;
             section.Find("Class Title").GetComponent<Text>().text = unit.classTitle;
             section.transform.Find("Level").GetComponent<Text>().text = unit.health.level.ToString();
 
@@ -83,12 +83,12 @@ namespace InBattle{
                 UIController.SetTheme(unitSummaryBox.transform, unit.affiliation);
             }
 
-            unitSummaryBox.transform.Find("Unit Name").GetComponent<Text>().text = unit.name;
+            unitSummaryBox.transform.Find("Unit Name").GetComponent<Text>().text = unit.unitName;
             unitSummaryBox.transform.Find("Current HP").GetComponent<Text>().text = string.Format("{0}/{1}",
                                                                                                 Math.Ceiling(unit.health.currentHealth),
                                                                                                 Math.Ceiling(unit.health.maxHealth));
             unitSummaryBox.transform.Find("HP Bar").GetComponent<Slider>().value = unit.health.currentHealth / unit.health.maxHealth;
-            unitSummaryBox.transform.Find("Unit Name").GetComponent<Text>().text = unit.name;
+            unitSummaryBox.transform.Find("Unit Name").GetComponent<Text>().text = unit.unitName;
             unitSummaryBox.transform.Find("Level").GetComponent<Text>().text = unit.health.level.ToString();
 
             unitSummaryBox.transform.Find("Movement").GetComponent<Text>().text = string.Format("{0}/{1}",
