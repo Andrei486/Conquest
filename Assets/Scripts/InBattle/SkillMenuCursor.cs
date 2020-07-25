@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Objects;
+using Menus;
 
 namespace InBattle{	
 	public class SkillMenuCursor : MenuCursor

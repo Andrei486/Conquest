@@ -58,8 +58,6 @@
      <Compile Include="Assets\Scripts\Common\Extensions.cs" />
      <Compile Include="Assets\Scripts\Common\InfoObject.cs" />
      <Compile Include="Assets\Scripts\Common\JsonConverters.cs" />
-     <Compile Include="Assets\Scripts\Common\Menu.cs" />
-     <Compile Include="Assets\Scripts\Common\MenuCursor.cs" />
      <Compile Include="Assets\Scripts\Common\ObjectClasses.cs" />
      <Compile Include="Assets\Scripts\Common\PrefabManager.cs" />
      <Compile Include="Assets\Scripts\InBattle\ActionMenuCursor.cs" />
@@ -78,6 +76,9 @@
      <Compile Include="Assets\Scripts\InBattle\SaveManager.cs" />
      <Compile Include="Assets\Scripts\InBattle\SkillMenuCursor.cs" />
      <Compile Include="Assets\Scripts\InBattle\UIController.cs" />
+     <Compile Include="Assets\Scripts\Menus\Menu.cs" />
+     <Compile Include="Assets\Scripts\Menus\MenuCursor.cs" />
+     <Compile Include="Assets\Scripts\Menus\MenuElement.cs" />
      <Compile Include="Assets\Scripts\MissionSelect\MissionCursor.cs" />
      <Compile Include="Assets\Scripts\MissionSelect\MissionManager.cs" />
      <None Include="Assets\Miscellaneous\distanceGrid.txt" />

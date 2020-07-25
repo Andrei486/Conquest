@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
 using InBattle;
+using Menus;
 
 public class ControlsManager: MonoBehaviour
 {

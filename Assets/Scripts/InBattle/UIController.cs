@@ -17,6 +17,9 @@ namespace InBattle{
 
         void Start(){
             controls = ControlsManager.GetControls();
+            foreach (Transform child in unitInfoPrefab.transform){
+                Debug.Log(child.name + child.GetComponent<RectTransform>().rect.ToString());
+            }
         }
         void Update(){
         }

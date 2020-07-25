@@ -33,7 +33,6 @@ namespace InBattle{
             Debug.Log(Application.persistentDataPath);
             //LoadControls();
             
-            Debug.Log(JsonConvert.SerializeObject(EndCondition.ON_ROUT | EndCondition.ON_DEFEAT_COMMANDER));
             InfoObject info = InfoObject.Find();
             if (info != null){
                 currentMission = info.missionToLoad;
