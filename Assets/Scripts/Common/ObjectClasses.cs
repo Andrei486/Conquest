@@ -165,6 +165,14 @@ namespace Objects
 		ALLY,
 		OTHER
 	}
+
+	[Flags]
+	public enum EndCondition{
+		ON_ROUT = 1,
+		ON_DEFEAT_COMMANDER = 2,
+		ON_REACH_DESTINATION = 4,
+		ON_TURN_LIMIT = 8
+	}
 	
 	[Serializable]
 	public struct ActionInfo{

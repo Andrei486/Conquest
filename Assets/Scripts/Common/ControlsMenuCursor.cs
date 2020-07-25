@@ -24,7 +24,7 @@ public class ControlsMenuCursor : MenuCursor
     }
     
     public override void SelectItem(GameObject item){
-        Command command = (Command) ControlsManager.GetCommandByName(item.transform.Find("Name").GetComponent<Text>().text);
+        Command command = (item.transform.Find("Name").GetComponent<Text>().text).GetByDescription<Command>();
         StartCoroutine(menuController.SetCommandPopup(command));
     }
 

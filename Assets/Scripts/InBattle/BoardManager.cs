@@ -12,8 +12,11 @@ namespace InBattle{
 		public int rows;
 		public int columns;
 		public int currentTurn;
-		public int lastTurn = 100;
-		public bool winOnTimeout = false;
+		public int turnLimit = 100;
+		public EndCondition victory = EndCondition.ON_ROUT;
+		public EndCondition defeat = EndCondition.ON_ROUT;
+		public List<BoardSpace> destinationSpaces;
+		public List<BoardSpace> defendedSpaces;
 		GameObject board;
 		public string modelName;
 		public string mapName;
@@ -411,15 +414,15 @@ namespace InBattle{
 		}
 
 		private bool ArmyDefeated(UnitAffiliation army){
-			List<GameObject> standingUnits = new List<GameObject>(from unit in this.units
-				where unit.GetComponent<PlayerController>().affiliation == army
-				select unit);
+			List<PlayerController> standingUnits = new List<PlayerController>(from player in players
+				where player.affiliation == army
+				select player);
 			return (standingUnits.Count == 0);
 		}
 
 		public void CheckEndMission(){
 			/**Ends the mission if needed.*/
-			if (ArmyDefeated(UnitAffiliation.PLAYER) || ArmyDefeated(UnitAffiliation.ENEMY) || currentTurn > lastTurn){
+			if (IsVictory(UnitAffiliation.PLAYER, victory, destinationSpaces) || IsVictory(UnitAffiliation.ENEMY, defeat, defendedSpaces)){
 				EndMission(); 
 			}
 		}
@@ -427,14 +430,14 @@ namespace InBattle{
 		private void EndMission(){
 			/**Ends the current mission and exits to the mission select screen, updating the mission's
 			status if needed.*/
-			bool victory = false;
+			bool isVictory = false;
 
 			SaveRemainingUnits();
-			if (ArmyDefeated(UnitAffiliation.ENEMY) || (currentTurn > lastTurn && winOnTimeout)){
-				victory = true;
+			if (IsVictory(UnitAffiliation.PLAYER, victory, destinationSpaces)){
+				isVictory = true;
 			}
 			Mission updated = SaveManager.GetSaveManager().currentMission;
-			updated.completed = updated.completed || victory;
+			updated.completed = updated.completed || isVictory;
 			InfoObject info = InfoObject.Create();
 			info.missionToUpdate = updated;
 			SceneManager.LoadScene("Scenes/battleselect", LoadSceneMode.Single);
@@ -513,6 +516,36 @@ namespace InBattle{
 					toSave.Add(pc);
 				}
 			}
+		}
+
+		private bool IsVictory(UnitAffiliation phase, EndCondition conditions, List<BoardSpace> targetSpaces = null){
+			/**Returns true if and only if the current board is a victory for the player's army,
+			according to the conditions for victory.!--*/
+			if (targetSpaces == null){
+				targetSpaces = new List<BoardSpace>();
+			}
+			List<Func<bool>> predicates = new List<Func<bool>>(); //each of these predicates returns true if and only if it is a victory
+			IEnumerable<UnitAffiliation> opposingArmies = (from army in (UnitAffiliation[]) Enum.GetValues(typeof(UnitAffiliation))
+					where !armyManager.IsFriendly(army, phase) select army);
+			if (conditions.HasFlag(EndCondition.ON_ROUT)){ //if all enemy armies are destroyed
+				predicates.Add(() => (from army in opposingArmies select ArmyDefeated(army)).All(x => x));
+			}
+			if (conditions.HasFlag(EndCondition.ON_DEFEAT_COMMANDER)){ //if there is no enemy commander left in any army
+				predicates.Add(() => (from army in opposingArmies select (from enemy in players where enemy.affiliation == army && enemy.isCommander select enemy).Count() == 0).All(x => x));
+			}
+			if (conditions.HasFlag(EndCondition.ON_TURN_LIMIT)){ //if the turn limit has been reached
+				predicates.Add(() => currentTurn >= turnLimit);
+			}
+			if (conditions.HasFlag(EndCondition.ON_REACH_DESTINATION)){ //if anyone has reached the destination
+				predicates.Add(() => (from player in players where player.affiliation == phase
+                                                       && targetSpaces.Contains(GetSpace(player.boardPosition)) select player).Count() == 0);
+			}
+			foreach (Func<bool> predicate in predicates){
+				if (predicate()){
+					return true;
+				}
+			}
+			return false;
 		}
 		
 		public static void ClearVisualization(){

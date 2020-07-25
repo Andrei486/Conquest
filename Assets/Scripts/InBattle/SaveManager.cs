@@ -32,7 +32,8 @@ namespace InBattle{
             controlsData = Application.persistentDataPath + "/SaveData/controlsData.txt";
             Debug.Log(Application.persistentDataPath);
             //LoadControls();
-
+            
+            Debug.Log(JsonConvert.SerializeObject(EndCondition.ON_ROUT | EndCondition.ON_DEFEAT_COMMANDER));
             InfoObject info = InfoObject.Find();
             if (info != null){
                 currentMission = info.missionToLoad;
@@ -56,21 +57,27 @@ namespace InBattle{
         public GameObject LoadMission(GameObject boardObject, JObject missionInfo){
             BoardManager board = boardObject.GetComponent<BoardManager>();
             List<GameObject> units = new List<GameObject>();
-                foreach (JToken item in missionInfo["units"].Children()){
-                    Debug.Log(item);
-                    units.Add(JsonConvert.DeserializeObject<GameObject>(item.ToString(), new PlayerConverter()));
-                }
-                board.SetUnits(units);
-                board.currentTurn = missionInfo["currentTurn"].Value<int>();
-                board.phase = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), missionInfo["currentPhase"].Value<string>());
-                board.mapName = missionInfo["map"].Value<string>();
-                if (missionInfo.ContainsKey("armyManager")){
-                    board.armyManager = JsonConvert.DeserializeObject<ArmyManager>(missionInfo["armyManager"].ToString());
-                } else {
-                    Debug.Log("using default army manager, none specified");
-                    board.armyManager = new ArmyManager();
-                    board.armyManager.SetDefault();
-                }
+            foreach (JToken item in missionInfo["units"].Children()){
+                Debug.Log(item);
+                units.Add(JsonConvert.DeserializeObject<GameObject>(item.ToString(), new PlayerConverter()));
+            }
+            board.SetUnits(units);
+            board.currentTurn = missionInfo["currentTurn"].Value<int>();
+            board.phase = (UnitAffiliation) Enum.Parse(typeof(UnitAffiliation), missionInfo["currentPhase"].Value<string>());
+            board.mapName = missionInfo["mapName"].Value<string>();
+            board.victory = (EndCondition) missionInfo["victory"].Value<int>();
+			board.defeat = (EndCondition) missionInfo["defeat"].Value<int>();
+			board.destinationSpaces = missionInfo.ContainsKey("destinationSpaces") ?
+				JsonConvert.DeserializeObject<List<BoardSpace>>(missionInfo["destinationSpaces"].ToString()) : new List<BoardSpace>();
+			board.defendedSpaces = missionInfo.ContainsKey("defendedSpaces") ?
+				JsonConvert.DeserializeObject<List<BoardSpace>>(missionInfo["defendedSpaces"].ToString()) : new List<BoardSpace>();
+            if (missionInfo.ContainsKey("armyManager")){
+                board.armyManager = JsonConvert.DeserializeObject<ArmyManager>(missionInfo["armyManager"].ToString());
+            } else {
+                Debug.Log("using default army manager, none specified");
+                board.armyManager = new ArmyManager();
+                board.armyManager.SetDefault();
+            }
                 
             return boardObject;
         }
@@ -89,7 +96,7 @@ namespace InBattle{
                 missionInfo = JObject.Parse(File.ReadAllText(missionData));
             }
             
-            mapData = missionInfo["map"].Value<string>();
+            mapData = missionInfo["mapName"].Value<string>();
             TextAsset boardInfo = Resources.Load<TextAsset>("Maps/" + mapData);
             GameObject boardObject = JsonConvert.DeserializeObject<GameObject>(boardInfo.text, new BoardConverter());
             boardObject = LoadMission(boardObject, missionInfo);

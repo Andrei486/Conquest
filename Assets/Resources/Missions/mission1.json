@@ -96,7 +96,7 @@
         "remainingActions": 3,
         "bullets": 3,
         "affiliation": 1,
-        "isCommander": false,
+        "isCommander": true,
         "turnEnded": false,
         "hasActed": false,
         "health": {
@@ -167,7 +167,9 @@
     ],
     "currentTurn": 1,
     "currentPhase": 0,
-    "map": "map5",
+    "mapName": "map5",
+    "victory": 3,
+    "defeat": 1,
     "armyManager": {
       "conflictGraph": {
         "PLAYER": [

@@ -111,9 +111,13 @@ namespace JsonConverters{
 			*/
 			JObject missionInfo = new JObject(
 				new JProperty("units", units),
+				new JProperty("victory", board.victory),
+				new JProperty("defeat", board.defeat),
+				new JProperty("destinationSpaces", board.destinationSpaces),
+				new JProperty("defendedSpaces", board.defendedSpaces),
 				new JProperty("currentTurn", board.currentTurn),
 				new JProperty("currentPhase", board.phase),
-				new JProperty("map", board.mapName),
+				new JProperty("mapName", board.mapName),
 				new JProperty("armyManager", JObject.Parse(JsonConvert.SerializeObject(board.armyManager)))
 			);
 
@@ -134,11 +138,10 @@ namespace JsonConverters{
 			BoardManager board = boardObject.GetComponent<BoardManager>();
 			JObject boardInfo = JObject.Load(reader);
 
-			//set dimensions
+			//set properties
 			board.columns = boardInfo["columns"].Value<int>();
 			board.rows = boardInfo["rows"].Value<int>();
 			board.modelName = boardInfo["modelName"].Value<string>();
-
 			//initialize and show the map
 			List<BoardSpace> spaces = new List<BoardSpace>();
 			foreach (JToken item in boardInfo["spaces"].Children()){

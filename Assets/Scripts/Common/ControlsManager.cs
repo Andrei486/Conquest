@@ -166,7 +166,7 @@ public class ControlsManager: MonoBehaviour
         foreach (Command command in keyMappings.Keys){
             GameObject item = Instantiate(menuItem, controlsMenu.transform);
             item.transform.Translate(new Vector3(menuItemRowWidth * column, menuItemStackHeight * row, 0f)); //stack items properly
-            item.transform.Find("Name").GetComponent<Text>().text = ControlsManager.GetCommandName(command);
+            item.transform.Find("Name").GetComponent<Text>().text = command.GetDescription();
             item.transform.Find("Keybind").GetComponent<Text>().text = keyMappings[command].ToString();
             row++;
             //start a new column if at max number of items
@@ -215,30 +215,6 @@ public class ControlsManager: MonoBehaviour
         //update the menu
         HideControlsMenu();
         ShowControlsMenu();
-    }
-
-    public static string GetCommandName(Command command){
-        FieldInfo fi = command.GetType().GetField(command.ToString());
-
-        DescriptionAttribute[] attributes = fi.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
-
-        if (attributes.Any())
-        {
-            return attributes.First().Description;
-        }
-
-        return command.ToString();
-    }
-
-    public static Command? GetCommandByName(string name){
-        foreach (Command command in GetControls().keyMappings.Keys){
-            FieldInfo fi = command.GetType().GetField(command.ToString());
-            DescriptionAttribute[] attributes = fi.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
-            if (attributes.First().Description == name){
-                return command;
-            }
-        }
-        return null;
     }
 }
 

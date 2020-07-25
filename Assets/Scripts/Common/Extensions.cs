@@ -1,6 +1,14 @@
-using System.Collections.Generic;
+using System.Collections;
 using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.ComponentModel;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.UI;
+using InBattle;
 using Objects;
 
 public static class Extensions
@@ -85,19 +93,52 @@ public static class Extensions
         return color;
     }
 
-    public static T NextOf<T>(this IList<T> list, T item)
-    {
+    public static T NextOf<T>(this IList<T> list, T item){
         var indexOf = list.IndexOf(item);
         return list[indexOf == list.Count - 1 ? 0 : indexOf + 1];
     }
-    public static T PreviousOf<T>(this IList<T> list, T item)
-    {
+    public static T PreviousOf<T>(this IList<T> list, T item){
         var indexOf = list.IndexOf(item);
         return list[indexOf == 0 ? list.Count - 1 : indexOf - 1];
     }
 
-    public static bool ApproximatelyEqual(this Quaternion quatA, Quaternion quatB, float acceptableRange = (float)(1e-5))
-    {
+    public static bool ApproximatelyEqual(this Quaternion quatA, Quaternion quatB, float acceptableRange = (float)(1e-5)){
         return 1 - Mathf.Abs(Quaternion.Dot(quatA, quatB)) < acceptableRange;
-    }  
+    } 
+
+    public static T GetByDescription<T>(this string description){
+        var type = typeof(T);
+        if(!type.IsEnum) throw new InvalidOperationException();
+        foreach(var field in type.GetFields())
+        {
+            var attribute = Attribute.GetCustomAttribute(field,
+                typeof(DescriptionAttribute)) as DescriptionAttribute;
+            if(attribute != null)
+            {
+                if(attribute.Description == description)
+                    return (T)field.GetValue(null);
+            }
+            else
+            {
+                if(field.Name == description)
+                    return (T)field.GetValue(null);
+            }
+        }
+        throw new ArgumentException("Not found.", nameof(description));
+    }
+
+    public static string GetDescription<T>(this T element){
+        /**Returns the description of the given enum element.!--*/
+        if(!typeof(T).IsEnum) throw new InvalidOperationException();
+        FieldInfo fi = element.GetType().GetField(element.ToString());
+
+        DescriptionAttribute[] attributes = fi.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
+
+        if (attributes.Any())
+        {
+            return attributes.First().Description;
+        }
+
+        return element.ToString();
+    }
 }
