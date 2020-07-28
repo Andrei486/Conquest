@@ -33,13 +33,29 @@ namespace Menus{
 
         }
         public virtual void OnSelect(MenuCursor cursor){
-
+            /**Called when a MenuCursor selects this element while hovering on it.!--*/
+            //default behavior is to move cursor to first valid child
+            if (children.Count > 0){
+                cursor.activeElement = this;
+                cursor.hoveredElement = children[0];
+            }
+            return;
         }
         public virtual void OnHover(MenuCursor cursor){
-
+            /**Called when a MenuCursor moves onto this element.!--*/
+            return;
+        }
+        public virtual void OnUnhover(MenuCursor cursor){
+            /**Called when a MenuCursor moves off of this element.
+            Used to undo effects created in OnHover, if any.!--*/
+            return;
         }
         public virtual void OnBack(MenuCursor cursor){
-
+            /**Called when a MenuCursor tries to move back while this element is active.!--*/
+            if (parent != null){
+                cursor.activeElement = parent;
+                cursor.hoveredElement = this;
+            }
         }
 
         // private MenuElement FindElementInDirection(Vector2 direction){

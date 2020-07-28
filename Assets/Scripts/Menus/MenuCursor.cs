@@ -6,17 +6,26 @@ using UnityEngine.UI;
 namespace Menus{
 	public class MenuCursor : MonoBehaviour
 	{
-		protected GameObject menu;
-		public GameObject currentItem;
-		public int index;
+		public Menu root;
+		public MenuElement activeElement;
+		public MenuElement hoveredElement{
+			get{
+				return hoveredElement;
+			}
+			set{
+				hoveredElement.OnUnhover(this);
+				hoveredElement = value;
+				if (hoveredElement != null){
+					hoveredElement.OnHover(this); //when hovered element changes, automatically call OnHover
+				}
+			}
+		}
 		public bool locked = false;
-		protected float infoMoveTime = 0.1f;
-		
-		Vector3 offset;
-		// Start is called before the first frame update
+		[SerializeField] Vector3 offset;
+		private ControlsManager controls;
 		virtual protected void Start()
 		{
-
+			controls = ControlsManager.GetControls();
 		}
 
 		// Update is called once per frame
@@ -24,53 +33,55 @@ namespace Menus{
 		{
 			if (this.locked){
 				return;
+			} else {
+				//move the cursor if the correct keys are pressed
+				if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_UP))){
+					HoverItem(hoveredElement.up);
+				}
+				if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_DOWN))){
+					HoverItem(hoveredElement.down);
+				}
+				if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_LEFT))){
+					HoverItem(hoveredElement.left);
+				}
+				if (Input.GetKeyDown(controls.GetCommand(Command.MOVE_RIGHT))){
+					HoverItem(hoveredElement.right);
+				}
 			}
-			if (this.menu != null){
-				// if (Input.GetKeyDown(controls.GetCommand(Command.TOGGLE_INFO))){
-				// 	menuController.showInfo = !menuController.showInfo;
-				// 	HoverItem(currentItem); //allow changes to take effect
-				// }
+		}
+		
+		virtual public void Setup(Menu root){
+			this.root = root;
+			this.activeElement = root.GetComponent<MenuElement>();
+			HoverItem(0);
+		}
+
+		virtual public void Destroy(){
+			/**Called when menu is destroyed to free up or unlock anything that was locked by the menu.!--*/
+		}
+		
+		virtual protected void HoverItem(MenuElement element){
+			/**Moves the cursor to hover over element, unless element is null.!--*/
+			if (element == null){
+				return;
 			}
-		}
-		
-		virtual public void LinkMenu(GameObject menu){
-			this.menu = menu;
-			ResetItem();
-			offset = new Vector3(this.gameObject.GetComponent<RectTransform>().rect.width * this.gameObject.transform.localScale.x * -1.1f, 0f, 0f);
-			this.gameObject.GetComponent<Image>().enabled = true;
-		}
-		
-		virtual public void UnlinkMenu(){
-			this.menu = null;
-			this.currentItem = null; //select the first element
-			this.gameObject.GetComponent<Image>().enabled = false;
-		}
-		
-		virtual protected void HoverItem(GameObject item){
-			this.currentItem = item;
-			this.transform.position = item.transform.position + offset;
+			this.hoveredElement = element;
+			this.transform.position = element.transform.position + offset;
 		}
 		
 		protected void HoverItem(int childNumber){
-			HoverItem(menu.transform.GetChild(childNumber).gameObject);
+			MenuElement firstValid = null;
+			foreach (Transform child in activeElement.transform){
+				if (child.GetComponent<MenuElement>() != null){
+					firstValid = child.GetComponent<MenuElement>();
+					break;
+				}
+			}
+			HoverItem(firstValid);
 		}
 		
 		virtual public void SelectItem(GameObject item){
 			
-		}
-		
-		virtual public void MoveUp(){
-			if (index < menu.transform.childCount - 1){
-				index++;
-				HoverItem(index);
-			}
-		}
-		
-		virtual public void MoveDown(){
-			if (index > 0){
-				index--;
-				HoverItem(index);
-			}
 		}
 		
 		protected void ResetItem(){
@@ -78,9 +89,8 @@ namespace Menus{
 		}
 		
 		IEnumerator Reset(){
+			Setup(root);
 			yield return new WaitForEndOfFrame();
-			index = 0;
-			HoverItem(index);
 		}
 
 		// protected IEnumerator SetupMenu(GameObject item, List<GameObject> attributes, float time){
